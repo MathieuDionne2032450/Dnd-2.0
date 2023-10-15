@@ -37,6 +37,7 @@ namespace Api_DnD.Data
             modelBuilder.Entity<Monstre>().ToTable("Monstre");
             modelBuilder.Entity<Campagne>().ToTable("Campagne");
             modelBuilder.Entity<Quete>().ToTable("Quete");
+            modelBuilder.Entity<spell>().ToTable("spell");
         }
     }
 }

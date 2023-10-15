@@ -26,7 +26,9 @@ namespace Api_DnD.Model
         public string Flaws { get; set; }
         public int Niv { get; set; }
         public int id { get; set; }
-        public ICollection<Campagne> Campagne { get; set; }
+        public Campagne Campagne { get; set; }
+
+        public ICollection<feats>? feats { get; set; }
 
         public static Perso PersoToPerso(Perso p)
         {
@@ -45,7 +47,8 @@ namespace Api_DnD.Model
                 Bonds = p.Bonds,
                 Flaws = p.Flaws, 
                 Niv = p.Niv,
-                id = p.id
+                id = p.id,
+                feats = p.feats
             };
         }
         

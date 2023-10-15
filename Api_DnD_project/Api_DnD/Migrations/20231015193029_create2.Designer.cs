@@ -11,15 +11,15 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Api_DnD.Migrations
 {
     [DbContext(typeof(DNDContext))]
-    [Migration("20231015154251_local")]
-    partial class local
+    [Migration("20231015193029_create2")]
+    partial class create2
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "7.0.10")
+                .HasAnnotation("ProductVersion", "7.0.12")
                 .HasAnnotation("Relational:MaxIdentifierLength", 64);
 
             modelBuilder.Entity("ActionMonstre", b =>
@@ -61,7 +61,7 @@ namespace Api_DnD.Migrations
                         .IsRequired()
                         .HasColumnType("longtext");
 
-                    b.Property<string>("Desc")
+                    b.Property<string>("Descr")
                         .IsRequired()
                         .HasColumnType("longtext");
 
@@ -161,12 +161,7 @@ namespace Api_DnD.Migrations
                         .IsRequired()
                         .HasColumnType("longtext");
 
-                    b.Property<int?>("Persoid")
-                        .HasColumnType("int");
-
                     b.HasKey("Id");
-
-                    b.HasIndex("Persoid");
 
                     b.ToTable("Campagne", (string)null);
                 });
@@ -265,15 +260,12 @@ namespace Api_DnD.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("ConditionImmunities")
-                        .IsRequired()
                         .HasColumnType("longtext");
 
                     b.Property<string>("DammageImmunities")
-                        .IsRequired()
                         .HasColumnType("longtext");
 
                     b.Property<string>("DammageResistance")
-                        .IsRequired()
                         .HasColumnType("longtext");
 
                     b.Property<int>("DarkVision")
@@ -373,6 +365,9 @@ namespace Api_DnD.Migrations
                         .IsRequired()
                         .HasColumnType("longtext");
 
+                    b.Property<int>("CampagneId")
+                        .HasColumnType("int");
+
                     b.Property<int>("ClasseId")
                         .HasColumnType("int");
 
@@ -412,6 +407,8 @@ namespace Api_DnD.Migrations
                     b.HasKey("id");
 
                     b.HasIndex("ArmureId");
+
+                    b.HasIndex("CampagneId");
 
                     b.HasIndex("ClasseId");
 
@@ -502,6 +499,30 @@ namespace Api_DnD.Migrations
                     b.HasIndex("Persoid");
 
                     b.ToTable("Skill");
+                });
+
+            modelBuilder.Entity("Api_DnD.Model.feats", b =>
+                {
+                    b.Property<int>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<string>("Descr")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Nom")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<int?>("Persoid")
+                        .HasColumnType("int");
+
+                    b.HasKey("id");
+
+                    b.HasIndex("Persoid");
+
+                    b.ToTable("feats");
                 });
 
             modelBuilder.Entity("ArmeCampagne", b =>
@@ -676,18 +697,17 @@ namespace Api_DnD.Migrations
                     b.Navigation("Enchantement");
                 });
 
-            modelBuilder.Entity("Api_DnD.Model.Campagne", b =>
-                {
-                    b.HasOne("Api_DnD.Model.Perso", null)
-                        .WithMany("Campagne")
-                        .HasForeignKey("Persoid");
-                });
-
             modelBuilder.Entity("Api_DnD.Model.Perso", b =>
                 {
                     b.HasOne("Api_DnD.Model.Armure", "Armure")
                         .WithMany()
                         .HasForeignKey("ArmureId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Api_DnD.Model.Campagne", "Campagne")
+                        .WithMany()
+                        .HasForeignKey("CampagneId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -704,6 +724,8 @@ namespace Api_DnD.Migrations
                         .IsRequired();
 
                     b.Navigation("Armure");
+
+                    b.Navigation("Campagne");
 
                     b.Navigation("Classes");
 
@@ -725,6 +747,13 @@ namespace Api_DnD.Migrations
                 {
                     b.HasOne("Api_DnD.Model.Perso", null)
                         .WithMany("Skills")
+                        .HasForeignKey("Persoid");
+                });
+
+            modelBuilder.Entity("Api_DnD.Model.feats", b =>
+                {
+                    b.HasOne("Api_DnD.Model.Perso", null)
+                        .WithMany("feats")
                         .HasForeignKey("Persoid");
                 });
 
@@ -855,11 +884,11 @@ namespace Api_DnD.Migrations
 
             modelBuilder.Entity("Api_DnD.Model.Perso", b =>
                 {
-                    b.Navigation("Campagne");
-
                     b.Navigation("LesArmes");
 
                     b.Navigation("Skills");
+
+                    b.Navigation("feats");
                 });
 #pragma warning restore 612, 618
         }

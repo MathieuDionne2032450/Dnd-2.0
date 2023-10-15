@@ -6,16 +6,11 @@ using System.Text;
 
 namespace Api_DnD.Controllers
 {
+    [ApiController]
+    [Route("[controller]")]
     public class KeyGenerator
     {
-        //private readonly KeyContext _context;
-        
-
-        //public KeyGenerator(KeyContext context)
-        //{
-        //    _context = context;
-        //}
-
+       
         /*
         //public async Task<ActionResult<IEnumerable<Key>>> GetAllKey()
         //{
@@ -24,12 +19,41 @@ namespace Api_DnD.Controllers
         //}
         */
 
+        private readonly DNDContext _context;
+
+        public KeyGenerator(DNDContext context)
+        {
+            _context = context;
+        }
 
         internal static readonly char[] chars =
             "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890".ToCharArray();
 
-        public static string GenererUniqueKey(int size)
+        [HttpGet("/GenererUniqueKey")]
+        public async Task<Key> GenererUniqueKey()
         {
+            bool verif = false;
+            Key key;
+
+            do
+            {
+                key = GenerateKeys();
+                if(await _context.Key.FindAsync(key.ApiKey) == null)
+                {
+                    verif= true;
+                }
+            } while (verif == false);
+
+            _context.Key.Add(key);
+            await _context.SaveChangesAsync();
+
+            return key;
+            
+        }
+
+        static Key GenerateKeys()
+        {
+            int size = 32;
             byte[] data = new byte[4 * size];
             using (var crypto = RandomNumberGenerator.Create())
             {
@@ -43,21 +67,19 @@ namespace Api_DnD.Controllers
 
                 result.Append(chars[idx]);
             }
-
-            return result.ToString();
+            return new Key(result.ToString(),Key.KEY_ROLE_USER);
         }
 
-        public static string VerifKey(string key)
+        [HttpGet("/VerifKey/{key}")]
+        public async Task<string> VerifKey(string key)
         {
-            List<string> ListKey = new List<string>();
-            List<string> ListRoles = new List<string>();
-            for(int i =0;i<ListKey.Count();i++)
+            Key existingKey = await _context.Key.FindAsync(key);
+            
+            if(existingKey != null)
             {
-                if (ListKey[i] == key)
-                {
-                    return ListRoles[i];
-                }
+                return existingKey.Role;
             }
+
             return "null";
         }
     }

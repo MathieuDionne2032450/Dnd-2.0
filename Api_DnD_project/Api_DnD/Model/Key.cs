@@ -1,8 +1,15 @@
-﻿namespace Api_DnD.Model
+﻿using Microsoft.EntityFrameworkCore;
+using System.ComponentModel.DataAnnotations;
+
+namespace Api_DnD.Model
 {
+
     public class Key
     {
-        public int Id { get; set; }
+        public const string KEY_ROLE_ADMIN = "ADMIN_ROLE";
+        public const string KEY_ROLE_USER = "USER_ROLE";
+
+        [Key]
         public string ApiKey { get; set; }
 
         public string Role { get; set; }
