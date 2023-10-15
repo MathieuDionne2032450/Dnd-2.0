@@ -1,0 +1,104 @@
+INSERT INTO race VALUES (2,"Loup",0,0,0,0,0,0);
+INSERT INTO race VALUES (3,"troll",0,0,0,0,0,0);
+INSERT INTO race VALUES (4,"Élementaire",0,0,0,0,0,0);
+INSERT INTO race VALUES (5,"nain",0,0,0,0,0,2);
+INSERT INTO race VALUES (6,"drakéide",0,0,2,0,0,0);
+
+INSERT INTO monstre VALUES (1,"Loup arctique", "Large",2,14,25,40,0,0,14,16,14,12,16,12,true,1,"Loup","","","");
+INSERT INTO monstre VALUES (2,"Élémentaire de feu", "Large",4,18,60,30,0,0,16,14,16,8,10,4,true,3,"Élémentaire","","feu","brulé");
+INSERT INTO monstre VALUES (3,"Élémentaire d'eau", "Large",4,18,60,30,0,0,16,14,16,8,10,4,true,3,"Élémentaire","","eau","noyé");
+
+INSERT INTO classes (name, description, hitDie, primaryAbility) VALUES 
+('Guerrier', 'Un maître de l'art de la guerre.', 10, 'Force'),
+('Magicien', 'Un utilisateur puissant de la magie.', 6, 'Intelligence'),
+('Rogue', 'Un expert dans les tâches furtives et sournoises.', 8, 'Dextérité'),
+('Clerc', 'Un serviteur dévoué d'un dieu ou d'une déesse.', 8, 'Sagesse'),
+('Barbare', 'Un guerrier sauvage et furieux.', 12, 'Force'),
+('Sorcier', 'Un lanceur de sorts qui tire son pouvoir d'une source magique innée.', 6, 'Charisme'),
+('Rôdeur', 'Un expert de la nature et du suivi.', 10, 'Dextérité'),
+('Paladin', 'Un chevalier sacré, muni d'un pouvoir divin.', 10, 'Charisme'),
+('Bard', 'Un artiste talentueux et un conteur d'histoires.', 8, 'Charisme'),
+('Moine', 'Un maître des arts martiaux et de la méditation.', 8, 'Sagesse');
+
+INSERT INTO armure (Name, Type, Ac, DexBonus, MaxDexMod, StealthDisadvantage, EnchantementId) VALUES 
+('Armure de cuir', 'Légère', 11, 'true', 2, 'false', 1),
+('Armure de peau', 'Légère', 12, 'true', 2, 'false', 2),
+('Cotte de mailles', 'Intermédiaire', 14, 'true', 2, 'true', 3),
+('Armure de plaques', 'Lourde', 18, 'false', NULL, 'true', 4),
+('Armure de cuir clouté', 'Légère', 12, 'true', 2, 'true', 5),
+('Armure de bandit', 'Légère', 11, 'true', 2, 'false', 6),
+('Plastron de fer', 'Intermédiaire', 15, 'false', NULL, 'true', 7),
+('Armure de samouraï', 'Intermédiaire', 13, 'true', 2, 'true', 8),
+('Armure d’elfe', 'Légère', 11, 'true', 2, 'false', 9),
+('Cuirassé en mithril', 'Lourde', 18, 'false', NULL, 'false', 10);
+
+INSERT INTO pnj (Bouche, Nez, Barbe, Cheveux, Sourcil, Tete, Yeux1, Yeux2, Description, Name) VALUES
+(1, 2, 0, 3, 4, 1, 2, 3, 'Un guerrier féroce des terres du Nord.', 'Drizzt Do\'Urden'),
+(2, 3, 1, 2, 1, 3, 4, 2, 'Un puissant sorcier spécialisé dans les enchantements.', 'Elminster'),
+(3, 4, 2, 1, 2, 4, 3, 1, 'Un nain expert en forge et en combat.', 'Bruenor Battlehammer'),
+(4, 1, 3, 4, 3, 2, 1, 4, 'Un barbare redoutable des plaines sauvages.', 'Wulfgar'),
+(5, 2, 4, 3, 4, 1, 2, 1, 'Un archer elfe renommé.', 'Legolas'),
+(6, 3, 1, 4, 2, 3, 1, 2, 'Un mystérieux voleur et assassin.', 'Artemis Entreri'),
+(7, 4, 2, 3, 1, 4, 2, 3, 'Un puissant mage de la cité de Waterdeep.', 'Khelben Blackstaff'),
+(8, 1, 3, 4, 2, 1, 4, 2, 'Un gnome marchand et aventurier.', 'Regis'),
+(9, 2, 4, 1, 3, 2, 1, 3, 'Un elfe noir maître de l\'épée.', 'Zaknafein'),
+(10, 3, 1, 2, 4, 3, 4, 1, 'Un paladin dévoué de la lumière.', 'Alustriel');
+
+INSERT INTO quete (PnjId, DescriptionQuete, Reward) VALUES
+(1, 'Sauver le village des gobelins qui l\'assaillent.', '100 pièces d\'or et une épée magique'),
+(2, 'Récupérer l\'artefact sacré volé par les voleurs.', '150 pièces d\'or et une armure enchantée'),
+(3, 'Trouver l\'ancienne épée perdue de la famille royale.', '200 pièces d\'or et une couronne enchantée'),
+(4, 'Arrêter le culte sombre qui menace de détruire le monde.', '300 pièces d\'or et une amulette sacrée'),
+(5, 'Explorer les ruines anciennes et rapporter des artefacts mystérieux.', '250 pièces d\'or et une baguette magique'),
+(6, 'Sauver le royaume de l\'invasion des dragons.', '350 pièces d\'or et une armure légendaire'),
+(3, 'Libérer le village maudit de l\'emprise des fantômes.', '180 pièces d\'or et un anneau magique'),
+(4, 'Découvrir le secret du temple oublié dans la forêt interdite.', '280 pièces d\'or et un sceptre enchanté'),
+(5, 'Protéger les caravanes marchandes contre les pillards du désert.', '220 pièces d\'or et une dague empoisonnée'),
+(6, 'Trouver la source de la malédiction qui plonge le pays dans l\'obscurité.', '320 pièces d\'or et un livre de sorts antique');
+
+INSERT INTO monstre (Nom, Size, RaceId, ArmorClass, HitPoint, Speed, FlySpeed, ClimbSpeed, Str, Dex, Con, Intel, Wis, Cha, DarkVision, Challenge, Lang, DammageResistance, DammageImmunities, ConditionImmunities) VALUES
+('Goblin', 'Small', 1, 15, 7, 30, NULL, NULL, 8, 14, 10, 10, 8, 8, false, 0.25, 'Common', NULL, 'Poison', 'Frightened'),
+('Orc', 'Medium', 2, 13, 15, 30, NULL, NULL, 16, 12, 16, 7, 11, 10, false, 0.5, 'Common', NULL, 'Poison', NULL),
+('Troll', 'Large', 3, 15, 84, 30, NULL, NULL, 18, 13, 20, 7, 9, 7, false, 2, 'Giant', 'Fire', NULL, 'Paralyzed'),
+('Dragon', 'Huge', 4, 18, 256, 60, 80, NULL, 27, 10, 25, 16, 13, 21, true, 15, 'Draconic', 'Cold', 'Fire', 'Blinded'),
+('Beholder', 'Large', 5, 18, 180, 0, NULL, NULL, 10, 14, 16, 19, 17, 17, true, 13, 'Deep Speech', 'Force', NULL, 'Charmed'),
+
+
+INSERT INTO monstre (Nom, Size, RaceId, ArmorClass, HitPoint, Speed, FlySpeed, ClimbSpeed, Str, Dex, Con, Intel, Wis, Cha, DarkVision, Challenge, Lang, DammageResistance, DammageImmunities, ConditionImmunities) VALUES
+('Kobold', 'Small', 1, 12, 5, 30, NULL, NULL, 7, 15, 9, 8, 7, 8, true, 0.125, 'Common', NULL, NULL, NULL),
+('Skeleton', 'Medium', 6, 13, 13, 30, NULL, NULL, 10, 14, 15, 6, 8, 5, false, 0.25, NULL, 'Piercing', 'Poison', 'Poisoned'),
+('Zombie', 'Medium', 7, 8, 22, 20, NULL, NULL, 13, 6, 16, 3, 6, 5, false, 0.125, NULL, 'Bludgeoning', 'Poison', 'Poisoned'),
+('Ogre', 'Large', 8, 11, 59, 40, NULL, NULL, 19, 8, 16, 5, 7, 7, false, 2, 'Giant', 'Bludgeoning', NULL, NULL),
+('Minotaur', 'Large', 9, 14, 76, 40, NULL, NULL, 18, 11, 16, 6, 10, 9, false, 3, NULL, NULL, 'Charmed'),
+('Harpy', 'Medium', 10, 11, 38, 20, 40, NULL, 12, 13, 12, 7, 10, 13, false, 1, 'Auran', NULL, 'Piercing', 'Frightened'),
+('Giant Spider', 'Large', 11, 14, 26, 30, NULL, 30, 14, 16, 12, 2, 11, 4, false, 1, NULL, 'Piercing', 'Poison', 'Poisoned'),
+('Lich', 'Medium', 12, 17, 135, 30, NULL, NULL, 11, 16, 16, 20, 14, 16, true, 21, 'Abyssal', 'Cold', 'Lightning', 'Paralyzed'),
+('Hydra', 'Huge', 13, 15, 172, 30, NULL, NULL, 20, 12, 20, 2, 10, 7, false, 8, NULL, 'Poison', 'Fire', 'Frightened'),
+('Gorgon', 'Large', 14, 19, 114, 40, NULL, NULL, 20, 11, 18, 2, 12, 7, false, 5, NULL, 'Bludgeoning', 'Poison', 'Frightened'),
+('Cockatrice', 'Small', 15, 11, 27, 20, NULL, NULL, 6, 15, 11, 2, 13, 5, false, 0.5, NULL, 'Petrification', 'Poisoned'),
+('Treant', 'Huge', 16, 16, 138, 30, NULL, NULL, 23, 8, 21, 12, 16, 12, false, 9, 'Sylvan', 'Fire', 'Piercing', 'Charmed'),
+('Manticore', 'Large', 17, 14, 68, 30, 50, NULL, 17, 16, 17, 7, 12, 8, false, 3, 'Auran', 'Piercing', NULL, 'Frightened'),
+('Banshee', 'Medium', 18, 12, 58, 0, NULL, NULL, 1, 14, 11, 12, 11, 17, true, 4, 'Abyssal', NULL, 'Necrotic', 'Charmed'),
+('Specter', 'Medium', 19, 12, 22, 0, NULL, NULL, 1, 14, 11, 10, 10, 11, true, 1, 'Abyssal', NULL, 'Necrotic', 'Charmed'),
+('Ancient Red Dragon', 'Gargantuan', 20, 19, 546, 40, 80, NULL, 30, 10, 29, 16, 13, 21, true, 24, 'Draconic', 'Fire', NULL, 'Frightened'),
+('Young Green Dragon', 'Large', 21, 18, 207, 40, 80, NULL, 19, 12, 17, 16, 13, 15, true, 8, 'Draconic', NULL, 'Poison', 'Charmed'),
+('Chimera', 'Large', 22, 14, 114, 30, 60, NULL, 19, 11, 19, 3, 14, 10, false, 6, 'Draconic', NULL, 'Poison', 'Charmed'),
+('Rakshasa', 'Medium', 23, 16, 110, 40, NULL, NULL, 14, 17, 16, 16, 14, 20, false, 13, 'Abyssal', 'Cold', 'Piercing', 'Frightened'),
+('Vampire', 'Medium', 24, 16, 144, 30, 60, NULL, 18, 18, 18, 17, 18, 18, true, 13, 'Abyssal', 'Necrotic', NULL, 'Charmed'),
+('Gelatinous Cube', 'Large', 25, 6, 84, 15, NULL, NULL, 14, 3, 20, 1, 6, 1, false, 2, NULL, 'Acid', 'Blinded'),
+('Rust Monster', 'Medium', 26, 14, 27, 40, NULL, NULL, 12, 13, 11, 2, 13, 3, false, 0.5, NULL, NULL, 'Frightened'),
+('Lizardfolk', 'Medium', 27, 12, 22, 30, NULL, 30, 15, 10, 13, 7, 12, 7, false, 0.5, 'Draconic', NULL, 'Piercing', 'Charmed'),
+('Gnoll', 'Medium', 28, 15, 22, 30, NULL, NULL, 16, 12, 11, 7, 10, 6, false, 0.5, 'Gnoll', NULL, 'Poison', 'Frightened'),
+('Satyr', 'Medium', 29, 14, 31, 40, 60, NULL, 12, 16, 11, 12, 14, 15, false, 0.5, 'Sylvan', NULL, NULL, 'Frightened'),
+('Giant Rat', 'Small', 30, 12, 7, 30, NULL, NULL, 7, 15, 11, 2, 10, 4, false, 0.125, NULL, 'Piercing', NULL, 'Poisoned'),
+('Sahuagin', 'Medium', 31, 12, 22, 30, 30, NULL, 13, 11, 12, 12, 13, 8, false, 0.5, 'Abyssal', NULL, 'Poison', 'Charmed'),
+('Succubus', 'Medium', 32, 15, 66, 30, 60, NULL, 8, 17, 11, 15, 12, 20, true, 4, 'Abyssal', NULL, 'Cold', 'Charmed'),
+('Gargoyle', 'Medium', 33, 15, 52, 30, 60, NULL, 15, 11, 16, 6, 11, 7, false, 2, NULL, 'Bludgeoning', 'Poison', 'Frightened'),
+('Earth Elemental', 'Large', 34, 17, 126, 30, NULL, NULL, 20, 8, 16, 5, 10, 5, false, 5, NULL, 'Piercing', NULL, 'Paralyzed'),
+('Flumph', 'Small', 35, 12, 7, 30, 0, NULL, 4, 15, 11, 15, 14, 14, false, 0.125, 'Deep Speech', 'Psychic', 'Lightning', NULL),
+('Kuo-Toa', 'Medium', 36, 13, 18, 30, NULL, NULL, 13, 11, 10, 12, 14, 8, false, 0.5, 'Undercommon', NULL, 'Lightning', 'Poisoned'),
+('Basilisk', 'Medium', 37, 12, 52, 20, NULL, NULL, 16, 8, 15, 2, 12, 7, false, 3, NULL, 'Poison', 'Petrification', 'Petrified'),
+('Awakened Shrub', 'Small', 38, 9, 10, 20, NULL, NULL, 3, 8, 11, 10, 10, 6, false, 0, NULL, 'Fire', NULL, 'Blinded'),
+('Gnoll Pack Lord', 'Medium', 28, 15, 49, 30, NULL, NULL, 16, 12, 11, 7, 10, 6, false, 2, 'Gnoll', NULL, 'Poison', 'Frightened'),
+('Night Hag', 'Medium', 39, 17, 112, 30, NULL, NULL, 18, 15, 16, 16, 14, 16, false, 5, 'Abyssal', NULL, 'Cold', 'Charmed'),
+('Nothic', 'Medium', 40, 15, 45, 30, NULL, NULL, 14, 16, 11, 13, 12, 10, true, 2, 'Undercommon', 'Psychic', NULL, 'Frightened');

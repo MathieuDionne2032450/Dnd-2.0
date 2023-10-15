@@ -1,0 +1,149 @@
+INSERT INTO enchantement (Nom, Description, Type, Modif)
+VALUES 
+('Feu Éternel', 'L\'arme est enflammée, inflige des dégâts de feu à l\'ennemi', 'Feu', '6'),
+('Froid Glacial', 'L\'arme est glacée, inflige des dégâts de froid à l\'ennemi', 'Froid', '6'),
+('Choc Électrique', 'L\'arme est chargée d\'électricité, inflige des dégâts électriques à l\'ennemi', 'Électrique', '6'),
+('Poison Mortel', 'L\'arme est empoisonnée, inflige un poison mortel à l\'ennemi', 'Poison', '6'),
+('Saignement Profond', 'L\'arme inflige des dégâts continus, provoque un saignement chez l\'ennemi', 'Physique', '4'),
+('Âme Captive', 'L\'âme de l\'ennemi est emprisonnée dans l\'arme, augmente la puissance de l\'arme', 'Spirituel', '2'),
+('Protection des Anciens', 'L\'arme confère une protection magique à son porteur', 'Défensif', '3'),
+('Invisibilité Occulte', 'L\'arme rend son porteur invisible à l\'œil nu', 'Furtivité', '4'),
+('Flamme Éternelle', 'L\'arme brûle continuellement sans se consumer, inflige des dégâts de feu', 'Feu', '8'),
+('Gel Profond', 'L\'arme gèle tout sur son passage, inflige des dégâts de froid', 'Froid', '8'),
+('Tempête Électrique', 'L\'arme provoque une tempête électrique, inflige des dégâts électriques', 'Électrique', '8'),
+('Poison Mortel Amélioré', 'L\'empoisonnement provoqué par l\'arme est extrêmement mortel', 'Poison', '8'),
+('Saignement Mortel', 'Le saignement provoqué par l\'arme est fatal', 'Physique', '6'),
+('Contrôle des Âmes', 'L\'arme permet de contrôler l\'esprit de l\'ennemi', 'Spirituel', '4'),
+('Bouclier des Dieux', 'L\'arme crée un bouclier magique, protège son porteur de toute attaque', 'Défensif', '4'),
+('Ombre Éternelle', 'L\'arme plonge tout dans l\'obscurité, confère des capacités de furtivité', 'Furtivité', '6'),
+('Lumière Éclatante', 'L\'arme émet une lumière éclatante, repousse les créatures des ténèbres', 'Lumière', '6'),
+('Vitesse du Vent', 'L\'arme confère une grande vitesse à son porteur', 'Vitesse', '6'),
+('Résistance de la Terre', 'L\'arme confère une résistance à tous les éléments terrestres', 'Résistance', '4'),
+('Régénération Divine', 'L\'arme confère une régénération rapide à son porteur', 'Régénération', '5');
+
+SELECT * FROM a23_sda_projetapi_mal.enchantement;
+
+
+INSERT INTO race ( Nom, BonusPV, BonusDex, BonusForce, BonusIntel, BonusWisdom, BonusConsti) values ('Kobolt', 0,0,0,0,0,0);
+
+
+
+INSERT INTO armure (Name, Type, Ac, DexBonus, MaxDexMod, StealthDisadvantage, EnchantementId)
+VALUES 
+    ('Armure de Cuir', 'Légère', 11, 2, 2, 0, 1),
+    ('Armure d\'Écailles', 'Légère', 12, 2, 2, 0, 2),
+    ('Armure de Peau', 'Légère', 11, 2, 2, 0, 3),
+    ('Armure de Cuir Clouté', 'Légère', 12, 2, 2, 0, 4),
+    ('Armure de Cuir Renforcé', 'Légère', 13, 2, 2, 0, 5),
+    ('Armure de Mailles', 'Intermédiaire', 14, 2, 2, 1, 6),
+    ('Armure d\'Écailles de Dragon', 'Intermédiaire', 15, 2, 2, 1, 7),
+    ('Armure de Plates', 'Lourde', 18, 0, 0, 1, 8),
+    ('Armure de Plates Completes', 'Lourde', 20, 0, 0, 1, 9),
+    ('Armure de Plates d\'Ornements', 'Lourde', 19, 0, 0, 1, 10),
+    ('Armure de Plates de Guerre', 'Lourde', 18, 0, 0, 1, 11),
+    ('Armure de Plates à Pointes', 'Lourde', 19, 0, 0, 1, 12),
+    ('Armure de Plates des Ombres', 'Lourde', 20, 0, 0, 1, 13),
+    ('Armure de Plates du Roi', 'Lourde', 20, 0, 0, 1, 14),
+    ('Armure de Plates de l\'Aube', 'Lourde', 18, 0, 0, 1, 15),
+    ('Armure de Plates des Abysses', 'Lourde', 19, 0, 0, 1, 16),
+    ('Armure de Plates du Dragon', 'Lourde', 20, 0, 0, 1, 17),
+    ('Armure de Plates du Griffon', 'Lourde', 19, 0, 0, 1, 18),
+    ('Armure de Plates de l\'Archimage', 'Lourde', 20, 0, 0, 1, 19),
+    ('Armure de Plates du Paladin', 'Lourde', 18, 0, 0, 1, 20);
+
+
+SELECT * FROM a23_sda_projetapi_mal.armure;
+
+
+
+
+
+INSERT INTO perso (IrlJoueur, Nom, Description, Inspiration, ArmureId, ClasseId, RaceId, Personalitetrait, Ideal, Bonds, Flaws, Niv)
+VALUES
+('Alexandre','Krados','démon démoniaque',0,5,1,3,'evil','Justice','Avce Louise','Le bruit',1),
+('Mathieu','Thrain Marteau-de-Feu','Thrain est un nain robuste avec une barbe tressée et des bras puissants. Il manie un marteau de guerre forgé dans les flammes des montagnes lointaines. Sa loyauté envers ses compagnons est aussi solide que la pierre, et il aime raconter des contes autour d\'une chope de bière.',0,1,2,6,'evil','Liberté','Avec Louise','Perfectionnisme Inflexible',1),
+('Francis','Elena Ombrelame','Elena est une elfe gracieuse aux cheveux d\'ébène et aux yeux d\'argent perçants. Elle manie une lame légère avec une habileté mortelle, se déplaçant silencieusement dans l\'ombre. Son passé est un mystère, mais son regard trahit une détermination farouche.','0',2,2,1,'evil','Honneur','Vengeance Familiale ','Obsession Malsaine',3),
+('Emmy','Garrick Griffon-Argenté','Garrick est un paladin noble au cœur pur, portant une armure étincelante ornée d\'un blason de griffon. Il brandit une épée flamboyante avec laquelle il châtie le mal. Son sens du devoir est inébranlable, et il est prêt à sacrifier sa vie pour protéger les innocents.','0',3,2,6,'good','Amitié','Serment de Protection','Impulsivité Téméraire',12),
+('Pier-Luc','Lysandra Oragebrume','Lysandra est une sorcière charismatique capable de contrôler les éléments. Ses yeux bleus brillent d\'une sagesse ancienne, et son rire résonne comme le tonnerre. Elle voyage avec un corbeau familier nommé Zephyr, qui semble avoir un lien mystique avec les tempêtes.','1',4,3,5,'good','Sagesse','Loyauté à un Ordre','Timidité Maladive',1),
+('Alexis','Kaelen Sabre-de-Lune','Kaelen est un nain robuste avec une barbe tressée et des bras puissants. Il manie un marteau de guerre forgé dans les flammes des montagnes lointaines. Sa loyauté envers ses compagnons est aussi solide que la pierre, et il aime raconter des contes autour d\'une chope de bière.','0',6,3,4,'pacifist','Nature','Amour Interdit ','Méfiance Excessive',10),
+('Louis-André','Sylas Sombre-Épine','Sylas est un rôdeur solitaire qui arpente les forêts sombres avec son arc silencieux et ses flèches empoisonnées. Ses yeux verts scrutent l\'obscurité, repérant les dangers invisibles pour les autres. Il préfère la compagnie des arbres à celle des gens.','0',7,4,3,'evil','Ambition','Dettes de Gratitude','Rancunier Implacable',12),
+('Simon','Faelan Porte-Étendard','Branthor est un mage puissant portant une robe d\'un bleu éclatant, avec des yeux étincelants comme des saphirs. Il a étudié les arts mystiques pendant des décennies et peut invoquer le feu des dragons et les éclairs du ciel. Sa soif de connaissance l\'a conduit à explorer des endroits interdits.','0',8,4,2,'good-pure','Pacifisme','La Quête de la Vérité','Colérique Impulsif',1),
+('William','Elowen Lame-d\'Ébène','Elowen est une guerrière agile avec des cheveux d\'un noir profond et des yeux perçants comme des lames. Elle manie deux épées courbes avec une grâce mortelle, dansant à travers le champ de bataille. Son passé est marqué par la trahison, mais elle avance avec détermination.','1',9,5,1,'good','Compassion','Alliance d\'Espoir','Avarice Démesurée',8);
+
+SELECT * FROM a23_sda_projetapi_mal.perso;
+
+
+
+
+INSERT INTO arme (BonusJet, BonusForce, Nom, EnchantementId, Persoid)
+VALUES 
+(2, 3, 'Épée de la Destinée', 1, 1),
+(1, 2, 'Arc de l\'Ombre', 2, 56),
+(3, 4, 'Marteau du Tonnerre', 3, 57),
+(2, 2, 'Dague de l\'Assassin', 4, 58),
+(4, 5, 'Hache du Barbare', 5, 68),
+(1, 3, 'Bâton de Feu', 6, 69),
+(3, 2, 'Lance de la Justice', 7, 70),
+(2, 1, 'Faux de la Mort', 8, 71),
+(5, 4, 'Épée de la Lumière', 9, 72),
+(2, 3, 'Arc du Chasseur', 10, 73),
+(4, 4, 'Marteau de Guerre', 11, 1),
+(3, 2, 'Dague de l\'Ombre', 12, 56),
+(3, 3, 'Hache du Guerrier', 13, 57),
+(1, 1, 'Bâton de Sagesse', 14, 68),
+(2, 2, 'Lance de l\'Aigle', 15, 58),
+(4, 3, 'Faux de la Nuit', 16, 69),
+(3, 4, 'Épée du Paladin', 17, 68),
+(2, 2, 'Arc de Précision', 18, 70),
+(4, 5, 'Marteau de Justice', 19, 72),
+(1, 3, 'Dague du Voleur', 20, 71);
+
+SELECT * FROM a23_sda_projetapi_mal.arme;
+
+INSERT INTO monstre (Nom, Size, ArmorClass, HitPoint, Speed, FlySpeed, ClimbSpeed, Str, Dex, Con, Intel, Wis, Cha, DarkVision, Challenge, Lang, DammageResistance, DammageImmunities, ConditionImmunities)
+VALUES 
+    
+    ('Liche', 'Moyenne', 17, 135, 30, 0, 0, 11, 16, 16, 20, 14, 18, 120, 21, 'Abyssal, Draconique', 'Nécrotique', 'Nécrotique', 'Empoisonné'),
+    ('Beholder', 'Gargantuan', 18, 180, 0, 0, 0, 10, 14, 16, 17, 15, 17, 120, 23, 'Sylvain', 'Psychique', 'Psychique', 'Empoisonné'),
+    ('Kraken', 'Gargantuan', 18, 472, 20, 60, 20, 30, 11, 25, 22, 18, 20, 120, 23, 'Primordial', 'Foudre', 'Foudre', 'Empoisonné'),
+    ('Balor', 'Gargantuan', 19, 262, 40, 80, 0, 26, 15, 22, 20, 16, 22, 120, 19, 'Abyssal', 'Feu', 'Feu', 'Effrayé'),
+    ('Gorgone', 'Grande', 19, 114, 50, 0, 0, 20, 11, 18, 2, 12, 7, 60, 13, 'Abyssal, Draconique', 'Acide', 'Acide', 'Empoisonné'),
+    ('Spectateur', 'Moyenne', 14, 39, 30, 0, 0, 14, 14, 11, 14, 14, 11, 60, 3, 'Télépathique', 'Radiant', 'Radiant', 'Empoisonné'),
+    ('Hydre', 'Gargantuan', 15, 172, 30, 0, 0, 25, 10, 19, 2, 10, 7, 60, 8, 'Abyssal, Draconique', 'Acide', 'Acide', 'Empoisonné'),
+    ('Harpie', 'Moyenne', 11, 22, 20, 60, 0, 6, 16, 10, 7, 12, 8, 60, 1/2, 'Commun', 'Aucun', 'Aucun', 'Empoisonné'),
+    ('Squelette', 'Moyenne', 13, 13, 30, 0, 0, 10, 14, 15, 6, 8, 5, 60, 1/4, 'Aucun', 'Perforant', 'Perforant', 'Effrayé'),
+    ('Ogre', 'Grosse', 11, 59, 40, 0, 0, 19, 8, 16, 5, 7, 7, 60, 2, 'Géant', 'Contondant', 'Contondant', 'Effrayé'),
+    ('Manticore', 'Grosse', 14, 68, 30, 50, 0, 17, 16, 17, 3, 12, 7, 60, 3, 'Sylvain', 'Perforant', 'Perforant', 'Empoisonné'),
+    ('Kobold', 'Petite', 12, 5, 30, 0, 30, 7, 15, 9, 8, 7, 8, 60, 1/8, 'Commun', 'Acide', 'Acide', 'Effrayé'),
+    ('Chimère', 'Grosse', 14, 150, 30, 60, 30, 19, 11, 19, 3, 14, 10, 60, 6, 'Draconique', 'Contondant, Perforant, Tranchant', 'Contondant, Perforant, Tranchant', 'Empoisonné'),
+    ('Loup-Garou', 'Moyenne', 11, 58, 30, 0, 0, 18, 13, 14, 10, 11, 10, 60, 1, 'Commun', 'Contondant, Perforant', 'Contondant, Perforant', 'Effrayé'),
+    ('Basilic', 'Grande', 15, 52, 20, 0, 0, 16, 8, 15, 2, 12, 7, 60, 3, 'Aucun', 'Perforant', 'Perforant', 'Empoisonné'),
+    ('Troll', 'Grosse', 15, 84, 30, 0, 30, 18, 13, 20, 7, 9, 7, 60, 1, 'Géant', 'Acide, Feu', 'Acide, Feu', 'Effrayé'),
+    ('Sphinx', 'Gargantuan', 17, 256, 60, 120, 0, 22, 10, 20, 16, 18, 23, 120, 10, 'Télépathique', 'Contondant, Perforant, Tranchant', 'Contondant, Perforant, Tranchant', 'Empoisonné'),
+    ('Succube', 'Moyenne', 15, 66, 30, 60, 0, 8, 17, 11, 15, 12, 20, 60, 4, 'Abyssal, Télépathique', 'Acide, Froid, Feu', 'Acide, Froid, Feu', 'Empoisonné');
+    SELECT * FROM a23_sda_projetapi_mal.monstre;
+
+
+
+INSERT INTO skill ( Descr, Nom, Persoid)
+VALUES 
+    ('Maîtrise de l''épée longue', 'Épée Longue', 1),
+    ('Maîtrise de l''arc', 'Arc', 1),
+    ('Magie de guérison', 'Guérison', 56),
+    ('Crochetage de serrures', 'Crochetage', 56),
+    ('Alchimie', 'Alchimie', 57),
+    ('Maîtrise des bêtes', 'Bêtes', 57),
+    ('Tactique de combat', 'Combat Tactique', 58),
+    ('Nécromancie', 'Nécromancie', 58),
+    ('Invocation d''éléments', 'Invocation', 68),
+    ('Méditation', 'Méditation', 68),
+    ('Discrétion', 'Discrétion', 69),
+    ('Charme', 'Charme', 69),
+    ('Connaissance des monstres', 'Monstres', 70),
+    ('Ingénierie', 'Ingénierie', 70),
+    ('Érudition antique', 'Érudition', 71),
+    ('Tissage des runes', 'Runes', 71),
+    ('Manipulation des ombres', 'Ombres', 72),
+    ('Cuisine magique', 'Cuisine', 72),
+    ('Lecture des étoiles', 'Astronomie', 73),
+    ('Art de la poésie', 'Poésie', 73);

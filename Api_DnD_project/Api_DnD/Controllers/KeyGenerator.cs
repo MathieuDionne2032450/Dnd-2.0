@@ -1,0 +1,64 @@
+﻿using Api_DnD.Data;
+using Api_DnD.Model;
+using Microsoft.AspNetCore.Mvc;
+using System.Security.Cryptography;
+using System.Text;
+
+namespace Api_DnD.Controllers
+{
+    public class KeyGenerator
+    {
+        //private readonly KeyContext _context;
+        
+
+        //public KeyGenerator(KeyContext context)
+        //{
+        //    _context = context;
+        //}
+
+        /*
+        //public async Task<ActionResult<IEnumerable<Key>>> GetAllKey()
+        //{
+
+        //    //return await _context.key.Select<>.ToListAsync();
+        //}
+        */
+
+
+        internal static readonly char[] chars =
+            "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890".ToCharArray();
+
+        public static string GenererUniqueKey(int size)
+        {
+            byte[] data = new byte[4 * size];
+            using (var crypto = RandomNumberGenerator.Create())
+            {
+                crypto.GetBytes(data);
+            }
+            StringBuilder result = new StringBuilder(size);
+            for (int i = 0; i < size; i++)
+            {
+                var rnd = BitConverter.ToUInt32(data, i * 4);
+                var idx = rnd % chars.Length;
+
+                result.Append(chars[idx]);
+            }
+
+            return result.ToString();
+        }
+
+        public static string VerifKey(string key)
+        {
+            List<string> ListKey = new List<string>();
+            List<string> ListRoles = new List<string>();
+            for(int i =0;i<ListKey.Count();i++)
+            {
+                if (ListKey[i] == key)
+                {
+                    return ListRoles[i];
+                }
+            }
+            return "null";
+        }
+    }
+}

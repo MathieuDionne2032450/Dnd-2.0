@@ -1,0 +1,861 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<sim-project version="12.75" multi-file="no" uid="simp04b2f6af57104ae5a0e524176f193ec6">
+  <meta>
+    <name>Diagrame de classe DND</name>
+    <authors>Raphael Gagnon</authors>
+    <description />
+  </meta>
+  <counters models="1">
+    <entity-names>
+      <counter>
+        <item-type type-id="class" type="Class" />
+        <value>5</value>
+      </counter>
+      <counter>
+        <item-type type-id="data-type" type="Data Type" />
+        <value>2</value>
+      </counter>
+      <counter>
+        <item-type type-id="collaboration" type="Collaboration" />
+        <value>3</value>
+      </counter>
+    </entity-names>
+    <entity-ids>
+      <counter>
+        <item-type type-id="group" type="Group" />
+        <value>355</value>
+      </counter>
+      <counter>
+        <item-type type-id="class" type="Class" />
+        <value>6</value>
+      </counter>
+      <counter>
+        <item-type type-id="property" type="Property" />
+        <value>60</value>
+      </counter>
+      <counter>
+        <item-type type-id="universal-connector" type="Universal Connector" />
+        <value>2</value>
+      </counter>
+      <counter>
+        <item-type type-id="data-type" type="Data Type" />
+        <value>3</value>
+      </counter>
+      <counter>
+        <item-type type-id="relationship" type="Association" />
+        <value>8</value>
+      </counter>
+      <counter>
+        <item-type type-id="collaboration" type="Collaboration" />
+        <value>4</value>
+      </counter>
+    </entity-ids>
+    <diagrams>
+      <counter>
+        <type>SoftwareIdeasModeler.Core.Diagrams.UmlDiagrams.UmlUseCaseDiagram</type>
+        <value>1</value>
+      </counter>
+      <counter>
+        <type>SoftwareIdeasModeler.Core.Diagrams.UmlDiagrams.UmlClassDiagram</type>
+        <value>1</value>
+      </counter>
+    </diagrams>
+    <fields>
+      <counter>
+        <type>SoftwareIdeasModeler.Core.DiagramItems.Fields.OperationField</type>
+        <value>42</value>
+      </counter>
+    </fields>
+  </counters>
+  <alias-groups />
+  <management uid="md-d49abb4bd3ca465b94c9080d1b5397d0" name="" task-id-sequence="0">
+    <working-schedule uid="ws-118b1cfd090343b6ba2b6589fed1d87c" hours="8" monday="8" tuesday="8" wednesday="8" thursday="8" friday="8" saturday="0" sunday="0" />
+    <persons>
+      <person id="">
+        <first-name>Raphael</first-name>
+        <last-name>Gagnon</last-name>
+        <role />
+        <e-mail>raphaelgagnon@cegep-chicoutimi.qc.ca</e-mail>
+        <phone-number />
+        <description />
+        <color>#00000000</color>
+        <working-schedule uid="ws-055ea5af63544fddb59668a1a6f775c8" hours="8" monday="8" tuesday="8" wednesday="8" thursday="8" friday="8" saturday="0" sunday="0" />
+      </person>
+      <person id="">
+        <first-name>Raphael</first-name>
+        <last-name>Gagnon</last-name>
+        <role />
+        <e-mail>raphaelgagnon@cegep-chicoutimi.qc.ca</e-mail>
+        <phone-number />
+        <description />
+        <color>#00000000</color>
+      </person>
+    </persons>
+    <teams />
+    <sprints />
+    <projects />
+    <modules />
+    <tasks />
+    <to-dos />
+  </management>
+  <glossary id="glsr-d87fc7a60f0740bfb17a9d28f240cb7e" />
+  <types default="UML">
+    <type-sets>
+      <type-set file="UmlTypes.xml" />
+    </type-sets>
+    <custom-types>
+      <type id="bool" tid="" name="bool" description="" />
+      <type id="Class:3f7ce9c70b7443389c9d9e09cbb125ac" tid="" name="Enchantement" description="" class-ref="3f7ce9c70b7443389c9d9e09cbb125ac" />
+      <type id="int" tid="" name="int" description="" />
+      <type id="Class:6c6c4cd2abec4d75a8c228b0f0bec6b1" tid="" name="Armure" description="" class-ref="6c6c4cd2abec4d75a8c228b0f0bec6b1" />
+      <type id="Class:3489956e5b74415bae1bedcb20eb7f70" tid="" name="Armes" description="" class-ref="3489956e5b74415bae1bedcb20eb7f70" />
+      <type id="Class:4882fe14920f4d258c8cee871928b695" tid="" name="Classes" description="" class-ref="4882fe14920f4d258c8cee871928b695" />
+      <type id="Class:e206399b71b4497d8c8cfb5f12547e19" tid="" name="Race" description="" class-ref="e206399b71b4497d8c8cfb5f12547e19" />
+      <type id="List&lt;int&gt;" tid="" name="List&lt;int&gt;" description="" />
+    </custom-types>
+  </types>
+  <items />
+  <models>
+    <model id="p3b8be33bf3ab44cda9e0f444c191204e_196715254" name="Model1" namespace="" order-index="1">
+      <meta>
+        <authors>
+          <author>Raphael Gagnon</author>
+        </authors>
+        <description />
+        <creation-date>08/23/2023 10:49:58</creation-date>
+        <change-date>01/01/0001 00:00:00</change-date>
+        <revision-count>0</revision-count>
+        <version />
+      </meta>
+      <abstract-items />
+      <sub-models />
+      <diagram type="uml-class" id="pbe7bf3bc86974c619078f5e92d7c57fa_755522734" name="ClassDiagram1" order-index="2" overview-order-index="0" uid="" show-id="false" show-name="true" show-parent-name="false" name-style="local-auto-parents" show-stereotypes="true" show-tagged-values="false" show-template-parameters="true" show-fields="true" show-field-tags="true" show-empty-compartments="true" show-special-indicators="false" show-rules="true" show-attributes="true" show-attribute-visibility="true" show-operations="true" show-operation-parameters="true" show-operation-visibility="true" show-visibility-sign="true" show-nullability="true" show-sequence-number="false" show-extension-points="false" show-relationship-texts="true" show-data="true" show-description="false" show-field-description="false" auto-routed-paths="false" default-line-style="default" view-location="-99,-12" zoom="0.7">
+        <style>
+          <background-color index="1" color="#FFFFFFFF" />
+          <background-color index="2" color="#FFFFFFFF" />
+          <background-type type="solid" />
+        </style>
+        <meta>
+          <authors>
+            <author>Raphael Gagnon</author>
+          </authors>
+          <description />
+          <creation-date>08/23/2023 10:50:05</creation-date>
+          <change-date>09/06/2023 10:21:29</change-date>
+          <revision-count>0</revision-count>
+          <version />
+        </meta>
+        <abstract-items>
+          <item id="6c6c4cd2abec4d75a8c228b0f0bec6b1" cid="C001" type="class" name="Armure" style-class="" change-tracking-state="added" creator="" creation-date="08/23/2023 10:51:47" visibility="package">
+            <owned-items>
+              <owned-item ref="154336baf3e0454287c6a6ccdcc93fed" />
+              <owned-item ref="011a88de2b84424fbc36ae0cf5fa5357" />
+              <owned-item ref="2dafbe1af6f74477957b049de58bcbb5" />
+              <owned-item ref="ce4564056af540479d264a568eef65da" />
+              <owned-item ref="3f5be1f4f8e945a7b00d8c3d790a9ce3" />
+              <owned-item ref="d1faa0ffca314e33bc5bfeb2ff891107" />
+              <owned-item ref="b6610bd188664444b3bc59e00ffeb2a1" />
+              <owned-item ref="2e7d02771dcf48218e5ac4a47896ce5f" />
+            </owned-items>
+            <attributes>
+              <attribute id="afea72d36d3944355b3f0e8dfd43b4af8598" cid="PROP003" name="name" creation-date="08/23/2023 10:53:09" property-ref="2dafbe1af6f74477957b049de58bcbb5" />
+              <attribute id="a2aa3e64179074d39a39fc6f207cf472e815" cid="PROP001" name="type" creation-date="08/23/2023 10:52:35" property-ref="154336baf3e0454287c6a6ccdcc93fed" />
+              <attribute id="aefb931f9706042c9936860e63d824e1f80" cid="PROP002" name="ac" creation-date="08/23/2023 10:52:53" property-ref="011a88de2b84424fbc36ae0cf5fa5357" />
+              <attribute id="a20842bb8c0734e8d9ae0990d67be139b61" cid="PROP004" name="dexBonus" creation-date="08/23/2023 11:01:18" property-ref="ce4564056af540479d264a568eef65da" />
+              <attribute id="a8d226bc371784656935acc7aba0e839721" cid="PROP005" name="maxDexMod" creation-date="08/23/2023 11:02:10" property-ref="3f5be1f4f8e945a7b00d8c3d790a9ce3" />
+              <attribute id="a4ee5a9aa767545718094f548d9702495820" cid="PROP006" name="stealthDisadvantage" creation-date="08/23/2023 11:02:38" property-ref="d1faa0ffca314e33bc5bfeb2ff891107" />
+              <attribute id="ac7f50c0a1664476f9308c39d21e26035201" cid="PROP029" name="Enchant" creation-date="09/06/2023 09:44:43" property-ref="b6610bd188664444b3bc59e00ffeb2a1" />
+              <attribute id="afa6996d9d1954d67b284607b17773d03584" cid="PROP056" name="Id" creation-date="09/06/2023 10:28:14" property-ref="2e7d02771dcf48218e5ac4a47896ce5f" />
+            </attributes>
+            <operations>
+              <operation id="o2fb044c4a9fc4662ab9977392ba757c1976" cid="ELEM001" name="GetArmorById" creation-date="08/23/2023 11:03:06" type="" type-id="" visibility="public">
+                <parameters>
+                  <parameter id="p3b0fe427b326451898a35e8025fd44fe" name="int id" type="" type-id="" />
+                </parameters>
+              </operation>
+              <operation id="o7a19404f18f4494897345eee8e2563a0683" cid="ELEM002" name="GetListArmorByType" creation-date="08/23/2023 11:04:26" type="" type-id="" visibility="public">
+                <parameters>
+                  <parameter id="p690bf11ca0e8461e853a5015bde7a490" name="string type" type="" type-id="" />
+                </parameters>
+              </operation>
+              <operation id="o37b0bd27526446f0870fe8338102fb9e63" cid="ELEM003" name="GetAllArmor" creation-date="08/23/2023 11:04:47" type="" type-id="" visibility="public" />
+              <operation id="ob9f3448eb54b44e7a3692bd9ef18138c36" cid="ELEM004" name="PostArmor" creation-date="08/23/2023 11:05:39" type="" type-id="" visibility="public">
+                <parameters>
+                  <parameter id="pce2ccbf185e043bd804f9f6ede4c0a59" name="string name" type="" type-id="" />
+                  <parameter id="p81d50fd5caf549d595f9a5894442d23c" name="string type" type="" type-id="" />
+                  <parameter id="p6ac9edc93662457d931688a891ca36d3" name="int ac" type="" type-id="" />
+                  <parameter id="p578a4494008945728bbdd33ec9959a84" name="bool desBonus" type="" type-id="" />
+                  <parameter id="p9c56eb1c1a614ab2a55e90cf25c039f0" name="int maxDexMod" type="" type-id="" />
+                  <parameter id="p1f915c4cb0b24f46861127ac75223f33" name="bool stealthDisadvantage" type="" type-id="" />
+                </parameters>
+              </operation>
+              <operation id="oa29182b9c11945bc89e743d13019f8a0214" cid="ELEM005" name="PutArmor" creation-date="08/23/2023 11:13:17" type="" type-id="" visibility="public">
+                <parameters>
+                  <parameter id="pbc3e2302f1804340811ea938e41d76e3" name="string name" type="" type-id="" />
+                  <parameter id="pcbc11a1a24744330bd55425082d9092d" name="string type" type="" type-id="" />
+                  <parameter id="pfac8c3a9cae7456ba30fa65fcc70813a" name="int ac" type="" type-id="" />
+                  <parameter id="pa7f28099941347ccb47e3e72a03ae0e8" name="bool desBonus" type="" type-id="" />
+                  <parameter id="p1fa55f608696414a9268c8e76a2a77db" name="int maxDexMod" type="" type-id="" />
+                  <parameter id="p3484c48542b34746a71804b63a53ae83" name="bool stealthDisadvantage" type="" type-id="" />
+                </parameters>
+              </operation>
+              <operation id="o2112d6f950744930b897b9acc96931e4128" cid="ELEM006" name="DeleteArmor" creation-date="08/23/2023 11:15:26" type="" type-id="" visibility="public">
+                <parameters>
+                  <parameter id="p081626c73aa74d38b46399239b67fc2f" name="string name" type="" type-id="" />
+                </parameters>
+              </operation>
+            </operations>
+          </item>
+          <item id="154336baf3e0454287c6a6ccdcc93fed" cid="PROP001" type="property" name="type" style-class="" owner="6c6c4cd2abec4d75a8c228b0f0bec6b1" creator="" creation-date="08/23/2023 10:52:35" visibility="private">
+            <feature />
+            <structural-feature type="String" type-id="Uml.String" />
+            <property />
+          </item>
+          <item id="011a88de2b84424fbc36ae0cf5fa5357" cid="PROP002" type="property" name="ac" style-class="" owner="6c6c4cd2abec4d75a8c228b0f0bec6b1" creator="" creation-date="08/23/2023 10:52:53" visibility="private">
+            <feature />
+            <structural-feature type="Integer" type-id="Uml.Integer" />
+            <property />
+          </item>
+          <item id="2dafbe1af6f74477957b049de58bcbb5" cid="PROP003" type="property" name="name" style-class="" owner="6c6c4cd2abec4d75a8c228b0f0bec6b1" creator="" creation-date="08/23/2023 10:53:09" visibility="private">
+            <feature />
+            <structural-feature type="String" type-id="Uml.String" />
+            <property />
+          </item>
+          <item id="ce4564056af540479d264a568eef65da" cid="PROP004" type="property" name="dexBonus" style-class="" owner="6c6c4cd2abec4d75a8c228b0f0bec6b1" creator="" creation-date="08/23/2023 11:01:18" visibility="private">
+            <feature />
+            <structural-feature type="bool" type-id="bool" />
+            <property />
+          </item>
+          <item id="3f5be1f4f8e945a7b00d8c3d790a9ce3" cid="PROP005" type="property" name="maxDexMod" style-class="" owner="6c6c4cd2abec4d75a8c228b0f0bec6b1" creator="" creation-date="08/23/2023 11:02:10" visibility="private">
+            <feature />
+            <structural-feature type="Integer" type-id="Uml.Integer" />
+            <property />
+          </item>
+          <item id="d1faa0ffca314e33bc5bfeb2ff891107" cid="PROP006" type="property" name="stealthDisadvantage" style-class="" owner="6c6c4cd2abec4d75a8c228b0f0bec6b1" creator="" creation-date="08/23/2023 11:02:38" visibility="private">
+            <feature />
+            <structural-feature type="bool" type-id="bool" />
+            <property />
+          </item>
+          <item id="4882fe14920f4d258c8cee871928b695" cid="C002" type="class" name="Classes" style-class="" change-tracking-state="added" creator="" creation-date="08/23/2023 11:25:35" visibility="package">
+            <owned-items>
+              <owned-item ref="bd763fc1e60f41388b87e73be7b8fb31" />
+              <owned-item ref="9ceba368b6ec4afbb6f11f29ceedcc76" />
+              <owned-item ref="17cd79a3079142ca9bb27e345ad13862" />
+              <owned-item ref="70e8d2d0eab64c4cbd6e60e0ecf3a9ad" />
+              <owned-item ref="eb53c1dd44b04785a9aaedf079739a10" />
+            </owned-items>
+            <attributes>
+              <attribute id="a50b61626d63b4ce48c7d9fb4dd8a789a876" cid="PROP008" name="name" creation-date="08/23/2023 11:31:14" property-ref="bd763fc1e60f41388b87e73be7b8fb31" />
+              <attribute id="a582233d127d747ef9838f4cb78755afe518" cid="PROP009" name="description" creation-date="08/23/2023 11:31:23" property-ref="9ceba368b6ec4afbb6f11f29ceedcc76" />
+              <attribute id="a384cec11fd534f9cb1b335337bb17932585" cid="PROP010" name="hitDie" creation-date="08/23/2023 11:31:37" property-ref="17cd79a3079142ca9bb27e345ad13862" />
+              <attribute id="afd6f95ddb5384e3c9714fb9fb614e89b576" cid="PROP011" name="primaryAbility" creation-date="08/23/2023 11:31:49" property-ref="70e8d2d0eab64c4cbd6e60e0ecf3a9ad" />
+              <attribute id="a10197efde6be4ed2b8d9a0639e198745724" cid="PROP057" name="id" creation-date="09/06/2023 10:42:03" property-ref="eb53c1dd44b04785a9aaedf079739a10" />
+            </attributes>
+            <operations>
+              <operation id="o22c5b335fba3449d9669c0af99f6f32a765" cid="ELEM009" name="GetClassesById" creation-date="08/23/2023 11:34:45" type="" type-id="" visibility="public">
+                <parameters>
+                  <parameter id="peb4f89c8afa24ab5949b4fd103d1efff" name="int id" type="" type-id="" />
+                </parameters>
+              </operation>
+              <operation id="ofee9deaa1f064a7bb3050d2ecf75dddb453" cid="ELEM010" name="GetListClassesByAbility" creation-date="08/23/2023 11:35:48" type="" type-id="" visibility="public">
+                <parameters>
+                  <parameter id="pa9c050dbdd1640f88890b2def36c5a0a" name="string ability" type="" type-id="" />
+                </parameters>
+              </operation>
+              <operation id="o1aece367a9ff4565975b087f986c20d9651" cid="ELEM011" name="GetAllClasses" creation-date="08/23/2023 11:36:38" type="" type-id="" visibility="public" />
+              <operation id="ob46c06723be640349c310e1c9ec0ed21601" cid="ELEM012" name="PostClasses" creation-date="08/23/2023 11:38:32" type="" type-id="" visibility="public">
+                <parameters>
+                  <parameter id="pc2a8aab0ae7b4198ba944de3af042de8" name="string name" type="" type-id="" />
+                  <parameter id="pfaa9e0c5f8af429b833523063ca437c1" name="string description" type="" type-id="" />
+                  <parameter id="p51289ef639914c14a4e1077babae755e" name="string hitDie" type="" type-id="" />
+                  <parameter id="p036e49b74a894da89f7a4818804bd36a" name="string ability" type="" type-id="" />
+                </parameters>
+              </operation>
+              <operation id="o439a39c061af4af391797c880375e5d5798" cid="ELEM013" name="PutClasses" creation-date="08/23/2023 11:38:43" type="" type-id="" visibility="public">
+                <parameters>
+                  <parameter id="pd31bc32ab6bf4cffb44d951e5b9d87b8" name="string name" type="" type-id="" />
+                  <parameter id="p0bed09e88f184e9f8de45790fff94012" name="string description" type="" type-id="" />
+                  <parameter id="pe1dc76e649df4d10bfda14e6366d910f" name="string hitDie" type="" type-id="" />
+                  <parameter id="pdb5260b41a6347be86f12b9a7f9c04db" name="string ability" type="" type-id="" />
+                </parameters>
+              </operation>
+              <operation id="occea28162947454db06fe5278285d5d6196" cid="ELEM014" name="deleteClasses" creation-date="08/23/2023 11:39:29" type="" type-id="" visibility="public">
+                <parameters>
+                  <parameter id="pd917a166d8fb4c1395aa204141a773c1" name="string name" type="" type-id="" />
+                </parameters>
+              </operation>
+            </operations>
+          </item>
+          <item id="bd763fc1e60f41388b87e73be7b8fb31" cid="PROP008" type="property" name="name" style-class="" owner="4882fe14920f4d258c8cee871928b695" creator="" creation-date="08/23/2023 11:31:14" visibility="private">
+            <feature />
+            <structural-feature type="String" type-id="Uml.String" />
+            <property />
+          </item>
+          <item id="9ceba368b6ec4afbb6f11f29ceedcc76" cid="PROP009" type="property" name="description" style-class="" owner="4882fe14920f4d258c8cee871928b695" creator="" creation-date="08/23/2023 11:31:23" visibility="private">
+            <feature />
+            <structural-feature type="String" type-id="Uml.String" />
+            <property />
+          </item>
+          <item id="17cd79a3079142ca9bb27e345ad13862" cid="PROP010" type="property" name="hitDie" style-class="" owner="4882fe14920f4d258c8cee871928b695" creator="" creation-date="08/23/2023 11:31:37" visibility="private">
+            <feature />
+            <structural-feature type="String" type-id="Uml.String" />
+            <property />
+          </item>
+          <item id="70e8d2d0eab64c4cbd6e60e0ecf3a9ad" cid="PROP011" type="property" name="primaryAbility" style-class="" owner="4882fe14920f4d258c8cee871928b695" creator="" creation-date="08/23/2023 11:31:49" visibility="private">
+            <feature />
+            <structural-feature type="String" type-id="Uml.String" />
+            <property />
+          </item>
+          <item id="3f7ce9c70b7443389c9d9e09cbb125ac" cid="DT001" type="data-type" name="Enchantement" style-class="" change-tracking-state="added" creator="" creation-date="09/06/2023 09:23:43" visibility="package">
+            <owned-items>
+              <owned-item ref="b6a13a51793d49558e038926194fe2c6" />
+              <owned-item ref="4c7320b0821e44d7a28af997bc4edede" />
+              <owned-item ref="c76374b615114653beedb8f1896eca30" />
+              <owned-item ref="1cf2efc085f64f21b7b10ef5de17689b" />
+              <owned-item ref="699755349b9d437fa322d96cb846c0c7" />
+            </owned-items>
+            <attributes>
+              <attribute id="aaee8d9fa833d453f852d90bc477967e6540" cid="PROP013" name="Nom" creation-date="09/06/2023 09:24:00" property-ref="b6a13a51793d49558e038926194fe2c6" />
+              <attribute id="aeb300a8b19164610a05fc76b5ba76fbf770" cid="PROP014" name="Description" creation-date="09/06/2023 09:24:15" property-ref="4c7320b0821e44d7a28af997bc4edede" />
+              <attribute id="a70f01ff5f9144006a99e7b03b27b4405344" cid="PROP015" name="type" creation-date="09/06/2023 09:24:28" property-ref="c76374b615114653beedb8f1896eca30" />
+              <attribute id="a37b8e06bed6845e99477e0c1e578c546351" cid="PROP016" name="Modif" creation-date="09/06/2023 09:24:39" property-ref="1cf2efc085f64f21b7b10ef5de17689b" />
+              <attribute id="ae994c314c9544d388b1575f50723dd09851" cid="PROP055" name="Id" creation-date="09/06/2023 10:28:00" property-ref="699755349b9d437fa322d96cb846c0c7" />
+            </attributes>
+            <operations>
+              <operation id="o3fdc1919c9e24835a6e74016c7fefdb4907" cid="ELEM015" name="GetEnchantementById" creation-date="09/06/2023 09:24:51" type="" type-id="" visibility="public">
+                <parameters>
+                  <parameter id="pb1280ba3b9564d71978014116a157ec3" name="Int id" type="" type-id="" />
+                </parameters>
+              </operation>
+              <operation id="o9e760837155a440296f423d20f0bbfff528" cid="ELEM019" name="GetAllEnchantement" creation-date="09/06/2023 09:26:12" type="" type-id="" visibility="public" />
+              <operation id="o3c0ab1cff6da47d2b88e2e88f9a71492556" cid="ELEM020" name="GetRandomEnchantement" creation-date="09/06/2023 09:29:02" type="" type-id="" visibility="public" />
+              <operation id="o34a1158cc8484e7eae1c142ca8de3a13431" cid="ELEM016" name="PutEnchantement" creation-date="09/06/2023 09:25:01" type="" type-id="" visibility="public">
+                <parameters>
+                  <parameter id="p70f35774dbc2424687bc6fed5f3fc1d4" name="String nom" type="" type-id="" />
+                  <parameter id="p270a59151ad6470ab11615fc3e3f2c0d" name="string description" type="" type-id="" />
+                  <parameter id="p94670392812f40c781cff2328d482305" name="String type" type="" type-id="" />
+                  <parameter id="p7c4b676c0c4a4d2ebc35499f27926efb" name="int modif" type="" type-id="" />
+                </parameters>
+              </operation>
+              <operation id="oc7ed58eb5451475b852ba9ca6b437259241" cid="ELEM017" name="PostEnchantement" creation-date="09/06/2023 09:25:29" type="" type-id="" visibility="public">
+                <parameters>
+                  <parameter id="pdc235669bbfb47fc9373d98a3ae260fc" name="String nom" type="" type-id="" />
+                  <parameter id="paeb4c39be2e7476395b3113a64feb2b5" name="string description" type="" type-id="" />
+                  <parameter id="p6cc4b8bc1c9e4ee0be325f644d283094" name="String type" type="" type-id="" />
+                  <parameter id="p51d5368eea4b4eb28acda3c906c89bac" name="int modif" type="" type-id="" />
+                </parameters>
+              </operation>
+              <operation id="o2f28329754764ce2b6e8f3201850267a739" cid="ELEM018" name="DeleteEnchantement" creation-date="09/06/2023 09:25:54" type="" type-id="" visibility="public">
+                <parameters>
+                  <parameter id="p63f75a260f1c4a0da93dec54c41e172e" name="string nom" type="" type-id="" />
+                </parameters>
+              </operation>
+            </operations>
+          </item>
+          <item id="b6a13a51793d49558e038926194fe2c6" cid="PROP013" type="property" name="Nom" style-class="" owner="3f7ce9c70b7443389c9d9e09cbb125ac" creator="" creation-date="09/06/2023 09:24:00" visibility="private">
+            <feature />
+            <structural-feature type="String" type-id="Uml.String" />
+            <property />
+          </item>
+          <item id="4c7320b0821e44d7a28af997bc4edede" cid="PROP014" type="property" name="Description" style-class="" owner="3f7ce9c70b7443389c9d9e09cbb125ac" creator="" creation-date="09/06/2023 09:24:15" visibility="private">
+            <feature />
+            <structural-feature type="String" type-id="Uml.String" />
+            <property />
+          </item>
+          <item id="c76374b615114653beedb8f1896eca30" cid="PROP015" type="property" name="type" style-class="" owner="3f7ce9c70b7443389c9d9e09cbb125ac" creator="" creation-date="09/06/2023 09:24:28" visibility="private">
+            <feature />
+            <structural-feature type="String" type-id="Uml.String" />
+            <property />
+          </item>
+          <item id="1cf2efc085f64f21b7b10ef5de17689b" cid="PROP016" type="property" name="Modif" style-class="" owner="3f7ce9c70b7443389c9d9e09cbb125ac" creator="" creation-date="09/06/2023 09:24:39" visibility="private">
+            <feature />
+            <structural-feature type="Integer" type-id="Uml.Integer" />
+            <property />
+          </item>
+          <item id="e206399b71b4497d8c8cfb5f12547e19" cid="DT002" type="data-type" name="Race" style-class="" change-tracking-state="added" creator="" creation-date="09/06/2023 09:27:00" visibility="package">
+            <owned-items>
+              <owned-item ref="3c0c0a1472ff4a798c20684de21edaec" />
+              <owned-item ref="9a63043bea5f48aab88a0c3f31faa29b" />
+              <owned-item ref="24fe2f5396de413f97173c95b163bec8" />
+              <owned-item ref="d6a314a51aa84f728186aefcadfbfd37" />
+              <owned-item ref="9968bb1393954e31a207faad0d75dee3" />
+              <owned-item ref="adf1aaa1ac7e48a8a084da2c83f59ef7" />
+              <owned-item ref="b3771fc1502f4f359c8f2a8f58ad2a29" />
+              <owned-item ref="fe4dcce2c4c64165a1f149b4bab7262f" />
+            </owned-items>
+            <attributes>
+              <attribute id="a661e2393c4534a2dad952eee87df5dfc604" cid="PROP017" name="Nom" creation-date="09/06/2023 09:30:39" property-ref="3c0c0a1472ff4a798c20684de21edaec" />
+              <attribute id="ab5e5908f106d467fb2e27a2e8c2f3d59286" cid="PROP018" name="BonusPv" creation-date="09/06/2023 09:30:57" property-ref="9a63043bea5f48aab88a0c3f31faa29b" />
+              <attribute id="a90d69e50864f49babdded65bcf0b3103142" cid="PROP019" name="BonusDex" creation-date="09/06/2023 09:31:33" property-ref="24fe2f5396de413f97173c95b163bec8" />
+              <attribute id="aa65e055dc28a4d56908650d77064ba7e274" cid="PROP020" name="BonusForce" creation-date="09/06/2023 09:32:14" property-ref="d6a314a51aa84f728186aefcadfbfd37" />
+              <attribute id="aa5825a3abab9416198e19aded4cfe56e704" cid="PROP021" name="BonusIntel" creation-date="09/06/2023 09:33:44" property-ref="9968bb1393954e31a207faad0d75dee3" />
+              <attribute id="af15c5f7b45b44f6093f37e4c79b8c97796" cid="PROP022" name="BonusWisdom" creation-date="09/06/2023 09:33:57" property-ref="adf1aaa1ac7e48a8a084da2c83f59ef7" />
+              <attribute id="a1f5effbb1f464fa18b8c20d2f62004d8190" cid="PROP023" name="BonusConsti" creation-date="09/06/2023 09:34:15" property-ref="b3771fc1502f4f359c8f2a8f58ad2a29" />
+              <attribute id="a7da389231a6e4909b2053453530cc312465" cid="PROP059" name="id" creation-date="09/06/2023 10:43:10" property-ref="fe4dcce2c4c64165a1f149b4bab7262f" />
+            </attributes>
+            <operations>
+              <operation id="o5e44919b75d74a7c96bd003d19fa1c90419" cid="ELEM021" name="GetRaceByName" creation-date="09/06/2023 09:35:09" type="" type-id="" visibility="public">
+                <parameters>
+                  <parameter id="p6c8bd5ebb7114c929265f18b0a03d0a2" name="int id" type="" type-id="" />
+                </parameters>
+              </operation>
+              <operation id="o28a4daef595c45a6b7a79dba727f800c404" cid="ELEM022" name="GetAllRace" creation-date="09/06/2023 09:35:25" type="" type-id="" visibility="public" />
+              <operation id="o09949bf89257417ba0a82fcb7addb091957" cid="ELEM023" name="GetRandomRace" creation-date="09/06/2023 09:35:41" type="" type-id="" visibility="public" />
+              <operation id="odd2cde0684d744b4a9fab3331898b906819" cid="ELEM024" name="PostRace" creation-date="09/06/2023 09:36:27" type="" type-id="" visibility="public">
+                <parameters>
+                  <parameter id="pe717f5e8b74f4f39afc56b0679bb711c" name="strnig nom" type="" type-id="" />
+                  <parameter id="p1782bd4d0e1942b59e9988c7d3f968cd" name="int pv" type="" type-id="" />
+                  <parameter id="pc18835fe5cb7484b937a63eae919c438" name="int dex" type="" type-id="" />
+                  <parameter id="p83fdbfea123241238fae218dd697b3b3" name="int force" type="" type-id="" />
+                  <parameter id="pa52acc850eb94d7db93f9bed128c2397" name="int intel" type="" type-id="" />
+                  <parameter id="pae541d8a1efe4384b95b71706bca3261" name="int wisdom" type="" type-id="" />
+                  <parameter id="pf624320119a341edbb99218cc0774964" name="consti" type="" type-id="" />
+                </parameters>
+              </operation>
+              <operation id="oad97119b86754741bddbb880da1c8186592" cid="ELEM025" name="PutRace" creation-date="09/06/2023 09:37:00" type="" type-id="" visibility="public">
+                <parameters>
+                  <parameter id="p4a48c3fdac6946109c6c4aec90500254" name="strnig nom" type="" type-id="" />
+                  <parameter id="p6110af0ab97b4e9582b28c8cc408e7ff" name="int pv" type="" type-id="" />
+                  <parameter id="p48251b2d7eab4221b2fb593f66a932bf" name="int dex" type="" type-id="" />
+                  <parameter id="pfa517039ead74efd9fc6c56e398a3b1e" name="int force" type="" type-id="" />
+                  <parameter id="p148d96ac2df047459e1b392600a753b3" name="int intel" type="" type-id="" />
+                  <parameter id="p3b9f455c381349a3ab462bac1e13f90d" name="int wisdom" type="" type-id="" />
+                  <parameter id="p72ccc2425c1d4095ae4f6f390164420d" name="consti" type="" type-id="" />
+                </parameters>
+              </operation>
+              <operation id="o5ab186f32b774aff90b449bc836ca0a8888" cid="ELEM026" name="DeleteRace" creation-date="09/06/2023 09:37:04" type="" type-id="" visibility="public">
+                <parameters>
+                  <parameter id="p3e62890df5dc42729804eb7e025e4ad4" name="string nom" type="" type-id="" />
+                </parameters>
+              </operation>
+            </operations>
+          </item>
+          <item id="3c0c0a1472ff4a798c20684de21edaec" cid="PROP017" type="property" name="Nom" style-class="" owner="e206399b71b4497d8c8cfb5f12547e19" creator="" creation-date="09/06/2023 09:30:39" visibility="private">
+            <feature />
+            <structural-feature type="String" type-id="Uml.String" />
+            <property />
+          </item>
+          <item id="9a63043bea5f48aab88a0c3f31faa29b" cid="PROP018" type="property" name="BonusPv" style-class="" owner="e206399b71b4497d8c8cfb5f12547e19" creator="" creation-date="09/06/2023 09:30:57" visibility="private">
+            <feature />
+            <structural-feature type="Integer" type-id="Uml.Integer" />
+            <property />
+          </item>
+          <item id="24fe2f5396de413f97173c95b163bec8" cid="PROP019" type="property" name="BonusDex" style-class="" owner="e206399b71b4497d8c8cfb5f12547e19" creator="" creation-date="09/06/2023 09:31:33" visibility="private">
+            <feature />
+            <structural-feature type="Integer" type-id="Uml.Integer" />
+            <property />
+          </item>
+          <item id="d6a314a51aa84f728186aefcadfbfd37" cid="PROP020" type="property" name="BonusForce" style-class="" owner="e206399b71b4497d8c8cfb5f12547e19" creator="" creation-date="09/06/2023 09:32:14" visibility="private">
+            <feature />
+            <structural-feature type="Integer" type-id="Uml.Integer" />
+            <property />
+          </item>
+          <item id="9968bb1393954e31a207faad0d75dee3" cid="PROP021" type="property" name="BonusIntel" style-class="" owner="e206399b71b4497d8c8cfb5f12547e19" creator="" creation-date="09/06/2023 09:33:44" visibility="private">
+            <feature />
+            <structural-feature type="Integer" type-id="Uml.Integer" />
+            <property />
+          </item>
+          <item id="adf1aaa1ac7e48a8a084da2c83f59ef7" cid="PROP022" type="property" name="BonusWisdom" style-class="" owner="e206399b71b4497d8c8cfb5f12547e19" creator="" creation-date="09/06/2023 09:33:57" visibility="private">
+            <feature />
+            <structural-feature type="Integer" type-id="Uml.Integer" />
+            <property />
+          </item>
+          <item id="b3771fc1502f4f359c8f2a8f58ad2a29" cid="PROP023" type="property" name="BonusConsti" style-class="" owner="e206399b71b4497d8c8cfb5f12547e19" creator="" creation-date="09/06/2023 09:34:15" visibility="private">
+            <feature />
+            <structural-feature type="" type-id="" />
+            <property />
+          </item>
+          <item id="3489956e5b74415bae1bedcb20eb7f70" cid="C003" type="class" name="Armes" style-class="" change-tracking-state="added" creator="" creation-date="09/06/2023 09:43:18" visibility="package">
+            <owned-items>
+              <owned-item ref="4b5ce71899fa42f5a9686e16478a5ad1" />
+              <owned-item ref="2b5469f519434ff9809cb0dc37694867" />
+              <owned-item ref="0aa27dd7a1af426fbfd3f1c6a8b88d15" />
+              <owned-item ref="749c4c67d1874e7698ce07c5374399cc" />
+              <owned-item ref="3bbdd2e895ed420ca17391444f847a08" />
+            </owned-items>
+            <attributes>
+              <attribute id="a2475110ef5364f5b87dcaa88b53d2efb194" cid="PROP026" name="BonusJet" creation-date="09/06/2023 09:43:24" property-ref="4b5ce71899fa42f5a9686e16478a5ad1" />
+              <attribute id="a12f760119a6e4c6d87a3d73f04a5fc2d777" cid="PROP027" name="BonusForce" creation-date="09/06/2023 09:43:59" property-ref="2b5469f519434ff9809cb0dc37694867" />
+              <attribute id="a66b372b1f68746b19ed91e028dcae0c0857" cid="PROP028" name="Nom" creation-date="09/06/2023 09:44:15" property-ref="0aa27dd7a1af426fbfd3f1c6a8b88d15" />
+              <attribute id="acb82196fb7dd42ea94078b37e0f3ec31535" cid="PROP030" name="Enchant" creation-date="09/06/2023 09:44:56" property-ref="749c4c67d1874e7698ce07c5374399cc" />
+              <attribute id="aaa5970794bbd4d48b183ad010e54c6d8251" cid="PROP058" name="Id" creation-date="09/06/2023 10:42:48" property-ref="3bbdd2e895ed420ca17391444f847a08" />
+            </attributes>
+            <operations>
+              <operation id="ofb7892dace554645808afec5010e7a6d636" cid="ELEM027" name="GetArmeById" creation-date="09/06/2023 09:46:58" type="" type-id="" visibility="public">
+                <parameters>
+                  <parameter id="p574b79deba05492082806119a2669bad" name="int id" type="" type-id="" />
+                </parameters>
+              </operation>
+              <operation id="o66efc57e773442769723a40a48ce5c7270" cid="ELEM028" name="GetRandomArme" creation-date="09/06/2023 09:47:15" type="" type-id="" visibility="public" />
+              <operation id="obc28602000e247b385b52d9f2f8f572e714" cid="ELEM029" name="GetAllArmes" creation-date="09/06/2023 09:47:32" type="" type-id="" visibility="public" />
+              <operation id="od8729d8aaafb47be957a6b5a550309b4532" cid="ELEM030" name="PutArme" creation-date="09/06/2023 09:47:40" type="" type-id="" visibility="public">
+                <parameters>
+                  <parameter id="ped7f4e9a629a46cfbb684276887af3a2" name="string nom" type="" type-id="" />
+                  <parameter id="pde5708d3ea19482c81fe8b31c7b4487d" name="int jet" type="" type-id="" />
+                  <parameter id="p30f47467f03e4e0cbeaca3a08510a76b" name="int force" type="" type-id="" />
+                </parameters>
+              </operation>
+              <operation id="o94733048b83742b1b455ef29da3ab2eb188" cid="ELEM031" name="PostArme" creation-date="09/06/2023 09:47:59" type="" type-id="" visibility="public">
+                <parameters>
+                  <parameter id="p66f56caec80a452f9914acfb8ff1694e" name="string nom" type="" type-id="" />
+                  <parameter id="p03c8a32650404633b5e69aba13eee1a3" name="int jet" type="" type-id="" />
+                  <parameter id="p3312c470b4274be3843188c2423b7bbc" name="int force" type="" type-id="" />
+                </parameters>
+              </operation>
+              <operation id="od441a5ed94c14ceeab3ae8487f14d3d2323" cid="ELEM032" name="DeleteArme" creation-date="09/06/2023 09:48:30" type="" type-id="" visibility="public">
+                <parameters>
+                  <parameter id="pf0ce5c01d6fe47e1a94937f1223ae2a3" name="string nom" type="" type-id="" />
+                </parameters>
+              </operation>
+            </operations>
+          </item>
+          <item id="4b5ce71899fa42f5a9686e16478a5ad1" cid="PROP026" type="property" name="BonusJet" style-class="" owner="3489956e5b74415bae1bedcb20eb7f70" creator="" creation-date="09/06/2023 09:43:24" visibility="private">
+            <feature />
+            <structural-feature type="Integer" type-id="Uml.Integer" />
+            <property />
+          </item>
+          <item id="2b5469f519434ff9809cb0dc37694867" cid="PROP027" type="property" name="BonusForce" style-class="" owner="3489956e5b74415bae1bedcb20eb7f70" creator="" creation-date="09/06/2023 09:43:59" visibility="private">
+            <feature />
+            <structural-feature type="Integer" type-id="Uml.Integer" />
+            <property />
+          </item>
+          <item id="0aa27dd7a1af426fbfd3f1c6a8b88d15" cid="PROP028" type="property" name="Nom" style-class="" owner="3489956e5b74415bae1bedcb20eb7f70" creator="" creation-date="09/06/2023 09:44:15" visibility="private">
+            <feature />
+            <structural-feature type="String" type-id="Uml.String" />
+            <property />
+          </item>
+          <item id="b6610bd188664444b3bc59e00ffeb2a1" cid="PROP029" type="property" name="Enchant" style-class="" owner="6c6c4cd2abec4d75a8c228b0f0bec6b1" creator="" creation-date="09/06/2023 09:44:43" visibility="private">
+            <feature />
+            <structural-feature type="Enchantement" type-id="Class:3f7ce9c70b7443389c9d9e09cbb125ac" />
+            <property />
+          </item>
+          <item id="749c4c67d1874e7698ce07c5374399cc" cid="PROP030" type="property" name="Enchant" style-class="" owner="3489956e5b74415bae1bedcb20eb7f70" creator="" creation-date="09/06/2023 09:44:56" visibility="private">
+            <feature />
+            <structural-feature type="Enchantement" type-id="Class:3f7ce9c70b7443389c9d9e09cbb125ac" />
+            <property />
+          </item>
+          <item id="6bcab5872d7c41baa2cc0ff3b5cc9ff1" cid="PROP033" type="property" name="Nom" style-class="" owner="9d4c5b0b8a0a43a3a8c0742c17fa8e5f" creator="" creation-date="09/06/2023 09:49:02" visibility="private">
+            <feature />
+            <structural-feature type="String" type-id="Uml.String" />
+            <property />
+          </item>
+          <item id="9d4c5b0b8a0a43a3a8c0742c17fa8e5f" cid="C004" type="class" name="Perso" style-class="" change-tracking-state="added" creator="" creation-date="09/06/2023 09:48:53" visibility="package">
+            <owned-items>
+              <owned-item ref="6bcab5872d7c41baa2cc0ff3b5cc9ff1" />
+              <owned-item ref="965fbbeee43648aeb0691dfeacf915ce" />
+              <owned-item ref="632fe533e21a461e87f3d124c8999cca" />
+              <owned-item ref="270d5ebe45504b51a711000be24ed844" />
+              <owned-item ref="3e9ce9faa1394e9eb9bea41e3d2b96ee" />
+              <owned-item ref="10d5ce5585d6402ab065d501e12304d1" />
+              <owned-item ref="f74c79deec5c49a4aa81fbe7608f9a5c" />
+              <owned-item ref="9bab8482c60042e7afacbd56d5fcf46a" />
+              <owned-item ref="5ff5f50766b14f999e1442bf3ee60119" />
+              <owned-item ref="cf375b940df5461f8970a89df68cbc87" />
+              <owned-item ref="30b25a80b624429c9dfe77b9bbc975fe" />
+              <owned-item ref="e722d2fb7e8147fb99e0f2154c3756f4" />
+              <owned-item ref="715d4d2d6ae24647b6790f15e4745387" />
+              <owned-item ref="25e3df37353e4b5e96916d4eac3044b5" />
+            </owned-items>
+            <attributes>
+              <attribute id="aa4ce62d63ec045a3ad28e0d0a1706ebd287" cid="PROP033" name="Nom" creation-date="09/06/2023 09:49:02" property-ref="6bcab5872d7c41baa2cc0ff3b5cc9ff1" />
+              <attribute id="a9ce96325a2414c4ca5110d0f01d1882f50" cid="PROP034" name="Description" creation-date="09/06/2023 09:49:16" property-ref="965fbbeee43648aeb0691dfeacf915ce" />
+              <attribute id="a253c325a4494408bb105cb5c53db2e89233" cid="PROP035" name="Inspiration" creation-date="09/06/2023 09:49:27" property-ref="632fe533e21a461e87f3d124c8999cca" />
+              <attribute id="acf398b67461c4fd9bdcfd283196183d9694" cid="PROP038" name="Armure" creation-date="09/06/2023 09:53:49" property-ref="270d5ebe45504b51a711000be24ed844" />
+              <attribute id="ac032d72bf6a942b1bdcf4bbed977d6d2922" cid="PROP039" name="Arme" creation-date="09/06/2023 09:53:56" property-ref="3e9ce9faa1394e9eb9bea41e3d2b96ee" />
+              <attribute id="ab2c9b62e87084a1e9a9198d65b9ef16c317" cid="PROP040" name="Classe" creation-date="09/06/2023 09:54:46" property-ref="10d5ce5585d6402ab065d501e12304d1" />
+              <attribute id="a30d3cca5e7a94857bc90612312bc9056924" cid="PROP041" name="Race" creation-date="09/06/2023 09:55:28" property-ref="f74c79deec5c49a4aa81fbe7608f9a5c" />
+              <attribute id="ab0cb945305d54a75b83ccc974cf85d0c8" cid="PROP042" name="Skills" creation-date="09/06/2023 10:07:30" property-ref="9bab8482c60042e7afacbd56d5fcf46a" />
+              <attribute id="a4e1f09f7f67942fd871487b77e22f3f2724" cid="PROP044" name="Personalitetrait" creation-date="09/06/2023 10:14:00" property-ref="5ff5f50766b14f999e1442bf3ee60119" />
+              <attribute id="a7804b0fb12df4fa89ce9bc54f891abdb735" cid="PROP045" name="Ideal" creation-date="09/06/2023 10:17:12" property-ref="cf375b940df5461f8970a89df68cbc87" />
+              <attribute id="a31452de8b2ce43cfb0fb4099243bc309112" cid="PROP046" name="Bonds" creation-date="09/06/2023 10:17:21" property-ref="30b25a80b624429c9dfe77b9bbc975fe" />
+              <attribute id="a301d134cd0dc455a8bc1613a4735f745630" cid="PROP047" name="Flaws" creation-date="09/06/2023 10:17:32" property-ref="e722d2fb7e8147fb99e0f2154c3756f4" />
+              <attribute id="aa380e359484545a9ae9a69655d7c333b122" cid="PROP053" name="NIv" creation-date="09/06/2023 10:22:41" property-ref="715d4d2d6ae24647b6790f15e4745387" />
+              <attribute id="ae2ec6c291817492da9297f043ff8dc20651" cid="PROP054" name="Id" creation-date="09/06/2023 10:25:36" property-ref="25e3df37353e4b5e96916d4eac3044b5" />
+            </attributes>
+            <operations>
+              <operation id="oa0d443ae3ea14abb866a0107e577b4c0167" cid="ELEM033" name="GetStat" creation-date="09/06/2023 09:55:47" type="" type-id="" visibility="public" />
+              <operation id="o66c7fd8c8183464ebb5a8b3067392fba756" cid="ELEM034" name="GetSkills" creation-date="09/06/2023 10:11:50" type="" type-id="" visibility="public" />
+              <operation id="o9c18924e5ac147539483ff8481892367629" cid="ELEM035" name="GetAC" creation-date="09/06/2023 10:12:03" type="" type-id="" visibility="public" />
+              <operation id="o2639a47e51a34aa0a998f1d5b687a865927" cid="ELEM036" name="GetSpellDC" creation-date="09/06/2023 10:21:11" type="" type-id="" visibility="public" />
+              <operation id="o04d5255ca381413b828a4fce38e512d6626" cid="ELEM037" name="GetProficiencyBonus" creation-date="09/06/2023 10:21:44" type="" type-id="" visibility="public" />
+              <operation id="ob86ea045a59748d9873cc58f48850789831" cid="ELEM038" name="PostPerso" creation-date="09/06/2023 10:23:01" type="" type-id="" visibility="public">
+                <parameters>
+                  <parameter id="pb6336ab20e614d3d836a57470644361a" name="nom" type="String" type-id="Uml.String" />
+                  <parameter id="p58e111e12dac4dcca9f326a8963a774f" name="description" type="String" type-id="Uml.String" />
+                  <parameter id="p9e867db040b04d538a7632ee428ffd16" name="inspiration" type="Integer" type-id="Uml.Integer" />
+                  <parameter id="p62061e4b42a749fba04024d920d7f800" name="armure" type="Armure" type-id="Class:6c6c4cd2abec4d75a8c228b0f0bec6b1" />
+                  <parameter id="pdb68165542de48f4929118f586b52a40" name="arme" type="Armes" type-id="Class:3489956e5b74415bae1bedcb20eb7f70" />
+                  <parameter id="p0cac836fcbbb462faf612f983671a456" name="classe" type="Classes" type-id="Class:4882fe14920f4d258c8cee871928b695" />
+                  <parameter id="p307894227ef7416f998aec74f9e2d3b9" name="race" type="Race" type-id="Class:e206399b71b4497d8c8cfb5f12547e19" />
+                  <parameter id="p44c347d6fd414f7b850028fdee96c12c" name="skills" type="List&lt;int&gt;" type-id="List&lt;int&gt;" />
+                  <parameter id="p9b683624c3904652a4b55ef4b9f9513f" name="personalitetrait" type="String" type-id="Uml.String" />
+                  <parameter id="pf51fc2e9951e458e95e4d6384f4b3efa" name="ideal" type="String" type-id="Uml.String" />
+                  <parameter id="pb456a974aba34841a6e65ef7f8c279e9" name="bonds" type="String" type-id="Uml.String" />
+                  <parameter id="pff092dbb8cff4e9186c1e220c2044a18" name="flaws" type="String" type-id="Uml.String" />
+                  <parameter id="p167d9e45967247a793e1b4ad4a50d84f" name="niv" type="int" type-id="int" />
+                </parameters>
+              </operation>
+              <operation id="oc0ef50bda3bc4db0a545d43df2f49ef4350" cid="ELEM039" name="PutPerso" creation-date="09/06/2023 10:23:13" type="" type-id="" visibility="public">
+                <parameters>
+                  <parameter id="p18b5106ee9ec458e848f1c621f4d89c5" name="nom" type="String" type-id="Uml.String" />
+                  <parameter id="pea06edf19aa745ffad0a850b96d58c8c" name="description" type="String" type-id="Uml.String" />
+                  <parameter id="p587c98ab436a42d0934f310c5702ac0e" name="inspiration" type="Integer" type-id="Uml.Integer" />
+                  <parameter id="p12a6615adc874c1e9cbedd652150458c" name="armure" type="Armure" type-id="Class:6c6c4cd2abec4d75a8c228b0f0bec6b1" />
+                  <parameter id="pdb9765cae0d34b7fbbc225db4589cb54" name="arme" type="Armes" type-id="Class:3489956e5b74415bae1bedcb20eb7f70" />
+                  <parameter id="pca19d43684884c4a95522190b86973ef" name="classe" type="Classes" type-id="Class:4882fe14920f4d258c8cee871928b695" />
+                  <parameter id="p7336c11ad3f24fa0b4c3cd7dcaf3a260" name="race" type="Race" type-id="Class:e206399b71b4497d8c8cfb5f12547e19" />
+                  <parameter id="p99ee59d0ec94482b9b9248a058b6f848" name="skills" type="List&lt;int&gt;" type-id="List&lt;int&gt;" />
+                  <parameter id="p37eea2d5d05f4bb991149b69a5caf344" name="personalitetrait" type="String" type-id="Uml.String" />
+                  <parameter id="p75688c5086c147febb3b4b550a6ecfe2" name="ideal" type="String" type-id="Uml.String" />
+                  <parameter id="p42e25289c35240ce9555cbc088caaa04" name="bonds" type="String" type-id="Uml.String" />
+                  <parameter id="p4e9643296ed54eb1b2023a0b6acda209" name="flaws" type="String" type-id="Uml.String" />
+                  <parameter id="p9c665af7e12241fd9bd53ee155b1e274" name="niv" type="int" type-id="int" />
+                </parameters>
+              </operation>
+              <operation id="o12a8f6a8a6584c6fad53c6aede6e9bca153" cid="ELEM041" name="DeletePerso" creation-date="09/06/2023 10:24:29" type="" type-id="" visibility="public">
+                <parameters>
+                  <parameter id="pcaf44e3a14b54a5e9d1634e7ecf4b275" name="int id" type="" type-id="" />
+                </parameters>
+              </operation>
+            </operations>
+          </item>
+          <item id="965fbbeee43648aeb0691dfeacf915ce" cid="PROP034" type="property" name="Description" style-class="" owner="9d4c5b0b8a0a43a3a8c0742c17fa8e5f" creator="" creation-date="09/06/2023 09:49:16" visibility="private">
+            <feature />
+            <structural-feature type="String" type-id="Uml.String" />
+            <property />
+          </item>
+          <item id="632fe533e21a461e87f3d124c8999cca" cid="PROP035" type="property" name="Inspiration" style-class="" owner="9d4c5b0b8a0a43a3a8c0742c17fa8e5f" creator="" creation-date="09/06/2023 09:49:27" visibility="private">
+            <feature />
+            <structural-feature type="Integer" type-id="Uml.Integer" />
+            <property />
+          </item>
+          <item id="30b25a80b624429c9dfe77b9bbc975fe" cid="PROP046" type="property" name="Bonds" style-class="" owner="9d4c5b0b8a0a43a3a8c0742c17fa8e5f" creator="" creation-date="09/06/2023 10:17:21" visibility="private">
+            <feature />
+            <structural-feature type="String" type-id="Uml.String" />
+            <property />
+          </item>
+          <item id="cf375b940df5461f8970a89df68cbc87" cid="PROP045" type="property" name="Ideal" style-class="" owner="9d4c5b0b8a0a43a3a8c0742c17fa8e5f" creator="" creation-date="09/06/2023 10:17:12" visibility="private">
+            <feature />
+            <structural-feature type="String" type-id="Uml.String" />
+            <property />
+          </item>
+          <item id="270d5ebe45504b51a711000be24ed844" cid="PROP038" type="property" name="Armure" style-class="" owner="9d4c5b0b8a0a43a3a8c0742c17fa8e5f" creator="" creation-date="09/06/2023 09:53:49" visibility="private">
+            <feature />
+            <structural-feature type="Armure" type-id="Class:6c6c4cd2abec4d75a8c228b0f0bec6b1" />
+            <property />
+          </item>
+          <item id="3e9ce9faa1394e9eb9bea41e3d2b96ee" cid="PROP039" type="property" name="Arme" style-class="" owner="9d4c5b0b8a0a43a3a8c0742c17fa8e5f" creator="" creation-date="09/06/2023 09:53:56" visibility="private">
+            <feature />
+            <structural-feature type="Armes" type-id="Class:3489956e5b74415bae1bedcb20eb7f70" />
+            <property />
+          </item>
+          <item id="10d5ce5585d6402ab065d501e12304d1" cid="PROP040" type="property" name="Classe" style-class="" owner="9d4c5b0b8a0a43a3a8c0742c17fa8e5f" creator="" creation-date="09/06/2023 09:54:46" visibility="private">
+            <feature />
+            <structural-feature type="Classes" type-id="Class:4882fe14920f4d258c8cee871928b695" />
+            <property />
+          </item>
+          <item id="f74c79deec5c49a4aa81fbe7608f9a5c" cid="PROP041" type="property" name="Race" style-class="" owner="9d4c5b0b8a0a43a3a8c0742c17fa8e5f" creator="" creation-date="09/06/2023 09:55:28" visibility="private">
+            <feature />
+            <structural-feature type="Race" type-id="Class:e206399b71b4497d8c8cfb5f12547e19" />
+            <property />
+          </item>
+          <item id="53d4c038bb2a48adb1628883f5a7f67b" cid="REL001" type="relationship" name="" style-class="" change-tracking-state="added" creator="" creation-date="09/06/2023 10:03:48" from="3f7ce9c70b7443389c9d9e09cbb125ac" to="6c6c4cd2abec4d75a8c228b0f0bec6b1" visibility="package">
+            <relation from="3f7ce9c70b7443389c9d9e09cbb125ac" to="6c6c4cd2abec4d75a8c228b0f0bec6b1" derived="false">
+              <start-role id="umlar-030b5ed0-ea57-48b3-9cb9-8dd7834c2338" name="" navigability="" association-type="association" visibility="private" />
+              <end-role id="umlar-6e743483-502c-46dd-89ae-9eb2106b1fac" name="" navigability="" association-type="association" visibility="private" />
+            </relation>
+          </item>
+          <item id="d1e0bf98d2a442e8a32ebcb0e6f300a7" cid="REL002" type="relationship" name="" style-class="" change-tracking-state="added" creator="" creation-date="09/06/2023 10:03:53" from="3f7ce9c70b7443389c9d9e09cbb125ac" to="3489956e5b74415bae1bedcb20eb7f70" visibility="package">
+            <relation from="3f7ce9c70b7443389c9d9e09cbb125ac" to="3489956e5b74415bae1bedcb20eb7f70" derived="false">
+              <start-role id="umlar-e02cbcb3-c590-4b42-b65a-843cc4f5df9e" name="" navigability="" association-type="association" visibility="private" />
+              <end-role id="umlar-593e2382-2710-4eab-a3ed-f4d44b9adfc7" name="" navigability="" association-type="association" visibility="private" />
+            </relation>
+          </item>
+          <item id="fc8f95e120ae4ce7a4291e5941e39cda" cid="REL003" type="relationship" name="" style-class="" change-tracking-state="added" creator="" creation-date="09/06/2023 10:03:59" from="6c6c4cd2abec4d75a8c228b0f0bec6b1" to="9d4c5b0b8a0a43a3a8c0742c17fa8e5f" visibility="package">
+            <relation from="6c6c4cd2abec4d75a8c228b0f0bec6b1" to="9d4c5b0b8a0a43a3a8c0742c17fa8e5f" derived="false">
+              <start-role id="umlar-cad0bfaa-393f-4684-a1ec-1167f9705d25" name="" navigability="" association-type="association" visibility="private" />
+              <end-role id="umlar-cc099dd5-e19f-4db3-8c33-ab5347e18497" name="" navigability="" association-type="association" visibility="private" />
+            </relation>
+          </item>
+          <item id="46cb8da9ec7c4304b4092c49eefbd38e" cid="REL004" type="relationship" name="" style-class="" change-tracking-state="added" creator="" creation-date="09/06/2023 10:04:18" from="3489956e5b74415bae1bedcb20eb7f70" to="9d4c5b0b8a0a43a3a8c0742c17fa8e5f" visibility="package">
+            <relation from="3489956e5b74415bae1bedcb20eb7f70" to="9d4c5b0b8a0a43a3a8c0742c17fa8e5f" derived="false">
+              <start-role id="umlar-b28661eb-3ea8-4d0a-9472-ebc597e01067" name="" navigability="" association-type="association" visibility="private" />
+              <end-role id="umlar-ad5cfa5c-3504-4659-b0e3-f1b7ca07c08a" name="" navigability="" association-type="association" visibility="private" />
+            </relation>
+          </item>
+          <item id="326edc99a53f4a9c94580ef1df8e8d5c" cid="REL005" type="relationship" name="" style-class="" change-tracking-state="added" creator="" creation-date="09/06/2023 10:04:28" from="4882fe14920f4d258c8cee871928b695" to="9d4c5b0b8a0a43a3a8c0742c17fa8e5f" visibility="package">
+            <relation from="4882fe14920f4d258c8cee871928b695" to="9d4c5b0b8a0a43a3a8c0742c17fa8e5f" derived="false">
+              <start-role id="umlar-118a4bc4-9d27-4a80-94cc-9c11001a008c" name="" navigability="" association-type="association" visibility="private" />
+              <end-role id="umlar-e15f1771-de3d-4474-b847-b1fe36df0a1f" name="" navigability="" association-type="association" visibility="private" />
+            </relation>
+          </item>
+          <item id="5ce60992710c49c19806b13c1e87b7e8" cid="REL006" type="relationship" name="" style-class="" change-tracking-state="added" creator="" creation-date="09/06/2023 10:04:34" from="9d4c5b0b8a0a43a3a8c0742c17fa8e5f" to="e206399b71b4497d8c8cfb5f12547e19" visibility="package">
+            <relation from="9d4c5b0b8a0a43a3a8c0742c17fa8e5f" to="e206399b71b4497d8c8cfb5f12547e19" derived="false">
+              <start-role id="umlar-7ce59125-cb3f-452c-938c-7e2407ccc8bd" name="" navigability="" association-type="association" visibility="private" />
+              <end-role id="umlar-93546a6e-b256-4c9a-8022-34c84e453878" name="" navigability="" association-type="association" visibility="private" />
+            </relation>
+          </item>
+          <item id="9bab8482c60042e7afacbd56d5fcf46a" cid="PROP042" type="property" name="Skills" style-class="" owner="9d4c5b0b8a0a43a3a8c0742c17fa8e5f" creator="" creation-date="09/06/2023 10:07:30" visibility="private">
+            <feature />
+            <structural-feature type="List&lt;int&gt;" type-id="List&lt;int&gt;" />
+            <property />
+          </item>
+          <item id="3b24f9f9a2d64c93b3e017ffc6e9b759" cid="C005" type="class" name="EnumSkills" style-class="" change-tracking-state="added" creator="" creation-date="09/06/2023 10:10:35" visibility="package" />
+          <item id="c91633edb0c34d66b6d7306d4d8e2a44" cid="REL007" type="relationship" name="" style-class="" change-tracking-state="added" creator="" creation-date="09/06/2023 10:11:38" from="3b24f9f9a2d64c93b3e017ffc6e9b759" to="9d4c5b0b8a0a43a3a8c0742c17fa8e5f" visibility="package">
+            <relation from="3b24f9f9a2d64c93b3e017ffc6e9b759" to="9d4c5b0b8a0a43a3a8c0742c17fa8e5f" derived="false">
+              <start-role id="umlar-562cbc4e-d764-462f-a73b-3f30b177af90" name="" navigability="" association-type="association" visibility="private" />
+              <end-role id="umlar-29592b9d-58b4-4785-9bff-75cbbb947d57" name="" navigability="" association-type="association" visibility="private" />
+            </relation>
+          </item>
+          <item id="5ff5f50766b14f999e1442bf3ee60119" cid="PROP044" type="property" name="Personalitetrait" style-class="" owner="9d4c5b0b8a0a43a3a8c0742c17fa8e5f" creator="" creation-date="09/06/2023 10:14:00" visibility="private">
+            <feature />
+            <structural-feature type="String" type-id="Uml.String" />
+            <property />
+          </item>
+          <item id="e722d2fb7e8147fb99e0f2154c3756f4" cid="PROP047" type="property" name="Flaws" style-class="" owner="9d4c5b0b8a0a43a3a8c0742c17fa8e5f" creator="" creation-date="09/06/2023 10:17:32" visibility="private">
+            <feature />
+            <structural-feature type="String" type-id="Uml.String" />
+            <property />
+          </item>
+          <item id="83b52ef7c404480a8093c56dddbead1d" cid="CL001" type="collaboration" name="Collaboration1" style-class="" change-tracking-state="added" creator="" creation-date="09/06/2023 10:18:35" visibility="package">
+            <owned-items>
+              <owned-item ref="9be30d234c084231b432e269936dda6a" />
+            </owned-items>
+          </item>
+          <item id="9be30d234c084231b432e269936dda6a" cid="CL002" type="collaboration" name="Collaboration2" style-class="" owner="83b52ef7c404480a8093c56dddbead1d" change-tracking-state="added" creator="" creation-date="09/06/2023 10:18:42" visibility="package" />
+          <item id="a84201a3899345e386aa40817d53ef58" cid="CL003" type="collaboration" name="Collaboration3" style-class="" change-tracking-state="added" creator="" creation-date="09/06/2023 10:18:43" visibility="package" />
+          <item id="25e3df37353e4b5e96916d4eac3044b5" cid="PROP054" type="property" name="Id" style-class="" owner="9d4c5b0b8a0a43a3a8c0742c17fa8e5f" creator="" creation-date="09/06/2023 10:25:36" visibility="private">
+            <feature />
+            <structural-feature type="int" type-id="int" />
+            <property />
+          </item>
+          <item id="699755349b9d437fa322d96cb846c0c7" cid="PROP055" type="property" name="Id" style-class="" owner="3f7ce9c70b7443389c9d9e09cbb125ac" creator="" creation-date="09/06/2023 10:28:00" visibility="private">
+            <feature />
+            <structural-feature type="int" type-id="int" />
+            <property />
+          </item>
+          <item id="2e7d02771dcf48218e5ac4a47896ce5f" cid="PROP056" type="property" name="Id" style-class="" owner="6c6c4cd2abec4d75a8c228b0f0bec6b1" creator="" creation-date="09/06/2023 10:28:14" visibility="private">
+            <feature />
+            <structural-feature type="int" type-id="int" />
+            <property />
+          </item>
+          <item id="715d4d2d6ae24647b6790f15e4745387" cid="PROP053" type="property" name="NIv" style-class="" owner="9d4c5b0b8a0a43a3a8c0742c17fa8e5f" creator="" creation-date="09/06/2023 10:22:41" visibility="private">
+            <feature />
+            <structural-feature type="int" type-id="int" />
+            <property />
+          </item>
+          <item id="eb53c1dd44b04785a9aaedf079739a10" cid="PROP057" type="property" name="id" style-class="" owner="4882fe14920f4d258c8cee871928b695" creator="" creation-date="09/06/2023 10:42:03" visibility="private">
+            <feature />
+            <structural-feature type="int" type-id="int" />
+            <property />
+          </item>
+          <item id="3bbdd2e895ed420ca17391444f847a08" cid="PROP058" type="property" name="Id" style-class="" owner="3489956e5b74415bae1bedcb20eb7f70" creator="" creation-date="09/06/2023 10:42:48" visibility="private">
+            <feature />
+            <structural-feature type="int" type-id="int" />
+            <property />
+          </item>
+          <item id="fe4dcce2c4c64165a1f149b4bab7262f" cid="PROP059" type="property" name="id" style-class="" owner="e206399b71b4497d8c8cfb5f12547e19" creator="" creation-date="09/06/2023 10:43:10" visibility="private">
+            <feature />
+            <structural-feature type="int" type-id="int" />
+            <property />
+          </item>
+        </abstract-items>
+        <layer id="eb5bc4839f2842e7bc368c1ea797c3bf" name="Default" visible="true" enabled="true" locked="false">
+          <item id="6c6c4cd2abec4d75a8c228b0f0bec6b1" iid="2c86911edeef43c6911fc543461af984" creation-date="08/23/2023 10:51:47" order-index="0" type="entity">
+            <layout ax="436" ay="-21" awidth="332" aheight="348" x="436" y="-21" width="164" height="160" rotation-center="-12,0" />
+            <class />
+          </item>
+          <item id="4882fe14920f4d258c8cee871928b695" iid="5439f8af0c9b46c682c7c620fea4c9e6" creation-date="08/23/2023 11:25:35" order-index="1" type="entity">
+            <layout ax="877" ay="-21" awidth="356" aheight="291" x="877" y="-23" width="211" height="160" rotation-center="-34,0" />
+            <class />
+          </item>
+          <item id="3f7ce9c70b7443389c9d9e09cbb125ac" iid="20ab15de8e9642ce9817dec941f50bad" creation-date="09/06/2023 09:23:43" order-index="2" type="data-type">
+            <layout ax="8" ay="-23" awidth="353" aheight="295" x="8" y="-23" width="140" height="160" />
+            <data-type />
+          </item>
+          <item id="e206399b71b4497d8c8cfb5f12547e19" iid="a8cb7b26fe004f9892d0625c18de1fe0" creation-date="09/06/2023 09:27:00" order-index="3" type="data-type">
+            <layout ax="1378" ay="-23" awidth="346" aheight="352" x="1378" y="-23" width="281" height="221" rotation-center="-70.5,-30.5" />
+            <data-type />
+          </item>
+          <item id="3489956e5b74415bae1bedcb20eb7f70" iid="cf1567ed107f45d1ab9beb0d1e043680" creation-date="09/06/2023 09:43:18" order-index="4" type="entity">
+            <layout ax="436" ay="336" awidth="250" aheight="255" x="443" y="336" width="217" height="160" rotation-center="-12.5,0" />
+            <class />
+          </item>
+          <item id="53d4c038bb2a48adb1628883f5a7f67b" iid="36ab065495104b90a89362c9520e24c5" creation-date="09/06/2023 10:03:48" order-index="6" type="relation">
+            <layout start-role-position="25,15" end-role-position="25,-15" start-multiplicity-position="25,-15" end-multiplicity-position="25,15" line-style="oblique" lock-start-point="true" lock-end-point="true" lock-to-fields="false" auto-path="" x1="361" y1="124" x2="436" y2="123" start-border-pos="0.375" end-border-pos="0.896656534954407" start-local-pos="138" end-local-pos="136" name-position="0,20">
+              <points>
+                <point x="361" y="124" />
+                <point x="436" y="123" />
+              </points>
+            </layout>
+            <relation from="3f7ce9c70b7443389c9d9e09cbb125ac" from-iid="20ab15de8e9642ce9817dec941f50bad" to="6c6c4cd2abec4d75a8c228b0f0bec6b1" to-iid="2c86911edeef43c6911fc543461af984" />
+          </item>
+          <item id="d1e0bf98d2a442e8a32ebcb0e6f300a7" iid="85d59a87058b419da25b3521931ff546" creation-date="09/06/2023 10:03:53" order-index="7" type="relation">
+            <layout start-role-position="25,15" end-role-position="25,-15" start-multiplicity-position="25,-15" end-multiplicity-position="25,15" line-style="oblique" lock-start-point="true" lock-end-point="true" lock-to-fields="false" auto-path="" x1="325" y1="272" x2="436" y2="460" start-border-pos="0.525495750708215" end-border-pos="0.878177966101695" start-local-pos="317" end-local-pos="115" name-position="0,20">
+              <points>
+                <point x="325" y="272" />
+                <point x="436" y="460" />
+              </points>
+            </layout>
+            <relation from="3f7ce9c70b7443389c9d9e09cbb125ac" from-iid="20ab15de8e9642ce9817dec941f50bad" to="3489956e5b74415bae1bedcb20eb7f70" to-iid="cf1567ed107f45d1ab9beb0d1e043680" />
+          </item>
+          <item id="fc8f95e120ae4ce7a4291e5941e39cda" iid="709e761299e3410997be8db50fc21015" creation-date="09/06/2023 10:03:59" order-index="8" type="relation">
+            <layout start-role-position="25,15" end-role-position="25,-15" start-multiplicity-position="25,-15" end-multiplicity-position="25,15" line-style="oblique" lock-start-point="true" lock-end-point="true" lock-to-fields="false" auto-path="" x1="768" y1="143" x2="863" y2="570" start-border-pos="0.367781155015198" end-border-pos="0.905720338983051" start-local-pos="155" end-local-pos="89" name-position="0,20">
+              <points>
+                <point x="768" y="143" />
+                <point x="828" y="237" />
+                <point x="840" y="281" />
+                <point x="863" y="570" />
+              </points>
+            </layout>
+            <relation from="6c6c4cd2abec4d75a8c228b0f0bec6b1" from-iid="2c86911edeef43c6911fc543461af984" to="9d4c5b0b8a0a43a3a8c0742c17fa8e5f" to-iid="339c65fa124740e397c916d67880945d" />
+          </item>
+          <item id="46cb8da9ec7c4304b4092c49eefbd38e" iid="63927217c7654a9290fdb3e7e1acbb1b" creation-date="09/06/2023 10:04:18" order-index="9" type="relation">
+            <layout start-role-position="25,15" end-role-position="25,-15" start-multiplicity-position="25,-15" end-multiplicity-position="25,15" line-style="oblique" lock-start-point="true" lock-end-point="true" lock-to-fields="false" auto-path="" x1="686" y1="460" x2="863" y2="582" start-border-pos="0.371822033898305" end-border-pos="0.900423728813559" start-local-pos="115" end-local-pos="94" name-position="0,20">
+              <points>
+                <point x="686" y="460" />
+                <point x="863" y="582" />
+              </points>
+            </layout>
+            <relation from="3489956e5b74415bae1bedcb20eb7f70" from-iid="cf1567ed107f45d1ab9beb0d1e043680" to="9d4c5b0b8a0a43a3a8c0742c17fa8e5f" to-iid="339c65fa124740e397c916d67880945d" />
+          </item>
+          <item id="326edc99a53f4a9c94580ef1df8e8d5c" iid="ee624d5706da4b5c9966a19751eabe44" creation-date="09/06/2023 10:04:28" order-index="10" type="relation">
+            <layout start-role-position="25,15" end-role-position="25,-15" start-multiplicity-position="25,-15" end-multiplicity-position="25,15" line-style="oblique" lock-start-point="true" lock-end-point="true" lock-to-fields="false" auto-path="" x1="1055" y1="270" x2="1102" y2="363" start-border-pos="0.625" end-border-pos="0.125" start-local-pos="178" end-local-pos="70" name-position="0,20">
+              <points>
+                <point x="1055" y="270" />
+                <point x="1102" y="363" />
+              </points>
+            </layout>
+            <relation from="4882fe14920f4d258c8cee871928b695" from-iid="5439f8af0c9b46c682c7c620fea4c9e6" to="9d4c5b0b8a0a43a3a8c0742c17fa8e5f" to-iid="339c65fa124740e397c916d67880945d" />
+          </item>
+          <item id="5ce60992710c49c19806b13c1e87b7e8" iid="5b009c244d5b4f1ea66d62027bd3b21d" creation-date="09/06/2023 10:04:34" order-index="11" type="relation">
+            <layout start-role-position="25,15" end-role-position="25,-15" start-multiplicity-position="25,-15" end-multiplicity-position="25,15" line-style="oblique" lock-start-point="true" lock-end-point="true" lock-to-fields="false" auto-path="" x1="1341" y1="638" x2="1378" y2="327" start-border-pos="0.375" end-border-pos="0.751501501501502" start-local-pos="118" end-local-pos="331" name-position="0,20">
+              <points>
+                <point x="1341" y="638" />
+                <point x="1378" y="327" />
+              </points>
+            </layout>
+            <relation from="9d4c5b0b8a0a43a3a8c0742c17fa8e5f" from-iid="339c65fa124740e397c916d67880945d" to="e206399b71b4497d8c8cfb5f12547e19" to-iid="a8cb7b26fe004f9892d0625c18de1fe0" />
+          </item>
+          <item id="3b24f9f9a2d64c93b3e017ffc6e9b759" iid="ce7bf6c41af84531ac2ab5371d3985f8" creation-date="09/06/2023 10:10:35" order-index="12" type="entity">
+            <layout ax="1535" ay="385" awidth="140" aheight="160" x="1535" y="385" width="140" height="160" />
+            <class />
+          </item>
+          <item id="c91633edb0c34d66b6d7306d4d8e2a44" iid="db815c9f32e94e92b8ebc178a448aba9" creation-date="09/06/2023 10:11:38" order-index="13" type="relation">
+            <layout start-role-position="25,15" end-role-position="25,-15" start-multiplicity-position="25,-15" end-multiplicity-position="25,15" line-style="oblique" lock-start-point="true" lock-end-point="true" lock-to-fields="false" auto-path="" x1="1535" y1="465" x2="1341" y2="636" start-border-pos="0.875" end-border-pos="0.374509803921569" start-local-pos="80" end-local-pos="127" name-position="0,20">
+              <points>
+                <point x="1535" y="465" />
+                <point x="1341" y="636" />
+              </points>
+            </layout>
+            <relation from="3b24f9f9a2d64c93b3e017ffc6e9b759" from-iid="ce7bf6c41af84531ac2ab5371d3985f8" to="9d4c5b0b8a0a43a3a8c0742c17fa8e5f" to-iid="339c65fa124740e397c916d67880945d" />
+          </item>
+          <item id="9d4c5b0b8a0a43a3a8c0742c17fa8e5f" iid="339c65fa124740e397c916d67880945d" creation-date="09/06/2023 09:48:53" order-index="5" type="entity">
+            <layout ax="863" ay="363" awidth="478" aheight="549" x="863" y="363" width="478" height="160" rotation-center="61,0" />
+            <class />
+          </item>
+        </layer>
+      </diagram>
+    </model>
+  </models>
+</sim-project>
