@@ -2,6 +2,7 @@
 using Api_DnD.Model;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 
 namespace Api_DnD.Controllers
@@ -18,34 +19,34 @@ namespace Api_DnD.Controllers
         }
 
         [HttpGet("/GetAllArmure")]
-        public async Task<ActionResult<IEnumerable<Armure>>> GetArmure(string sortOrder)
+        public async Task<ActionResult<IEnumerable<Armure>>> GetArmure(string? sortOrder,string? recherche, int page)
         {
+            if (!string.IsNullOrEmpty(recherche))
+            {
+                return await _context.Armures.Where(a => a.Name.Contains(recherche)).ToListAsync();
+            }
+
+            if (page <= 0)
+                page = 1;
+
             switch (sortOrder)
             {
                 case "nom":
-                    return await _context.Armures.OrderBy(a => a.Name).ToListAsync();
-                    break;
+                    return await _context.Armures.OrderBy(a => a.Name).Skip((3 * page) - 3).Take(3).ToListAsync();
                 case "id":
-                    return await _context.Armures.OrderBy(a => a.Id).ToListAsync();
-                    break;
+                    return await _context.Armures.OrderBy(a => a.Id).Skip((3 * page) - 3).Take(3).ToListAsync();
                 case "nom_desc":
-                    return await _context.Armures.OrderByDescending(a => a.Name).ToListAsync();
-                    break;
+                    return await _context.Armures.OrderByDescending(a => a.Name).Skip((3 * page) - 3).Take(3).ToListAsync();
                 case "id_desc":
-                    return await _context.Armures.OrderByDescending(a => a.Id).ToListAsync();
-                    break;
+                    return await _context.Armures.OrderByDescending(a => a.Id).Skip((3 * page) - 3).Take(3).ToListAsync();
                 case "dex":
-                    return await _context.Armures.OrderBy(a => a.DexBonus).ToListAsync();
-                    break;
-                case "force":
-                    return await _context.Armures.OrderBy(a => a.Ac).ToListAsync();
-                    break;
+                    return await _context.Armures.OrderBy(a => a.DexBonus).Skip((3 * page) - 3).Take(3).ToListAsync();
+                case "ac":
+                    return await _context.Armures.OrderBy(a => a.Ac).Skip((3 * page) - 3).Take(3).ToListAsync();
                 case "dex_desc":
-                    return await _context.Armures.OrderByDescending(a => a.DexBonus).ToListAsync();
-                    break;
-                case "force_desc":
-                    return await _context.Armures.OrderByDescending(a => a.Ac).ToListAsync();
-                    break;
+                    return await _context.Armures.OrderByDescending(a => a.DexBonus).Skip((3 * page) - 3).Take(3).ToListAsync();
+                case "ac_desc":
+                    return await _context.Armures.OrderByDescending(a => a.Ac).Skip((3 * page) - 3).Take(3).ToListAsync();
                 default:
                     return await _context.Armures.ToListAsync();
             }

@@ -6,7 +6,11 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Api_DnD.Migrations
 {
     /// <inheritdoc />
+<<<<<<<< HEAD:Api_DnD_project/Api_DnD/Migrations/20231015212339_test.cs
     public partial class test : Migration
+========
+    public partial class LocalDB : Migration
+>>>>>>>> ac3a95fe55ede1b43054bfc65db5bed22be7f494:Api_DnD_project/Api_DnD/Migrations/20231015210705_LocalDB.cs
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -190,6 +194,7 @@ namespace Api_DnD.Migrations
                 .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.CreateTable(
+<<<<<<<< HEAD:Api_DnD_project/Api_DnD/Migrations/20231015212339_test.cs
                 name: "Skill",
                 columns: table => new
                 {
@@ -207,6 +212,8 @@ namespace Api_DnD.Migrations
                 .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.CreateTable(
+========
+>>>>>>>> ac3a95fe55ede1b43054bfc65db5bed22be7f494:Api_DnD_project/Api_DnD/Migrations/20231015210705_LocalDB.cs
                 name: "spell",
                 columns: table => new
                 {
@@ -602,7 +609,11 @@ namespace Api_DnD.Migrations
                 .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.CreateTable(
+<<<<<<<< HEAD:Api_DnD_project/Api_DnD/Migrations/20231015212339_test.cs
                 name: "Persofeats",
+========
+                name: "Feats",
+>>>>>>>> ac3a95fe55ede1b43054bfc65db5bed22be7f494:Api_DnD_project/Api_DnD/Migrations/20231015210705_LocalDB.cs
                 columns: table => new
                 {
                     Persosid = table.Column<int>(type: "int", nullable: false),
@@ -610,10 +621,17 @@ namespace Api_DnD.Migrations
                 },
                 constraints: table =>
                 {
+<<<<<<<< HEAD:Api_DnD_project/Api_DnD/Migrations/20231015212339_test.cs
                     table.PrimaryKey("PK_Persofeats", x => new { x.Persosid, x.featsid });
                     table.ForeignKey(
                         name: "FK_Persofeats_Perso_Persosid",
                         column: x => x.Persosid,
+========
+                    table.PrimaryKey("PK_Feats", x => x.id);
+                    table.ForeignKey(
+                        name: "FK_Feats_Perso_Persoid",
+                        column: x => x.Persoid,
+>>>>>>>> ac3a95fe55ede1b43054bfc65db5bed22be7f494:Api_DnD_project/Api_DnD/Migrations/20231015210705_LocalDB.cs
                         principalTable: "Perso",
                         principalColumn: "id",
                         onDelete: ReferentialAction.Cascade);
@@ -742,6 +760,14 @@ namespace Api_DnD.Migrations
                 column: "RacesId");
 
             migrationBuilder.CreateIndex(
+<<<<<<<< HEAD:Api_DnD_project/Api_DnD/Migrations/20231015212339_test.cs
+========
+                name: "IX_Feats_Persoid",
+                table: "Feats",
+                column: "Persoid");
+
+            migrationBuilder.CreateIndex(
+>>>>>>>> ac3a95fe55ede1b43054bfc65db5bed22be7f494:Api_DnD_project/Api_DnD/Migrations/20231015210705_LocalDB.cs
                 name: "IX_Perso_ArmureId",
                 table: "Perso",
                 column: "ArmureId");
@@ -808,6 +834,12 @@ namespace Api_DnD.Migrations
                 name: "CampagneRace");
 
             migrationBuilder.DropTable(
+<<<<<<<< HEAD:Api_DnD_project/Api_DnD/Migrations/20231015212339_test.cs
+========
+                name: "Feats");
+
+            migrationBuilder.DropTable(
+>>>>>>>> ac3a95fe55ede1b43054bfc65db5bed22be7f494:Api_DnD_project/Api_DnD/Migrations/20231015210705_LocalDB.cs
                 name: "Key");
 
             migrationBuilder.DropTable(
@@ -815,6 +847,9 @@ namespace Api_DnD.Migrations
 
             migrationBuilder.DropTable(
                 name: "PersoSkill");
+
+            migrationBuilder.DropTable(
+                name: "spell");
 
             migrationBuilder.DropTable(
                 name: "spell");

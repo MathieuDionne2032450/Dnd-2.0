@@ -11,8 +11,13 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Api_DnD.Migrations
 {
     [DbContext(typeof(DNDContext))]
+<<<<<<<< HEAD:Api_DnD_project/Api_DnD/Migrations/20231015212339_test.Designer.cs
     [Migration("20231015212339_test")]
     partial class test
+========
+    [Migration("20231015210705_LocalDB")]
+    partial class LocalDB
+>>>>>>>> ac3a95fe55ede1b43054bfc65db5bed22be7f494:Api_DnD_project/Api_DnD/Migrations/20231015210705_LocalDB.Designer.cs
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -491,6 +496,7 @@ namespace Api_DnD.Migrations
                     b.ToTable("Skill");
                 });
 
+<<<<<<<< HEAD:Api_DnD_project/Api_DnD/Migrations/20231015212339_test.Designer.cs
             modelBuilder.Entity("Api_DnD.Model.feats", b =>
                 {
                     b.Property<int>("id")
@@ -511,6 +517,9 @@ namespace Api_DnD.Migrations
                 });
 
             modelBuilder.Entity("Api_DnD.Model.spell", b =>
+========
+            modelBuilder.Entity("Api_DnD.Model.Spell", b =>
+>>>>>>>> ac3a95fe55ede1b43054bfc65db5bed22be7f494:Api_DnD_project/Api_DnD/Migrations/20231015210705_LocalDB.Designer.cs
                 {
                     b.Property<int>("id")
                         .ValueGeneratedOnAdd()
@@ -541,6 +550,30 @@ namespace Api_DnD.Migrations
                     b.HasKey("id");
 
                     b.ToTable("spell", (string)null);
+                });
+
+            modelBuilder.Entity("Api_DnD.Model.feats", b =>
+                {
+                    b.Property<int>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<string>("Descr")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Nom")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<int?>("Persoid")
+                        .HasColumnType("int");
+
+                    b.HasKey("id");
+
+                    b.HasIndex("Persoid");
+
+                    b.ToTable("Feats");
                 });
 
             modelBuilder.Entity("ArmeCampagne", b =>

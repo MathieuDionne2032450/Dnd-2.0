@@ -1,6 +1,7 @@
 ﻿using Api_DnD.Data;
 using Api_DnD.Model;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 
 namespace Api_DnD.Controllers
@@ -18,9 +19,43 @@ namespace Api_DnD.Controllers
 
         //GET: PersoControllerCreate
         [HttpGet("/GetAllPNJ")]
-        public async Task<ActionResult<IEnumerable<PnjDTO>>> GetAllPNJ()
+        public async Task<ActionResult<IEnumerable<PnjDTO>>> GetAllPNJ(string? sortOrder, string? recherche, int page)
         {
-            return  _context.PNJ.Select(x => PnjDTO.PnjToPnjDTO(x)).OrderBy(p => p.Nom).ToList();
+            List<PnjDTO> listePNJDTO = new List<PnjDTO>();
+            PnjDTO pnjConverti;
+            if (!string.IsNullOrEmpty(recherche))
+            {
+                foreach(PNJ pnj in _context.PNJ)
+                {
+                    if(pnj.Name.Contains(recherche))
+                    {
+                        // Comme on retourne des PNJDTO, il faut convertir les PNJ
+                        pnjConverti = PnjDTO.PnjToPnjDTO(pnj);
+                        listePNJDTO.Add(pnjConverti);
+                    }
+                }
+                return listePNJDTO;
+            }
+
+            if (page <= 0)
+                page = 1;
+            foreach (PNJ pnj in _context.PNJ)
+            {
+                pnjConverti = PnjDTO.PnjToPnjDTO(pnj);
+                listePNJDTO.Add(pnjConverti);
+            }
+            switch (sortOrder)
+            {
+                case "nom":
+                    listePNJDTO.OrderBy(r => r.Nom).Skip((3 * page) - 3).Take(3);
+                    return listePNJDTO;
+                case "nom_desc":
+                    listePNJDTO.OrderByDescending(r => r.Nom).Skip((3 * page) - 3).Take(3);
+                    return listePNJDTO;
+                default:
+                    listePNJDTO.Skip((3 * page) - 3).Take(3);
+                    return listePNJDTO;
+            }
         }
 
         [HttpGet("GetPNJByCampagne")]
