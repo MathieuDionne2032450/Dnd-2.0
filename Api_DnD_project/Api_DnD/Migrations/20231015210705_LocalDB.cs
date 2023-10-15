@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Api_DnD.Migrations
 {
     /// <inheritdoc />
-    public partial class create : Migration
+    public partial class LocalDB : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -76,16 +76,14 @@ namespace Api_DnD.Migrations
                 name: "Key",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    ApiKey = table.Column<string>(type: "longtext", nullable: false)
+                    ApiKey = table.Column<string>(type: "varchar(255)", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     Role = table.Column<string>(type: "longtext", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4")
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Key", x => x.Id);
+                    table.PrimaryKey("PK_Key", x => x.ApiKey);
                 })
                 .Annotation("MySql:CharSet", "utf8mb4");
 
@@ -171,6 +169,29 @@ namespace Api_DnD.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Race", x => x.Id);
+                })
+                .Annotation("MySql:CharSet", "utf8mb4");
+
+            migrationBuilder.CreateTable(
+                name: "spell",
+                columns: table => new
+                {
+                    id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                    Name = table.Column<string>(type: "longtext", nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    Description = table.Column<string>(type: "longtext", nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    DammageType = table.Column<string>(type: "longtext", nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    Dammage = table.Column<int>(type: "int", nullable: false),
+                    ClassId = table.Column<int>(type: "int", nullable: false),
+                    Zone = table.Column<string>(type: "longtext", nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4")
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_spell", x => x.id);
                 })
                 .Annotation("MySql:CharSet", "utf8mb4");
 
@@ -547,7 +568,7 @@ namespace Api_DnD.Migrations
                 .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.CreateTable(
-                name: "feats",
+                name: "Feats",
                 columns: table => new
                 {
                     id = table.Column<int>(type: "int", nullable: false)
@@ -560,9 +581,9 @@ namespace Api_DnD.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_feats", x => x.id);
+                    table.PrimaryKey("PK_Feats", x => x.id);
                     table.ForeignKey(
-                        name: "FK_feats_Perso_Persoid",
+                        name: "FK_Feats_Perso_Persoid",
                         column: x => x.Persoid,
                         principalTable: "Perso",
                         principalColumn: "id");
@@ -683,8 +704,8 @@ namespace Api_DnD.Migrations
                 column: "RacesId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_feats_Persoid",
-                table: "feats",
+                name: "IX_Feats_Persoid",
+                table: "Feats",
                 column: "Persoid");
 
             migrationBuilder.CreateIndex(
@@ -749,13 +770,16 @@ namespace Api_DnD.Migrations
                 name: "CampagneRace");
 
             migrationBuilder.DropTable(
-                name: "feats");
+                name: "Feats");
 
             migrationBuilder.DropTable(
                 name: "Key");
 
             migrationBuilder.DropTable(
                 name: "Skill");
+
+            migrationBuilder.DropTable(
+                name: "spell");
 
             migrationBuilder.DropTable(
                 name: "Actions");

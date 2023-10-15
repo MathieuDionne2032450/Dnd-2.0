@@ -1,6 +1,6 @@
 ﻿namespace Api_DnD.Model
 {
-    public class spell
+    public class Spell
     {
         public int id { get; set; }
         public string Name { get; set; }
@@ -10,6 +10,15 @@
         public int ClassId { get; set; }
         public string Zone { get; set; }
 
-        public spell() { }
+        public Spell(int id, string name, string description, string dammageType, int dammage, int classId, string zone)
+        {
+            this.id = id;
+            Name = name;
+            Description = description;
+            DammageType = dammageType;
+            Dammage = dammage;
+            ClassId = classId;
+            Zone = zone;
+        }
     }
 }

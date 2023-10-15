@@ -128,42 +128,42 @@ namespace Api_DnD.Controllers
 
         
         [HttpPut("/EditMonstre")] 
-        public async Task<ActionResult<Monstre>> EditMonstre(int id, Monstre monstre)
+        public async Task<ActionResult<Monstre>> EditMonstre(int id, string nom, string size, int armorClass, int hitPoint, int speed, int flySpeed, int climbSpeed, int str, int dex, int con, int intel, int wis, int cha, int darkVision, float challenge, string lang, string? dammageResistance, string? dammageImmunities, string? conditionImmunities)
         {
             await _context.Monstres.Where(m => m.Id == id).ExecuteUpdateAsync(setters => setters
-            .SetProperty(m => m.Nom, monstre.Nom)
-            .SetProperty(m => m.Size, monstre.Size)
-            .SetProperty(m => m.ArmorClass, monstre.ArmorClass)
-            .SetProperty(m => m.HitPoint, monstre.HitPoint)
-            .SetProperty(m => m.Speed, monstre.Speed)
-            .SetProperty(m => m.FlySpeed, monstre.FlySpeed)
-            .SetProperty(m => m.ClimbSpeed, monstre.ClimbSpeed)
-            .SetProperty(m => m.Str, monstre.Str)
-            .SetProperty(m => m.Dex, monstre.Dex)
-            .SetProperty(m => m.Con, monstre.Con)
-            .SetProperty(m => m.Intel, monstre.Intel)
-            .SetProperty(m => m.Wis, monstre.Wis)
-            .SetProperty(m => m.Cha, monstre.Cha)
-            .SetProperty(m => m.DarkVision, monstre.DarkVision)
-            .SetProperty(m => m.Challenge, monstre.Challenge)
-            .SetProperty(m => m.Lang, monstre.Lang)
-            .SetProperty(m => m.DammageResistance, monstre.DammageResistance)
-            .SetProperty(m => m.DammageImmunities, monstre.DammageImmunities)
-            .SetProperty(m => m.Actions, monstre.Actions)
-            .SetProperty(m => m.Campagne, monstre.Campagne)
+            .SetProperty(m => m.Nom, nom)
+            .SetProperty(m => m.Size, size)
+            .SetProperty(m => m.ArmorClass, armorClass)
+            .SetProperty(m => m.HitPoint, hitPoint)
+            .SetProperty(m => m.Speed, speed)
+            .SetProperty(m => m.FlySpeed, flySpeed)
+            .SetProperty(m => m.ClimbSpeed, climbSpeed)
+            .SetProperty(m => m.Str, str)
+            .SetProperty(m => m.Dex, dex)
+            .SetProperty(m => m.Con, con)
+            .SetProperty(m => m.Intel, intel)
+            .SetProperty(m => m.Wis, wis)
+            .SetProperty(m => m.Cha, cha)
+            .SetProperty(m => m.DarkVision, darkVision)
+            .SetProperty(m => m.Challenge, challenge)
+            .SetProperty(m => m.Lang, lang)
+            .SetProperty(m => m.DammageResistance, dammageResistance)
+            .SetProperty(m => m.DammageImmunities, dammageImmunities)
+            .SetProperty(m => m.ConditionImmunities, conditionImmunities)
             );
-
             return NoContent();
         }
         
 
         [HttpPost("/CreateMonstre")]
-        public async Task<ActionResult<Monstre>> CreateMonstre(Monstre monstre)
+        public async Task<ActionResult<Monstre>> CreateMonstre(string nom, string size, int armorClass, int hitPoint, int speed, int flySpeed, int climbSpeed, int str, int dex, int con, int intel, int wis, int cha, int darkVision, float challenge, string lang, string? dammageResistance, string? dammageImmunities, string? conditionImmunities)
         {
-            _context.Monstres.Add(monstre);
+            Monstre m = new Monstre(nom, size, armorClass, hitPoint, speed, flySpeed, climbSpeed, str, dex, con, intel, wis, cha, darkVision, challenge, lang, dammageResistance, dammageImmunities, conditionImmunities);
+
+            _context.Monstres.Add(m);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetMonstre", new { id = monstre.Id }, monstre);
+            return NoContent();
         }
 
         [HttpDelete("/DeleteMonstre/{id}")]

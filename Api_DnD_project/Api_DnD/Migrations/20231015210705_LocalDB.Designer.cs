@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Api_DnD.Migrations
 {
     [DbContext(typeof(DNDContext))]
-    [Migration("20231015193029_create2")]
-    partial class create2
+    [Migration("20231015210705_LocalDB")]
+    partial class LocalDB
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -221,19 +221,14 @@ namespace Api_DnD.Migrations
 
             modelBuilder.Entity("Api_DnD.Model.Key", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
                     b.Property<string>("ApiKey")
-                        .IsRequired()
-                        .HasColumnType("longtext");
+                        .HasColumnType("varchar(255)");
 
                     b.Property<string>("Role")
                         .IsRequired()
                         .HasColumnType("longtext");
 
-                    b.HasKey("Id");
+                    b.HasKey("ApiKey");
 
                     b.ToTable("Key", (string)null);
                 });
@@ -501,6 +496,39 @@ namespace Api_DnD.Migrations
                     b.ToTable("Skill");
                 });
 
+            modelBuilder.Entity("Api_DnD.Model.Spell", b =>
+                {
+                    b.Property<int>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<int>("ClassId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Dammage")
+                        .HasColumnType("int");
+
+                    b.Property<string>("DammageType")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Zone")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.HasKey("id");
+
+                    b.ToTable("spell", (string)null);
+                });
+
             modelBuilder.Entity("Api_DnD.Model.feats", b =>
                 {
                     b.Property<int>("id")
@@ -522,7 +550,7 @@ namespace Api_DnD.Migrations
 
                     b.HasIndex("Persoid");
 
-                    b.ToTable("feats");
+                    b.ToTable("Feats");
                 });
 
             modelBuilder.Entity("ArmeCampagne", b =>

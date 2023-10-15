@@ -218,19 +218,14 @@ namespace Api_DnD.Migrations
 
             modelBuilder.Entity("Api_DnD.Model.Key", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
                     b.Property<string>("ApiKey")
-                        .IsRequired()
-                        .HasColumnType("longtext");
+                        .HasColumnType("varchar(255)");
 
                     b.Property<string>("Role")
                         .IsRequired()
                         .HasColumnType("longtext");
 
-                    b.HasKey("Id");
+                    b.HasKey("ApiKey");
 
                     b.ToTable("Key", (string)null);
                 });
@@ -498,31 +493,7 @@ namespace Api_DnD.Migrations
                     b.ToTable("Skill");
                 });
 
-            modelBuilder.Entity("Api_DnD.Model.feats", b =>
-                {
-                    b.Property<int>("id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    b.Property<string>("Descr")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
-                    b.Property<string>("Nom")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
-                    b.Property<int?>("Persoid")
-                        .HasColumnType("int");
-
-                    b.HasKey("id");
-
-                    b.HasIndex("Persoid");
-
-                    b.ToTable("feats");
-                });
-
-            modelBuilder.Entity("Api_DnD.Model.spell", b =>
+            modelBuilder.Entity("Api_DnD.Model.Spell", b =>
                 {
                     b.Property<int>("id")
                         .ValueGeneratedOnAdd()
@@ -553,6 +524,30 @@ namespace Api_DnD.Migrations
                     b.HasKey("id");
 
                     b.ToTable("spell", (string)null);
+                });
+
+            modelBuilder.Entity("Api_DnD.Model.feats", b =>
+                {
+                    b.Property<int>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<string>("Descr")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Nom")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<int?>("Persoid")
+                        .HasColumnType("int");
+
+                    b.HasKey("id");
+
+                    b.HasIndex("Persoid");
+
+                    b.ToTable("Feats");
                 });
 
             modelBuilder.Entity("ArmeCampagne", b =>

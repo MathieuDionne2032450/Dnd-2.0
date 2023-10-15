@@ -23,6 +23,9 @@ namespace Api_DnD.Data
         public DbSet<Monstre> Monstres { get; set; }
         public DbSet<Campagne> Campagnes { get; set; }
         public DbSet<Quete> Quetes { get; set; }
+        public DbSet<Spell> Spells { get; set; }
+        public DbSet<feats> Feats { get; set; }
+
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -37,7 +40,7 @@ namespace Api_DnD.Data
             modelBuilder.Entity<Monstre>().ToTable("Monstre");
             modelBuilder.Entity<Campagne>().ToTable("Campagne");
             modelBuilder.Entity<Quete>().ToTable("Quete");
-            modelBuilder.Entity<spell>().ToTable("spell");
+            modelBuilder.Entity<Spell>().ToTable("spell");
         }
     }
 }
