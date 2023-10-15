@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Api_DnD.Migrations
 {
     [DbContext(typeof(DNDContext))]
-    [Migration("20231015193029_create2")]
-    partial class create2
+    [Migration("20231015212339_test")]
+    partial class test
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -221,19 +221,14 @@ namespace Api_DnD.Migrations
 
             modelBuilder.Entity("Api_DnD.Model.Key", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
                     b.Property<string>("ApiKey")
-                        .IsRequired()
-                        .HasColumnType("longtext");
+                        .HasColumnType("varchar(255)");
 
                     b.Property<string>("Role")
                         .IsRequired()
                         .HasColumnType("longtext");
 
-                    b.HasKey("Id");
+                    b.HasKey("ApiKey");
 
                     b.ToTable("Key", (string)null);
                 });
@@ -491,12 +486,7 @@ namespace Api_DnD.Migrations
                         .IsRequired()
                         .HasColumnType("longtext");
 
-                    b.Property<int?>("Persoid")
-                        .HasColumnType("int");
-
                     b.HasKey("id");
-
-                    b.HasIndex("Persoid");
 
                     b.ToTable("Skill");
                 });
@@ -515,14 +505,42 @@ namespace Api_DnD.Migrations
                         .IsRequired()
                         .HasColumnType("longtext");
 
-                    b.Property<int?>("Persoid")
+                    b.HasKey("id");
+
+                    b.ToTable("feats");
+                });
+
+            modelBuilder.Entity("Api_DnD.Model.spell", b =>
+                {
+                    b.Property<int>("id")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("int");
+
+                    b.Property<int>("ClassId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Dammage")
+                        .HasColumnType("int");
+
+                    b.Property<string>("DammageType")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Zone")
+                        .IsRequired()
+                        .HasColumnType("longtext");
 
                     b.HasKey("id");
 
-                    b.HasIndex("Persoid");
-
-                    b.ToTable("feats");
+                    b.ToTable("spell", (string)null);
                 });
 
             modelBuilder.Entity("ArmeCampagne", b =>
@@ -645,6 +663,36 @@ namespace Api_DnD.Migrations
                     b.ToTable("CampagneRace");
                 });
 
+            modelBuilder.Entity("PersoSkill", b =>
+                {
+                    b.Property<int>("Persosid")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Skillsid")
+                        .HasColumnType("int");
+
+                    b.HasKey("Persosid", "Skillsid");
+
+                    b.HasIndex("Skillsid");
+
+                    b.ToTable("PersoSkill");
+                });
+
+            modelBuilder.Entity("Persofeats", b =>
+                {
+                    b.Property<int>("Persosid")
+                        .HasColumnType("int");
+
+                    b.Property<int>("featsid")
+                        .HasColumnType("int");
+
+                    b.HasKey("Persosid", "featsid");
+
+                    b.HasIndex("featsid");
+
+                    b.ToTable("Persofeats");
+                });
+
             modelBuilder.Entity("ActionMonstre", b =>
                 {
                     b.HasOne("Api_DnD.Model.Action", null)
@@ -741,20 +789,6 @@ namespace Api_DnD.Migrations
                         .IsRequired();
 
                     b.Navigation("Pnj");
-                });
-
-            modelBuilder.Entity("Api_DnD.Model.Skill", b =>
-                {
-                    b.HasOne("Api_DnD.Model.Perso", null)
-                        .WithMany("Skills")
-                        .HasForeignKey("Persoid");
-                });
-
-            modelBuilder.Entity("Api_DnD.Model.feats", b =>
-                {
-                    b.HasOne("Api_DnD.Model.Perso", null)
-                        .WithMany("feats")
-                        .HasForeignKey("Persoid");
                 });
 
             modelBuilder.Entity("ArmeCampagne", b =>
@@ -877,6 +911,36 @@ namespace Api_DnD.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("PersoSkill", b =>
+                {
+                    b.HasOne("Api_DnD.Model.Perso", null)
+                        .WithMany()
+                        .HasForeignKey("Persosid")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Api_DnD.Model.Skill", null)
+                        .WithMany()
+                        .HasForeignKey("Skillsid")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Persofeats", b =>
+                {
+                    b.HasOne("Api_DnD.Model.Perso", null)
+                        .WithMany()
+                        .HasForeignKey("Persosid")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Api_DnD.Model.feats", null)
+                        .WithMany()
+                        .HasForeignKey("featsid")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
             modelBuilder.Entity("Api_DnD.Model.PNJ", b =>
                 {
                     b.Navigation("Quetes");
@@ -885,10 +949,6 @@ namespace Api_DnD.Migrations
             modelBuilder.Entity("Api_DnD.Model.Perso", b =>
                 {
                     b.Navigation("LesArmes");
-
-                    b.Navigation("Skills");
-
-                    b.Navigation("feats");
                 });
 #pragma warning restore 612, 618
         }

@@ -18,33 +18,31 @@ namespace Api_DnD.Controllers
         }
 
 
-        //[HttpGet("/GetCampagneById/{id}")]
-        //public async Task<ActionResult<Armure>> GetCampagneById(int id)
-        //{
-        //    return await _context.Armures.FindAsync(id);
-        //}
+        [HttpGet("/GetCampagneById/{id}")]
+        public async Task<ActionResult<Campagne>> GetCampagneById(int id)
+        {
+            return await _context.Campagnes.FindAsync(id);
+        }
 
-        //[HttpPost("/CreateCampagne/")]
-        //public async Task<ActionResult<Arme>> CreateCampagne(string name, string type, int ac, bool dexBonus, int maxDexBonus, int stealthDisadvantage, int EnchantementId)
-        //{
-        //    Armure armureCree = new Armure { Name = name, Type = type, Ac = ac, DexBonus = dexBonus, MaxDexMod = maxDexBonus, StealthDisadvantage = stealthDisadvantage, EnchantementId = EnchantementId };
+        [HttpPost("/CreateCampagne/")]
+        public async Task<ActionResult<Arme>> CreateCampagne(string Name, string Desc)
+        {
+            Campagne CampagneCree = new Campagne { Name= Name, Desc= Desc };
 
-        //    _context.Armures.Add(armureCree);
-        //    await _context.SaveChangesAsync();
+            _context.Campagnes.Add(CampagneCree);
+            await _context.SaveChangesAsync();
 
-        //    return CreatedAtAction("GetArmureById", new { id = armureCree.Id }, armureCree);
-        //}
+            return CreatedAtAction("GetCampagneById", new { id = CampagneCree.Id }, CampagneCree);
+        }
 
         [HttpPut("/EditCampagne")]
         public async Task<ActionResult<Campagne>> EditCampagne(int Id, string Name, string Desc)
         {
-
             await _context.Campagnes.Where(c => c.Id == Id).ExecuteUpdateAsync(setters => setters
             .SetProperty(c => c.Name, Name)
             .SetProperty(c => c.Desc, Desc));
 
             return NoContent();
-
         }
 
         // POST: ArmeController/Delete/5
@@ -52,14 +50,64 @@ namespace Api_DnD.Controllers
         [HttpDelete("/DeleteCampagne/{id}")]
         public async Task<bool> DeleteCampagne(int id)
         {
-            if (await _context.Campagnes.Where(c => c.Id.Equals(id)).ExecuteDeleteAsync() == 1)
+            await DeletePersos(id);
+
+            var campagne = _context.Campagnes
+                .Include(c => c.Armes)
+                .Include(c => c.PNJs)
+                .Include(c => c.Armures)
+                .Include(c => c.Monstres)
+                .Include(c => c.Classes)
+                .Include(c => c.Races)
+                .Include(c => c.Enchantements)
+                .Include(c => c.Quetes)
+                .FirstOrDefault(c => c.Id == id);
+
+            if (campagne != null)
             {
+                campagne.Armes.Clear();
+                campagne.PNJs.Clear();
+                campagne.Armures.Clear();
+                campagne.Monstres.Clear();
+                campagne.Classes.Clear();
+                campagne.Races.Clear();
+                campagne.Enchantements.Clear();
+                campagne.Quetes.Clear();
+
+                
+
+
+                _context.Campagnes.Remove(campagne);
+
+                _context.SaveChanges();
                 return true;
             }
-            else
+
+            
+            
+            return false;
+            
+        }
+
+
+        async Task<bool> DeletePersos(int id)
+        {
+            var persos = _context.Persos
+                   .Include(p => p.Campagne)
+                   .Include(p => p.LesArmes)
+                   .Include(p => p.feats)
+                   .Include(p => p.Skills)
+                   .Where(p => p.Campagne.Id == id);
+
+            foreach (var p in persos)
             {
-                return false;
+                p.Skills.Clear();
+                p.feats.Clear();
+                p.LesArmes.Clear();
+                _context.Persos.Remove(p);
             }
+            _context.SaveChanges();
+            return true;
         }
     }
 }

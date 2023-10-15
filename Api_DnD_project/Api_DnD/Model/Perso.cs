@@ -26,6 +26,8 @@ namespace Api_DnD.Model
         public string Flaws { get; set; }
         public int Niv { get; set; }
         public int id { get; set; }
+        public int CampagneId { get; set; }
+        [ForeignKey("CampagneId")]
         public Campagne Campagne { get; set; }
 
         public ICollection<feats>? feats { get; set; }
