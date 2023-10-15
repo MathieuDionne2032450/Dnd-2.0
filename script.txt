@@ -1,0 +1,472 @@
+INSERT INTO enchantement (Nom, Description, Type, Modif)
+VALUES 
+('Feu Éternel', 'L\'arme est enflammée, inflige des dégâts de feu à l\'ennemi', 'Feu', '6'),
+('Froid Glacial', 'L\'arme est glacée, inflige des dégâts de froid à l\'ennemi', 'Froid', '6'),
+('Choc Électrique', 'L\'arme est chargée d\'électricité, inflige des dégâts électriques à l\'ennemi', 'Électrique', '6'),
+('Poison Mortel', 'L\'arme est empoisonnée, inflige un poison mortel à l\'ennemi', 'Poison', '6'),
+('Saignement Profond', 'L\'arme inflige des dégâts continus, provoque un saignement chez l\'ennemi', 'Physique', '4'),
+('Âme Captive', 'L\'âme de l\'ennemi est emprisonnée dans l\'arme, augmente la puissance de l\'arme', 'Spirituel', '2'),
+('Protection des Anciens', 'L\'arme confère une protection magique à son porteur', 'Défensif', '3'),
+('Invisibilité Occulte', 'L\'arme rend son porteur invisible à l\'œil nu', 'Furtivité', '4'),
+('Flamme Éternelle', 'L\'arme brûle continuellement sans se consumer, inflige des dégâts de feu', 'Feu', '8'),
+('Gel Profond', 'L\'arme gèle tout sur son passage, inflige des dégâts de froid', 'Froid', '8'),
+('Tempête Électrique', 'L\'arme provoque une tempête électrique, inflige des dégâts électriques', 'Électrique', '8'),
+('Poison Mortel Amélioré', 'L\'empoisonnement provoqué par l\'arme est extrêmement mortel', 'Poison', '8'),
+('Saignement Mortel', 'Le saignement provoqué par l\'arme est fatal', 'Physique', '6'),
+('Contrôle des Âmes', 'L\'arme permet de contrôler l\'esprit de l\'ennemi', 'Spirituel', '4'),
+('Bouclier des Dieux', 'L\'arme crée un bouclier magique, protège son porteur de toute attaque', 'Défensif', '4'),
+('Ombre Éternelle', 'L\'arme plonge tout dans l\'obscurité, confère des capacités de furtivité', 'Furtivité', '6'),
+('Lumière Éclatante', 'L\'arme émet une lumière éclatante, repousse les créatures des ténèbres', 'Lumière', '6'),
+('Vitesse du Vent', 'L\'arme confère une grande vitesse à son porteur', 'Vitesse', '6'),
+('Résistance de la Terre', 'L\'arme confère une résistance à tous les éléments terrestres', 'Résistance', '4'),
+('Régénération Divine', 'L\'arme confère une régénération rapide à son porteur', 'Régénération', '5');
+
+SELECT * FROM a23_sda_projetapi_mal.enchantement;
+
+INSERT INTO armure (Name, Type, Ac, DexBonus, MaxDexMod, StealthDisadvantage, EnchantementId)
+VALUES 
+    ('Armure de Cuir', 'Légère', 11, 2, 2, 0, 1),
+    ('Armure d\'Écailles', 'Légère', 12, 2, 2, 0, 2),
+    ('Armure de Peau', 'Légère', 11, 2, 2, 0, 3),
+    ('Armure de Cuir Clouté', 'Légère', 12, 2, 2, 0, 4),
+    ('Armure de Cuir Renforcé', 'Légère', 13, 2, 2, 0, 5),
+    ('Armure de Mailles', 'Intermédiaire', 14, 2, 2, 1, 6),
+    ('Armure d\'Écailles de Dragon', 'Intermédiaire', 15, 2, 2, 1, 7),
+    ('Armure de Plates', 'Lourde', 18, 0, 0, 1, 8),
+    ('Armure de Plates Completes', 'Lourde', 20, 0, 0, 1, 9),
+    ('Armure de Plates d\'Ornements', 'Lourde', 19, 0, 0, 1, 10),
+    ('Armure de Plates de Guerre', 'Lourde', 18, 0, 0, 1, 11),
+    ('Armure de Plates à Pointes', 'Lourde', 19, 0, 0, 1, 12),
+    ('Armure de Plates des Ombres', 'Lourde', 20, 0, 0, 1, 13),
+    ('Armure de Plates du Roi', 'Lourde', 20, 0, 0, 1, 14),
+    ('Armure de Plates de l\'Aube', 'Lourde', 18, 0, 0, 1, 15),
+    ('Armure de Plates des Abysses', 'Lourde', 19, 0, 0, 1, 16),
+    ('Armure de Plates du Dragon', 'Lourde', 20, 0, 0, 1, 17),
+    ('Armure de Plates du Griffon', 'Lourde', 19, 0, 0, 1, 18),
+    ('Armure de Plates de l\'Archimage', 'Lourde', 20, 0, 0, 1, 19),
+    ('Armure de Plates du Paladin', 'Lourde', 18, 0, 0, 1, 20);
+
+
+SELECT * FROM a23_sda_projetapi_mal.armure;
+
+
+
+INSERT INTO race (Nom, BonusPV, BonusDex, BonusForce, BonusIntel, BonusWisdom, BonusConsti, BonusCharisma)
+VALUES 
+    ('Humain', 10, 0, 0, 0, 0, 0, 0),
+    ('Elfe', 5, 10, 0, 0, 0, 0, 0),
+    ('Nain', 12, 0, 2, 0, 0, 2, 0),
+    ('Orc', 15, 0, 4, -2, -2, 0, -2),
+    ('Gnome', 6, 0, -2, 2, 0, 0, 0),
+    ('Halfelin', 6, 2, -2, 0, 0, 0, 2);
+
+SELECT * FROM a23_sda_projetapi_mal.race;
+
+
+
+INSERT INTO classes (name, description, hitDie, primaryAbility) VALUES 
+('Guerrier', 'Un maître de l\'art de la guerre.', 10, 'Force'),
+('Magicien', 'Un utilisateur puissant de la magie.', 6, 'Intelligence'),
+('Rogue', 'Un expert dans les tâches furtives et sournoises.', 8, 'Dextérité'),
+('Clerc', 'Un serviteur dévoué d\'un dieu ou d\'une déesse.', 8, 'Sagesse'),
+('Barbare', 'Un guerrier sauvage et furieux.', 12, 'Force'),
+('Sorcier', 'Un lanceur de sorts qui tire son pouvoir d\'une source magique innée.', 6, 'Charisme'),
+('Rôdeur', 'Un expert de la nature et du suivi.', 10, 'Dextérité'),
+('Paladin', 'Un chevalier sacré, muni d\'un pouvoir divin.', 10, 'Charisme'),
+('Bard', 'Un artiste talentueux et un conteur d\'histoires.', 8, 'Charisme'),
+('Moine', 'Un maître des arts martiaux et de la méditation.', 8, 'Sagesse');
+
+SELECT * FROM a23_sda_projetapi_mal.classes;
+
+
+
+INSERT INTO pnj (Bouche, Nez, Barbe, Cheveux, Sourcil, Tete, Yeux1, Yeux2, Description, Name) VALUES
+(1, 2, 0, 3, 4, 1, 2, 3, 'Un guerrier féroce des terres du Nord.', 'Drizzt Do\'Urden'),
+(2, 3, 1, 2, 1, 3, 4, 2, 'Un puissant sorcier spécialisé dans les enchantements.', 'Elminster'),
+(3, 4, 2, 1, 2, 4, 3, 1, 'Un nain expert en forge et en combat.', 'Bruenor Battlehammer'),
+(4, 1, 3, 4, 3, 2, 1, 4, 'Un barbare redoutable des plaines sauvages.', 'Wulfgar'),
+(5, 2, 4, 3, 4, 1, 2, 1, 'Un archer elfe renommé.', 'Legolas'),
+(6, 3, 1, 4, 2, 3, 1, 2, 'Un mystérieux voleur et assassin.', 'Artemis Entreri'),
+(7, 4, 2, 3, 1, 4, 2, 3, 'Un puissant mage de la cité de Waterdeep.', 'Khelben Blackstaff'),
+(8, 1, 3, 4, 2, 1, 4, 2, 'Un gnome marchand et aventurier.', 'Regis'),
+(9, 2, 4, 1, 3, 2, 1, 3, 'Un elfe noir maître de l\'épée.', 'Zaknafein'),
+(10, 3, 1, 2, 4, 3, 4, 1, 'Un paladin dévoué de la lumière.', 'Alustriel');
+
+SELECT * FROM a23_sda_projetapi_mal.pnj;
+
+
+INSERT INTO quete (PnjId, DescriptionQuete, Reward) VALUES
+(1, 'Sauver le village des gobelins qui l\'assaillent.', '100 pièces d\'or et une épée magique'),
+(2, 'Récupérer l\'artefact sacré volé par les voleurs.', '150 pièces d\'or et une armure enchantée'),
+(3, 'Trouver l\'ancienne épée perdue de la famille royale.', '200 pièces d\'or et une couronne enchantée'),
+(4, 'Arrêter le culte sombre qui menace de détruire le monde.', '300 pièces d\'or et une amulette sacrée'),
+(5, 'Explorer les ruines anciennes et rapporter des artefacts mystérieux.', '250 pièces d\'or et une baguette magique'),
+(6, 'Sauver le royaume de l\'invasion des dragons.', '350 pièces d\'or et une armure légendaire'),
+(3, 'Libérer le village maudit de l\'emprise des fantômes.', '180 pièces d\'or et un anneau magique'),
+(4, 'Découvrir le secret du temple oublié dans la forêt interdite.', '280 pièces d\'or et un sceptre enchanté'),
+(5, 'Protéger les caravanes marchandes contre les pillards du désert.', '220 pièces d\'or et une dague empoisonnée'),
+(6, 'Trouver la source de la malédiction qui plonge le pays dans l\'obscurité.', '320 pièces d\'or et un livre de sorts antique');
+
+
+SELECT * FROM a23_sda_projetapi_mal.quete;
+
+
+
+
+INSERT INTO campagne (Name, `Desc`) VALUES
+('La Quête du Dragon Écarlate', 'Une aventure épique où les héros se lancent à la recherche d\'un puissant dragon rouge qui menace le royaume.'),
+('Les Terres Oubliées de l\'Ancien Roi', 'Un voyage dangereux à travers des terres oubliées, autrefois gouvernées par un roi légendaire. Les mystères et les trésors attendent ceux qui oseront explorer.'),
+('La Légion des Ténèbres', 'Une sombre prophétie annonce l\'arrivée d\'une légion de créatures des ténèbres. Les héros doivent unir leurs forces pour empêcher l\'avènement de l\'obscurité.');
+
+
+
+SELECT * FROM a23_sda_projetapi_mal.campagne;
+
+
+
+
+
+INSERT INTO perso (IrlJoueur, Nom, Description, Inspiration, ArmureId, ClasseId, RaceId, Personalitetrait, Ideal, Bonds, Flaws, Niv, CampagneId) VALUES 
+('Alexandre','Krados','démon démoniaque',0,5,1,3,'evil','Justice','Avce Louise','Le bruit',1, FLOOR(RAND() * 2) + 1), 
+('Mathieu','Thrain Marteau-de-Feu','Thrain est un nain robuste avec une barbe tressée et des bras puissants. Il manie un marteau de guerre forgé dans les flammes des montagnes lointaines. Sa loyauté envers ses compagnons est aussi solide que la pierre, et il aime raconter des contes autour d\'une chope de bière.',0,1,2,6,'evil','Liberté','Avec Louise','Perfectionnisme Inflexible',1, FLOOR(RAND() * 2) + 1), 
+('Francis','Elena Ombrelame','Elena est une elfe gracieuse aux cheveux d\'ébène et aux yeux d\'argent perçants. Elle manie une lame légère avec une habileté mortelle, se déplaçant silencieusement dans l\'ombre. Son passé est un mystère, mais son regard trahit une détermination farouche.','0',2,2,1,'evil','Honneur','Vengeance Familiale ','Obsession Malsaine',3, FLOOR(RAND() * 2) + 1), 
+('Emmy','Garrick Griffon-Argenté','Garrick est un paladin noble au cœur pur, portant une armure étincelante ornée d\'un blason de griffon. Il brandit une épée flamboyante avec laquelle il châtie le mal. Son sens du devoir est inébranlable, et il est prêt à sacrifier sa vie pour protéger les innocents.','0',3,2,6,'good','Amitié','Serment de Protection','Impulsivité Téméraire',12, FLOOR(RAND() * 2) + 1), 
+('Pier-Luc','Lysandra Oragebrume','Lysandra est une sorcière charismatique capable de contrôler les éléments. Ses yeux bleus brillent d\'une sagesse ancienne, et son rire résonne comme le tonnerre. Elle voyage avec un corbeau familier nommé Zephyr, qui semble avoir un lien mystique avec les tempêtes.','1',4,3,5,'good','Sagesse','Loyauté à un Ordre','Timidité Maladive',1, FLOOR(RAND() * 2) + 1), 
+('Alexis','Kaelen Sabre-de-Lune','Kaelen est un nain robuste avec une barbe tressée et des bras puissants. Il manie un marteau de guerre forgé dans les flammes des montagnes lointaines. Sa loyauté envers ses compagnons est aussi solide que la pierre, et il aime raconter des contes autour d\'une chope de bière.','0',6,3,4,'pacifist','Nature','Amour Interdit ','Méfiance Excessive',10, FLOOR(RAND() * 2) + 1), 
+('Louis-André','Sylas Sombre-Épine','Sylas est un rôdeur solitaire qui arpente les forêts sombres avec son arc silencieux et ses flèches empoisonnées. Ses yeux verts scrutent l\'obscurité, repérant les dangers invisibles pour les autres. Il préfère la compagnie des arbres à celle des gens.','0',7,4,3,'evil','Ambition','Dettes de Gratitude','Rancunier Implacable',12, FLOOR(RAND() * 2) + 1), 
+('Simon','Faelan Porte-Étendard','Branthor est un mage puissant portant une robe d\'un bleu éclatant, avec des yeux étincelants comme des saphirs. Il a étudié les arts mystiques pendant des décennies et peut invoquer le feu des dragons et les éclairs du ciel. Sa soif de connaissance l\'a conduit à explorer des endroits interdits.','0',8,4,2,'good-pure','Pacifisme','La Quête de la Vérité','Colérique Impulsif',1, FLOOR(RAND() * 2) + 1), 
+('William','Elowen Lame-d\'Ébène','Elowen est une guerrière agile avec des cheveux d\'un noir profond et des yeux perçants comme des lames. Elle manie deux épées courbes avec une grâce mortelle, dansant à travers le champ de bataille. Son passé est marqué par la trahison, mais elle avance avec détermination.','1',9,5,1,'good','Compassion','Alliance d\'Espoir','Avarice Démesurée',8, FLOOR(RAND() * 2) + 1);
+
+
+SELECT * FROM a23_sda_projetapi_mal.perso;
+
+INSERT INTO arme (BonusJet, BonusForce, Nom, EnchantementId, Persoid)
+VALUES 
+(2, 3, 'Épée de la Destinée', 1, 1),
+(1, 2, 'Arc de l\'Ombre', 2, 2),
+(3, 4, 'Marteau du Tonnerre', 3, 3),
+(2, 2, 'Dague de l\'Assassin', 4, 4),
+(4, 5, 'Hache du Barbare', 5, 5),
+(1, 3, 'Bâton de Feu', 6, 6),
+(3, 2, 'Lance de la Justice', 7, 7),
+(2, 1, 'Faux de la Mort', 8, 8),
+(5, 4, 'Épée de la Lumière', 9, 1),
+(2, 3, 'Arc du Chasseur', 10, 2),
+(4, 4, 'Marteau de Guerre', 11, 3),
+(3, 2, 'Dague de l\'Ombre', 12, 4),
+(3, 3, 'Hache du Guerrier', 13, 5),
+(1, 1, 'Bâton de Sagesse', 14, 6),
+(2, 2, 'Lance de l\'Aigle', 15, 7),
+(4, 3, 'Faux de la Nuit', 16, 8),
+(3, 4, 'Épée du Paladin', 17, 1),
+(2, 2, 'Arc de Précision', 18, 2),
+(4, 5, 'Marteau de Justice', 19, 3),
+(1, 3, 'Dague du Voleur', 20, 4);
+
+SELECT * FROM a23_sda_projetapi_mal.arme;
+
+
+
+INSERT INTO skill ( Descr, Nom, Persoid)
+VALUES 
+    ('Maîtrise de l''épée longue', 'Épée Longue', 1),
+    ('Maîtrise de l''arc', 'Arc', 1),
+    ('Magie de guérison', 'Guérison', 2),
+    ('Crochetage de serrures', 'Crochetage', 2),
+    ('Alchimie', 'Alchimie', 3),
+    ('Maîtrise des bêtes', 'Bêtes', 3),
+    ('Tactique de combat', 'Combat Tactique', 4),
+    ('Nécromancie', 'Nécromancie', 4),
+    ('Invocation d''éléments', 'Invocation', 5),
+    ('Méditation', 'Méditation', 5),
+    ('Discrétion', 'Discrétion', 6),
+    ('Charme', 'Charme', 6),
+    ('Connaissance des monstres', 'Monstres', 7),
+    ('Ingénierie', 'Ingénierie', 7),
+    ('Érudition antique', 'Érudition', 8),
+    ('Tissage des runes', 'Runes', 8),
+    ('Manipulation des ombres', 'Ombres', 9),
+    ('Cuisine magique', 'Cuisine', 9),
+    ('Lecture des étoiles', 'Astronomie', 1),
+    ('Art de la poésie', 'Poésie', 2);
+
+SELECT * FROM a23_sda_projetapi_mal.skill;
+
+
+
+INSERT INTO monstre (Nom, Size, ArmorClass, HitPoint, Speed, FlySpeed, ClimbSpeed, Str, Dex, Con, Intel, Wis, Cha, DarkVision, Challenge, Lang, DammageResistance, DammageImmunities, ConditionImmunities) 
+VALUES 
+('Goblin', 'Small', 15, 7, 30, 0, 0, 8, 14, 10, 10, 8, 8, false, 0.25, 'Common', NULL, 'Poison', 'Frightened'),
+('Orc', 'Medium', 13, 15, 30, 0, 0, 16, 12, 16, 7, 11, 10, false, 0.5, 'Common', NULL, 'Poison', NULL),
+('Troll', 'Large', 15, 84, 30, 0, 0, 18, 13, 20, 7, 9, 7, false, 2, 'Giant', 'Fire', NULL, 'Paralyzed'),
+('Dragon', 'Huge', 18, 256, 60, 80, 0, 27, 10, 25, 16, 13, 21, true, 15, 'Draconic', 'Cold', 'Fire', 'Blinded'),
+('Beholder', 'Large', 18, 180, 0, 0, 0, 10, 14, 16, 19, 17, 17, true, 13, 'Deep Speech', 'Force', NULL, 'Charmed'),
+('Kobold', 'Small', 12, 5, 30, 0, 0, 7, 15, 9, 8, 7, 8, true, 0.125, 'Common', NULL, NULL, NULL),
+('Skeleton', 'Medium', 13, 13, 30, 0, 0, 10, 14, 15, 6, 8, 5, false, 0.25, 'Common', 'Piercing', 'Poison', 'Poisoned'),
+('Zombie', 'Medium', 8, 22, 20, 0, 0, 13, 6, 16, 3, 6, 5, false, 0.125, 'Common', 'Bludgeoning', 'Poison', 'Poisoned'),
+('Ogre', 'Large', 11, 59, 40, 0, 0, 19, 8, 16, 5, 7, 7, false, 2, 'Giant', 'Bludgeoning', NULL, NULL),
+('Minotaur', 'Large', 14, 76, 40, 0, 0, 18, 11, 16, 6, 10, 9, false, 3, 'Common', NULL, 'Charmed', NULL),
+('Harpy', 'Medium', 11, 38, 20, 40, 0, 12, 13, 12, 7, 10, 13, false, 1, 'Auran', NULL, 'Piercing', 'Frightened'),
+('Giant Spider', 'Large', 14, 26, 30, 0, 30, 14, 16, 12, 2, 11, 4, false, 1, 'Common', 'Piercing', 'Poison', 'Poisoned');
+
+SELECT * FROM a23_sda_projetapi_mal.monstre;
+
+
+
+
+
+
+INSERT INTO actions (Type, Name, Descr, Dammage, DammageType, Dc, DcType, CampagneId) VALUES
+('Melee', 'Sword Slash', 'A quick slash with a sword.', 8, 'Slashing', 0, 'Aucun', 1),
+('Ranged', 'Fireball', 'Hurl a ball of fire at the enemy.', 28, 'Fire', 15, 'Dexterity', 1),
+('Magic', 'Healing Touch', 'Heal a friendly target with a magical touch.', -20, 'Healing', 0, 'Aucun', 1),
+('Melee', 'Bite', 'Bite the opponent with sharp teeth.', 12, 'Piercing', 0, 'Aucun', 1),
+('Ranged', 'Poison Dart', 'Shoot a dart dipped in poison.', 10, 'Poison', 14, 'Constitution', 1),
+('Magic', 'Telekinesis', 'Move objects with the power of your mind.', 0, 'Aucun', 18, 'Intelligence', 1),
+('Melee', 'Claw Swipe', 'Swing powerful claws at the enemy.', 15, 'Slashing', 0, 'Aucun', 1),
+('Ranged', 'Ice Shard', 'Launch sharp ice shards at the target.', 20, 'Cold', 16, 'Dexterity', 1),
+('Magic', 'Invisibility', 'Turn invisible and disappear from sight.', 0, 'Aucun', 20, 'Wisdom', 1),
+('Melee', 'Tail Slap', 'Slam the opponent with a powerful tail.', 18, 'Bludgeoning', 0, 'Aucun', 1);
+
+
+
+SELECT * FROM a23_sda_projetapi_mal.actions;
+
+
+
+
+INSERT INTO a23_sda_projetapi_mal.armecampagne VALUES 
+(1,1),
+(2,1),
+(3,1),
+(4,1),
+(5,1),
+(6,1),
+(7,1),
+(8,1),
+(9,1),
+(10,1),
+(11,1),
+(12,1),
+(13,2),
+(14,2),
+(15,2),
+(16,2),
+(17,3),
+(18,3),
+(19,3),
+(20,3);
+SELECT * FROM a23_sda_projetapi_mal.armecampagne;
+
+INSERT INTO a23_sda_projetapi_mal.armurecampagne VALUES 
+(1,1),
+(2,1),
+(3,1),
+(4,1),
+(5,1),
+(6,1),
+(7,1),
+(8,1),
+(9,1),
+(10,1),
+(11,1),
+(12,1),
+(13,2),
+(14,2),
+(15,2),
+(16,2),
+(17,3),
+(18,3),
+(19,3),
+(20,3);
+SELECT * FROM a23_sda_projetapi_mal.armurecampagne;
+
+
+INSERT INTO a23_sda_projetapi_mal.campagneclasses VALUES 
+(1,1),
+(1,2),
+(1,3),
+(1,4),
+(1,5),
+(2,6),
+(2,7),
+(2,8),
+(3,9),
+(3,10);
+
+SELECT * FROM a23_sda_projetapi_mal.campagneclasses;
+
+INSERT INTO a23_sda_projetapi_mal.campagneenchantement VALUES 
+(1,1),
+(1,2),
+(1,3),
+(1,4),
+(1,5),
+(2,6),
+(2,7),
+(2,8),
+(3,9),
+(3,10),
+(1,11),
+(1,12),
+(1,13),
+(1,14),
+(1,15),
+(2,16),
+(2,17),
+(2,18),
+(3,19),
+(3,20);
+
+SELECT * FROM a23_sda_projetapi_mal.campagneenchantement;
+
+
+INSERT INTO a23_sda_projetapi_mal.campagnemonstre VALUES 
+(1,1),
+(1,2),
+(1,3),
+(1,4),
+(1,5),
+(2,6),
+(2,7),
+(2,8),
+(3,9),
+(3,10),
+(1,11),
+(1,12);
+
+
+
+SELECT * FROM a23_sda_projetapi_mal.campagnemonstre;
+
+
+
+
+INSERT INTO a23_sda_projetapi_mal.campagnepnj VALUES 
+(1,1),
+(1,2),
+(1,3),
+(1,4),
+(1,5),
+(2,6),
+(2,7),
+(2,8),
+(3,9),
+(3,10);
+
+
+SELECT * FROM a23_sda_projetapi_mal.campagnepnj;
+
+INSERT INTO a23_sda_projetapi_mal.campagnequete VALUES 
+(1,1),
+(1,2),
+(1,3),
+(1,4),
+(1,5),
+(2,6),
+(2,7),
+(2,8),
+(3,9),
+(3,10);
+
+
+SELECT * FROM a23_sda_projetapi_mal.campagnequete;
+
+
+INSERT INTO a23_sda_projetapi_mal.campagnerace VALUES 
+(1,1),
+(1,2),
+(1,3),
+(1,4),
+(3,5),
+(2,6);
+
+
+
+
+SELECT * FROM a23_sda_projetapi_mal.campagnerace;
+
+
+INSERT INTO a23_sda_projetapi_mal.actionmonstre VALUES 
+(1,1),
+(1,2),
+(1,3),
+(1,4),
+(1,5),
+(2,6),
+(2,7),
+(2,8),
+(3,9),
+(3,10),
+(3,11),
+(3,12),
+(4,1),
+(4,2),
+(4,3),
+(5,4),
+(5,5),
+(5,6),
+(6,7),
+(7,8),
+(8,9),
+(8,10),
+(8,11),
+(9,12),
+(10,1),
+(7,2),
+(10,3),
+(8,4),
+(9,5);
+
+
+SELECT * FROM a23_sda_projetapi_mal.actionmonstre;
+
+INSERT INTO feats (Nom, Persoid, Descr) VALUES
+('Éclair de l\'Ombre', FLOOR(RAND() * 9) + 1, 'Vous pouvez vous déplacer rapidement et silencieusement dans l\'ombre, devenant invisible pour vos ennemis.'),
+('Lame Tourbillonnante', FLOOR(RAND() * 9) + 1, 'Vous pouvez effectuer une attaque tourbillonnante, touchant tous les ennemis dans un rayon de 5 mètres.'),
+('Résistance à la Magie', FLOOR(RAND() * 9) + 1, 'Vous avez développé une résistance naturelle à la magie, réduisant les dégâts magiques que vous subissez de moitié.'),
+('Maître de la Disruption', FLOOR(RAND() * 9) + 1, 'Vous avez appris à perturber les sorts des lanceurs de sorts ennemis, rendant leurs incantations plus difficiles.'),
+('Oeil de l\'Aigle', FLOOR(RAND() * 9) + 1, 'Votre vue est exceptionnellement perçante, vous permettant de repérer des détails minuscules à grande distance.'),
+('Coup Étourdissant', FLOOR(RAND() * 9) + 1, 'Vous avez perfectionné l\'art de frapper les points faibles de vos ennemis, les assommant brièvement avec un coup bien placé.'),
+('Danse des Lames', FLOOR(RAND() * 9) + 1, 'Vous pouvez manier deux armes à une main simultanément avec une grâce mortelle, effectuant des attaques rapides et précises.'),
+('Sang-Froid', FLOOR(RAND() * 9) + 1, 'Sous la pression, vous maintenez votre calme. Vous avez l\'avantage sur les jets de sauvegarde contre la peur.'),
+('Invocation Élémentaire', FLOOR(RAND() * 9) + 1, 'Vous avez appris à invoquer un élémentaire pour combattre à vos côtés lors des batailles.'),
+('Tacticien Brillant', FLOOR(RAND() * 9) + 1, 'Vous êtes un stratège brillant sur le champ de bataille, capable de coordonner les attaques de votre groupe avec une grande efficacité.'),
+('Frappes Précises', FLOOR(RAND() * 9) + 1, 'Vous avez appris à viser les points faibles de vos ennemis, infligeant des dégâts supplémentaires avec vos attaques.'),
+('Maître des Potions', FLOOR(RAND() * 9) + 1, 'Vous avez une connaissance approfondie des potions et des élixirs, vous permettant de les créer avec une grande efficacité.'),
+('Sceau de Protection', FLOOR(RAND() * 9) + 1, 'Vous pouvez créer un sceau magique de protection qui offre une résistance contre les sorts et les attaques magiques.'),
+('Voyageur Astral', FLOOR(RAND() * 9) + 1, 'Vous avez la capacité de quitter votre corps physique et de voyager dans l\'astral, explorant d\'autres plans d\'existence.'),
+('Frappe Foudroyante', FLOOR(RAND() * 9) + 1, 'Votre attaque porte un coup puissant, infligeant des dégâts massifs et repoussant l\'ennemi en arrière.'),
+('Forme Bestiale', FLOOR(RAND() * 9) + 1, 'Vous pouvez vous transformer en une bête féroce, acquérant ses capacités et sa force physique.'),
+('Ombre Mordante', FLOOR(RAND() * 9) + 1, 'Vous pouvez vous déplacer rapidement dans les ombres, devenant invisible et gagnant un bonus aux attaques furtives.'),
+('Chant de Guérison', FLOOR(RAND() * 9) + 1, 'Votre voix a un pouvoir de guérison. En chantant, vous pouvez soigner les blessures de vos alliés.'),
+('Gardien Ancestral', FLOOR(RAND() * 9) + 1, 'Vous pouvez invoquer l\'esprit de vos ancêtres pour protéger vos alliés, créant un bouclier magique impénétrable.'),
+('Cri Destructeur', FLOOR(RAND() * 9) + 1, 'Vous pouvez lancer un cri puissant qui détruit les structures et les ennemis à proximité.');
+
+SELECT * FROM a23_sda_projetapi_mal.feats;
+
+
+INSERT INTO spell (Name, Description, DammageType, Dammage, ClassId, Zone) VALUES
+('Boule de Feu', 'Invoque une boule de feu brûlante qui explose à l''impact, infligeant des dégâts de feu à tous les ennemis dans la zone.', 'Feu', 8, 1, 'Zone d''Explosion'),
+('Projectile Magique', 'Lance des projectiles magiques non élémentaires vers l''ennemi, infligeant des dégâts magiques.', 'Magique', 6, 2, 'Cible Unique'),
+('Choc de Foudre', 'Frappe l''ennemi avec un éclair de foudre, infligeant des dégâts de foudre et paralysant brièvement.', 'Foudre', 7, 3, 'Cible Unique'),
+('Main de la Glace', 'Crée une main glacée qui saisit l''ennemi, infligeant des dégâts de froid et ralentissant le mouvement.', 'Froid', 5, 4, 'Cible Unique'),
+('Guérison Sacrée', 'Guérit les blessures des alliés dans la zone, restaurant un montant élevé de points de vie.', 'Guérison', 0, 5, 'Zone de Soin'),
+('Sphère d''Acide', 'Crée une sphère d''acide corrosif qui tournoie autour de l''enchanteur, infligeant des dégâts d''acide aux ennemis dans la zone.', 'Acide', 9, 6, 'Zone d''Effet'),
+('Bénédiction Divine', 'Confère des bénédictions divines aux alliés dans la zone, augmentant leur précision et leurs dégâts pendant un certain temps.', 'Bénéfique', 0, 7, 'Zone d''Effet'),
+('Ombre Mortelle', 'Invoque des ombres mortelles pour envelopper l''ennemi, infligeant des dégâts d''ombre et réduisant leur résistance à la lumière.', 'Ombre', 6, 8, 'Cible Unique'),
+('Nova Radiante', 'Libère une explosion de lumière sacrée, infligeant des dégâts radiants à tous les ennemis dans la zone.', 'Radiant', 10, 9, 'Zone d''Explosion'),
+('Étreinte de la Terre', 'Fait émerger des mains de terre pour immobiliser l''ennemi, infligeant des dégâts de terre et les empêchant de se déplacer.', 'Terre', 7, 10, 'Cible Unique'),
+('Frappe Céleste', 'Canalise le pouvoir des cieux pour frapper l''ennemi avec une force céleste, infligeant des dégâts divins et repoussant l''ennemi.', 'Divin', 8, 1, 'Cible Unique'),
+('Appel des Oiseaux', 'Fait appel à un essaim d''oiseaux pour attaquer l''ennemi, infligeant des dégâts de picorage et causant une confusion temporaire.', 'Physique', 4, 2, 'Cible Unique'),
+('Mur de Force', 'Crée un mur invisible d''énergie pure pour bloquer les attaques ennemies.', 'Barrage', 0, 3, 'Défense'),
+('Foudre Céleste', 'Invoque un éclair céleste qui frappe l''ennemi de haut en bas, infligeant des dégâts de foudre et provoquant une paralysie temporaire.', 'Foudre', 9, 4, 'Cible Unique'),
+('Flammes Éternelles', 'Crée des flammes éternelles qui brûlent l''ennemi, infligeant des dégâts de feu persistants jusqu''à ce que le feu soit éteint.', 'Feu', 7, 5, 'Cible Unique'),
+('Miroir Magique', 'Crée un miroir magique qui renvoie les sorts ennemis vers leur lanceur, les affectant avec leur propre magie.', 'Réflexion', 0, 6, 'Défense'),
+('Réanimation des Morts', 'Réanime temporairement un allié tombé au combat en tant que mort-vivant loyal, sous le contrôle du lanceur.', 'Nécrotique', 0, 7, 'Allié Mort'),
+('Éclair de Givre', 'Lance un éclair de givre qui gèle l''ennemi sur place, infligeant des dégâts de froid et réduisant la vitesse de déplacement.', 'Froid', 6, 8, 'Cible Unique'),
+('Tempête de Sable', 'Crée une tempête de sable tourbillonnante qui aveugle et étouffe les ennemis dans la zone, infligeant des dégâts de sable.', 'Physique', 8, 9, 'Zone d''Effet'),
+('Éclat Astral', 'Libère des éclats d''énergie astrale qui transpercent l''ennemi, infligeant des dégâts d''énergie et ignorant une partie de l''armure.', 'Énergie', 7, 10, 'Cible Unique');
+
+
+SELECT * FROM a23_sda_projetapi_mal.spell;

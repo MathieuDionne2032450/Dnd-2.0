@@ -21,9 +21,9 @@ namespace Api_DnD.Model
         public int DarkVision { get; set; }
         public float Challenge { get; set; }
         public string Lang { get; set; }
-        public string DammageResistance { get; set; }
-        public string DammageImmunities { get; set; }
-        public string ConditionImmunities { get; set; }
+        public string? DammageResistance { get; set; }
+        public string? DammageImmunities { get; set; }
+        public string? ConditionImmunities { get; set; }
         public ICollection<Action> Actions { get; set; }
         public ICollection<Campagne> Campagne { get; set; }
 

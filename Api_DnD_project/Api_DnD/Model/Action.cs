@@ -9,7 +9,7 @@ namespace Api_DnD.Model
         public string Type { get; set; }
         public int Id { get; set; }
         public string Name { get; set; }
-        public string Desc { get; set; }
+        public string Descr { get; set; }
         public string Dammage { get; set; }
         public string DammageType { get; set; }
         public int Dc { get; set; }
