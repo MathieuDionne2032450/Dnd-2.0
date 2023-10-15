@@ -34,30 +34,30 @@ namespace Api_DnD.Controllers
             {
                 case "nom":
                    return await _context.Armes.OrderBy(a => a.Nom).Skip((3 * page) - 3).Take(3).ToListAsync();
-                    break;
+                    
                 case "id":
                     return await _context.Armes.OrderBy(a => a.id).Skip((3 * page) - 3).Take(3).ToListAsync();
-                    break;
+                    
                 case "nom_desc":
                     return await _context.Armes.OrderByDescending(a => a.Nom).Skip((3 * page) - 3).Take(3).ToListAsync();
-                    break;
+                    
                 case "id_desc":
                     return await _context.Armes.OrderByDescending(a => a.id).Skip((3 * page) - 3).Take(3).ToListAsync();
-                    break;
+                    
                 case "jet":
                     return await _context.Armes.OrderBy(a => a.BonusJet).Skip((3 * page) - 3).Take(3).ToListAsync();
-                    break;
+                    
                 case "force":
                     return await _context.Armes.OrderBy(a => a.BonusForce).Skip((3 * page) - 3).Take(3).ToListAsync();
-                    break;
+                    
                 case "jet_desc":
                     return await _context.Armes.OrderByDescending(a => a.BonusJet).Skip((3 * page) - 3).Take(3).ToListAsync();
-                    break;
+                    
                 case "force_desc":
                     return await _context.Armes.OrderByDescending(a => a.BonusForce).Skip((3 * page) - 3).Take(3).ToListAsync();
-                    break;
+                    
                 default:
-                    return await _context.Armes.Skip((3 * page) - 3).Take(3).ToListAsync();
+                    return await _context.Armes.ToListAsync();
             }
         }
 

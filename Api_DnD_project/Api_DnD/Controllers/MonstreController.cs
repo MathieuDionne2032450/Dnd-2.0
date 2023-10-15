@@ -3,6 +3,8 @@ using Api_DnD.Model;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc.RazorPages;
+using System.Runtime.CompilerServices;
 
 namespace Api_DnD.Controllers
 {
@@ -19,13 +21,103 @@ namespace Api_DnD.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Monstre>>> GetMonstres()
+        public async Task<ActionResult<IEnumerable<Monstre>>> GetMonstres(string? sortOrder, string? recherche, int page)
         {
-            return await _context.Monstres
-                .Include(m => m.Campagne)
-                .Include(m => m.Actions)
-                .OrderBy(m => m.Nom)
-                .ToListAsync();
+            if (!string.IsNullOrEmpty(recherche))
+            {
+                return await _context.Monstres.Where(m => m.Nom.Contains(recherche)).ToListAsync();
+            }
+
+            if (page <= 0)
+                page = 1;
+
+            switch (sortOrder)
+            {
+                case "nom":
+                    return await _context.Monstres.OrderBy(m => m.Nom).Skip((3 * page) - 3).Take(3).ToListAsync();
+
+                case "id":
+                    return await _context.Monstres.OrderBy(m => m.Id).Skip((3 * page) - 3).Take(3).ToListAsync();
+
+                case "nom_desc":
+                    return await _context.Monstres.OrderByDescending(m => m.Nom).Skip((3 * page) - 3).Take(3).ToListAsync();
+
+                case "id_desc":
+                    return await _context.Monstres.OrderByDescending(m => m.Id).Skip((3 * page) - 3).Take(3).ToListAsync();
+
+                case "amure":
+                    return await _context.Monstres.OrderBy(m => m.ArmorClass).Skip((3 * page) - 3).Take(3).ToListAsync();
+
+                case "challenge":
+                    return await _context.Monstres.OrderBy(m => m.Challenge).Skip((3 * page) - 3).Take(3).ToListAsync();
+
+                case "armure_desc":
+                    return await _context.Monstres.OrderByDescending(m => m.ArmorClass).Skip((3 * page) - 3).Take(3).ToListAsync();
+
+                case "challenge_desc":
+                    return await _context.Monstres.OrderByDescending(m => m.Challenge).Skip((3 * page) - 3).Take(3).ToListAsync();
+
+                case "wisdom":
+                    return await _context.Monstres.OrderBy(m => m.Wis).Skip((3 * page) - 3).Take(3).ToListAsync();
+
+                case "charisma":
+                    return await _context.Monstres.OrderBy(m => m.Cha).Skip((3 * page) - 3).Take(3).ToListAsync();
+
+                case "wisdom_desc":
+                    return await _context.Monstres.OrderByDescending(m => m.Wis).Skip((3 * page) - 3).Take(3).ToListAsync();
+
+                case "charisma_desc":
+                    return await _context.Monstres.OrderByDescending(m => m.Cha).Skip((3 * page) - 3).Take(3).ToListAsync();
+
+                case "dammageResistance":
+                    return await _context.Monstres.OrderBy(m => m.DammageResistance).Skip((3 * page) - 3).Take(3).ToListAsync();
+
+                case "dex":
+                    return await _context.Monstres.OrderBy(m => m.Dex).Skip((3 * page) - 3).Take(3).ToListAsync();
+
+                case "dammageResistance_desc":
+                    return await _context.Monstres.OrderByDescending(m => m.DammageResistance).Skip((3 * page) - 3).Take(3).ToListAsync();
+
+                case "dex_desc":
+                    return await _context.Monstres.OrderByDescending(m => m.Dex).Skip((3 * page) - 3).Take(3).ToListAsync();
+                case "flySpeed":
+                    return await _context.Monstres.OrderBy(m => m.FlySpeed).Skip((3 * page) - 3).Take(3).ToListAsync();
+
+                case "hitPoint":
+                    return await _context.Monstres.OrderBy(m => m.HitPoint).Skip((3 * page) - 3).Take(3).ToListAsync();
+
+                case "flySpeed_desc":
+                    return await _context.Monstres.OrderByDescending(m => m.FlySpeed).Skip((3 * page) - 3).Take(3).ToListAsync();
+
+                case "hitPoint_desc":
+                    return await _context.Monstres.OrderByDescending(m => m.HitPoint).Skip((3 * page) - 3).Take(3).ToListAsync();
+
+                case "speed":
+                    return await _context.Monstres.OrderBy(m => m.Speed).Skip((3 * page) - 3).Take(3).ToListAsync();
+
+                case "strenght":
+                    return await _context.Monstres.OrderBy(m => m.Str).Skip((3 * page) - 3).Take(3).ToListAsync();
+
+                case "speed_desc":
+                    return await _context.Monstres.OrderByDescending(m => m.Speed).Skip((3 * page) - 3).Take(3).ToListAsync();
+
+                case "strenght_desc":
+                    return await _context.Monstres.OrderByDescending(m => m.Str).Skip((3 * page) - 3).Take(3).ToListAsync();
+
+                case "size":
+                    return await _context.Monstres.OrderBy(m => m.Size).Skip((3 * page) - 3).Take(3).ToListAsync();
+
+                case "intelligence":
+                    return await _context.Monstres.OrderBy(m => m.Intel).Skip((3 * page) - 3).Take(3).ToListAsync();
+
+                case "size_desc":
+                    return await _context.Monstres.OrderByDescending(m => m.Speed).Skip((3 * page) - 3).Take(3).ToListAsync();
+
+                case "intelligence_desc":
+                    return await _context.Monstres.OrderByDescending(m => m.Intel).Skip((3 * page) - 3).Take(3).ToListAsync();
+                default:
+                    return await _context.Monstres.ToListAsync();
+            }
         }
 
         [HttpGet("/GetMonstreById/{id}")]
