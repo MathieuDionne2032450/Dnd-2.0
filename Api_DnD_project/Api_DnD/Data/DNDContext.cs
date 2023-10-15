@@ -24,6 +24,7 @@ namespace Api_DnD.Data
         public DbSet<Campagne> Campagnes { get; set; }
         public DbSet<Quete> Quetes { get; set; }
         public DbSet<Spell> Spells { get; set; }
+        public DbSet<Skill> Skill { get; set; }
         public DbSet<feats> Feats { get; set; }
 
 
@@ -41,6 +42,7 @@ namespace Api_DnD.Data
             modelBuilder.Entity<Campagne>().ToTable("Campagne");
             modelBuilder.Entity<Quete>().ToTable("Quete");
             modelBuilder.Entity<Spell>().ToTable("spell");
+            modelBuilder.Entity<Skill>().ToTable("skill");
         }
     }
 }

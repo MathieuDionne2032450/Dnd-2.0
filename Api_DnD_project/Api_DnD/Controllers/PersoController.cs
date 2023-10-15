@@ -33,11 +33,8 @@ namespace Api_DnD.Controllers
                 List<Perso> listePersos = new List<Perso>();
                 foreach (Perso perso in _context.Persos)
                 {
-                    foreach (Campagne campagne in perso.Campagne)
-                    {
-                        if (campagne.Name.Contains(rechercheCampagne))
-                            listePersos.Add(perso);
-                    }
+                    if (perso.Campagne.Name.Contains(rechercheCampagne))
+                        listePersos.Add(perso);
                 }
                 return listePersos;
             }
@@ -88,88 +85,88 @@ namespace Api_DnD.Controllers
             return PersoDTO.PersoToDTO(perso);
         }
 
-        [HttpPut("/EditPerso")]
-        public async Task<ActionResult<Perso>> EditPerso(
-            int id, 
-            string IrlJoueur,
-            string Nom,
-            string Description,
-            int Inspiration,
-            int ArmureId,
-            ICollection<Arme> LesArmes,
-            int ClasseId,
-            int RaceId,
-            ICollection<Skill> Skills,
-            string Personalitetrait,
-            string Ideal,
-            string Bonds,
-            string Flaws,
-            int Niv,
-            ICollection<Campagne> Campagne)
-        {
-            await _context.Persos.Where(p => p.id == id).ExecuteUpdateAsync(setters => setters
-            .SetProperty(p => p.IrlJoueur, IrlJoueur)
-            .SetProperty(p => p.Nom, Nom)
-            .SetProperty(p => p.Description, Description)
-            .SetProperty(p => p.Inspiration, Inspiration)
-            .SetProperty(p => p.ArmureId, ArmureId)
-            .SetProperty(p => p.LesArmes, LesArmes)
-            .SetProperty(p => p.ClasseId, ClasseId)
-            .SetProperty(p => p.RaceId, RaceId)
-            .SetProperty(p => p.Skills, Skills)
-            .SetProperty(p => p.Personalitetrait, Personalitetrait)
-            .SetProperty(p => p.Ideal, Ideal)
-            .SetProperty(p => p.Bonds, Bonds)
-            .SetProperty(p => p.Flaws, Flaws)
-            .SetProperty(p => p.Niv, Niv)
-            .SetProperty(p => p.Campagne, Campagne)
-            );
+        //[HttpPut("/EditPerso")]
+        //public async Task<ActionResult<Perso>> EditPerso(
+        //    int id, 
+        //    string IrlJoueur,
+        //    string Nom,
+        //    string Description,
+        //    int Inspiration,
+        //    int ArmureId,
+        //    ICollection<Arme> LesArmes,
+        //    int ClasseId,
+        //    int RaceId,
+        //    ICollection<Skill> Skills,
+        //    string Personalitetrait,
+        //    string Ideal,
+        //    string Bonds,
+        //    string Flaws,
+        //    int Niv,
+        //    Campagne Campagne)
+        //{
+        //    await _context.Persos.Where(p => p.id == id).ExecuteUpdateAsync(setters => setters
+        //    .SetProperty(p => p.IrlJoueur, IrlJoueur)
+        //    .SetProperty(p => p.Nom, Nom)
+        //    .SetProperty(p => p.Description, Description)
+        //    .SetProperty(p => p.Inspiration, Inspiration)
+        //    .SetProperty(p => p.ArmureId, ArmureId)
+        //    .SetProperty(p => p.LesArmes, LesArmes)
+        //    .SetProperty(p => p.ClasseId, ClasseId)
+        //    .SetProperty(p => p.RaceId, RaceId)
+        //    .SetProperty(p => p.Skills, Skills)
+        //    .SetProperty(p => p.Personalitetrait, Personalitetrait)
+        //    .SetProperty(p => p.Ideal, Ideal)
+        //    .SetProperty(p => p.Bonds, Bonds)
+        //    .SetProperty(p => p.Flaws, Flaws)
+        //    .SetProperty(p => p.Niv, Niv)
+        //    .SetProperty(p => p.Campagne, Campagne)
+        //    );
 
-            return NoContent();
-        }
+        //    return NoContent();
+        //}
 
-        [HttpPost("/CreatePerso")]
-        public async Task<ActionResult<Perso>> CreatePerso(
-            string IrlJoueur,
-            string Nom,
-            string Description,
-            int Inspiration,
-            int ArmureId,
-            ICollection<Arme> LesArmes,
-            int ClasseId,
-            int RaceId,
-            ICollection<Skill> Skills,
-            string Personalitetrait,
-            string Ideal,
-            string Bonds,
-            string Flaws,
-            int Niv,
-            ICollection<Campagne> Campagne)
-        {
-            Perso perso = new Perso
-            {
-                IrlJoueur = IrlJoueur,
-                Nom = Nom,
-                Description = Description,
-                Inspiration = Inspiration,
-                ArmureId = ArmureId,
-                LesArmes = LesArmes,
-                ClasseId = ClasseId,
-                RaceId = RaceId,
-                Skills = Skills,
-                Personalitetrait = Personalitetrait,
-                Ideal = Ideal,
-                Bonds = Bonds,
-                Flaws = Flaws,
-                Niv = Niv,
-                Campagne = Campagne
-            };
+        //[HttpPost("/CreatePerso")]
+        //public async Task<ActionResult<Perso>> CreatePerso(
+        //    string IrlJoueur,
+        //    string Nom,
+        //    string Description,
+        //    int Inspiration,
+        //    int ArmureId,
+        //    ICollection<Arme> LesArmes,
+        //    int ClasseId,
+        //    int RaceId,
+        //    ICollection<Skill> Skills,
+        //    string Personalitetrait,
+        //    string Ideal,
+        //    string Bonds,
+        //    string Flaws,
+        //    int Niv,
+        //    Campagne Campagne)
+        //{
+        //    Perso perso = new Perso
+        //    {
+        //        IrlJoueur = IrlJoueur,
+        //        Nom = Nom,
+        //        Description = Description,
+        //        Inspiration = Inspiration,
+        //        ArmureId = ArmureId,
+        //        LesArmes = LesArmes,
+        //        ClasseId = ClasseId,
+        //        RaceId = RaceId,
+        //        Skills = Skills,
+        //        Personalitetrait = Personalitetrait,
+        //        Ideal = Ideal,
+        //        Bonds = Bonds,
+        //        Flaws = Flaws,
+        //        Niv = Niv,
+        //        Campagne = Campagne
+        //    };
 
-            _context.Persos.Add(perso);
-            await _context.SaveChangesAsync();
+        //    _context.Persos.Add(perso);
+        //    await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetPersoById", new { id = perso.id }, perso);
-        }
+        //    return CreatedAtAction("GetPersoById", new { id = perso.id }, perso);
+        //}
 
         [HttpDelete("/DeletePerso/{id}")]
         public async Task<bool> DeletePerso(int id)
