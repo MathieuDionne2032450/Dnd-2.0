@@ -547,6 +547,29 @@ namespace Api_DnD.Migrations
                 .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.CreateTable(
+                name: "feats",
+                columns: table => new
+                {
+                    id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                    Nom = table.Column<string>(type: "longtext", nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    Descr = table.Column<string>(type: "longtext", nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    Persoid = table.Column<int>(type: "int", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_feats", x => x.id);
+                    table.ForeignKey(
+                        name: "FK_feats_Perso_Persoid",
+                        column: x => x.Persoid,
+                        principalTable: "Perso",
+                        principalColumn: "id");
+                })
+                .Annotation("MySql:CharSet", "utf8mb4");
+
+            migrationBuilder.CreateTable(
                 name: "Skill",
                 columns: table => new
                 {
@@ -660,6 +683,11 @@ namespace Api_DnD.Migrations
                 column: "RacesId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_feats_Persoid",
+                table: "feats",
+                column: "Persoid");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Perso_ArmureId",
                 table: "Perso",
                 column: "ArmureId");
@@ -719,6 +747,9 @@ namespace Api_DnD.Migrations
 
             migrationBuilder.DropTable(
                 name: "CampagneRace");
+
+            migrationBuilder.DropTable(
+                name: "feats");
 
             migrationBuilder.DropTable(
                 name: "Key");

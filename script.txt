@@ -421,3 +421,52 @@ INSERT INTO a23_sda_projetapi_mal.actionmonstre VALUES
 
 SELECT * FROM a23_sda_projetapi_mal.actionmonstre;
 
+INSERT INTO feats (Nom, Persoid, Descr) VALUES
+('Éclair de l\'Ombre', FLOOR(RAND() * 9) + 1, 'Vous pouvez vous déplacer rapidement et silencieusement dans l\'ombre, devenant invisible pour vos ennemis.'),
+('Lame Tourbillonnante', FLOOR(RAND() * 9) + 1, 'Vous pouvez effectuer une attaque tourbillonnante, touchant tous les ennemis dans un rayon de 5 mètres.'),
+('Résistance à la Magie', FLOOR(RAND() * 9) + 1, 'Vous avez développé une résistance naturelle à la magie, réduisant les dégâts magiques que vous subissez de moitié.'),
+('Maître de la Disruption', FLOOR(RAND() * 9) + 1, 'Vous avez appris à perturber les sorts des lanceurs de sorts ennemis, rendant leurs incantations plus difficiles.'),
+('Oeil de l\'Aigle', FLOOR(RAND() * 9) + 1, 'Votre vue est exceptionnellement perçante, vous permettant de repérer des détails minuscules à grande distance.'),
+('Coup Étourdissant', FLOOR(RAND() * 9) + 1, 'Vous avez perfectionné l\'art de frapper les points faibles de vos ennemis, les assommant brièvement avec un coup bien placé.'),
+('Danse des Lames', FLOOR(RAND() * 9) + 1, 'Vous pouvez manier deux armes à une main simultanément avec une grâce mortelle, effectuant des attaques rapides et précises.'),
+('Sang-Froid', FLOOR(RAND() * 9) + 1, 'Sous la pression, vous maintenez votre calme. Vous avez l\'avantage sur les jets de sauvegarde contre la peur.'),
+('Invocation Élémentaire', FLOOR(RAND() * 9) + 1, 'Vous avez appris à invoquer un élémentaire pour combattre à vos côtés lors des batailles.'),
+('Tacticien Brillant', FLOOR(RAND() * 9) + 1, 'Vous êtes un stratège brillant sur le champ de bataille, capable de coordonner les attaques de votre groupe avec une grande efficacité.'),
+('Frappes Précises', FLOOR(RAND() * 9) + 1, 'Vous avez appris à viser les points faibles de vos ennemis, infligeant des dégâts supplémentaires avec vos attaques.'),
+('Maître des Potions', FLOOR(RAND() * 9) + 1, 'Vous avez une connaissance approfondie des potions et des élixirs, vous permettant de les créer avec une grande efficacité.'),
+('Sceau de Protection', FLOOR(RAND() * 9) + 1, 'Vous pouvez créer un sceau magique de protection qui offre une résistance contre les sorts et les attaques magiques.'),
+('Voyageur Astral', FLOOR(RAND() * 9) + 1, 'Vous avez la capacité de quitter votre corps physique et de voyager dans l\'astral, explorant d\'autres plans d\'existence.'),
+('Frappe Foudroyante', FLOOR(RAND() * 9) + 1, 'Votre attaque porte un coup puissant, infligeant des dégâts massifs et repoussant l\'ennemi en arrière.'),
+('Forme Bestiale', FLOOR(RAND() * 9) + 1, 'Vous pouvez vous transformer en une bête féroce, acquérant ses capacités et sa force physique.'),
+('Ombre Mordante', FLOOR(RAND() * 9) + 1, 'Vous pouvez vous déplacer rapidement dans les ombres, devenant invisible et gagnant un bonus aux attaques furtives.'),
+('Chant de Guérison', FLOOR(RAND() * 9) + 1, 'Votre voix a un pouvoir de guérison. En chantant, vous pouvez soigner les blessures de vos alliés.'),
+('Gardien Ancestral', FLOOR(RAND() * 9) + 1, 'Vous pouvez invoquer l\'esprit de vos ancêtres pour protéger vos alliés, créant un bouclier magique impénétrable.'),
+('Cri Destructeur', FLOOR(RAND() * 9) + 1, 'Vous pouvez lancer un cri puissant qui détruit les structures et les ennemis à proximité.');
+
+SELECT * FROM a23_sda_projetapi_mal.feats;
+
+
+INSERT INTO spell (Name, Description, DammageType, Dammage, ClassId, Zone) VALUES
+('Boule de Feu', 'Invoque une boule de feu brûlante qui explose à l''impact, infligeant des dégâts de feu à tous les ennemis dans la zone.', 'Feu', 8, 1, 'Zone d''Explosion'),
+('Projectile Magique', 'Lance des projectiles magiques non élémentaires vers l''ennemi, infligeant des dégâts magiques.', 'Magique', 6, 2, 'Cible Unique'),
+('Choc de Foudre', 'Frappe l''ennemi avec un éclair de foudre, infligeant des dégâts de foudre et paralysant brièvement.', 'Foudre', 7, 3, 'Cible Unique'),
+('Main de la Glace', 'Crée une main glacée qui saisit l''ennemi, infligeant des dégâts de froid et ralentissant le mouvement.', 'Froid', 5, 4, 'Cible Unique'),
+('Guérison Sacrée', 'Guérit les blessures des alliés dans la zone, restaurant un montant élevé de points de vie.', 'Guérison', 0, 5, 'Zone de Soin'),
+('Sphère d''Acide', 'Crée une sphère d''acide corrosif qui tournoie autour de l''enchanteur, infligeant des dégâts d''acide aux ennemis dans la zone.', 'Acide', 9, 6, 'Zone d''Effet'),
+('Bénédiction Divine', 'Confère des bénédictions divines aux alliés dans la zone, augmentant leur précision et leurs dégâts pendant un certain temps.', 'Bénéfique', 0, 7, 'Zone d''Effet'),
+('Ombre Mortelle', 'Invoque des ombres mortelles pour envelopper l''ennemi, infligeant des dégâts d''ombre et réduisant leur résistance à la lumière.', 'Ombre', 6, 8, 'Cible Unique'),
+('Nova Radiante', 'Libère une explosion de lumière sacrée, infligeant des dégâts radiants à tous les ennemis dans la zone.', 'Radiant', 10, 9, 'Zone d''Explosion'),
+('Étreinte de la Terre', 'Fait émerger des mains de terre pour immobiliser l''ennemi, infligeant des dégâts de terre et les empêchant de se déplacer.', 'Terre', 7, 10, 'Cible Unique'),
+('Frappe Céleste', 'Canalise le pouvoir des cieux pour frapper l''ennemi avec une force céleste, infligeant des dégâts divins et repoussant l''ennemi.', 'Divin', 8, 1, 'Cible Unique'),
+('Appel des Oiseaux', 'Fait appel à un essaim d''oiseaux pour attaquer l''ennemi, infligeant des dégâts de picorage et causant une confusion temporaire.', 'Physique', 4, 2, 'Cible Unique'),
+('Mur de Force', 'Crée un mur invisible d''énergie pure pour bloquer les attaques ennemies.', 'Barrage', 0, 3, 'Défense'),
+('Foudre Céleste', 'Invoque un éclair céleste qui frappe l''ennemi de haut en bas, infligeant des dégâts de foudre et provoquant une paralysie temporaire.', 'Foudre', 9, 4, 'Cible Unique'),
+('Flammes Éternelles', 'Crée des flammes éternelles qui brûlent l''ennemi, infligeant des dégâts de feu persistants jusqu''à ce que le feu soit éteint.', 'Feu', 7, 5, 'Cible Unique'),
+('Miroir Magique', 'Crée un miroir magique qui renvoie les sorts ennemis vers leur lanceur, les affectant avec leur propre magie.', 'Réflexion', 0, 6, 'Défense'),
+('Réanimation des Morts', 'Réanime temporairement un allié tombé au combat en tant que mort-vivant loyal, sous le contrôle du lanceur.', 'Nécrotique', 0, 7, 'Allié Mort'),
+('Éclair de Givre', 'Lance un éclair de givre qui gèle l''ennemi sur place, infligeant des dégâts de froid et réduisant la vitesse de déplacement.', 'Froid', 6, 8, 'Cible Unique'),
+('Tempête de Sable', 'Crée une tempête de sable tourbillonnante qui aveugle et étouffe les ennemis dans la zone, infligeant des dégâts de sable.', 'Physique', 8, 9, 'Zone d''Effet'),
+('Éclat Astral', 'Libère des éclats d''énergie astrale qui transpercent l''ennemi, infligeant des dégâts d''énergie et ignorant une partie de l''armure.', 'Énergie', 7, 10, 'Cible Unique');
+
+
+SELECT * FROM a23_sda_projetapi_mal.spell;

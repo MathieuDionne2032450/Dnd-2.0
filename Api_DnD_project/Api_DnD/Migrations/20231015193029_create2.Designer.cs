@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Api_DnD.Migrations
 {
     [DbContext(typeof(DNDContext))]
-    [Migration("20231015190255_create")]
-    partial class create
+    [Migration("20231015193029_create2")]
+    partial class create2
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -501,6 +501,30 @@ namespace Api_DnD.Migrations
                     b.ToTable("Skill");
                 });
 
+            modelBuilder.Entity("Api_DnD.Model.feats", b =>
+                {
+                    b.Property<int>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<string>("Descr")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Nom")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<int?>("Persoid")
+                        .HasColumnType("int");
+
+                    b.HasKey("id");
+
+                    b.HasIndex("Persoid");
+
+                    b.ToTable("feats");
+                });
+
             modelBuilder.Entity("ArmeCampagne", b =>
                 {
                     b.Property<int>("Armesid")
@@ -726,6 +750,13 @@ namespace Api_DnD.Migrations
                         .HasForeignKey("Persoid");
                 });
 
+            modelBuilder.Entity("Api_DnD.Model.feats", b =>
+                {
+                    b.HasOne("Api_DnD.Model.Perso", null)
+                        .WithMany("feats")
+                        .HasForeignKey("Persoid");
+                });
+
             modelBuilder.Entity("ArmeCampagne", b =>
                 {
                     b.HasOne("Api_DnD.Model.Arme", null)
@@ -856,6 +887,8 @@ namespace Api_DnD.Migrations
                     b.Navigation("LesArmes");
 
                     b.Navigation("Skills");
+
+                    b.Navigation("feats");
                 });
 #pragma warning restore 612, 618
         }
