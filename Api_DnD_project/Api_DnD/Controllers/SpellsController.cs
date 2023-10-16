@@ -75,6 +75,17 @@ namespace Api_DnD.Controllers
         [HttpPut("/EditSpell")]
         public async Task<ActionResult<Spell>> EditArme(int id, string name, string description, string dammageType, int dammage, int classId, string zone)
         {
+            Spell s = await _context.Spells.FindAsync(id);
+
+            if (string.IsNullOrEmpty(name))
+                name = s.Name;
+
+            if (string.IsNullOrEmpty(description))
+                description = s.Description;
+
+            if (string.IsNullOrEmpty(dammageType))
+                dammageType = s.DammageType;
+
             await _context.Spells.Where(s => s.id == id).ExecuteUpdateAsync(setters => setters
             .SetProperty(s => s.Name, name)
             .SetProperty(s => s.Description, description)

@@ -128,8 +128,39 @@ namespace Api_DnD.Controllers
 
         
         [HttpPut("/EditMonstre")] 
-        public async Task<ActionResult<Monstre>> EditMonstre(int id, string nom, string size, int armorClass, int hitPoint, int speed, int flySpeed, int climbSpeed, int str, int dex, int con, int intel, int wis, int cha, int darkVision, float challenge, string lang, string? dammageResistance, string? dammageImmunities, string? conditionImmunities)
+        public async Task<ActionResult<Monstre>> EditMonstre(int id, string? nom, string? size, int armorClass, int hitPoint, int speed, int flySpeed, int climbSpeed, int str, int dex, int con, int intel, int wis, int cha, int darkVision, float challenge, string? lang, string? dammageResistance, string? dammageImmunities, string? conditionImmunities)
         {
+            Monstre m = await _context.Monstres.FindAsync(id);
+
+            if (string.IsNullOrEmpty(nom))
+                nom = m.Nom;
+
+            if (string.IsNullOrEmpty(size))
+                size = m.Size;
+
+            if (armorClass == 0)
+                armorClass = m.ArmorClass;
+
+            if (hitPoint == 0)
+                hitPoint = m.HitPoint;
+
+            if (speed == 0)
+                speed = m.Speed;
+
+            if (string.IsNullOrEmpty(lang))
+                lang = m.Lang;
+
+            if (string.IsNullOrEmpty(dammageResistance))
+                dammageResistance = m.DammageResistance;
+
+            if (string.IsNullOrEmpty(dammageImmunities))
+                dammageImmunities = m.DammageImmunities;
+
+            if (string.IsNullOrEmpty(conditionImmunities))
+                conditionImmunities = m.ConditionImmunities;
+            
+
+
             await _context.Monstres.Where(m => m.Id == id).ExecuteUpdateAsync(setters => setters
             .SetProperty(m => m.Nom, nom)
             .SetProperty(m => m.Size, size)
