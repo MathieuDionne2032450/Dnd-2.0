@@ -61,28 +61,28 @@ namespace Api_DnD.Controllers
         }
 
             [HttpGet("/GetEnchantement/{id}")]
-        public async Task<ActionResult<Enchantement>> GetArme(int id)
+        public async Task<ActionResult<Enchantement>> GetEnchantement(int id)
         {
             return await _context.Enchantements.FindAsync(id);
         }
 
         [HttpPut("/EditEnchantement")]
-        public async Task<ActionResult<Enchantement>> EditEnchantement(int id, Enchantement enchantement)
+        public async Task<ActionResult<Enchantement>> EditEnchantement(int id, string Nom, string Description, string Type, int Modif)
         {
             await _context.Enchantements.Where(e => e.Id == id).ExecuteUpdateAsync(setters => setters
-            .SetProperty(e => e.Nom, enchantement.Nom)
-            .SetProperty(e => e.Description, enchantement.Description)
-            .SetProperty(e => e.Type, enchantement.Type)
-            .SetProperty(e => e.Modif, enchantement.Modif)
-            .SetProperty(e => e.Campagne, enchantement.Campagne)
+            .SetProperty(e => e.Nom, Nom)
+            .SetProperty(e => e.Description, Description)
+            .SetProperty(e => e.Type, Type)
+            .SetProperty(e => e.Modif, Modif)
             );
 
             return NoContent();
         }
 
         [HttpPost("/CreateEnchantement")]
-        public async Task<ActionResult<Enchantement>> CreateEnchantement(Enchantement enchantement)
+        public async Task<ActionResult<Enchantement>> CreateEnchantement(string Nom, string Description, string Type, int Modif)
         {
+            Enchantement enchantement = new Enchantement { Nom = Nom, Description = Description, Type = Type, Modif = Modif };
             _context.Enchantements.Add(enchantement);
             await _context.SaveChangesAsync();
 
