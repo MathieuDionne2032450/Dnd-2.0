@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Api_DnD.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("[controller]")]
     [ApiController]
     public class RaceController : ControllerBase
     {

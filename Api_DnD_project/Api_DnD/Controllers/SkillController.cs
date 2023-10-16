@@ -1,11 +1,14 @@
 ﻿using Api_DnD.Data;
 using Api_DnD.Model;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+
+
 
 namespace Api_DnD.Controllers
 {
-    [Route("api/[controller]")]
     [ApiController]
+    [Route("[controller]")]
     public class SkillController
     {
         private readonly DNDContext _context;
@@ -15,7 +18,7 @@ namespace Api_DnD.Controllers
         }
 
         //[HttpGet("/GetAllSkill")]
-        //public async Task<ActionResult<IEnumerable<Spell>>> GetSkill(string? sortOrder, string? recherche, int page)
+        //public async Task<ActionResult<IEnumerable<Skill>>> GetSkill(string? sortOrder, string? recherche, int page)
         //{
         //    if (!string.IsNullOrEmpty(recherche))
         //    {
@@ -68,44 +71,42 @@ namespace Api_DnD.Controllers
             return await _context.Skill.FindAsync(id);
         }
 
-        //[HttpPut("/EditSpell")]
-        //public async Task<ActionResult<Spell>> EditArme(int id, string name, string description, string dammageType, int dammage, int classId, string zone)
-        //{
-        //    await _context.Spells.Where(s => s.id == id).ExecuteUpdateAsync(setters => setters
-        //    .SetProperty(s => s.Name, name)
-        //    .SetProperty(s => s.Description, description)
-        //    .SetProperty(s => s.DammageType, dammageType)
-        //    .SetProperty(s => s.Dammage, dammage)
-        //    .SetProperty(s => s.ClassId, classId)
-        //    .SetProperty(s => s.Zone, zone));
+        [HttpPut("/EditSkill")]
+        public async Task<ActionResult<Skill>> EditSkill(int id, string nom, string description)
+        {
+            await _context.Skill.Where(m => m.id == id).ExecuteUpdateAsync(setters => setters
+                .SetProperty(m => m.Nom, nom)
+                .SetProperty(m => m.Descr, description)
+                );
 
-        //    return NoContent();
-        //}
 
-        //[HttpPost("/CreateSpell")]
-        //public async Task<ActionResult<Arme>> CreateArme(int id, string name, string description, string dammageType, int dammage, int classId, string zone)
-        //{
-        //    Spell spellCree = new Spell(id, name, description, dammageType, dammage, classId, zone);
+            return null;
+        }
 
-        //    _context.Spells.Add(spellCree);
-        //    await _context.SaveChangesAsync();
+        [HttpPost("/CreateSkill")]
+        public async Task<ActionResult<Skill>> CreateSkill(string nom, string description)
+        {
+            Skill SkillCree = new Skill { Nom = nom, Descr = description};
 
-        //    return NoContent();
-        //}
+            _context.Skill.Add(SkillCree);
+            await _context.SaveChangesAsync();
 
-        //// POST: ArmeController/Delete/5
-        //// Si une entrée est trouvée et supprimée, la valeur true est retournée, sinon c'est la valeur false
-        //[HttpDelete("/DeleteSpell/{id}")]
-        //public async Task<bool> DeleteArme(int id)
-        //{
-        //    if (await _context.Spells.Where(s => s.id.Equals(id)).ExecuteDeleteAsync() == 1)
-        //    {
-        //        return true;
-        //    }
-        //    else
-        //    {
-        //        return false;
-        //    }
-        //}
+            return null;
+        }
+
+        // POST: ArmeController/Delete/5
+        // Si une entrée est trouvée et supprimée, la valeur true est retournée, sinon c'est la valeur false
+        [HttpDelete("/DeleteSkill/{id}")]
+        public async Task<bool> DeleteSkill(int id)
+        {
+            if (await _context.Skill.Where(s => s.id.Equals(id)).ExecuteDeleteAsync() == 1)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 }

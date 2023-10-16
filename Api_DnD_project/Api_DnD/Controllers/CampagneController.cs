@@ -109,5 +109,144 @@ namespace Api_DnD.Controllers
             _context.SaveChanges();
             return true;
         }
+
+
+
+
+        [HttpPost("/CampagneArme/")]
+        public async Task<ActionResult<Campagne>> CampagneArme(int idCampagne,int idArme)
+        {
+            var campagne = _context.Campagnes
+                 .Include(c => c.Armes)
+                 .FirstOrDefault(c => c.Id == idCampagne);
+
+            if (campagne != null)
+            {
+                campagne.Armes.Add(await _context.Armes.FindAsync(idArme));
+
+                await _context.SaveChangesAsync();
+            }
+
+            return CreatedAtAction("GetCampagneById", new { id = campagne.Id }, campagne);
+        }
+
+        [HttpPost("/CampagneArmure/")]
+        public async Task<ActionResult<Campagne>> CampagneArmure(int idCampagne, int idArmure)
+        {
+            var campagne = _context.Campagnes
+                 .Include(c => c.Armures)
+                 .FirstOrDefault(c => c.Id == idCampagne);
+
+            if (campagne != null)
+            {
+                campagne.Armures.Add(await _context.Armures.FindAsync(idArmure));
+
+                await _context.SaveChangesAsync();
+            }
+
+            return CreatedAtAction("GetCampagneById", new { id = campagne.Id }, campagne);
+        }
+
+        [HttpPost("/CampagneEnchantement/")]
+        public async Task<ActionResult<Campagne>> CampagneEnchantement(int idCampagne, int idEnchantement)
+        {
+            var campagne = _context.Campagnes
+                 .Include(c => c.Enchantements)
+                 .FirstOrDefault(c => c.Id == idCampagne);
+
+            if (campagne != null)
+            {
+                campagne.Enchantements.Add(await _context.Enchantements.FindAsync(idEnchantement));
+
+                await _context.SaveChangesAsync();
+            }
+
+            return CreatedAtAction("GetCampagneById", new { id = campagne.Id }, campagne);
+        }
+
+        [HttpPost("/CampagneMonstres/")]
+        public async Task<ActionResult<Campagne>> CampagneMonstres(int idCampagne, int idMonstre)
+        {
+            var campagne = _context.Campagnes
+                 .Include(c => c.Monstres)
+                 .FirstOrDefault(c => c.Id == idCampagne);
+
+            if (campagne != null)
+            {
+                campagne.Monstres.Add(await _context.Monstres.FindAsync(idMonstre));
+
+                await _context.SaveChangesAsync();
+            }
+
+            return CreatedAtAction("GetCampagneById", new { id = campagne.Id }, campagne);
+        }
+
+        [HttpPost("/CampagnePNJs/")]
+        public async Task<ActionResult<Campagne>> CampagnePNJs(int idCampagne, int idpnj)
+        {
+            var campagne = _context.Campagnes
+                 .Include(c => c.PNJs)
+                 .FirstOrDefault(c => c.Id == idCampagne);
+
+            if (campagne != null)
+            {
+                campagne.PNJs.Add(await _context.PNJ.FindAsync(idpnj));
+
+                await _context.SaveChangesAsync();
+            }
+
+            return CreatedAtAction("GetCampagneById", new { id = campagne.Id }, campagne);
+        }
+
+        [HttpPost("/CampagneQuetes/")]
+        public async Task<ActionResult<Campagne>> CampagneQuetes(int idCampagne, int idpnj)
+        {
+            var campagne = _context.Campagnes
+                 .Include(c => c.Quetes)
+                 .FirstOrDefault(c => c.Id == idCampagne);
+
+            if (campagne != null)
+            {
+                campagne.Quetes.Add(await _context.Quetes.FindAsync(idpnj));
+
+                await _context.SaveChangesAsync();
+            }
+
+            return CreatedAtAction("GetCampagneById", new { id = campagne.Id }, campagne);
+        }
+
+        [HttpPost("/CampagneClasses/")]
+        public async Task<ActionResult<Campagne>> CampagneClasses(int idCampagne, int idpnj)
+        {
+            var campagne = _context.Campagnes
+                 .Include(c => c.Classes)
+                 .FirstOrDefault(c => c.Id == idCampagne);
+
+            if (campagne != null)
+            {
+                campagne.Classes.Add(await _context.Classes.FindAsync(idpnj));
+
+                await _context.SaveChangesAsync();
+            }
+
+            return CreatedAtAction("GetCampagneById", new { id = campagne.Id }, campagne);
+        }
+
+        [HttpPost("/CampagneRaces/")]
+        public async Task<ActionResult<Campagne>> CampagneRaces(int idCampagne, int idpnj)
+        {
+            var campagne = _context.Campagnes
+                 .Include(c => c.Races)
+                 .FirstOrDefault(c => c.Id == idCampagne);
+
+            if (campagne != null)
+            {
+                campagne.Races.Add(await _context.Races.FindAsync(idpnj));
+
+                await _context.SaveChangesAsync();
+            }
+
+            return CreatedAtAction("GetCampagneById", new { id = campagne.Id }, campagne);
+        }
     }
 }

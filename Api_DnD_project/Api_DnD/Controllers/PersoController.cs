@@ -10,8 +10,6 @@ namespace Api_DnD.Controllers
     [Route("[controller]")]
     public class PersoController : ControllerBase
     {
-
-
         private readonly DNDContext _context;
 
         public PersoController(DNDContext context)
@@ -179,6 +177,58 @@ namespace Api_DnD.Controllers
             {
                 return false;
             }
+        }
+
+
+
+        [HttpPost("/PersoArme/")]
+        public async Task<ActionResult<Perso>> PersoArme(int idPerso, int idArme)
+        {
+            var Perso = _context.Persos
+                 .Include(c => c.LesArmes)
+                 .FirstOrDefault(c => c.id == idPerso);
+
+            if (Perso != null)
+            {
+                Perso.LesArmes.Add(await _context.Armes.FindAsync(idArme));
+                await _context.SaveChangesAsync();
+            }
+
+            return CreatedAtAction("GetPersoById", new { id = Perso.id }, Perso);
+        }
+
+        [HttpPost("/PersoSkill/")]
+        public async Task<ActionResult<Perso>> MonstreCampagne(int idPerso, int idSkill)
+        {
+            var Perso = _context.Persos
+                 .Include(c => c.Skills)
+                 .FirstOrDefault(c => c.id == idPerso);
+
+            if (Perso != null)
+            {
+                Perso.Skills.Add(await _context.Skill.FindAsync(idSkill));
+                await _context.SaveChangesAsync();
+            }
+
+            return CreatedAtAction("GetPersoById", new { id = Perso.id }, Perso);
+        }
+
+
+        [HttpPost("/PersoFeats/")]
+        public async Task<ActionResult<Perso>> PersoFeats(int idPerso, int idFeats)
+        {
+            var Perso = _context.Persos
+                 .Include(c => c.feats)
+                 .FirstOrDefault(c => c.id == idPerso);
+
+            if (Perso != null)
+            {
+                Perso.feats.Add(await _context.Feats.FindAsync(idFeats));
+
+                await _context.SaveChangesAsync();
+            }
+
+            return CreatedAtAction("GetPersoById", new { id = Perso.id }, Perso);
         }
     }
 }

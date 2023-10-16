@@ -178,6 +178,40 @@ namespace Api_DnD.Controllers
                 return false;
             }
         }
-        
+
+
+        [HttpPost("/MonstreAction/")]
+        public async Task<ActionResult<Monstre>> MonstreAction(int idAction, int idMonstre)
+        {
+            var Monstre = _context.Monstres
+                 .Include(c => c.Actions)
+                 .FirstOrDefault(c => c.Id == idMonstre);
+
+            if (Monstre != null)
+            {
+                Monstre.Actions.Add(await _context.Actions.FindAsync(idAction));
+
+                await _context.SaveChangesAsync();
+            }
+
+            return CreatedAtAction("GetMonstreById", new { id = Monstre.Id }, Monstre);
+        }
+
+        [HttpPost("/MonstreCampagne/")]
+        public async Task<ActionResult<Monstre>> MonstreCampagne(int idCampagne, int idMonstre)
+        {
+            var Monstre = _context.Monstres
+                 .Include(c => c.Actions)
+                 .FirstOrDefault(c => c.Id == idMonstre);
+
+            if (Monstre != null)
+            {
+                Monstre.Campagne.Add(await _context.Campagnes.FindAsync(idCampagne));
+
+                await _context.SaveChangesAsync();
+            }
+
+            return CreatedAtAction("GetMonstreById", new { id = Monstre.Id }, Monstre);
+        }
     }
 }
