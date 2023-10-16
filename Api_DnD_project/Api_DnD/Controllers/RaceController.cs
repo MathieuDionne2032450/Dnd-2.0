@@ -131,59 +131,60 @@ namespace Api_DnD.Controllers
             int? wisdom = bonusWisdom;
             int? consti = bonusConsti;
             int? charisma = bonusCharisma;
-
-            if (nom == null || nom == "")
+            if (raceTempo != null)
             {
-                name = raceTempo.Nom;
+                if (nom == null || nom == "")
+                {
+                    name = raceTempo.Nom;
+                }
+
+                if (bonusPv == null)
+                {
+                    pv = raceTempo.BonusPV;
+                }
+
+                if (bonusDex == null)
+                {
+                    dex = raceTempo.BonusDex;
+                }
+
+                if (bonusForce == null)
+                {
+                    force = raceTempo.BonusForce;
+                }
+
+                if (bonusIntel == null)
+                {
+                    intel = raceTempo.BonusIntel;
+                }
+
+                if (bonusWisdom == null)
+                {
+                    wisdom = raceTempo.BonusWisdom;
+                }
+
+                if (bonusCharisma == null)
+                {
+                    charisma = raceTempo.BonusCharisma;
+                }
+
+                if (bonusConsti == null)
+                {
+                    consti = raceTempo.BonusConsti;
+                }
+
+                await _context.Races.Where(r => r.Id == id).ExecuteUpdateAsync(setters => setters
+                .SetProperty(r => r.Nom, name)
+                .SetProperty(r => r.BonusPV, pv)
+                .SetProperty(r => r.BonusDex, dex)
+                .SetProperty(r => r.BonusForce, force)
+                .SetProperty(r => r.BonusIntel, intel)
+                .SetProperty(r => r.BonusWisdom, wisdom)
+                .SetProperty(r => r.BonusConsti, consti)
+                .SetProperty(r => r.BonusCharisma, charisma));
+
+                _context.SaveChanges();
             }
-
-            if(bonusPv == null)
-            {
-                pv = raceTempo.BonusPV;
-            }
-
-            if(bonusDex == null)
-            {
-                dex = raceTempo.BonusDex;
-            }
-
-            if (bonusForce == null)
-            {
-                force = raceTempo.BonusForce;
-            }
-
-            if (bonusIntel == null)
-            {
-                intel = raceTempo.BonusIntel;
-            }
-
-            if (bonusWisdom == null)
-            {
-                wisdom = raceTempo.BonusWisdom;
-            }
-
-            if(bonusCharisma == null)
-            {
-                charisma = raceTempo.BonusCharisma;
-            }
-
-            if (bonusConsti == null)
-            {
-                consti = raceTempo.BonusConsti;
-            }
-
-            await _context.Races.Where(r => r.Id == id).ExecuteUpdateAsync(setters => setters
-            .SetProperty(r => r.Nom, name)
-            .SetProperty(r => r.BonusPV, pv)
-            .SetProperty(r => r.BonusDex, dex)
-            .SetProperty(r => r.BonusForce, force)
-            .SetProperty(r => r.BonusIntel, intel)
-            .SetProperty(r => r.BonusWisdom, wisdom)
-            .SetProperty(r => r.BonusConsti, consti)
-            .SetProperty(r => r.BonusCharisma, charisma));
-
-            _context.SaveChanges();
-
             return NoContent();
             
         }
@@ -192,6 +193,8 @@ namespace Api_DnD.Controllers
         [HttpPost("CreateRace")]
         public void Post(int id, string nom, int bonusPv, int bonusDex, int bonusForce, int bonusIntel, int bonusWisdom, int bonusConsti, int bonusCharisma, int campagne)
         {
+
+
             Race race = new Race {Id = id, Nom = nom, BonusPV = bonusPv, BonusDex = bonusDex, BonusIntel = bonusIntel, BonusForce = bonusForce, BonusWisdom = bonusWisdom, BonusConsti = bonusConsti, BonusCharisma = bonusCharisma};
 
             _context.Races.Add(race);

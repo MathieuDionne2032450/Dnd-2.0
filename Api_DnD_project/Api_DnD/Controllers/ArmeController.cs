@@ -80,14 +80,25 @@ namespace Api_DnD.Controllers
         }
 
         [HttpPut("/EditArme")]
-        public async Task<ActionResult<Arme>> EditArme(int Id, int bonusJet, int bonusForce, string nom, int enchantementId)
+        public async Task<ActionResult<Arme>> EditArme(int id, int bonusJet, int bonusForce, string nom, int enchantementId)
         {
-            await _context.Armes.Where(a => a.id == Id).ExecuteUpdateAsync(setters => setters
-            .SetProperty(a => a.BonusJet, bonusJet)
-            .SetProperty(a => a.BonusForce, bonusForce)
-            .SetProperty(a => a.Nom, nom)
-            .SetProperty(a => a.EnchantementId, enchantementId));
+            Arme a = await _context.Armes.FindAsync(id);
 
+            if (a != null)
+            {
+                if (string.IsNullOrEmpty(nom))
+                    nom = a.Nom;
+
+                if (enchantementId == 0)
+                    enchantementId = a.EnchantementId;
+
+                await _context.Armes.Where(a => a.id == id).ExecuteUpdateAsync(setters => setters
+                .SetProperty(a => a.BonusJet, bonusJet)
+                .SetProperty(a => a.BonusForce, bonusForce)
+                .SetProperty(a => a.Nom, nom)
+                .SetProperty(a => a.EnchantementId, enchantementId));
+                _context.SaveChanges();
+            }
             return NoContent();
         }
 

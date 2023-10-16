@@ -74,12 +74,23 @@ namespace Api_DnD.Controllers
         [HttpPut("/EditSkill")]
         public async Task<ActionResult<Skill>> EditSkill(int id, string nom, string description)
         {
-            await _context.Skill.Where(m => m.id == id).ExecuteUpdateAsync(setters => setters
-                .SetProperty(m => m.Nom, nom)
-                .SetProperty(m => m.Descr, description)
-                );
+            Skill s = await _context.Skill.FindAsync(id);
+            if (s != null)
+            {
+                if (string.IsNullOrEmpty(nom))
+                    nom = s.Nom;
 
+                if (string.IsNullOrEmpty(description))
+                    description = s.Descr;
 
+                await _context.Skill.Where(m => m.id == id).ExecuteUpdateAsync(setters => setters
+                    .SetProperty(m => m.Nom, nom)
+                    .SetProperty(m => m.Descr, description)
+                    );
+
+                _context.SaveChanges();
+
+            }
             return null;
         }
 

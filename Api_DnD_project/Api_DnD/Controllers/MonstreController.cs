@@ -132,56 +132,60 @@ namespace Api_DnD.Controllers
         {
             Monstre m = await _context.Monstres.FindAsync(id);
 
-            if (string.IsNullOrEmpty(nom))
-                nom = m.Nom;
+            if (m != null)
+            {
+                if (string.IsNullOrEmpty(nom))
+                    nom = m.Nom;
 
-            if (string.IsNullOrEmpty(size))
-                size = m.Size;
+                if (string.IsNullOrEmpty(size))
+                    size = m.Size;
 
-            if (armorClass == 0)
-                armorClass = m.ArmorClass;
+                if (armorClass == 0)
+                    armorClass = m.ArmorClass;
 
-            if (hitPoint == 0)
-                hitPoint = m.HitPoint;
+                if (hitPoint == 0)
+                    hitPoint = m.HitPoint;
 
-            if (speed == 0)
-                speed = m.Speed;
+                if (speed == 0)
+                    speed = m.Speed;
 
-            if (string.IsNullOrEmpty(lang))
-                lang = m.Lang;
+                if (string.IsNullOrEmpty(lang))
+                    lang = m.Lang;
 
-            if (string.IsNullOrEmpty(dammageResistance))
-                dammageResistance = m.DammageResistance;
+                if (string.IsNullOrEmpty(dammageResistance))
+                    dammageResistance = m.DammageResistance;
 
-            if (string.IsNullOrEmpty(dammageImmunities))
-                dammageImmunities = m.DammageImmunities;
+                if (string.IsNullOrEmpty(dammageImmunities))
+                    dammageImmunities = m.DammageImmunities;
 
-            if (string.IsNullOrEmpty(conditionImmunities))
-                conditionImmunities = m.ConditionImmunities;
-            
+                if (string.IsNullOrEmpty(conditionImmunities))
+                    conditionImmunities = m.ConditionImmunities;
 
 
-            await _context.Monstres.Where(m => m.Id == id).ExecuteUpdateAsync(setters => setters
-            .SetProperty(m => m.Nom, nom)
-            .SetProperty(m => m.Size, size)
-            .SetProperty(m => m.ArmorClass, armorClass)
-            .SetProperty(m => m.HitPoint, hitPoint)
-            .SetProperty(m => m.Speed, speed)
-            .SetProperty(m => m.FlySpeed, flySpeed)
-            .SetProperty(m => m.ClimbSpeed, climbSpeed)
-            .SetProperty(m => m.Str, str)
-            .SetProperty(m => m.Dex, dex)
-            .SetProperty(m => m.Con, con)
-            .SetProperty(m => m.Intel, intel)
-            .SetProperty(m => m.Wis, wis)
-            .SetProperty(m => m.Cha, cha)
-            .SetProperty(m => m.DarkVision, darkVision)
-            .SetProperty(m => m.Challenge, challenge)
-            .SetProperty(m => m.Lang, lang)
-            .SetProperty(m => m.DammageResistance, dammageResistance)
-            .SetProperty(m => m.DammageImmunities, dammageImmunities)
-            .SetProperty(m => m.ConditionImmunities, conditionImmunities)
-            );
+
+                await _context.Monstres.Where(m => m.Id == id).ExecuteUpdateAsync(setters => setters
+                .SetProperty(m => m.Nom, nom)
+                .SetProperty(m => m.Size, size)
+                .SetProperty(m => m.ArmorClass, armorClass)
+                .SetProperty(m => m.HitPoint, hitPoint)
+                .SetProperty(m => m.Speed, speed)
+                .SetProperty(m => m.FlySpeed, flySpeed)
+                .SetProperty(m => m.ClimbSpeed, climbSpeed)
+                .SetProperty(m => m.Str, str)
+                .SetProperty(m => m.Dex, dex)
+                .SetProperty(m => m.Con, con)
+                .SetProperty(m => m.Intel, intel)
+                .SetProperty(m => m.Wis, wis)
+                .SetProperty(m => m.Cha, cha)
+                .SetProperty(m => m.DarkVision, darkVision)
+                .SetProperty(m => m.Challenge, challenge)
+                .SetProperty(m => m.Lang, lang)
+                .SetProperty(m => m.DammageResistance, dammageResistance)
+                .SetProperty(m => m.DammageImmunities, dammageImmunities)
+                .SetProperty(m => m.ConditionImmunities, conditionImmunities)
+                );
+                _context.SaveChanges();
+            }
             return NoContent();
         }
         

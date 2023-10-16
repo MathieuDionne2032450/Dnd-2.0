@@ -56,17 +56,19 @@ namespace Api_DnD.Controllers
         public async Task<ActionResult<feats>> EditArme(int id,string name, string description)
         {
             feats f = await _context.Feats.FindAsync(id);
+            if (f != null)
+            {
+                if (string.IsNullOrEmpty(name))
+                    name = f.Nom;
 
-            if (string.IsNullOrEmpty(name))
-                name = f.Nom;
+                if (string.IsNullOrEmpty(description))
+                    description = f.Descr;
 
-            if (string.IsNullOrEmpty(description))
-                description = f.Descr;
-
-            await _context.Feats.Where(f => f.id == id).ExecuteUpdateAsync(setters => setters
-            .SetProperty(f => f.Nom, name)
-            .SetProperty(f => f.Descr, description));
-            return NoContent();
+                await _context.Feats.Where(f => f.id == id).ExecuteUpdateAsync(setters => setters
+                .SetProperty(f => f.Nom, name)
+                .SetProperty(f => f.Descr, description));
+                return NoContent();
+            }
         }
 
         [HttpPost("/CreateFeat")]

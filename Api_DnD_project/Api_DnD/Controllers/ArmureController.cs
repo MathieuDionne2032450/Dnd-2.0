@@ -63,6 +63,7 @@ namespace Api_DnD.Controllers
         {
             Armure armureCree = new Armure { Name = name, Type = type, Ac = ac, DexBonus = dexBonus, MaxDexMod = maxDexBonus, StealthDisadvantage = stealthDisadvantage, EnchantementId = EnchantementId };
 
+
             _context.Armures.Add(armureCree);
             await _context.SaveChangesAsync();
 
@@ -70,17 +71,43 @@ namespace Api_DnD.Controllers
         }
 
         [HttpPut("/EditArmure")]
-        public async Task<ActionResult<Armure>> EditArmure(int Id, string name, string type, int ac, bool dexBonus, int maxDexBonus, int stealthDisadvantage, int EnchantementId)
+        public async Task<ActionResult<Armure>> EditArmure(int id, string name, string type, int ac, bool dexBonus, int maxDexBonus, int stealthDisadvantage, int EnchantementId)
         {
-            await _context.Armures.Where(a => a.Id == Id).ExecuteUpdateAsync(setters => setters
-            .SetProperty(a => a.Name, name)
-            .SetProperty(a => a.Type, type)
-            .SetProperty(a => a.Ac, ac)
-            .SetProperty(a => a.DexBonus,dexBonus)
-            .SetProperty(a => a.MaxDexMod,maxDexBonus)
-            .SetProperty(a => a.StealthDisadvantage,stealthDisadvantage)
-            .SetProperty(a => a.EnchantementId, EnchantementId));
+            Armure a = await _context.Armures.FindAsync(id);
 
+            if (a != null)
+            {
+                if (string.IsNullOrEmpty(name))
+                    name = a.Name;
+
+                if (string.IsNullOrEmpty(type)) type = a.Type;
+
+                if (dexBonus == null)
+                    dexBonus = a.DexBonus;
+
+                if (maxDexBonus == 0)
+                    maxDexBonus = a.MaxDexMod;
+
+                if (stealthDisadvantage == 0)
+                    stealthDisadvantage = a.StealthDisadvantage;
+
+                if (EnchantementId == 0)
+                {
+                    EnchantementId = a.EnchantementId;
+                }
+
+
+                await _context.Armures.Where(a => a.Id == Id).ExecuteUpdateAsync(setters => setters
+                .SetProperty(a => a.Name, name)
+                .SetProperty(a => a.Type, type)
+                .SetProperty(a => a.Ac, ac)
+                .SetProperty(a => a.DexBonus, dexBonus)
+                .SetProperty(a => a.MaxDexMod, maxDexBonus)
+                .SetProperty(a => a.StealthDisadvantage, stealthDisadvantage)
+                .SetProperty(a => a.EnchantementId, EnchantementId));
+
+                _context.SaveChanges();
+            }
             return NoContent();
 
         }
