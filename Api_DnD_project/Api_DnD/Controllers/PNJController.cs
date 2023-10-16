@@ -58,6 +58,12 @@ namespace Api_DnD.Controllers
             }
         }
 
+        [HttpGet("/GetPNJById/{id}")]
+        public async Task<ActionResult<PNJ>> GetPersoById(int id)
+        {
+            return await _context.PNJ.FindAsync(id);
+        }
+
         [HttpGet("GetPNJByCampagne")]
         public async Task<ActionResult<ICollection<PNJ>>> GetPNJByCampagne(int campagneId)
         {
@@ -79,6 +85,82 @@ namespace Api_DnD.Controllers
         {
             PNJ? pnj = await _context.PNJ.FindAsync(x);
             return PnjDTO.PnjToPnjDTO(pnj);
+        }
+
+        [HttpPut("/EditPNJ")]
+        public async Task<ActionResult<PNJ>> EditPNJ(
+            int Id, 
+            int Bouche, 
+            int Nez, 
+            int Barbe, 
+            int Cheveux, 
+            int Sourcil,
+            int Tete,
+            int Yeux1,
+            int Yeux2,
+            string Description,
+            string Name)
+        {
+            await _context.PNJ.Where(p => p.Id == Id).ExecuteUpdateAsync(setters => setters
+            .SetProperty(p => p.Bouche, Bouche)
+            .SetProperty(p => p.Nez, Nez)
+            .SetProperty(p => p.Barbe, Barbe)
+            .SetProperty(p => p.Cheveux, Cheveux)
+            .SetProperty(p => p.Sourcil, Sourcil)
+            .SetProperty(p => p.Tete, Tete)
+            .SetProperty(p => p.Yeux1, Yeux1)
+            .SetProperty(p => p.Yeux2, Yeux2)
+            .SetProperty(p => p.Description, Description)
+            .SetProperty(p => p.Name, Name)
+            );
+
+            return NoContent();
+        }
+
+        [HttpPost("/CreatePNJ")]
+        public async Task<ActionResult<PNJ>> CreatePNJ(
+            int Bouche,
+            int Nez,
+            int Barbe,
+            int Cheveux,
+            int Sourcil,
+            int Tete,
+            int Yeux1,
+            int Yeux2,
+            string Description,
+            string Name)
+        {
+            PNJ pnj = new PNJ
+            {
+                Bouche = Bouche,
+                Nez = Nez,
+                Barbe = Barbe,
+                Cheveux = Cheveux,
+                Sourcil = Sourcil,
+                Tete = Tete,
+                Yeux1 = Yeux1,
+                Yeux2 = Yeux2,
+                Description = Description,
+                Name = Name
+            };
+
+            _context.PNJ.Add(pnj);
+            await _context.SaveChangesAsync();
+
+            return CreatedAtAction("GetPNJById", new { id = pnj.Id }, pnj);
+        }
+
+        [HttpDelete("/DeletePNJ/{id}")]
+        public async Task<bool> DeletePNJ(int id)
+        {
+            if (await _context.Persos.Where(p => p.id.Equals(id)).ExecuteDeleteAsync() == 1)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }
