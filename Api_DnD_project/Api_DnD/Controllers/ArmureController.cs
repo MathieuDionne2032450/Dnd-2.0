@@ -97,7 +97,7 @@ namespace Api_DnD.Controllers
                 }
 
 
-                await _context.Armures.Where(a => a.Id == Id).ExecuteUpdateAsync(setters => setters
+                await _context.Armures.Where(a => a.Id == id).ExecuteUpdateAsync(setters => setters
                 .SetProperty(a => a.Name, name)
                 .SetProperty(a => a.Type, type)
                 .SetProperty(a => a.Ac, ac)

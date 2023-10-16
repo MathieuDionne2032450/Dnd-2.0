@@ -113,6 +113,7 @@ namespace Api_DnD.Controllers
             .SetProperty(p => p.Description, Description)
             .SetProperty(p => p.Name, Name)
             );
+            _context.SaveChanges();
 
             return NoContent();
         }

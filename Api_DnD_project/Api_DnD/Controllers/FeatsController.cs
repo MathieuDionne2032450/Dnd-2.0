@@ -67,8 +67,9 @@ namespace Api_DnD.Controllers
                 await _context.Feats.Where(f => f.id == id).ExecuteUpdateAsync(setters => setters
                 .SetProperty(f => f.Nom, name)
                 .SetProperty(f => f.Descr, description));
-                return NoContent();
+                
             }
+            return NoContent();
         }
 
         [HttpPost("/CreateFeat")]

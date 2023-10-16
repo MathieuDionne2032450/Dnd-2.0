@@ -97,7 +97,8 @@ namespace Api_DnD.Controllers
             string Ideal,
             string Bonds,
             string Flaws,
-            int Niv)
+            int Niv,
+            int campagneId)
         {
             await _context.Persos.Where(p => p.id == id).ExecuteUpdateAsync(setters => setters
             .SetProperty(p => p.IrlJoueur, IrlJoueur)
@@ -112,7 +113,9 @@ namespace Api_DnD.Controllers
             .SetProperty(p => p.Bonds, Bonds)
             .SetProperty(p => p.Flaws, Flaws)
             .SetProperty(p => p.Niv, Niv)
+            .SetProperty(p => p.CampagneId, campagneId)
             );
+            _context.SaveChanges();
 
             return NoContent();
         }
@@ -130,7 +133,8 @@ namespace Api_DnD.Controllers
             string Ideal,
             string Bonds,
             string Flaws,
-            int Niv)
+            int Niv,
+            int CampagneId)
         {
             Perso perso = new Perso
             {
@@ -146,6 +150,7 @@ namespace Api_DnD.Controllers
                 Bonds = Bonds,
                 Flaws = Flaws,
                 Niv = Niv,
+                CampagneId = CampagneId
             };
 
             _context.Persos.Add(perso);
