@@ -86,36 +86,63 @@ namespace Api_DnD.Controllers
         [HttpPut("/EditPerso")]
         public async Task<ActionResult<Perso>> EditPerso(
             int id,
-            string IrlJoueur,
-            string Nom,
-            string Description,
+            string? IrlJoueur,
+            string? Nom,
+            string? Description,
             int Inspiration,
             int ArmureId,
             int ClasseId,
             int RaceId,
-            string Personalitetrait,
-            string Ideal,
-            string Bonds,
-            string Flaws,
+            string? Personalitetrait,
+            string? Ideal,
+            string? Bonds,
+            string? Flaws,
             int Niv,
             int campagneId)
         {
-            await _context.Persos.Where(p => p.id == id).ExecuteUpdateAsync(setters => setters
-            .SetProperty(p => p.IrlJoueur, IrlJoueur)
-            .SetProperty(p => p.Nom, Nom)
-            .SetProperty(p => p.Description, Description)
-            .SetProperty(p => p.Inspiration, Inspiration)
-            .SetProperty(p => p.ArmureId, ArmureId)
-            .SetProperty(p => p.ClasseId, ClasseId)
-            .SetProperty(p => p.RaceId, RaceId)
-            .SetProperty(p => p.Personalitetrait, Personalitetrait)
-            .SetProperty(p => p.Ideal, Ideal)
-            .SetProperty(p => p.Bonds, Bonds)
-            .SetProperty(p => p.Flaws, Flaws)
-            .SetProperty(p => p.Niv, Niv)
-            .SetProperty(p => p.CampagneId, campagneId)
-            );
-            _context.SaveChanges();
+
+            Perso p = await _context.Persos.FindAsync(id);
+
+            if (p != null)
+            {
+                if (string.IsNullOrEmpty(IrlJoueur))
+                    IrlJoueur = p.IrlJoueur;
+
+                if (string.IsNullOrEmpty(Nom))
+                    Nom = p.Nom;
+
+                if (string.IsNullOrEmpty(Description))
+                    Description = p.Description;
+
+                if (string.IsNullOrEmpty(Personalitetrait))
+                    Personalitetrait = p.Personalitetrait;
+
+                if (string.IsNullOrEmpty(Ideal))
+                    Ideal = p.Ideal;
+
+                if (string.IsNullOrEmpty(Bonds))
+                    Bonds = p.Bonds;
+
+                if (string.IsNullOrEmpty(Flaws))
+                    Flaws = p.Flaws;
+
+                await _context.Persos.Where(p => p.id == id).ExecuteUpdateAsync(setters => setters
+                .SetProperty(p => p.IrlJoueur, IrlJoueur)
+                .SetProperty(p => p.Nom, Nom)
+                .SetProperty(p => p.Description, Description)
+                .SetProperty(p => p.Inspiration, Inspiration)
+                .SetProperty(p => p.ArmureId, ArmureId)
+                .SetProperty(p => p.ClasseId, ClasseId)
+                .SetProperty(p => p.RaceId, RaceId)
+                .SetProperty(p => p.Personalitetrait, Personalitetrait)
+                .SetProperty(p => p.Ideal, Ideal)
+                .SetProperty(p => p.Bonds, Bonds)
+                .SetProperty(p => p.Flaws, Flaws)
+                .SetProperty(p => p.Niv, Niv)
+                .SetProperty(p => p.CampagneId, campagneId)
+                );
+                _context.SaveChanges();
+            }
 
             return NoContent();
         }
