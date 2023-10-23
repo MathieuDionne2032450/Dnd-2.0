@@ -4,7 +4,7 @@
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public string Desc { get; set; }
+        public string? Desc { get; set; }
         public ICollection<Arme> Armes { get; set; }
         public ICollection<Armure> Armures { get; set; }
         public ICollection<Enchantement> Enchantements { get; set; }
