@@ -92,5 +92,74 @@ namespace TestDnd
         }
 
         #endregion endenchantement
+
+        #region Skill
+
+        public void CreateTablesSkill()
+        {
+            context.Database.EnsureCreated();
+
+            Campagne campagne = new Campagne
+            {
+                Id = 1,
+                Name = "La campagne",
+                Desc = "La campagne principale",
+                Armes = new List<Arme>(),
+                Armures = new List<Armure>(),
+                Enchantements = new List<Enchantement>(),
+                Monstres = new List<Monstre>(),
+                PNJs = new List<PNJ>(),
+                Quetes = new List<Quete>(),
+                Classes = new List<Classes>(),
+                Races = new List<Race>()
+            };
+
+            Enchantement enchantement = new Enchantement
+            {
+                Nom = "Enchantement",
+                Description = "Enchantement cool",
+                Type = "Enchanté",
+                Modif = 1,
+                Id = 1
+            };
+
+            Perso perso = new Perso { 
+                IrlJoueur = "Alexandre", 
+                Nom = "Krados", 
+                Description = "démon démoniaque", 
+                Inspiration = 0, 
+                ArmureId = 1, 
+                ClasseId = 1, 
+                RaceId = 3, 
+                Personalitetrait = "evil", 
+                Ideal = "Justice", 
+                Bonds = "Avec Louise", 
+                Flaws = "Le bruit", 
+                Niv = 1, 
+                CampagneId = 1 };
+
+            List<Perso> persos = new List<Perso> { perso };
+
+            Skill[] skills = new Skill[]
+            {
+                new Skill { id = 1, Descr = "Compétences acérées", Nom = "Skillz", Persos = persos },
+                new Skill { id = 2, Descr = "Force incroyable", Nom = "Gros muscles", Persos = persos },
+                new Skill { id = 3, Descr = "Capacité de voler", Nom = "Ailes", Persos = persos }
+            };
+
+            foreach(Skill s in skills)
+            {
+                context.Skill.Add(s);
+            }
+
+            context.SaveChanges();
+        }
+
+        public void DropTables()
+        {
+            context.Database.EnsureDeleted();
+        }
+
+        #endregion
     }
 }
