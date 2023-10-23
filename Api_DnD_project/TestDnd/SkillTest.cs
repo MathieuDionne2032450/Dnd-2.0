@@ -1,5 +1,6 @@
 ﻿using Api_DnD.Controllers;
 using Api_DnD.Data;
+using Api_DnD.Model;
 using FluentAssertions;
 using System;
 using System.Collections.Generic;
@@ -53,18 +54,20 @@ namespace TestDnd
             skillController.CreateSkill("Intelligence effrayante", "Des excellentes capacités mentales");
 
             skillController.GetSkill(4).Result.Value.Nom.Should().Be("Intelligence effrayante");
-
-            skillController.DeleteSkill(4);
         }
 
         [TestMethod]
         public void TestDeleteSkill()
         {
-            skillController.CreateSkill("Intelligence effrayante", "Des excellentes capacités mentales");
-
-            skillController.DeleteSkill(4);
+            skillController.DeleteSkill(3);
 
             skillController.GetSkill(4).Result.Value.Should().Be(null);
+        }
+
+        [TestCleanup]
+        public void DeleteDatabase()
+        {
+            context.Database.EnsureDeleted();
         }
     }
 }

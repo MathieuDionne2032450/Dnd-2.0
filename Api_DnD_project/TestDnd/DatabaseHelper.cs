@@ -17,7 +17,7 @@ namespace TestDnd
         public DNDContext CreateContext()
         {
             DbContextOptionsBuilder<DNDContext> builder = new DbContextOptionsBuilder<DNDContext>();
-            builder.UseMySql("Server=sql.decinfo-cchic.ca;Port=33306;Database=a23_sda_test_mal;Uid=dev-2032450;Pwd=Info2020", new MySqlServerVersion(new Version(8,0,21))).EnableSensitiveDataLogging();
+            builder.UseMySql("Server=localhost;Port=3306;Database=dndtest;Uid=root;Pwd=azimcone1", new MySqlServerVersion(new Version(8,0,21))).EnableSensitiveDataLogging();
             context = new DNDContext(builder.Options);
 
             return context;
@@ -82,14 +82,59 @@ namespace TestDnd
                 Id = 1
             };
 
+            Armure armure = new Armure
+            {
+                Name = "Armure",
+                Type = "Forte",
+                Ac = 2,
+                DexBonus = true,
+                MaxDexMod = 2,
+                StealthDisadvantage = 2,
+                EnchantementId = 1
+            };
+
+            Arme arme = new Arme
+            {
+                BonusJet = 2,
+                BonusForce = 2,
+                Nom = "Épée",
+                EnchantementId = 1,
+                Campagne = new List<Campagne> { campagne }
+            };
+
+            Classes classes = new Classes
+            {
+                name = "Classe",
+                description = "Description de la classe",
+                hitDie = "8d6",
+                primaryAbility = "Habileté primaire",
+                id = 1,
+                Campagne = new List<Campagne> { campagne }
+            };
+
+            Race race = new Race
+            {
+                Nom = "Orque",
+                BonusPV = 1,
+                BonusDex = 1,
+                BonusForce = 1,
+                BonusIntel = 1,
+                BonusWisdom = 1,
+                BonusConsti = 1,
+                BonusCharisma = 1,
+                Id = 1,
+                Campagnes = new List<Campagne> { campagne }
+            };
+
             Perso perso = new Perso { 
                 IrlJoueur = "Alexandre", 
                 Nom = "Krados", 
                 Description = "démon démoniaque", 
                 Inspiration = 0, 
-                ArmureId = 1, 
+                ArmureId = 1,
+                LesArmes = new List<Arme> { arme },
                 ClasseId = 1, 
-                RaceId = 3, 
+                RaceId = 1, 
                 Personalitetrait = "evil", 
                 Ideal = "Justice", 
                 Bonds = "Avec Louise", 
@@ -105,6 +150,14 @@ namespace TestDnd
                 new Skill { id = 2, Descr = "Force incroyable", Nom = "Gros muscles", Persos = persos },
                 new Skill { id = 3, Descr = "Capacité de voler", Nom = "Ailes", Persos = persos }
             };
+
+            context.Campagnes.Add(campagne);
+            context.Enchantements.Add(enchantement);
+            context.Armures.Add(armure);
+            context.Armes.Add(arme);
+            context.Classes.Add(classes);
+            context.Races.Add(race);
+            context.Persos.Add(perso);
 
             foreach(Skill s in skills)
             {
