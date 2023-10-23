@@ -60,8 +60,8 @@ namespace Api_DnD.Controllers
             }
         }
 
-            [HttpGet("/GetEnchantement/{id}")]
-        public async Task<ActionResult<Enchantement>> GetEnchantement(int id)
+        [HttpGet("/GetEnchantement/{id}")]
+        public async Task<ActionResult<Enchantement>> GetEnchantementById(int id)
         {
             return await _context.Enchantements.FindAsync(id);
         }
