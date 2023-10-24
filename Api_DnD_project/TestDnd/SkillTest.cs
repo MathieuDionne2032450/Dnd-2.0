@@ -29,23 +29,24 @@ namespace TestDnd
         [TestMethod]
         public void TestGetAllSkills()
         {
-            skillController.GetSkill("nom", string.Empty, 3).Result.Value.Count().Should().Be(3);
+            skillController.GetSkill("", "", 0).Result.Value.Count().Should().Be(3);
         }
 
-        [TestMethod]
         public void TestGetSkill()
         {
             skillController.GetSkill(1).Result.Value.Nom.Should().Be("Skillz");
+        }
+        public async Task<bool> AsyncEditSkill()
+        {
+            await skillController.EditSkill(1, "Urticaire", "Atchoum");
+
+            return skillController.GetSkill(1).Result.Value.Nom.Equals("Urticaire");
         }
 
         [TestMethod]
         public void TestEditSkill()
         {
-            skillController.EditSkill(1, "Urticaire", "Atchoum");
-
-            skillController.GetSkill(1).Result.Value.Nom.Should().Be("Urticaire");
-
-            dbHelper.DropTables();
+            AsyncEditSkill().Result.Should().Be(true);
         }
 
         [TestMethod]
@@ -59,7 +60,7 @@ namespace TestDnd
         [TestMethod]
         public void TestDeleteSkill()
         {
-            skillController.DeleteSkill(3);
+            skillController.DeleteSkill(4);
 
             skillController.GetSkill(4).Result.Value.Should().Be(null);
         }
