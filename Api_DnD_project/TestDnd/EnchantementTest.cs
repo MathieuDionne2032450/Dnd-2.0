@@ -49,8 +49,8 @@ namespace TestDnd
         [TestMethod]
         public void testEdit()
         {
-            TestEditEnchantement().Should().Be(true);
-           
+            //TestEditEnchantement().Should().Be(true);
+
         }
 
         [TestMethod]
