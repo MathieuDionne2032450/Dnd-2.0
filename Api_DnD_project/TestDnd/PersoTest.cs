@@ -24,7 +24,7 @@ namespace TestDnd
         [TestMethod]
         public void TestGetAll()
         {
-            persoController.GetAllPerso("id", null,null,1).Result.Value.Count().Should().Be(3);
+            persoController.GetAllPerso("id", null, null, 1).Result.Value.Count().Should().Be(3);
             persoController.GetAllPerso("id", null, null, 1).Result.Value.First().id.Should().Be(1);
         }
     }

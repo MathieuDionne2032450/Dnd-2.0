@@ -63,7 +63,8 @@ namespace Api_DnD.Controllers
         [HttpGet("/GetEnchantement/{id}")]
         public async Task<ActionResult<Enchantement>> GetEnchantementById(int id)
         {
-            return await _context.Enchantements.FindAsync(id);
+            var test = await _context.Enchantements.FindAsync(id);
+            return test;
         }
 
         [HttpPut("/EditEnchantement")]
@@ -82,12 +83,12 @@ namespace Api_DnD.Controllers
                     Type = e.Type;
 
                 await _context.Enchantements.Where(e => e.Id == id).ExecuteUpdateAsync(setters => setters
-                .SetProperty(e => e.Nom, Nom)
+                .SetProperty(e => e.Nom,Nom)
                 .SetProperty(e => e.Description, Description)
                 .SetProperty(e => e.Type, Type)
                 .SetProperty(e => e.Modif, Modif)
                 );
-                _context.SaveChanges();
+                await _context.SaveChangesAsync();
 
             }
 

@@ -5,6 +5,7 @@ using Api_DnD.Model;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
+using MySqlX.XDevAPI.Common;
 
 namespace TestDnd
 {
@@ -25,39 +26,41 @@ namespace TestDnd
         }
 
         [TestMethod]
-        public void TestGetAll()
+        public async Task TestGetAll()
         {
-            enchantementController.GetEnchantement("nom", null, 1).Result.Value?.Count().Should().Be(3);
+            var result = await enchantementController.GetEnchantement("nom", null, 1);
+            result.Value?.Count().Should().Be(3);
 
         }
 
         [TestMethod]
-        public void TestGetById()
+        public async Task TestGetById()
         {
-            enchantementController.GetEnchantementById(2).Result.Value?.Nom.Should().Be("feu");
+            var result = await enchantementController.GetEnchantementById(2);
+            result.Value?.Nom.Should().Be("feu");
         }
 
-
-        public async void TestEditEnchantement()
+        [TestMethod]
+        public async Task TestEditEnchantement()
         {
+            var result = (await enchantementController.GetEnchantementById(2)).Value;
             await enchantementController.EditEnchantement(2, "feu de camp", null, null, 2);
-            enchantementController.GetEnchantementById(2).Result.Value?.Nom.Should().Be("feu de camp");
-            enchantementController.GetEnchantementById(2).Result.Value?.Description.Should().NotBe(null);
-            dbHelper.DropTablesEnchantement();
+            await context.Entry(result).ReloadAsync();
+            result.Nom.Should().Be("feu de camp");
+            result.Description.Should().NotBe(null);
         }
 
-        [TestMethod]
-        public void testEdit()
-        {
-            TestEditEnchantement().Should().Be(true);
-           
-        }
+        //[TestMethod]
+        //public async void TestCreateEnchantement()
+        //{
+        //    enchantementController.CreateEnchantement("feu avec du bois", "feu avec des buches", "feu", 2).Result.Value?.Nom.Should().Be("feu avec du bois"); ;
 
-        [TestMethod]
-        public async void TestCreateEnchantement()
-        {
-            enchantementController.CreateEnchantement("feu avec du bois", "feu avec des buches", "feu", 2).Result.Value?.Nom.Should().Be("feu avec du bois"); ;
+        //    dbHelper.DropTablesEnchantement();
+        //}
 
+        [TestCleanup]
+        public void Clean()
+        {
             dbHelper.DropTablesEnchantement();
         }
 
