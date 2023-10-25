@@ -7,7 +7,6 @@ using System.Text;
 using System.Threading.Tasks;
 using Api_DnD.Data;
 using Api_DnD.Model;
-using FluentAssertions;
 using Microsoft.EntityFrameworkCore;
 
 namespace TestDnd
@@ -19,8 +18,7 @@ namespace TestDnd
         public DNDContext CreateContext()
         {
             DbContextOptionsBuilder<DNDContext> builder = new DbContextOptionsBuilder<DNDContext>();
-            builder.UseMySql("Server=sql.decinfo-cchic.ca;Port=33306;Database=a23_sda_test_mal;Uid=dev-2032450;Pwd=Info2020", new MySqlServerVersion(new Version(8,0,21))).EnableSensitiveDataLogging();
-            builder.UseMySql("Server=sql.decinfo-cchic.ca;Port=33306;Database=a23_sda_test_mal;Uid=dev-2033838;Pwd=azimcone1", new MySqlServerVersion(new Version(8,0,21))).EnableSensitiveDataLogging();
+            builder.UseMySql("Server=localhost;Port=3306;Database=dndtest;Uid=root;Pwd=azimcone1", new MySqlServerVersion(new Version(8,0,21))).EnableSensitiveDataLogging();
             context = new DNDContext(builder.Options);
 
             return context;
@@ -58,26 +56,26 @@ namespace TestDnd
         #region Perso
         public void CreateTablesPerso()
         {
-            context.Database.EnsureCreated();
-
             Race race = new Race() { Id = 1, BonusCharisma = 1, BonusDex = 1, BonusConsti = 1, BonusForce = 1, BonusIntel = 1, BonusPV = 1, BonusWisdom = 1, Nom = "Loup" };
             Enchantement enchant = new Enchantement() { Id = 1, Description="waw"};
             Classes classe = new Classes() { id = 1, description = "desc", hitDie = "2d4", name="Mage",primaryAbility="boule de feu"};
 
-            Perso[] persos = new Perso[]
+        Perso[] persos = new Perso[]
             {
                 
                 new Perso { IrlJoueur = "Alexandre", Nom = "Dreknethol", Description = "Un beau perso qui est vraiment le plus beau de tous", Inspiration = 0, ArmureId = 1,Armure = new Armure("armure1","lourde",14,false,0,0,1,1,1), LesArmes = new List<Arme>(),
                     ClasseId = 1, Classes = classe, RaceId = 1, Race = race, Skills = new List<Skill>(), Personalitetrait = "beau",
                     Ideal="beauté",Bonds = "Les gens beau", Flaws = "La laideur", Niv = 15, id = 1, CampagneId=1,Campagne=new Campagne(){ Id=1, Desc="campagne plate",Name="plate"}, feats = new List<feats>() },
                 
-                new Perso { IrlJoueur = "Mathieu", Nom = "Bwipo", Description = "un laid", Inspiration = 0, ArmureId = 2,Armure = new Armure("armure1","très lourde",14,false,0,0,1,2,1), LesArmes = new List<Arme>(),
+                new Perso { IrlJoueur = "Mathieu", Nom = "Bwipo", Description = "un laid", Inspiration = 0, ArmureId = 2,Armure = new Armure("armure1","lourde",14,false,0,0,1,2,1), LesArmes = new List<Arme>(),
                     ClasseId = 2, Classes = classe, RaceId = 2, Race = race, Skills = new List<Skill>(), Personalitetrait = "laid",
                     Ideal="laideur",Bonds = "Les gens laid", Flaws = "La beauté", Niv = 5, id = 2, CampagneId=2,Campagne=new Campagne(){ Id=2, Desc="campagne Dole",Name="dole"}, feats = new List<feats>() },
                 
                 new Perso { IrlJoueur = "Louis", Nom = "Louise", Description = "jeune damme cool", Inspiration = 0, ArmureId = 3,Armure = new Armure("armure1","lourde",14,false,0,0,1,3,1), LesArmes = new List<Arme>(),
                     ClasseId = 3, Classes = classe, RaceId = 1, Race = race, Skills = new List<Skill>(), Personalitetrait = "beau",
                     Ideal="cool",Bonds = "Les gens cool", Flaws = "Les gens pas cool", Niv = 1, id = 3, CampagneId=3,Campagne=new Campagne(){ Id=3, Desc="campagne Fun",Name="fun"}, feats = new List<feats>() },
+
+
             };
 
             foreach (Perso p in persos)
@@ -86,15 +84,14 @@ namespace TestDnd
             }
 
             context.SaveChanges();
-            
         }
 
-        public async Task DropTablesPerso()
+        public void DropTablesPerso()
         {
             context.Database.EnsureDeleted();
         }
 
-        #endregion Perso
+        #endregion endenchantement
 
         #region Skill
 
@@ -217,149 +214,5 @@ namespace TestDnd
         }
 
         #endregion
-
-        #region Arme
-
-        public void CreateTablesArme()
-        {
-            context.Database.EnsureCreated();
-
-            Campagne campagne = new Campagne
-            {
-                Id = 1,
-                Name = "La campagne",
-                Desc = "La campagne principale",
-                Armes = new List<Arme>(),
-                Armures = new List<Armure>(),
-                Enchantements = new List<Enchantement>(),
-                Monstres = new List<Monstre>(),
-                PNJs = new List<PNJ>(),
-                Quetes = new List<Quete>(),
-                Classes = new List<Classes>(),
-                Races = new List<Race>()
-            };
-
-            Enchantement enchantement = new Enchantement
-            {
-                Nom = "Enchantement",
-                Description = "Enchantement cool",
-                Type = "Enchanté",
-                Modif = 1,
-                Id = 1
-            };
-
-            Arme[] armes = new Arme[]
-            {
-                new Arme { BonusJet = 1, BonusForce = 1, Nom = "Massue", Enchantement = enchantement, Campagne = new List<Campagne> { campagne } },
-                new Arme { BonusJet = 1, BonusForce = 1, Nom = "Épée", Enchantement = enchantement, Campagne = new List<Campagne> { campagne } },
-                new Arme { BonusJet = 1, BonusForce = 1, Nom = "Poignard", Enchantement = enchantement, Campagne = new List<Campagne> { campagne } }
-            };
-
-            context.Campagnes.Add(campagne);
-            context.Enchantements.Add(enchantement);
-            foreach(Arme arme in armes)
-            {
-                context.Armes.Add(arme);
-            }
-
-            context.SaveChanges();
-        }
-
-        #endregion
-
-        #region Armure
-
-        public void CreateTablesArmure()
-        {
-            context.Database.EnsureCreated();
-
-            Campagne campagne = new Campagne
-            {
-                Id = 1,
-                Name = "La campagne",
-                Desc = "La campagne principale",
-                Armes = new List<Arme>(),
-                Armures = new List<Armure>(),
-                Enchantements = new List<Enchantement>(),
-                Monstres = new List<Monstre>(),
-                PNJs = new List<PNJ>(),
-                Quetes = new List<Quete>(),
-                Classes = new List<Classes>(),
-                Races = new List<Race>()
-            };
-
-            Enchantement enchantement = new Enchantement
-            {
-                Nom = "Enchantement",
-                Description = "Enchantement cool",
-                Type = "Enchanté",
-                Modif = 1,
-                Id = 1
-            };
-
-            Armure[] armures = new Armure[]
-            {
-                new Armure { Name = "Plastron", Type = "Fer", Ac = 1, DexBonus = true, MaxDexMod = 1, StealthDisadvantage = 1, Enchantement = enchantement, Campagne = new List<Campagne> { campagne } },
-                new Armure { Name = "Bottes", Type = "Cuir", Ac = 1, DexBonus = false, MaxDexMod = 1, StealthDisadvantage = 1, Enchantement = enchantement, Campagne = new List<Campagne> { campagne } },
-                new Armure { Name = "Casque", Type = "Diamant", Ac = 1, DexBonus = true, MaxDexMod = 1, StealthDisadvantage = 1, Enchantement = enchantement, Campagne = new List<Campagne> { campagne } }
-            };
-
-            context.Campagnes.Add(campagne);
-            context.Enchantements.Add(enchantement);
-            foreach (Armure armure in armures)
-            {
-                context.Add(armure);
-            }
-
-            context.SaveChanges();
-        }
-
-        #endregion
-
-        #region Campagne
-
-        public void CreateTablesCampagne()
-        {
-            Campagne[] campagnes = new Campagne[]
-            {
-            new Campagne
-                {
-                    Id = 1,
-                    Name = "La campagne",
-                    Desc = "La campagne principale",
-                    Armes = new List<Arme>(),
-                    Armures = new List<Armure>(),
-                    Enchantements = new List<Enchantement>(),
-                    Monstres = new List<Monstre>(),
-                    PNJs = new List<PNJ>(),
-                    Quetes = new List<Quete>(),
-                    Classes = new List<Classes>(),
-                    Races = new List<Race>()
-                },
-            new Campagne
-                {
-                    Id = 2,
-                    Name = "L'autre campagne",
-                    Desc = "La campagne secondaire",
-                    Armes = new List<Arme>(),
-                    Armures = new List<Armure>(),
-                    Enchantements = new List<Enchantement>(),
-                    Monstres = new List<Monstre>(),
-                    PNJs = new List<PNJ>(),
-                    Quetes = new List<Quete>(),
-                    Classes = new List<Classes>(),
-                    Races = new List<Race>()
-                },
-            };
-
-            foreach(Campagne campagne in campagnes)
-            {
-                context.Campagnes.Add(campagne);
-            }
-
-            context.SaveChanges();
-        }
     }
-
-    #endregion
 }

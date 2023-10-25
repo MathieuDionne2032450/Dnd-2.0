@@ -36,17 +36,14 @@ namespace TestDnd
         {
             skillController.GetSkill(1).Result.Value.Nom.Should().Be("Skillz");
         }
-        public async Task<bool> AsyncEditSkill()
-        {
-            await skillController.EditSkill(1, "Urticaire", "Atchoum");
-
-            return skillController.GetSkill(1).Result.Value.Nom.Equals("Urticaire");
-        }
 
         [TestMethod]
-        public void TestEditSkill()
+        public async Task TestEditSkill()
         {
-            AsyncEditSkill().Result.Should().Be(true);
+            await skillController.EditSkill(1, "Urticaire", "Atchoum");
+            var nouvelleValeur = await skillController.GetSkill(1);
+
+            nouvelleValeur.Should().Be("Urticaire");
         }
 
         [TestMethod]

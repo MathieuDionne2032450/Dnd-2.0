@@ -7,7 +7,6 @@ using System.Text;
 using System.Threading.Tasks;
 using Api_DnD.Data;
 using Api_DnD.Model;
-using FluentAssertions;
 using Microsoft.EntityFrameworkCore;
 
 namespace TestDnd
@@ -19,8 +18,13 @@ namespace TestDnd
         public DNDContext CreateContext()
         {
             DbContextOptionsBuilder<DNDContext> builder = new DbContextOptionsBuilder<DNDContext>();
-            builder.UseMySql("Server=sql.decinfo-cchic.ca;Port=33306;Database=a23_sda_test_mal;Uid=dev-2032450;Pwd=Info2020", new MySqlServerVersion(new Version(8,0,21))).EnableSensitiveDataLogging();
+<<<<<<< HEAD
+            builder.UseMySql("Server=localhost;Port=3306;Database=dndtest;Uid=root;Pwd=azimcone1", new MySqlServerVersion(new Version(8,0,21))).EnableSensitiveDataLogging();
             builder.UseMySql("Server=sql.decinfo-cchic.ca;Port=33306;Database=a23_sda_test_mal;Uid=dev-2033838;Pwd=azimcone1", new MySqlServerVersion(new Version(8,0,21))).EnableSensitiveDataLogging();
+=======
+            builder.UseMySql("Server=localhost;Port=3306;Database=dndtest;Uid=root;Pwd=root", new MySqlServerVersion(new Version(8,0,21))).EnableSensitiveDataLogging();
+            // old password = azimcone1
+>>>>>>> 4295d043a43ca4571ae55e33cff415c4ed130b8a
             context = new DNDContext(builder.Options);
 
             return context;
