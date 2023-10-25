@@ -18,7 +18,8 @@ namespace TestDnd
         public DNDContext CreateContext()
         {
             DbContextOptionsBuilder<DNDContext> builder = new DbContextOptionsBuilder<DNDContext>();
-            builder.UseMySql("Server=localhost;Port=3306;Database=dndtest;Uid=root;Pwd=azimcone1", new MySqlServerVersion(new Version(8,0,21))).EnableSensitiveDataLogging();
+            builder.UseMySql("Server=localhost;Port=3306;Database=dndtest;Uid=root;Pwd=root", new MySqlServerVersion(new Version(8,0,21))).EnableSensitiveDataLogging();
+            // old password = azimcone1
             context = new DNDContext(builder.Options);
 
             return context;
@@ -56,26 +57,26 @@ namespace TestDnd
         #region Perso
         public void CreateTablesPerso()
         {
+            context.Database.EnsureCreated();
+
             Race race = new Race() { Id = 1, BonusCharisma = 1, BonusDex = 1, BonusConsti = 1, BonusForce = 1, BonusIntel = 1, BonusPV = 1, BonusWisdom = 1, Nom = "Loup" };
             Enchantement enchant = new Enchantement() { Id = 1, Description="waw"};
             Classes classe = new Classes() { id = 1, description = "desc", hitDie = "2d4", name="Mage",primaryAbility="boule de feu"};
 
-        Perso[] persos = new Perso[]
+            Perso[] persos = new Perso[]
             {
                 
                 new Perso { IrlJoueur = "Alexandre", Nom = "Dreknethol", Description = "Un beau perso qui est vraiment le plus beau de tous", Inspiration = 0, ArmureId = 1,Armure = new Armure("armure1","lourde",14,false,0,0,1,1,1), LesArmes = new List<Arme>(),
                     ClasseId = 1, Classes = classe, RaceId = 1, Race = race, Skills = new List<Skill>(), Personalitetrait = "beau",
                     Ideal="beauté",Bonds = "Les gens beau", Flaws = "La laideur", Niv = 15, id = 1, CampagneId=1,Campagne=new Campagne(){ Id=1, Desc="campagne plate",Name="plate"}, feats = new List<feats>() },
                 
-                new Perso { IrlJoueur = "Mathieu", Nom = "Bwipo", Description = "un laid", Inspiration = 0, ArmureId = 2,Armure = new Armure("armure1","lourde",14,false,0,0,1,2,1), LesArmes = new List<Arme>(),
+                new Perso { IrlJoueur = "Mathieu", Nom = "Bwipo", Description = "un laid", Inspiration = 0, ArmureId = 2,Armure = new Armure("armure1","très lourde",14,false,0,0,1,2,1), LesArmes = new List<Arme>(),
                     ClasseId = 2, Classes = classe, RaceId = 2, Race = race, Skills = new List<Skill>(), Personalitetrait = "laid",
                     Ideal="laideur",Bonds = "Les gens laid", Flaws = "La beauté", Niv = 5, id = 2, CampagneId=2,Campagne=new Campagne(){ Id=2, Desc="campagne Dole",Name="dole"}, feats = new List<feats>() },
                 
                 new Perso { IrlJoueur = "Louis", Nom = "Louise", Description = "jeune damme cool", Inspiration = 0, ArmureId = 3,Armure = new Armure("armure1","lourde",14,false,0,0,1,3,1), LesArmes = new List<Arme>(),
                     ClasseId = 3, Classes = classe, RaceId = 1, Race = race, Skills = new List<Skill>(), Personalitetrait = "beau",
                     Ideal="cool",Bonds = "Les gens cool", Flaws = "Les gens pas cool", Niv = 1, id = 3, CampagneId=3,Campagne=new Campagne(){ Id=3, Desc="campagne Fun",Name="fun"}, feats = new List<feats>() },
-
-
             };
 
             foreach (Perso p in persos)
@@ -84,14 +85,15 @@ namespace TestDnd
             }
 
             context.SaveChanges();
+            
         }
 
-        public void DropTablesPerso()
+        public async Task DropTablesPerso()
         {
             context.Database.EnsureDeleted();
         }
 
-        #endregion endenchantement
+        #endregion Perso
 
         #region Skill
 
