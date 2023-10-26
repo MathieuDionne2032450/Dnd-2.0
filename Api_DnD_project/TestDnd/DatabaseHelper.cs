@@ -19,8 +19,7 @@ namespace TestDnd
         public DNDContext CreateContext()
         {
             DbContextOptionsBuilder<DNDContext> builder = new DbContextOptionsBuilder<DNDContext>();
-            builder.UseMySql("Server=sql.decinfo-cchic.ca;Port=33306;Database=a23_sda_test_mal;Uid=dev-2032450;Pwd=Info2020", new MySqlServerVersion(new Version(8,0,21))).EnableSensitiveDataLogging();
-            builder.UseMySql("Server=sql.decinfo-cchic.ca;Port=33306;Database=a23_sda_test_mal;Uid=dev-2033838;Pwd=azimcone1", new MySqlServerVersion(new Version(8,0,21))).EnableSensitiveDataLogging();
+            builder.UseMySql("Server=localhost;Port=3306;Database=testDnD;Uid=root;Pwd=root", new MySqlServerVersion(new Version(8,0,21))).EnableSensitiveDataLogging();
             context = new DNDContext(builder.Options);
 
             return context;
@@ -54,6 +53,33 @@ namespace TestDnd
         }
 
         #endregion endenchantement
+
+        #region Classes
+        public void CreateTablesClasses()
+        {
+            context.Database.EnsureCreated();
+
+            Classes[] classes = new Classes[]
+            {
+                new Classes {name = "homme", description = "humain normal", hitDie="test1", primaryAbility ="Courrir" },
+                new Classes {name = "Elf", description = "oreille pointu", hitDie="test2", primaryAbility ="parler la langue elfique" },
+                new Classes {name = "ogre", description = "shrek", hitDie="test3", primaryAbility ="vit dans un marecage"  }
+            };
+
+            foreach (Classes c in classes)
+            {
+                context.Classes.Add(c);
+            }
+
+            context.SaveChanges();
+        }
+
+        public void DropTablesClasses()
+        {
+            context.Database.EnsureDeleted();
+        }
+
+        #endregion Classes
 
         #region Perso
         public void CreateTablesPerso()

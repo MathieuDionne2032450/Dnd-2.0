@@ -50,13 +50,21 @@ namespace TestDnd
             result.Description.Should().NotBe(null);
         }
 
-        //[TestMethod]
-        //public async void TestCreateEnchantement()
-        //{
-        //    enchantementController.CreateEnchantement("feu avec du bois", "feu avec des buches", "feu", 2).Result.Value?.Nom.Should().Be("feu avec du bois"); ;
+        [TestMethod]
+        public async Task TestCreateEnchantement()
+        {
+            await enchantementController.CreateEnchantement("feu avec du bois", "feu avec des buches", "feu", 2);
+            var result = (await enchantementController.GetEnchantementById(6)).Value;
+            await context.Entry(result).ReloadAsync();
+            result.Nom.Should().Be("feu avec du bois");
+            result.Description.Should().Be("feu avec des buches");
+        }
 
-        //    dbHelper.DropTablesEnchantement();
-        //}
+        [TestMethod]
+        public async Task TestDeleteEnchantement()
+        {
+            enchantementController.DeleteEnchantement(5).Result.Should().Be(true);
+        }
 
         [TestCleanup]
         public void Clean()
