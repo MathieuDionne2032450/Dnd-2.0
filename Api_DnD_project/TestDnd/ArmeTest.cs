@@ -56,6 +56,17 @@ namespace TestDnd
             result.Nom.Should().Be("Arbalète");
         }
 
+        [TestMethod]
+        public async Task TestDeleteArme()
+        {
+            await armeController.DeleteArme(3);
+
+            context.SaveChanges();
+
+            armeController.GetArme(string.Empty, string.Empty, 1).Result.Value?.Count().Should().Be(2);
+
+        }
+
         [TestCleanup]
         public void DeleteDatabase()
         {

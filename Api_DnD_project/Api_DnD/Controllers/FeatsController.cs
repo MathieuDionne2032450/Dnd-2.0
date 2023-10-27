@@ -17,7 +17,7 @@ namespace Api_DnD.Controllers
         }
 
         [HttpGet("/GetAllFeats")]
-        public async Task<ActionResult<IEnumerable<feats>>> GetArme(string? sortOrder, string? recherche, int page)
+        public async Task<ActionResult<IEnumerable<feats>>> GetFeats(string? sortOrder, string? recherche, int page)
         {
             if (!string.IsNullOrEmpty(recherche))
             {
@@ -47,13 +47,13 @@ namespace Api_DnD.Controllers
         }
 
         [HttpGet("/GetFeat/{id}")]
-        public async Task<ActionResult<feats>> GetArme(int id)
+        public async Task<ActionResult<feats>> GetFeat(int id)
         {
             return await _context.Feats.FindAsync(id);
         }
 
         [HttpPut("/EditFeat")]
-        public async Task<ActionResult<feats>> EditArme(int id,string name, string description)
+        public async Task<ActionResult<feats>> EditFeat(int id,string name, string description)
         {
             feats f = await _context.Feats.FindAsync(id);
             if (f != null)
@@ -73,9 +73,9 @@ namespace Api_DnD.Controllers
         }
 
         [HttpPost("/CreateFeat")]
-        public async Task<ActionResult<feats>> CreateArme(string name)
+        public async Task<ActionResult<feats>> CreateFeat(string name,string desc)
         {
-            feats featCree = new feats { Nom = name };
+            feats featCree = new feats { Nom = name , Descr=desc};
 
             _context.Feats.Add(featCree);
             await _context.SaveChangesAsync();
@@ -86,7 +86,7 @@ namespace Api_DnD.Controllers
         // POST: ArmeController/Delete/5
         // Si une entrée est trouvée et supprimée, la valeur true est retournée, sinon c'est la valeur false
         [HttpDelete("/DeleteFeat/{id}")]
-        public async Task<bool> DeleteArme(int id)
+        public async Task<bool> DeleteFeat(int id)
         {
             if (await _context.Feats.Where(f => f.id.Equals(id)).ExecuteDeleteAsync() == 1)
             {

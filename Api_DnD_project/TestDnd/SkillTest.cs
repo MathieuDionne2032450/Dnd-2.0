@@ -32,6 +32,7 @@ namespace TestDnd
             skillController.GetSkill("", "", 0).Result.Value.Count().Should().Be(3);
         }
 
+        [TestMethod]
         public void TestGetSkill()
         {
             skillController.GetSkill(1).Result.Value.Nom.Should().Be("Skillz");
@@ -40,10 +41,11 @@ namespace TestDnd
         [TestMethod]
         public async Task TestEditSkill()
         {
-            await skillController.EditSkill(1, "Urticaire", "Atchoum");
-            var nouvelleValeur = await skillController.GetSkill(1);
-
-            nouvelleValeur.Should().Be("Urticaire");
+            var result = (await skillController.GetSkill(3)).Value;
+            await skillController.EditSkill(3, "Urticaire", "Atchoum");
+            await context.Entry(result).ReloadAsync();
+            result.Nom.Should().Be("Urticaire");
+            result.Descr.Should().Be("Atchoum");
         }
 
         [TestMethod]

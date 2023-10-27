@@ -19,7 +19,7 @@ namespace TestDnd
         public DNDContext CreateContext()
         {
             DbContextOptionsBuilder<DNDContext> builder = new DbContextOptionsBuilder<DNDContext>();
-            builder.UseMySql("Server=localhost;Port=3306;Database=dndtest;Uid=root;Pwd=azimcone1", new MySqlServerVersion(new Version(8,0,21))).EnableSensitiveDataLogging();
+            builder.UseMySql("Server=localhost;Port=3306;Database=dndtest;Uid=admin;Pwd=Popomoka8934", new MySqlServerVersion(new Version(8,0,21))).EnableSensitiveDataLogging();
             context = new DNDContext(builder.Options);
 
             return context;
@@ -283,9 +283,35 @@ namespace TestDnd
 
             context.Campagnes.Add(campagne);
             context.Enchantements.Add(enchantement);
+            
             foreach(Arme arme in armes)
             {
                 context.Armes.Add(arme);
+            }
+
+            context.SaveChanges();
+        }
+
+        #endregion
+
+        #region Feats
+
+        public void CreateTablesFeats()
+        {
+            context.Database.EnsureCreated();
+
+            feats[] featslist = new feats[]
+            {
+                new feats { id = 1, Nom = "Artificier", Descr = "Peut tirer du cannon" },
+                new feats { id = 2, Nom = "Homme du feu", Descr = "Est resistant au dégat de feu" },
+                new feats { id = 3, Nom = "Main leste", Descr = "peut utliser une bonus action pour recharger" },
+
+            };
+
+            
+            foreach (feats feats in featslist)
+            {
+                context.Feats.Add(feats);
             }
 
             context.SaveChanges();
