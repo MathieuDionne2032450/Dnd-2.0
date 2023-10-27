@@ -19,7 +19,7 @@ namespace TestDnd
         public DNDContext CreateContext()
         {
             DbContextOptionsBuilder<DNDContext> builder = new DbContextOptionsBuilder<DNDContext>();
-            builder.UseMySql("Server=localhost;Port=3306;Database=testDnD;Uid=root;Pwd=root", new MySqlServerVersion(new Version(8,0,21))).EnableSensitiveDataLogging();
+            builder.UseMySql("Server=localhost;Port=3306;Database=dndtest;Uid=root;Pwd=azimcone1", new MySqlServerVersion(new Version(8,0,21))).EnableSensitiveDataLogging();
             context = new DNDContext(builder.Options);
 
             return context;
