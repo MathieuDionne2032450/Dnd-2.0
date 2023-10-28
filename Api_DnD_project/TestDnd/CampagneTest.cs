@@ -26,9 +26,42 @@ namespace TestDnd
         }
 
         [TestMethod]
+        public async Task TestGetAll()
+        {
+            var result = await campagneController.GetCampagne("nom", null, 1);
+            result.Value?.Count().Should().Be(2);
+        }
+
+        [TestMethod]
         public void TestGetById()
         {
             campagneController.GetCampagneById(2).Result.Value.Name.Should().Be("L'autre campagne");
+        }
+
+        [TestMethod]
+        public async Task TestEditCampagne()
+        {
+            var result = (await campagneController.GetCampagneById(2)).Value;
+            await campagneController.EditCampagne(2, "La belle campagne", "Belle campagne où on s'ouvre une p'tite frette entre chums et on joue ça à la légère tout en étant quand même investi dans l'histoire.");
+            await context.Entry(result).ReloadAsync();
+            result.Name.Should().Be("La belle campagne");
+            result.Desc.Should().Be("Belle campagne où on s'ouvre une p'tite frette entre chums et on joue ça à la légère tout en étant quand même investi dans l'histoire.");
+        }
+
+        [TestMethod]
+        public async Task TestCreateCampagne()
+        {
+            await campagneController.CreateCampagne("Campagne poche", "campagne poche");
+            var result = (await campagneController.GetCampagneById(3)).Value;
+            await context.Entry(result).ReloadAsync();
+            result.Name.Should().Be("Campagne poche");
+            result.Desc.Should().Be("campagne poche");
+        }
+
+        [TestMethod]
+        public async Task TestDeleteCampagne()
+        {
+            campagneController.DeleteCampagne(2).Result.Should().Be(true);
         }
 
         [TestCleanup]

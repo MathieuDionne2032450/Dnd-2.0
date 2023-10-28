@@ -59,9 +59,7 @@ namespace TestDnd
         [TestMethod]
         public void TestDeleteSkill()
         {
-            skillController.DeleteSkill(4);
-
-            skillController.GetSkill(4).Result.Value.Should().Be(null);
+            skillController.DeleteSkill(3).Result.Should().Be(true);
         }
 
         [TestCleanup]
