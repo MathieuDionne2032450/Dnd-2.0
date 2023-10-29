@@ -19,7 +19,7 @@ namespace TestDnd
         public DNDContext CreateContext()
         {
             DbContextOptionsBuilder<DNDContext> builder = new DbContextOptionsBuilder<DNDContext>();
-            builder.UseMySql("Server=localhost;Port=3306;Database=dndtest;Uid=admin;Pwd=Popomoka8934", new MySqlServerVersion(new Version(8,0,21))).EnableSensitiveDataLogging();
+            builder.UseMySql("Server=localhost;Port=3306;Database=dndtest;Uid=root;Pwd=root", new MySqlServerVersion(new Version(8,0,21))).EnableSensitiveDataLogging();
             context = new DNDContext(builder.Options);
 
             return context;
@@ -61,9 +61,9 @@ namespace TestDnd
 
             Classes[] classes = new Classes[]
             {
-                new Classes {name = "homme", description = "humain normal", hitDie="test1", primaryAbility ="Courrir" },
-                new Classes {name = "Elf", description = "oreille pointu", hitDie="test2", primaryAbility ="parler la langue elfique" },
-                new Classes {name = "ogre", description = "shrek", hitDie="test3", primaryAbility ="vit dans un marecage"  }
+                new Classes {name = "Guerrier", description = "combattant", hitDie="test1", primaryAbility ="Courrir" },
+                new Classes {name = "Archer", description = "tres precis", hitDie="test2", primaryAbility ="tirer des fleche" },
+                new Classes {name = "magicien", description = "ressemble a gandalf", hitDie="test3", primaryAbility ="magie"  }
             };
 
             foreach (Classes c in classes)
@@ -80,6 +80,33 @@ namespace TestDnd
         }
 
         #endregion Classes
+
+        #region Races
+        public void CreateTablesRace()
+        {
+            context.Database.EnsureCreated();
+
+            Race[] races = new Race[]
+            {
+                new Race { Nom = "humain",BonusCharisma = 1, BonusConsti = 2, BonusDex = 3, BonusForce = 4, BonusIntel = 5, BonusPV = 6, BonusWisdom = 7, Campagnes=null},
+                new Race { Nom = "Elf", BonusCharisma = 2, BonusConsti = 3, BonusDex = 4, BonusForce = 5, BonusIntel = 6, BonusPV = 7, BonusWisdom = 8, Campagnes=null},
+                new Race { Nom = "ogre", BonusCharisma = 3, BonusConsti = 4, BonusDex = 5, BonusForce = 6, BonusIntel = 7, BonusPV = 8, BonusWisdom = 9, Campagnes=null}
+            };
+
+            foreach (Race r in races)
+            {
+                context.Races.Add(r);
+            }
+
+            context.SaveChanges();
+        }
+
+        public void DropTablesRaces()
+        {
+            context.Database.EnsureDeleted();
+        }
+
+        #endregion Races
 
         #region Perso
         public void CreateTablesPerso()

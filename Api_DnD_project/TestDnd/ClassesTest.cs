@@ -37,27 +37,27 @@ namespace TestDnd
         public async Task TestGetById()
         {
             var result = await classesController.GetClassesById(2);
-            result.Value?.name.Should().Be("Elf");
+            result.Value?.name.Should().Be("Archer");
         }
 
         [TestMethod]
         public async Task TestEditClasses()
         {
             var result = (await classesController.GetClassesById(2)).Value;
-            await classesController.EditClasses(2,"lutin","esclave du pere noel",null,"Connait le pere noel");
+            await classesController.EditClasses(2,"Ninja","discret",null,"discret");
             await context.Entry(result).ReloadAsync();
-            result.name.Should().Be("lutin");
+            result.name.Should().Be("Ninja");
             result.hitDie.Should().NotBe(null);
         }
 
         [TestMethod]
         public async Task TestCreateClasses()
         {
-            await classesController.CreateClasses("Orc","monstre","test4","mechant dans seigneur des anneaux");
+            await classesController.CreateClasses("Guerrier dragon","Panda","test4","Pas besoin de primary ability");
             var result = (await classesController.GetClassesById(4)).Value;
             await context.Entry(result).ReloadAsync();
-            result.name.Should().Be("Orc");
-            result.description.Should().Be("monstre");
+            result.name.Should().Be("Guerrier dragon");
+            result.description.Should().Be("Panda");
         }
 
         [TestMethod]

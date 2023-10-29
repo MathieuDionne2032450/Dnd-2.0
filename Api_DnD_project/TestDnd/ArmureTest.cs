@@ -37,6 +37,38 @@ namespace TestDnd
             armureController.GetArmureById(2).Result.Value.Name.Should().Be("Bottes");
         }
 
+        [TestMethod]
+        public async Task TestEditArmure()
+        {
+            var result = (await armureController.GetArmureById(2)).Value;
+            await armureController.EditArmure(2,"Plastron en diamant", "Minecraft",1,false,4,4,0);
+            await context.Entry(result).ReloadAsync();
+            result.Name.Should().Be("Plastron en diamant");
+            result.EnchantementId.Should().Be(1);
+        }
+
+        [TestMethod]
+        public async Task TestCreateArmure()
+        {
+            await armureController.CreateArmure("Jambiere","Minecraft",2,true,2,2,1);
+            var result = (await armureController.GetArmureById(4)).Value;
+            await context.Entry(result).ReloadAsync();
+            result.Name.Should().Be("Jambiere");
+            result.Type.Should().Be("Minecraft");
+
+        }
+
+        [TestMethod]
+        public async Task TestDeleteArme()
+        {
+            await armureController.DeleteArmure(3);
+
+            context.SaveChanges();
+
+            armureController.GetArmure(string.Empty, string.Empty, 1).Result.Value?.Count().Should().Be(2);
+
+        }
+
         [TestCleanup]
         public void DeleteDatabase()
         {

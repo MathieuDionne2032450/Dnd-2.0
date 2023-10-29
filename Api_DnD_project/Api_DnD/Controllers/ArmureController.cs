@@ -59,7 +59,7 @@ namespace Api_DnD.Controllers
         }
 
         [HttpPost("/CreateArmures/")]
-        public async Task<ActionResult<Arme>> CreateArme(string name, string type, int ac, bool dexBonus, int maxDexBonus, int stealthDisadvantage, int EnchantementId)
+        public async Task<ActionResult<Arme>> CreateArmure(string name, string type, int ac, bool dexBonus, int maxDexBonus, int stealthDisadvantage, int EnchantementId)
         {
             Armure armureCree = new Armure { Name = name, Type = type, Ac = ac, DexBonus = dexBonus, MaxDexMod = maxDexBonus, StealthDisadvantage = stealthDisadvantage, EnchantementId = EnchantementId };
 
@@ -71,7 +71,7 @@ namespace Api_DnD.Controllers
         }
 
         [HttpPut("/EditArmure")]
-        public async Task<ActionResult<Armure>> EditArmure(int id, string name, string type, int ac, bool dexBonus, int maxDexBonus, int stealthDisadvantage, int EnchantementId)
+        public async Task<ActionResult<Armure>> EditArmure(int id, string name, string type, int ac, bool dexBonus, int maxDexBonus, int stealthDisadvantage, int enchantementId)
         {
             Armure a = await _context.Armures.FindAsync(id);
 
@@ -91,9 +91,9 @@ namespace Api_DnD.Controllers
                 if (stealthDisadvantage == 0)
                     stealthDisadvantage = a.StealthDisadvantage;
 
-                if (EnchantementId == 0)
+                if (enchantementId == 0)
                 {
-                    EnchantementId = a.EnchantementId;
+                    enchantementId = a.EnchantementId;
                 }
 
 
@@ -104,7 +104,7 @@ namespace Api_DnD.Controllers
                 .SetProperty(a => a.DexBonus, dexBonus)
                 .SetProperty(a => a.MaxDexMod, maxDexBonus)
                 .SetProperty(a => a.StealthDisadvantage, stealthDisadvantage)
-                .SetProperty(a => a.EnchantementId, EnchantementId));
+                .SetProperty(a => a.EnchantementId, enchantementId));
 
                 _context.SaveChanges();
             }
