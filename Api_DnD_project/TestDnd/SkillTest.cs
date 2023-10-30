@@ -29,7 +29,9 @@ namespace TestDnd
         [TestMethod]
         public void TestGetAllSkills()
         {
-            skillController.GetSkill("", "", 0).Result.Value.Count().Should().Be(3);
+            var result = skillController.GetSkill("nom_desc", "", 0).Result.Value?.ToList();
+            result.Count().Should().Be(3);
+            result[0].Nom.Should().Be("Force incroyable");
         }
 
         [TestMethod]

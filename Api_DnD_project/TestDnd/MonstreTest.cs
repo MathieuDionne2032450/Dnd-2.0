@@ -28,8 +28,9 @@ namespace TestDnd
         [TestMethod]
         public async Task TestGetAll()
         {
-            var result = await monstreController.GetMonstres("nom", null, 1);
-            result.Value?.Count().Should().Be(3);
+            var result = monstreController.GetMonstres("nom", null, 1).Result.Value?.ToList(); ;
+            result.Count().Should().Be(3);
+            result[0].Challenge.Should().Be(3.33f);
         }
 
         [TestMethod]

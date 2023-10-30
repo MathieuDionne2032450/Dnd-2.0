@@ -191,11 +191,11 @@ namespace TestDnd
                      Classes = classe, Race = race, Skills = new List<Skill> { skill }, Personalitetrait = "beau",
                     Ideal="beauté",Bonds = "Les gens beau", Flaws = "La laideur", Niv = 15, Campagne=campagne, feats = new List<feats>{ feat } },
                 
-                new Perso { IrlJoueur = "Mathieu", Nom = "Bwipo", Description = "un laid", Inspiration = 0,Armure = armure, LesArmes = new List<Arme>{ arme },
+                new Perso { IrlJoueur = "Mathieu", Nom = "Bwipo", Description = "un laid", Inspiration = 1,Armure = armure, LesArmes = new List<Arme>{ arme },
                      Classes = classe, Race = race, Skills = new List<Skill>{ skill }, Personalitetrait = "laid",
                     Ideal="laideur",Bonds = "Les gens laid", Flaws = "La beauté", Niv = 5,Campagne=campagne, feats = new List<feats> { feat } },
                 
-                new Perso { IrlJoueur = "Louis", Nom = "Louise", Description = "jeune damme cool", Inspiration = 0,Armure = armure, LesArmes = new List<Arme>{ arme },
+                new Perso { IrlJoueur = "Louis", Nom = "Louise", Description = "jeune damme cool", Inspiration = 2,Armure = armure, LesArmes = new List<Arme>{ arme },
                     Classes = classe,Race = race, Skills = new List<Skill>{ skill }, Personalitetrait = "beau",
                     Ideal="cool",Bonds = "Les gens cool", Flaws = "Les gens pas cool", Niv = 1,Campagne=campagne, feats = new List<feats> { feat } },
             };
@@ -371,7 +371,7 @@ namespace TestDnd
             Arme[] armes = new Arme[]
             {
                 new Arme { BonusJet = 1, BonusForce = 1, Nom = "Massue", Enchantement = enchantement, Campagne = new List<Campagne> { campagne } },
-                new Arme { BonusJet = 1, BonusForce = 1, Nom = "Épée", Enchantement = enchantement, Campagne = new List<Campagne> { campagne } },
+                new Arme { BonusJet = 1, BonusForce = 1, Nom = "Epee", Enchantement = enchantement, Campagne = new List<Campagne> { campagne } },
                 new Arme { BonusJet = 1, BonusForce = 1, Nom = "Poignard", Enchantement = enchantement, Campagne = new List<Campagne> { campagne } }
             };
 
@@ -569,8 +569,8 @@ namespace TestDnd
             Armure[] armures = new Armure[]
             {
                 new Armure { Name = "Plastron", Type = "Fer", Ac = 1, DexBonus = true, MaxDexMod = 1, StealthDisadvantage = 1, Enchantement = enchantement, Campagne = new List<Campagne> { campagne } },
-                new Armure { Name = "Bottes", Type = "Cuir", Ac = 1, DexBonus = false, MaxDexMod = 1, StealthDisadvantage = 1, Enchantement = enchantement, Campagne = new List<Campagne> { campagne } },
-                new Armure { Name = "Casque", Type = "Diamant", Ac = 1, DexBonus = true, MaxDexMod = 1, StealthDisadvantage = 1, Enchantement = enchantement, Campagne = new List<Campagne> { campagne } }
+                new Armure { Name = "Bottes", Type = "Cuir", Ac = 2, DexBonus = false, MaxDexMod = 1, StealthDisadvantage = 1, Enchantement = enchantement, Campagne = new List<Campagne> { campagne } },
+                new Armure { Name = "Casque", Type = "Diamant", Ac = 3, DexBonus = true, MaxDexMod = 1, StealthDisadvantage = 1, Enchantement = enchantement, Campagne = new List<Campagne> { campagne } }
             };
 
             context.Campagnes.Add(campagne);
@@ -711,7 +711,7 @@ namespace TestDnd
                     Wis = 1,
                     Cha = 1,
                     DarkVision = 1,
-                    Challenge = 1.33f,
+                    Challenge = 3.33f,
                     Lang = "fr",
                     DammageResistance = "Feu",
                     DammageImmunities = "Nécromancie",
@@ -735,7 +735,7 @@ namespace TestDnd
                     Wis = 1,
                     Cha = 1,
                     DarkVision = 1,
-                    Challenge = 1.33f,
+                    Challenge = 2.33f,
                     Lang = "fr",
                     DammageResistance = "Feu",
                     DammageImmunities = "Nécromancie",

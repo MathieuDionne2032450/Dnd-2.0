@@ -28,8 +28,9 @@ namespace TestDnd
         [TestMethod]
         public async Task TestGetAll()
         {
-            var result = await campagneController.GetCampagne("nom", null, 1);
-            result.Value?.Count().Should().Be(2);
+            var result = campagneController.GetCampagne("nom", null, 1).Result.Value?.ToList();
+            result.Count().Should().Be(2);
+            result[0].Name.Should().Be("L'autre campagne");
         }
 
         [TestMethod]

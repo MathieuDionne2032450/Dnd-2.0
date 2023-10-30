@@ -28,7 +28,9 @@ namespace TestDnd
         [TestMethod]
         public void TestGetAll()
         {
-            featsController.GetFeats(string.Empty, string.Empty, 1).Result.Value?.Count().Should().Be(3);
+            var result = featsController.GetFeats("id_desc", string.Empty, 1).Result.Value?.ToList();
+            result.Count().Should().Be(3);
+            result[0].id.Should().Be(3);
         }
 
         [TestMethod]

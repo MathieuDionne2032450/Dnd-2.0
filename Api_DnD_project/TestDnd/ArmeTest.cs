@@ -28,13 +28,15 @@ namespace TestDnd
         [TestMethod]
         public void TestGetAll()
         {
-            armeController.GetArme(string.Empty, string.Empty, 1).Result.Value?.Count().Should().Be(3);
+            var result  = armeController.GetArme("nom", string.Empty, 1).Result.Value?.ToList();
+            result.Count().Should().Be(3);
+            result[0].Nom.Should().Be("Epee");
         }
 
         [TestMethod]
         public void TestGetById()
         {
-            armeController.GetArme(2).Result.Value.Nom.Should().Be("Épée");
+            armeController.GetArme(2).Result.Value.Nom.Should().Be("Epee");
         }
 
         [TestMethod]

@@ -27,7 +27,9 @@ namespace TestDnd
         [TestMethod]
         public async Task TestGetAll1()
         {
-            persoController.GetAllPerso("id", null, null, 1).Result.Value.Count().Should().Be(3);
+            var result = persoController.GetAllPerso("inspiration", null, null, 1).Result.Value?.ToList();
+            result.Count().Should().Be(3);
+            result[0].Inspiration.Should().Be(2);
         }
 
         [TestMethod]

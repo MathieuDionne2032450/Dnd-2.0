@@ -28,8 +28,9 @@ namespace TestDnd
         [TestMethod]
         public async Task TestGetAll()
         {
-            var result = await enchantementController.GetEnchantement("nom", null, 1);
-            result.Value?.Count().Should().Be(3);
+            var result = enchantementController.GetEnchantement("type_desc", null, 1).Result.Value?.ToList();
+            result.Count().Should().Be(3);
+            result[0].Type.Should().Be("terre");
 
         }
 

@@ -28,7 +28,9 @@ namespace TestDnd
         [TestMethod]
         public void TestGetAll()
         {
-            armureController.GetArmure(string.Empty, string.Empty, 1).Result.Value?.Count().Should().Be(3);
+            var result = armureController.GetArmure("ac_desc", string.Empty, 1).Result.Value?.ToList();
+            result.Count().Should().Be(3);
+            result[0].Ac.Should().Be(3);
         }
 
         [TestMethod]

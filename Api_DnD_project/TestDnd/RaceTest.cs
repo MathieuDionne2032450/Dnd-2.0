@@ -29,9 +29,9 @@ namespace TestDnd
         [TestMethod]
         public async Task TestGetAll()
         {
-            var result = await raceController.GetRace("nom", null,null,1);
-            result.Value?.Count().Should().Be(3);
-
+            var result =  raceController.GetRace("bonusPV", null,null,1).Result.Value?.ToList();
+            result.Count().Should().Be(3);
+            result[0].BonusPV.Should().Be(6);
         }
 
         [TestMethod]

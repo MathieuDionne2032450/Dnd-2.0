@@ -31,7 +31,9 @@ namespace TestDnd
         [TestMethod]
         public void TestGetAllSpells()
         {
-            spellsController.GetSpells("", "", 0).Result.Value.Count().Should().Be(2);
+            var result = spellsController.GetSpells("dammage", "", 0).Result.Value?.ToList();
+            result.Count().Should().Be(2);
+            result[0].Dammage.Should().Be(20);
         }
 
         [TestMethod]
