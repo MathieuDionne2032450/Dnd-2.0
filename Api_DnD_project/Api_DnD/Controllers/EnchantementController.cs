@@ -60,21 +60,37 @@ namespace Api_DnD.Controllers
             }
         }
 
-            [HttpGet("/GetEnchantement/{id}")]
-        public async Task<ActionResult<Enchantement>> GetEnchantement(int id)
+        [HttpGet("/GetEnchantement/{id}")]
+        public async Task<ActionResult<Enchantement>> GetEnchantementById(int id)
         {
-            return await _context.Enchantements.FindAsync(id);
+            var test = await _context.Enchantements.FindAsync(id);
+            return test;
         }
 
         [HttpPut("/EditEnchantement")]
-        public async Task<ActionResult<Enchantement>> EditEnchantement(int id, string Nom, string Description, string Type, int Modif)
+        public async Task<ActionResult<Enchantement>> EditEnchantement(int id, string? Nom, string? Description, string? Type, int Modif)
         {
-            await _context.Enchantements.Where(e => e.Id == id).ExecuteUpdateAsync(setters => setters
-            .SetProperty(e => e.Nom, Nom)
-            .SetProperty(e => e.Description, Description)
-            .SetProperty(e => e.Type, Type)
-            .SetProperty(e => e.Modif, Modif)
-            );
+            Enchantement? e = await _context.Enchantements.FindAsync(id);
+            if (e != null)
+            {
+                if (string.IsNullOrEmpty(Nom))
+                    Nom = e.Nom;
+
+                if (string.IsNullOrEmpty(Description))
+                    Description = e.Description;
+
+                if (string.IsNullOrEmpty(Type))
+                    Type = e.Type;
+
+                await _context.Enchantements.Where(e => e.Id == id).ExecuteUpdateAsync(setters => setters
+                .SetProperty(e => e.Nom,Nom)
+                .SetProperty(e => e.Description, Description)
+                .SetProperty(e => e.Type, Type)
+                .SetProperty(e => e.Modif, Modif)
+                );
+                await _context.SaveChangesAsync();
+
+            }
 
             return NoContent();
         }

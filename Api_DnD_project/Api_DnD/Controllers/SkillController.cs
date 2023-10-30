@@ -17,53 +17,35 @@ namespace Api_DnD.Controllers
             _context = context;
         }
 
-        //[HttpGet("/GetAllSkill")]
-        //public async Task<ActionResult<IEnumerable<Skill>>> GetSkill(string? sortOrder, string? recherche, int page)
-        //{
-        //    if (!string.IsNullOrEmpty(recherche))
-        //    {
-        //        return await _context.Spells.Where(s => s.Name.Contains(recherche)).ToListAsync();
-        //    }
+        [HttpGet("/GetAllSkill")]
+        public async Task<ActionResult<IEnumerable<Skill>>> GetSkill(string? sortOrder, string? recherche, int page)
+        {
+            if (!string.IsNullOrEmpty(recherche))
+            {
+                return await _context.Skill.Where(s => s.Nom.Contains(recherche)).ToListAsync();
+            }
 
-        //    if (page <= 0)
-        //        page = 1;
+            if (page <= 0)
+                page = 1;
 
-        //    switch (sortOrder)
-        //    {
-        //        case "nom":
-        //            return await _context.Spells.OrderBy(s => s.Name).Skip((3 * page) - 3).Take(3).ToListAsync();
+            switch (sortOrder)
+            {
+                case "nom":
+                    return await _context.Skill.OrderBy(s => s.Nom).Skip((3 * page) - 3).Take(3).ToListAsync();
 
-        //        case "id":
-        //            return await _context.Spells.OrderBy(s => s.id).Skip((3 * page) - 3).Take(3).ToListAsync();
+                case "id":
+                    return await _context.Skill.OrderBy(s => s.id).Skip((3 * page) - 3).Take(3).ToListAsync();
 
-        //        case "nom_desc":
-        //            return await _context.Spells.OrderByDescending(s => s.Name).Skip((3 * page) - 3).Take(3).ToListAsync();
+                case "nom_desc":
+                    return await _context.Skill.OrderByDescending(s => s.Nom).Skip((3 * page) - 3).Take(3).ToListAsync();
 
-        //        case "id_desc":
-        //            return await _context.Spells.OrderByDescending(s => s.id).Skip((3 * page) - 3).Take(3).ToListAsync();
+                case "id_desc":
+                    return await _context.Skill.OrderByDescending(s => s.id).Skip((3 * page) - 3).Take(3).ToListAsync();
 
-        //        case "dammage":
-        //            return await _context.Spells.OrderBy(s => s.Dammage).Skip((3 * page) - 3).Take(3).ToListAsync();
-
-        //        case "dammageType":
-        //            return await _context.Spells.OrderBy(s => s.DammageType).Skip((3 * page) - 3).Take(3).ToListAsync();
-
-        //        case "dammage_desc":
-        //            return await _context.Spells.OrderByDescending(s => s.Dammage).Skip((3 * page) - 3).Take(3).ToListAsync();
-
-        //        case "damageType_desc":
-        //            return await _context.Spells.OrderByDescending(s => s.DammageType).Skip((3 * page) - 3).Take(3).ToListAsync();
-
-        //        case "zone":
-        //            return await _context.Spells.OrderBy(s => s.Zone).Skip((3 * page) - 3).Take(3).ToListAsync();
-
-        //        case "zone_desc":
-        //            return await _context.Spells.OrderByDescending(s => s.Zone).Skip((3 * page) - 3).Take(3).ToListAsync();
-
-        //        default:
-        //            return await _context.Spells.ToListAsync();
-        //    }
-        //}
+                default:
+                    return await _context.Skill.ToListAsync();
+            }
+        }
 
         [HttpGet("/GetSkill/{id}")]
         public async Task<ActionResult<Skill>> GetSkill(int id)
