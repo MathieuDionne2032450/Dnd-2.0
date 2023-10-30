@@ -794,5 +794,34 @@ namespace TestDnd
 
         #endregion
 
+        #region Key
+
+
+        public void CreateTablesKey()
+        {
+            context.Database.EnsureCreated();
+
+            
+
+
+            Key[] Keys = new Key[]
+            {
+                
+
+                new Key {ApiKey="l7HSOFQWbyj35OCjmbR8FgF59z3WKGgq",Role=Key.KEY_ROLE_USER},
+                new Key {ApiKey="8hA0tAVHPUx8D3mRn887Mv6ak3rNlaou",Role=Key.KEY_ROLE_USER},
+
+            };
+
+            foreach (Key key in Keys)
+            {
+                context.Key.Add(key);
+            }
+
+            context.SaveChanges();
+        }
+
+        #endregion
+
     }
 }
