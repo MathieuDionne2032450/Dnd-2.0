@@ -26,11 +26,20 @@ namespace TestDnd
         }
 
         [TestMethod]
-        public async Task TestGetAll()
+        public async Task TestGetAllEnchantement()
         {
             var result = enchantementController.GetEnchantement("type_desc", null, 1).Result.Value?.ToList();
             result.Count().Should().Be(3);
             result[0].Type.Should().Be("terre");
+
+        }
+
+        [TestMethod]
+        public async Task TestGetEnchantementRecherche()
+        {
+            var result = enchantementController.GetEnchantement("type_desc", "e", 1).Result.Value?.ToList();
+            result.Count().Should().Be(4);
+            result[0].Type.Should().Be("eau");
 
         }
 

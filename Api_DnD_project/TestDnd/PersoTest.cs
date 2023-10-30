@@ -27,9 +27,25 @@ namespace TestDnd
         [TestMethod]
         public async Task TestGetAll1()
         {
-            var result = persoController.GetAllPerso("inspiration", null, null, 1).Result.Value?.ToList();
+            var result = persoController.GetAllPerso("irlJoueur_desc", null, null, 1).Result.Value?.ToList();
             result.Count().Should().Be(3);
-            result[0].Inspiration.Should().Be(2);
+            result[0].IrlJoueur.Should().Be("Mathieu");
+        }
+
+        [TestMethod]
+        public async Task TestGetPersoRecherche()
+        {
+            var result = persoController.GetAllPerso("irlJoueur_desc", "Dreknethol",null, 1).Result.Value?.ToList();
+            result.Count().Should().Be(1);
+            result[0].Nom.Should().Be("Dreknethol");
+        }
+
+        [TestMethod]
+        public async Task TestGetPersoRechercheCampagne()
+        {
+            var result = persoController.GetAllPerso("inspiration_desc", null, "La campagne", 1).Result.Value?.ToList();
+            result.Count().Should().Be(4);
+            result[0].Nom.Should().Be("Krados");
         }
 
         [TestMethod]
@@ -73,24 +89,14 @@ namespace TestDnd
         }
 
         [TestMethod]
-        public void TestCreatePerso()
+        public async Task TestCreatePerso()
         {
-            persoController.CreatePerso(
-                "Balzac",
-                "Ballsack",
-                "Écrivain français",
-                1,
-                1,
-                1,
-                1,
-                "Écrit beaucoup",
-                "Écrire un roman",
-                "Gustave Flaubert",
-                "Gros",
-                1,
-                1);
-
-            persoController.GetPersoById(5).Result.Value.Nom.Should().Be("Ballsack");
+            await persoController.CreatePerso("Balzac","Ballsack","Écrivain français",1,1,1,1,"Écrit beaucoup","Écrire un roman","Gustave Flaubert","Gros",1,1);
+            
+            
+            var result = persoController.GetPersoById(5).Result.Value;
+            await context.Entry(result).ReloadAsync();
+            result.Nom.Should().Be("Ballsack");
         }
 
         [TestCleanup]

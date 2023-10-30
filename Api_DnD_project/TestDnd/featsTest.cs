@@ -26,11 +26,19 @@ namespace TestDnd
         }
 
         [TestMethod]
-        public void TestGetAll()
+        public void TestGetAllFeats()
         {
             var result = featsController.GetFeats("id_desc", string.Empty, 1).Result.Value?.ToList();
             result.Count().Should().Be(3);
             result[0].id.Should().Be(3);
+        }
+
+        [TestMethod]
+        public void TestGetFeatsRecherche()
+        {
+            var result = featsController.GetFeats("id_desc", "leste", 1).Result.Value?.ToList();
+            result.Count().Should().Be(1);
+            result[0].Nom.Should().Be("Main leste");
         }
 
         [TestMethod]

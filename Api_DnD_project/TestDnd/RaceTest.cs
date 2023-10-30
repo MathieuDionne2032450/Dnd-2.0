@@ -27,11 +27,26 @@ namespace TestDnd
         }
 
         [TestMethod]
-        public async Task TestGetAll()
+        public async Task TestGetAllRace()
         {
             var result =  raceController.GetRace("bonusPV", null,null,1).Result.Value?.ToList();
             result.Count().Should().Be(3);
             result[0].BonusPV.Should().Be(6);
+        }
+
+        [TestMethod]
+        public async Task TestGetRaceRecherche()
+        {
+            var result = raceController.GetRace("bonusPV", "El", null, 1).Result.Value?.ToList();
+            result.Count().Should().Be(1);
+            result[0].Nom.Should().Be("Elf");
+        }
+
+        [TestMethod]
+        public async Task TestGetRaceRechercheCampagne()
+        {
+            var result = raceController.GetRace("bonusPV", "La campagne", null, 1).Result.Value?.ToList();
+            result.Count().Should().Be(0);
         }
 
         [TestMethod]

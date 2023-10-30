@@ -26,10 +26,18 @@ namespace TestDnd
         }
 
         [TestMethod]
-        public async Task TestGetAll()
+        public async Task TestGetAllCampagne()
         {
             var result = campagneController.GetCampagne("nom", null, 1).Result.Value?.ToList();
             result.Count().Should().Be(2);
+            result[0].Name.Should().Be("L'autre campagne");
+        }
+
+        [TestMethod]
+        public async Task TestGetCampagneRecherche()
+        {
+            var result = campagneController.GetCampagne("nom", "autre", 1).Result.Value?.ToList();
+            result.Count().Should().Be(1);
             result[0].Name.Should().Be("L'autre campagne");
         }
 

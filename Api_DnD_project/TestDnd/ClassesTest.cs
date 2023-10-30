@@ -26,11 +26,20 @@ namespace TestDnd
         }
 
         [TestMethod]
-        public async Task TestGetAll()
+        public async Task TestGetAllClasses()
         {
             var result = classesController.GetClasses("nom", null, 1).Result.Value?.ToList();
             result.Count().Should().Be(3);
             result[0].name.Should().Be("Archer");
+
+        }
+
+        [TestMethod]
+        public async Task TestGetClassesRecherche()
+        {
+            var result = classesController.GetClasses("nom", "mag", 1).Result.Value?.ToList();
+            result.Count().Should().Be(1);
+            result[0].name.Should().Be("magicien");
 
         }
 
