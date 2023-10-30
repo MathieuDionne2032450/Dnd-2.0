@@ -16,7 +16,7 @@ namespace Api_DnD.Model
         public string Description { get; set; }
         public string Name { get; set; }
         public ICollection<Quete> Quetes { get; set; }
-        public ICollection<Campagne> Campagne { get; set; }
+        public Campagne Campagne { get; set; }
 
         [NotMapped]
         public int[] DescriptionPhysique { get; set; }
