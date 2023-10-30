@@ -59,7 +59,7 @@ namespace Api_DnD.Controllers
         }
 
         [HttpGet("/GetPNJById/{id}")]
-        public async Task<ActionResult<PNJ>> GetPersoById(int id)
+        public async Task<ActionResult<PNJ>> GetPnj(int id)
         {
             return await _context.PNJ.FindAsync(id);
         }
@@ -88,25 +88,12 @@ namespace Api_DnD.Controllers
         }
 
         [HttpPut("/EditPNJ")]
-        public async Task<ActionResult<PNJ>> EditPNJ(
-            int id, 
-            int Bouche, 
-            int Nez, 
-            int Barbe, 
-            int Cheveux, 
-            int Sourcil,
-            int Tete,
-            int Yeux1,
-            int Yeux2,
-            string? Description,
-            string? Name)
+        public async Task<ActionResult<PNJ>> EditPNJ(int id,  int Bouche,  int Nez,  int Barbe,  int Cheveux, int Sourcil,int Tete,int Yeux1,int Yeux2,string? Description,string? Name)
         {
             PNJ p = await _context.PNJ.FindAsync(id);
 
             if (p != null)
             {
-
-
                 if (string.IsNullOrEmpty(Description))
                     Description = p.Description;
 
@@ -141,7 +128,8 @@ namespace Api_DnD.Controllers
             int Yeux1,
             int Yeux2,
             string Description,
-            string Name)
+            string Name,
+            Campagne campagne)
         {
             PNJ pnj = new PNJ
             {
@@ -154,7 +142,8 @@ namespace Api_DnD.Controllers
                 Yeux1 = Yeux1,
                 Yeux2 = Yeux2,
                 Description = Description,
-                Name = Name
+                Name = Name,
+                Campagne = campagne
             };
 
             _context.PNJ.Add(pnj);
@@ -166,7 +155,7 @@ namespace Api_DnD.Controllers
         [HttpDelete("/DeletePNJ/{id}")]
         public async Task<bool> DeletePNJ(int id)
         {
-            if (await _context.Persos.Where(p => p.id.Equals(id)).ExecuteDeleteAsync() == 1)
+            if (await _context.PNJ.Where(p => p.Id.Equals(id)).ExecuteDeleteAsync() == 1)
             {
                 return true;
             }

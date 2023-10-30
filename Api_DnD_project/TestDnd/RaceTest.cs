@@ -80,6 +80,9 @@ namespace TestDnd
         public async Task TestDeleteRace()
         {
             raceController.DeleteRace(3).Result.Should().Be(true);
+            var result = raceController.GetRace("bonusPV", null, null, 1).Result.Value?.ToList();
+            result.Count().Should().Be(2);
+            
         }
 
         [TestCleanup]
