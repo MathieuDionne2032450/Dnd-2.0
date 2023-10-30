@@ -37,6 +37,14 @@ namespace TestDnd
         }
 
         [TestMethod]
+        public void TestGetSpellsRecherche()
+        {
+            var result = spellsController.GetSpells("dammage", "de feu", 0).Result.Value?.ToList();
+            result.Count().Should().Be(1);
+            result[0].Name.Should().Be("Lazer de feu");
+        }
+
+        [TestMethod]
         public void TestGetSpell()
         {
             spellsController.GetSpell(1).Result.Value.Name.Should().Be("Lazer de feu");

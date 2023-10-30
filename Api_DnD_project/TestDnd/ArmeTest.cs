@@ -34,6 +34,14 @@ namespace TestDnd
         }
 
         [TestMethod]
+        public void TestGetArmeRecherche()
+        {
+            var result = armeController.GetArme("nom","Ep", 1).Result.Value?.ToList();
+            result.Count().Should().Be(1);
+            result[0].Nom.Should().Be("Epee");
+        }
+
+        [TestMethod]
         public void TestGetById()
         {
             armeController.GetArme(2).Result.Value.Nom.Should().Be("Epee");

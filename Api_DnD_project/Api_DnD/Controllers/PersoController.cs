@@ -45,7 +45,7 @@ namespace Api_DnD.Controllers
                 case "irlJoueur":
                     return await _context.Persos.OrderBy(p => p.IrlJoueur).Skip((3 * page) - 3).Take(3).ToListAsync();
                 case "irlJoueur_desc":
-                    return await _context.Persos.OrderBy(p => p.IrlJoueur).Skip((3 * page) - 3).Take(3).ToListAsync();
+                    return await _context.Persos.OrderByDescending(p => p.IrlJoueur).Skip((3 * page) - 3).Take(3).ToListAsync();
                 case "nom":
                     return await _context.Persos.OrderBy(p => p.Nom).Skip((3 * page) - 3).Take(3).ToListAsync();
                 case "nom_desc":

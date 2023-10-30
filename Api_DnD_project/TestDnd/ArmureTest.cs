@@ -26,11 +26,19 @@ namespace TestDnd
         }
 
         [TestMethod]
-        public void TestGetAll()
+        public void TestGetAllArmure()
         {
-            var result = armureController.GetArmure("ac_desc", string.Empty, 1).Result.Value?.ToList();
+            var result = armureController.GetArmure("ac_desc",string.Empty, 1).Result.Value?.ToList();
             result.Count().Should().Be(3);
             result[0].Ac.Should().Be(3);
+        }
+
+        [TestMethod]
+        public void TestGetArmureRecherche()
+        {
+            var result = armureController.GetArmure("ac_desc","as", 1).Result.Value?.ToList();
+            result.Count().Should().Be(2);
+            result[0].Name.Should().Be("Plastron");
         }
 
         [TestMethod]

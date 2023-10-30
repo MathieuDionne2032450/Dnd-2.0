@@ -1,5 +1,6 @@
 ﻿using Api_DnD.Controllers;
 using Api_DnD.Data;
+using Api_DnD.Model;
 using FluentAssertions;
 using System;
 using System.Collections.Generic;
@@ -26,11 +27,19 @@ namespace TestDnd
         }
 
         [TestMethod]
-        public async Task TestGetAll()
+        public async Task TestGetAllMonstre()
         {
             var result = monstreController.GetMonstres("nom", null, 1).Result.Value?.ToList(); ;
             result.Count().Should().Be(3);
             result[0].Challenge.Should().Be(3.33f);
+        }
+
+        [TestMethod]
+        public async Task TestGetMonstreRecherche()
+        {
+            var result = monstreController.GetMonstres("nom","bobo", 1).Result.Value?.ToList(); ;
+            result.Count().Should().Be(1);
+            result[0].Nom.Should().Be("Bobobo");
         }
 
         [TestMethod]

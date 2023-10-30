@@ -5,6 +5,7 @@ using FluentAssertions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -31,13 +32,22 @@ namespace TestDnd
         {
             var result = skillController.GetSkill("nom_desc", "", 0).Result.Value?.ToList();
             result.Count().Should().Be(3);
-            result[0].Nom.Should().Be("Force incroyable");
+            result[0].Nom.Should().Be("Skillz");
         }
 
         [TestMethod]
-        public void TestGetSkill()
+        public void TestGetSkillsRecherche()
         {
-            skillController.GetSkill(1).Result.Value.Nom.Should().Be("Skillz");
+            var result = skillController.GetSkill("nom_desc", "ill", 0).Result.Value?.ToList();
+            result.Count().Should().Be(1);
+            result[0].Nom.Should().Be("Skillz");
+        }
+
+        [TestMethod]
+        public async  Task TestGetSkill()
+        {
+            var result = await skillController.GetSkill(1);
+            result.Value.Nom.Should().Be("Skillz");
         }
 
         [TestMethod]
