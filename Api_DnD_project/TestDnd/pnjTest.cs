@@ -28,12 +28,21 @@ namespace TestDnd
         }
 
         [TestMethod]
-        public async Task TestGetAll()
+        public async Task TestGetAllPnj()
         {
             var result = PnjController.GetAllPNJ("Id", null, 1).Result.Value?.ToList();
             result.Count().Should().Be(3);
             result[0].Nom.Should().Be("Gaspare Boneclaw");
             
+        }
+
+        [TestMethod]
+        public async Task TestGetPnjRecherche()
+        {
+            var result = PnjController.GetAllPNJ("Id", "Boneclaw", 1).Result.Value?.ToList();
+            result.Count().Should().Be(2);
+            result[0].Nom.Should().Be("Gaspare Boneclaw");
+
         }
 
         [TestMethod]
