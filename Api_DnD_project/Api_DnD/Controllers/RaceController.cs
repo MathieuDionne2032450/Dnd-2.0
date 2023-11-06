@@ -111,14 +111,14 @@ namespace Api_DnD.Controllers
 
         // GET api/<RaceController>/5
         [HttpGet("RaceById")]
-        public async Task<ActionResult<Race>> Get(int id)
+        public async Task<ActionResult<Race>> GetRaceById(int id)
         {
             return await _context.Races.FindAsync(id);
         }
 
         // POST api/<RaceController>
         [HttpPut("EditRace")]
-        public async Task<ActionResult<Race>> PutRace(int id, string? nom, int? bonusPv, int? bonusDex, int? bonusForce, int? bonusIntel, int? bonusWisdom, int? bonusConsti, int? bonusCharisma,int? campagne)
+        public async Task<ActionResult<Race>> EditRace(int id, string? nom, int? bonusPv, int? bonusDex, int? bonusForce, int? bonusIntel, int? bonusWisdom, int? bonusConsti, int? bonusCharisma,int? campagne)
         {
             Race raceTempo = await _context.Races.FindAsync(id);
             //Campagne camp = await _context.Campagnes.FindAsync(campagneid);
@@ -191,11 +191,11 @@ namespace Api_DnD.Controllers
 
         // PUT api/<RaceController>/5
         [HttpPost("CreateRace")]
-        public void Post(int id, string nom, int bonusPv, int bonusDex, int bonusForce, int bonusIntel, int bonusWisdom, int bonusConsti, int bonusCharisma, int campagne)
+        public void CreateRace(string nom, int bonusPv, int bonusDex, int bonusForce, int bonusIntel, int bonusWisdom, int bonusConsti, int bonusCharisma, int campagne)
         {
 
 
-            Race race = new Race {Id = id, Nom = nom, BonusPV = bonusPv, BonusDex = bonusDex, BonusIntel = bonusIntel, BonusForce = bonusForce, BonusWisdom = bonusWisdom, BonusConsti = bonusConsti, BonusCharisma = bonusCharisma};
+            Race race = new Race {Nom = nom, BonusPV = bonusPv, BonusDex = bonusDex, BonusIntel = bonusIntel, BonusForce = bonusForce, BonusWisdom = bonusWisdom, BonusConsti = bonusConsti, BonusCharisma = bonusCharisma};
 
             _context.Races.Add(race);
             _context.SaveChanges();

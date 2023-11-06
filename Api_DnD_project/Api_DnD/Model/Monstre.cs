@@ -27,6 +27,11 @@ namespace Api_DnD.Model
         public ICollection<Action> Actions { get; set; }
         public ICollection<Campagne> Campagne { get; set; }
 
+        public Monstre()
+        {
+
+        }
+
         public Monstre(string nom, string size, int armorClass, int hitPoint, int speed, int flySpeed, int climbSpeed, int str, int dex, int con, int intel, int wis, int cha, int darkVision, float challenge, string lang, string? dammageResistance, string? dammageImmunities, string? conditionImmunities)
         {
             Nom = nom;

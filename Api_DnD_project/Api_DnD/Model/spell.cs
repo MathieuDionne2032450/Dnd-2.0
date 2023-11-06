@@ -10,6 +10,10 @@
         public int ClassId { get; set; }
         public string Zone { get; set; }
 
+        public Spell()
+        {
+            
+        }
         public Spell(int id, string name, string description, string dammageType, int dammage, int classId, string zone)
         {
             this.id = id;

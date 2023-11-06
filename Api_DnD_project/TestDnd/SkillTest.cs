@@ -1,9 +1,11 @@
 ﻿using Api_DnD.Controllers;
 using Api_DnD.Data;
+using Api_DnD.Model;
 using FluentAssertions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -28,23 +30,34 @@ namespace TestDnd
         [TestMethod]
         public void TestGetAllSkills()
         {
-            skillController.GetSkill("nom", string.Empty, 3).Result.Value.Count().Should().Be(3);
+            var result = skillController.GetSkill("nom_desc", "", 0).Result.Value?.ToList();
+            result.Count().Should().Be(3);
+            result[0].Nom.Should().Be("Skillz");
         }
 
         [TestMethod]
-        public void TestGetSkill()
+        public void TestGetSkillsRecherche()
         {
-            skillController.GetSkill(1).Result.Value.Nom.Should().Be("Skillz");
+            var result = skillController.GetSkill("nom_desc", "ill", 0).Result.Value?.ToList();
+            result.Count().Should().Be(1);
+            result[0].Nom.Should().Be("Skillz");
         }
 
         [TestMethod]
-        public void TestEditSkill()
+        public async  Task TestGetSkill()
         {
-            skillController.EditSkill(1, "Urticaire", "Atchoum");
+            var result = await skillController.GetSkill(1);
+            result.Value.Nom.Should().Be("Skillz");
+        }
 
-            skillController.GetSkill(1).Result.Value.Nom.Should().Be("Urticaire");
-
-            dbHelper.DropTables();
+        [TestMethod]
+        public async Task TestEditSkill()
+        {
+            var result = (await skillController.GetSkill(3)).Value;
+            await skillController.EditSkill(3, "Urticaire", "Atchoum");
+            await context.Entry(result).ReloadAsync();
+            result.Nom.Should().Be("Urticaire");
+            result.Descr.Should().Be("Atchoum");
         }
 
         [TestMethod]
@@ -53,18 +66,18 @@ namespace TestDnd
             skillController.CreateSkill("Intelligence effrayante", "Des excellentes capacités mentales");
 
             skillController.GetSkill(4).Result.Value.Nom.Should().Be("Intelligence effrayante");
-
-            skillController.DeleteSkill(4);
         }
 
         [TestMethod]
         public void TestDeleteSkill()
         {
-            skillController.CreateSkill("Intelligence effrayante", "Des excellentes capacités mentales");
+            skillController.DeleteSkill(3).Result.Should().Be(true);
+        }
 
-            skillController.DeleteSkill(4);
-
-            skillController.GetSkill(4).Result.Value.Should().Be(null);
+        [TestCleanup]
+        public void DeleteDatabase()
+        {
+            context.Database.EnsureDeleted();
         }
     }
 }

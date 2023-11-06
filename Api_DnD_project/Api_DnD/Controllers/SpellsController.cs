@@ -19,7 +19,7 @@ namespace Api_DnD.Controllers
         }
 
         [HttpGet("/GetAllSpells")]
-        public async Task<ActionResult<IEnumerable<Spell>>> GetArme(string? sortOrder, string? recherche, int page)
+        public async Task<ActionResult<IEnumerable<Spell>>> GetSpells(string? sortOrder, string? recherche, int page)
         {
             if (!string.IsNullOrEmpty(recherche))
             {
@@ -67,13 +67,13 @@ namespace Api_DnD.Controllers
         }
 
         [HttpGet("/GetSpell/{id}")]
-        public async Task<ActionResult<Spell>> GetArme(int id)
+        public async Task<ActionResult<Spell>> GetSpell(int id)
         {
             return await _context.Spells.FindAsync(id);
         }
 
         [HttpPut("/EditSpell")]
-        public async Task<ActionResult<Spell>> EditArme(int id, string name, string description, string dammageType, int dammage,int classId, string zone)
+        public async Task<ActionResult<Spell>> EditSpell(int id, string name, string description, string dammageType, int dammage,int classId, string zone)
         {
             Spell s = await _context.Spells.FindAsync(id);
             if (s != null)
@@ -106,7 +106,7 @@ namespace Api_DnD.Controllers
         }
 
         [HttpPost("/CreateSpell")]
-        public async Task<ActionResult<Arme>> CreateArme(int id, string name, string description, string dammageType, int dammage, int classId, string zone)
+        public async Task<ActionResult<Arme>> CreateSpell(int id, string name, string description, string dammageType, int dammage, int classId, string zone)
         {
             Spell spellCree = new Spell(id,name,description,dammageType,dammage,classId,zone);
 
@@ -119,7 +119,7 @@ namespace Api_DnD.Controllers
         // POST: ArmeController/Delete/5
         // Si une entrée est trouvée et supprimée, la valeur true est retournée, sinon c'est la valeur false
         [HttpDelete("/DeleteSpell/{id}")]
-        public async Task<bool> DeleteArme(int id)
+        public async Task<bool> DeleteSpell(int id)
         {
             if (await _context.Spells.Where(s => s.id.Equals(id)).ExecuteDeleteAsync() == 1)
             {

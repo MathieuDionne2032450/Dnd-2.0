@@ -17,6 +17,31 @@ namespace Api_DnD.Controllers
             _context = context;
         }
 
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<Campagne>>> GetCampagne(string? sortOrder, string? recherche, int page)
+        {
+            if (!string.IsNullOrEmpty(recherche))
+            {
+                return await _context.Campagnes.Where(e => e.Name.Contains(recherche)).ToListAsync();
+            }
+
+            if (page <= 0)
+                page = 1;
+
+            switch(sortOrder)
+            {
+                case "nom":
+                    return await _context.Campagnes.OrderBy(e => e.Name).Skip((3 * page) - 3).Take(3).ToListAsync();
+                case "nom_desc":
+                    return await _context.Campagnes.OrderByDescending(e => e.Name).Skip((3 * page) - 3).Take(3).ToListAsync();
+                case "id":
+                    return await _context.Campagnes.OrderBy(e => e.Id).Skip((3 * page) - 3).Take(3).ToListAsync();
+                case "id_desc":
+                    return await _context.Campagnes.OrderByDescending(e => e.Id).Skip((3 * page) - 3).Take(3).ToListAsync();
+                default:
+                    return await _context.Campagnes.ToListAsync();
+            }
+        }
 
         [HttpGet("/GetCampagneById/{id}")]
         public async Task<ActionResult<Campagne>> GetCampagneById(int id)
