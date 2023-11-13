@@ -13,6 +13,11 @@
                 <local:FlyoutPageItem Title="Contacts"
                                       IconSource="contacts.png"
                                       TargetType="{x:Type local:MainPage}" />
+                <local:FlyoutPageItem
+                    Title="Connexion"
+                    IconSource="test.png"
+                    TargetType="{x:Type local:Connexion}"
+                    />
             </x:Array>
         </CollectionView.ItemsSource>
         <CollectionView.ItemTemplate>

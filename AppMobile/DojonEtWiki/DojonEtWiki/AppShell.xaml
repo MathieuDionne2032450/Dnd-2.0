@@ -7,8 +7,13 @@
     Shell.FlyoutBehavior="Flyout">
 
     <ShellContent
-        Title="Home"
+        Title="Accueil"
         ContentTemplate="{DataTemplate local:MainPage}"
         Route="MainPage" />
+
+    <ShellContent
+        Title="Connexion"
+        ContentTemplate="{DataTemplate local:Connexion}"
+        Route="Connexion" />
 
 </Shell>
