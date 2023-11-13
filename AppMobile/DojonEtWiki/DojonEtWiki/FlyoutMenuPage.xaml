@@ -16,6 +16,9 @@
                 <local:FlyoutPageItem
                     Title="Connexion"
                     IconSource="test.png"
+                <local:FlyoutPageItem Title="Liste wiki"
+                                      IconSource="wikilist.png"
+                                      TargetType="{x:Type local:WikiList}"/>
                     TargetType="{x:Type local:Connexion}"
                     />
             </x:Array>

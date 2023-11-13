@@ -15,5 +15,8 @@
         Title="Connexion"
         ContentTemplate="{DataTemplate local:Connexion}"
         Route="Connexion" />
+        Title="WikiList"
+        ContentTemplate="{DataTemplate local:WikiList}"
+        Route="WikiList"/>
 
 </Shell>

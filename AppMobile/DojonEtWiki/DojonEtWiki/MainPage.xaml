@@ -2,23 +2,19 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="DojonEtWiki.MainPage"
-             Title="MainPage">
+             Title="MainPage"
+             BackgroundImageSource="Resources/Images/castle.png">
     <ScrollView>
         <VerticalStackLayout 
             Spacing="25" 
             Padding="30,0" 
             VerticalOptions="Center">
 
-            <Image
-                Source="dotnet_bot.png"
-                SemanticProperties.Description="Cute dot net bot waving hi to you!"
-                HeightRequest="200"
-                HorizontalOptions="Center" />
-
             <Label 
                 Text="Hello!"
                 SemanticProperties.HeadingLevel="Level1"
                 FontSize="32"
+                
                 HorizontalOptions="Center" />
 
             <Label 
@@ -34,6 +30,9 @@
                 SemanticProperties.Hint="Counts the number of times you click"
                 Clicked="OnCounterClicked"
                 HorizontalOptions="Center" />
+
+            <Button Text="Aller à la page d'infos" Clicked="PageInfo_Clicked">
+            </Button>
 
         </VerticalStackLayout>
     </ScrollView>
