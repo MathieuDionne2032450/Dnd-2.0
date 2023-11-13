@@ -5,9 +5,9 @@ namespace DojonEtWiki;
 public partial class AppFlyout : FlyoutPage
 {
 
-	public AppFlyout()
-	{
-		InitializeComponent();
+    public AppFlyout()
+    {
+        InitializeComponent();
         flyoutPage.collectionView.SelectionChanged += OnSelectionChanged;
     }
 

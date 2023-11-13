@@ -5,9 +5,9 @@ public partial class MainPage : ContentPage
     int count = 0;
 
     public MainPage()
-	{
-		InitializeComponent();
-	}
+    {
+        InitializeComponent();
+    }
 
     private void OnCounterClicked(object sender, EventArgs e)
     {
@@ -19,5 +19,10 @@ public partial class MainPage : ContentPage
             CounterBtn.Text = $"Clicked {count} times";
 
         SemanticScreenReader.Announce(CounterBtn.Text);
+    }
+
+    private void PageInfo_Clicked(object sender, EventArgs e)
+    {
+
     }
 }

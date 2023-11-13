@@ -13,6 +13,9 @@
                 <local:FlyoutPageItem Title="Contacts"
                                       IconSource="contacts.png"
                                       TargetType="{x:Type local:MainPage}" />
+                <local:FlyoutPageItem Title="Liste wiki"
+                                      IconSource="wikilist.png"
+                                      TargetType="{x:Type local:WikiList}"/>
             </x:Array>
         </CollectionView.ItemsSource>
         <CollectionView.ItemTemplate>
