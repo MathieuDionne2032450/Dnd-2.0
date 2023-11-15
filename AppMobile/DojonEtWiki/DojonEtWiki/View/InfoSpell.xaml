@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DojonEtWiki.View.InfoSpell"
+             Title="InfoSpell">
+    <StackLayout>
+        <Label 
+            Text="Liste de vos Spells"
+            FontSize="Title"
+            FontAttributes="Bold"
+            TextColor="Red"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center"
+            Margin="20"/>
+        <CollectionView ItemsSource="{Binding Spells}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame BackgroundColor="LightGray" Padding="10" Margin="5">
+                        <StackLayout>
+                            <Label Text="{Binding Name, StringFormat='Nom : {0}'}" FontAttributes="Bold"/>
+                            <Label Text="{Binding Description, StringFormat='Description : {0}'}" />
+                            <Label Text="{Binding DammageType, StringFormat='Type de dommage : {0}'}" />
+                            <Label Text="{Binding Dammage, StringFormat='Dommage: {0}'}" />
+                            <Label Text="{Binding Class.Name, StringFormat='Classe : {0}'}" />
+                            <Label Text="{Binding Zone, StringFormat='Zone : {0}'}" />
+                        </StackLayout>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </StackLayout>
+</ContentPage>

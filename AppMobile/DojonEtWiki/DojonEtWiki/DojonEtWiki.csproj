@@ -55,6 +55,9 @@
 	  <Compile Update="View\AppFlyout.xaml.cs">
 	    <DependentUpon>AppFlyout.xaml</DependentUpon>
 	  </Compile>
+	  <Compile Update="View\InfoSpell.xaml.cs">
+	    <DependentUpon>InfoSpell.xaml</DependentUpon>
+	  </Compile>
 	</ItemGroup>
 
 	<ItemGroup>
@@ -64,7 +67,19 @@
 	  <MauiXaml Update="View\FlyoutMenuPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="View\InfoQuete.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="View\InfoRace.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="View\InfoSkill.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="View\MainPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="View\InfoSpell.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="View\WikiList.xaml">
@@ -74,6 +89,7 @@
 
 	<ItemGroup>
 	  <Folder Include="Media\" />
+	  <Folder Include="Resources\Images\Icons\" />
 	</ItemGroup>
 
 </Project>
