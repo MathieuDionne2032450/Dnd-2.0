@@ -17,7 +17,7 @@ namespace Api_DnD.Controllers
             _context = context;
         }
 
-        [HttpGet]
+        [HttpGet("AllEnchantement")]
         public async Task<ActionResult<IEnumerable<Enchantement>>> GetEnchantement(string? sortOrder, string? recherche, int page)
         {
             if (!string.IsNullOrEmpty(recherche))

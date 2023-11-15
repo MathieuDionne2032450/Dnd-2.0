@@ -1,4 +1,7 @@
 namespace DojonEtWiki.View;
+using Api;
+using DojonEtWiki.Model;
+using System.Web.Http;
 
 public partial class MainPage : ContentPage
 {
@@ -7,6 +10,8 @@ public partial class MainPage : ContentPage
     public MainPage()
     {
         InitializeComponent();
+        ApiHelper.InitializeClient();
+        List<Enchantement> e = EnchantementProcessor.GetEnchantement().Result;
     }
 
     private void OnCounterClicked(object sender, EventArgs e)
