@@ -3,36 +3,67 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="DojonEtWiki.View.MainPage"
              Title="MainPage"
-             BackgroundImageSource="Resources/Images/castle.png">
+             BackgroundColor="LightGray">
     <ScrollView>
+        
+            
+       
         <VerticalStackLayout 
-            Spacing="25" 
-            Padding="30,0" 
-            VerticalOptions="Center">
+            Spacing="15">
+            <Image VerticalOptions="Start" HorizontalOptions="CenterAndExpand" WidthRequest="400"  Source="Resources/Images/backgroundhome.jpeg" ></Image>
 
-            <Label 
-                Text="Hello!"
-                SemanticProperties.HeadingLevel="Level1"
-                FontSize="32"
+            <VerticalStackLayout Padding="30,0" Spacing="0" >
+                <Label 
+                Text="Nom d'utilisateur"
+                TextColor="Gray"
+                FontSize="16"
+                HorizontalOptions="Start" />
+
+                <Entry x:Name="username" FontSize="25" Margin="0,0,0,10" Placeholder="Nom d'utilisateur" HorizontalOptions="FillAndExpand" TextColor="White" PlaceholderColor="LightGray" BackgroundColor="Grey"></Entry>
+
+
+                <Label 
+                Text="Mot de passe"
+                TextColor="Gray"
+                FontSize="16"
+                HorizontalOptions="Start" />
+
+                <Entry x:Name="password" FontSize="25" IsPassword="True" Placeholder="Mot de passe" HorizontalOptions="FillAndExpand" TextColor="White" PlaceholderColor="LightGray" BackgroundColor="Grey"></Entry>
+                <Label 
+                    x:Name="error"
+                    IsVisible="False"
+                Text="Les informations entrées sont incorrectes"
+                TextColor="Red"
+                FontSize="16"
+                HorizontalOptions="Center" />
                 
-                HorizontalOptions="Center" />
+                
+                <Button Margin="0,0,0,20"
+                BackgroundColor="Transparent"
+                Text="Mot de passe oublié?"
+                TextColor="Gray"
+                FontSize="12"
+                HorizontalOptions="End" 
+                Clicked="Inscription_Clicked"
+                />
+        
 
-            <Label 
-                Text="Welcome"
-                SemanticProperties.HeadingLevel="Level2"
-                SemanticProperties.Description="Welcome to dot net Multi platform App U I"
-                FontSize="18"
-                HorizontalOptions="Center" />
 
-            <Button 
-                x:Name="CounterBtn"
-                Text="Click me"
-                SemanticProperties.Hint="Counts the number of times you click"
-                Clicked="OnCounterClicked"
-                HorizontalOptions="Center" />
-
-            <Button Text="Aller à la page d'infos" Clicked="PageInfo_Clicked">
-            </Button>
+                <Button Margin="0,0,0,110" Text="Connection" Clicked="Connection_Clicked"></Button>
+                
+                
+                
+                
+                <Label 
+                Text="Vous n'avez pas de compte?"
+                Margin="0,0,0,10"
+                TextColor="Gray"
+                FontSize="16"
+                HorizontalOptions="Start"/>
+                
+                <Button Text="Inscription" Clicked="Inscription_Clicked"></Button>
+            </VerticalStackLayout>
+            
 
         </VerticalStackLayout>
     </ScrollView>

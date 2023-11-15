@@ -2,27 +2,27 @@ namespace DojonEtWiki.View;
 
 public partial class MainPage : ContentPage
 {
-    int count = 0;
 
     public MainPage()
     {
         InitializeComponent();
     }
 
-    private void OnCounterClicked(object sender, EventArgs e)
+    private async void Connection_Clicked(object sender, EventArgs e)
     {
-        count++;
-
-        if (count == 1)
-            CounterBtn.Text = $"Clicked {count} time";
+        if(password.Text=="admin" && username.Text == "admin")
+        {
+            await Navigation.PushAsync(new WikiList());
+        }
         else
-            CounterBtn.Text = $"Clicked {count} times";
-
-        SemanticScreenReader.Announce(CounterBtn.Text);
+        {
+            error.IsVisible = true;
+        }
+        
     }
 
-    private void PageInfo_Clicked(object sender, EventArgs e)
+    private async void Inscription_Clicked(object sender, EventArgs e)
     {
-
+        await Navigation.PushAsync(new inscription());
     }
 }

@@ -20,7 +20,7 @@
                     Clicked="Campagne_Clicked"
                     HorizontalOptions="Center"
                     Margin="10"
-                    HeightRequest="100"
+                    HeightRequest="60"
                     WidthRequest="300"/>
 
             <Button x:Name="Perso"
@@ -29,7 +29,7 @@
                     Clicked="Perso_Clicked"
                     HorizontalOptions="Center"
                     Margin="10"
-                    HeightRequest="100"
+                    HeightRequest="60"
                     WidthRequest="300"/>
 
             <Button x:Name="Monstre"
@@ -38,7 +38,7 @@
                     Clicked="Monstre_Clicked"
                     HorizontalOptions="Center"
                     Margin="10"
-                    HeightRequest="100"
+                    HeightRequest="60"
                     WidthRequest="300"/>
 
             <Button x:Name="Arme"
@@ -47,7 +47,7 @@
                     Clicked="Arme_Clicked"
                     HorizontalOptions="Center"
                     Margin="10"
-                    HeightRequest="100"
+                    HeightRequest="60"
                     WidthRequest="300"/>
 
             <Button x:Name="Armure"
@@ -56,7 +56,7 @@
                     Clicked="Armure_Clicked"
                     HorizontalOptions="Center"
                     Margin="10"
-                    HeightRequest="100"
+                    HeightRequest="60"
                     WidthRequest="300"/>
 
             <Button x:Name="Classes"
@@ -65,7 +65,7 @@
                     Clicked="Classes_Clicked"
                     HorizontalOptions="Center"
                     Margin="10"
-                    HeightRequest="100"
+                    HeightRequest="60"
                     WidthRequest="300"/>
 
             <Button x:Name="Enchantement"
@@ -74,7 +74,7 @@
                     Clicked="Enchantement_Clicked"
                     HorizontalOptions="Center"
                     Margin="10"
-                    HeightRequest="100"
+                    HeightRequest="60"
                     WidthRequest="300"/>
 
             <Button x:Name="PNJ"
@@ -83,7 +83,7 @@
                     Clicked="PNJ_Clicked"
                     HorizontalOptions="Center"
                     Margin="10"
-                    HeightRequest="100"
+                    HeightRequest="60"
                     WidthRequest="300"/>
 
             <Button x:Name="Race"
@@ -92,7 +92,7 @@
                     Clicked="Race_Clicked"
                     HorizontalOptions="Center"
                     Margin="10"
-                    HeightRequest="100"
+                    HeightRequest="60"
                     WidthRequest="300"/>
         </VerticalStackLayout>
     </ScrollView>

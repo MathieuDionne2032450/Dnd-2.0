@@ -49,6 +49,12 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <None Remove="Resources\Images\background1.jpg" />
+	  <None Remove="Resources\Images\background2.jpg" />
+	  <None Remove="Resources\Images\backgroundhome.jpeg" />
+	</ItemGroup>
+
+	<ItemGroup>
 	  <Compile Update="View\FlyoutMenuPage.xaml.cs">
 	    <DependentUpon>FlyoutMenuPage.xaml</DependentUpon>
 	  </Compile>
@@ -58,10 +64,16 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <MauiXaml Update="View\Connexion.xaml">
+	  <MauiXaml Update="View\FlyoutMenuPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="View\FlyoutMenuPage.xaml">
+	  <MauiXaml Update="View\InfoCampagne.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="View\InfoPerso.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="View\inscription.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="View\MainPage.xaml">
