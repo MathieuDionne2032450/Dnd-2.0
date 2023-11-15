@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DojonEtWiki.View.InfoQuete"
+             Title="InfoQuete">
+    <StackLayout>
+        <Label 
+            Text="Liste de vos Quetes"
+            FontSize="Title"
+            FontAttributes="Bold"
+            TextColor="Red"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center"
+            Margin="20"/>
+        <CollectionView ItemsSource="{Binding Quetes}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame BackgroundColor="LightGray" Padding="10" Margin="5">
+                        <StackLayout>
+                            <Label Text="{Binding Pnj.Name, StringFormat='Nom du PNJ : {0}'}" FontAttributes="Bold"/>
+                            <Label Text="{Binding DescriptionQuete, StringFormat='Description : {0}'}" />
+                            <Label Text="{Binding reward, StringFormat='Récompense : {0}'}" />
+                            <Label Text="Campagnes :" FontAttributes="Bold"/>
+                            <StackLayout>
+                                <CollectionView ItemsSource="{Binding Campagne}">
+                                    <CollectionView.ItemTemplate>
+                                        <DataTemplate>
+                                            <Label Text="{Binding Name, StringFormat='Nom : {0}'}"/>
+                                        </DataTemplate>
+                                    </CollectionView.ItemTemplate>
+                                </CollectionView>
+                            </StackLayout>
+                        </StackLayout>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </StackLayout>
+</ContentPage>

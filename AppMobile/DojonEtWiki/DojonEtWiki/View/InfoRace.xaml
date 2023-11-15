@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DojonEtWiki.View.InfoRace"
+             Title="InfoRace">
+    <StackLayout>
+        <Label 
+            Text="Liste de vos Races"
+            FontSize="Title"
+            FontAttributes="Bold"
+            TextColor="Red"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center"
+            Margin="20"/>
+        <CollectionView ItemsSource="{Binding Races}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame BackgroundColor="LightGray" Padding="10" Margin="5">
+                        <StackLayout>
+                            <Label Text="{Binding Nom, StringFormat='Nom : {0}'}" FontAttributes="Bold"/>
+                            <Frame BackgroundColor="Gray" Padding="5" Margin="2">
+                                <StackLayout>
+                                    <Label 
+                                    Text="Bonus"
+                                    FontSize="Large"
+                                    FontAttributes="Bold"
+                                    TextColor="Red"
+                                    VerticalOptions="Center" 
+                                    HorizontalOptions="Center"
+                                    Margin="10"/>
+                                    <Label Text="{Binding BonusPV, StringFormat='+{0} de points de vie'}" />
+                                    <Label Text="{Binding BonusDex, StringFormat='+{0} de dextérité'}" />
+                                    <Label Text="{Binding BonusForce, StringFormat='+{0} de force'}" />
+                                    <Label Text="{Binding BonusIntel, StringFormat='+{0} en intelligence'}" />
+                                    <Label Text="{Binding BonusWisdom, StringFormat='+{0} de sagesse'}" />
+                                    <Label Text="{Binding BonusConsti, StringFormat='+{0} de constitution'}" />
+                                    <Label Text="{Binding BonusCharisma, StringFormat='+{0} de charisme'}" />
+                                </StackLayout>
+                            </Frame>
+                        </StackLayout>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </StackLayout>
+</ContentPage>

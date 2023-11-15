@@ -7,6 +7,11 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-
+        <Image Margin="200,17,200,17" Source="Sans_titre.png"/>
+        <Image Margin="200,17,200,17" Source="Sans_titre1.png"/>
+        <Image Margin="200,17,200,17" Source="Sans_titre2.png"/>
+        <Image Margin="200,17,200,17" x:Name="cheveux" Source="/Cheveux/cheveux1.png" Stretch="Fill"/>
+        <Button Margin="63,147,636,147" Click="Button_Click1">retour</Button>
+        <Button Margin="639,147,60,147" Click="Button_Click2">suivant</Button>
     </Grid>
 </Window>

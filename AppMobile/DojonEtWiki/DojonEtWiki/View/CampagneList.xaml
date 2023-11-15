@@ -3,16 +3,51 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="DojonEtWiki.View.CampagneList"
              Title="CampagneList">
-    <VerticalStackLayout>
-        <Label 
+    
+    <ScrollView>
+        <StackLayout>
+            <Label 
             Text="Liste de vos campagnes"
             FontSize="Title"
             FontAttributes="Bold"
             TextColor="Red"
             VerticalOptions="Center" 
             HorizontalOptions="Center"
-            Margin="20" />
-        
-        
-    </VerticalStackLayout>
+            Margin="20"/>
+            <CollectionView ItemsSource="{Binding Campagnes}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout>
+                            <Label Text="Participants :" FontAttributes="Bold"/>
+                            <StackLayout>
+                                <CollectionView ItemsSource="{Binding Participants}">
+                                    <CollectionView.ItemTemplate>
+                                        <DataTemplate>
+                                            <Label Text="{Binding Nom}"/>
+                                        </DataTemplate>
+                                    </CollectionView.ItemTemplate>
+                                </CollectionView>
+                            </StackLayout>
+                            <StackLayout Orientation="Horizontal">
+                                <Button Text="Détails" Clicked="Details_Clicked"/>
+                                <ImageButton 
+                                    Source="Resources/Images/Icons/trash.png"
+                                    BackgroundColor="Transparent"
+                                    HeightRequest="50"
+                                    Clicked="Delete_Clicked"/>
+                            </StackLayout>
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+            <Button x:Name="NouvelleCampagne"
+                    Text="Créer une nouvelle campagne"
+                    SemanticProperties.Hint="Créer une nouvelle campagne"
+                    Clicked="NouvelleCampagne_Clicked"
+                    HorizontalOptions="Center"
+                    Margin="10"
+                    HeightRequest="100"
+                    WidthRequest="300"/>
+        </StackLayout>
+    </ScrollView>
 </ContentPage>
