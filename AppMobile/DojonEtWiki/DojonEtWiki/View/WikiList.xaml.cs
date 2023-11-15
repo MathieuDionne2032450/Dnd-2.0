@@ -1,4 +1,4 @@
-namespace DojonEtWiki;
+namespace DojonEtWiki.View;
 
 public partial class WikiList : ContentPage
 {

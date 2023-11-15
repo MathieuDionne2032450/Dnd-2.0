@@ -1,6 +1,4 @@
-﻿
-
-namespace DojonEtWiki;
+﻿namespace DojonEtWiki.View;
 
 public partial class AppFlyout : FlyoutPage
 {

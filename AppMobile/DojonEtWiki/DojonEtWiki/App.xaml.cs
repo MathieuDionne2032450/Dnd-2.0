@@ -1,4 +1,5 @@
 ﻿namespace DojonEtWiki;
+using View;
 
 public partial class App : Application
 {

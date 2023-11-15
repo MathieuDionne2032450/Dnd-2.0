@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:local="clr-namespace:DojonEtWiki"
-             x:Class="DojonEtWiki.FlyoutMenuPage"
+             xmlns:local="clr-namespace:DojonEtWiki.View"
+             x:Class="DojonEtWiki.View.FlyoutMenuPage"
              Padding="0,40,0,0"
              Title="Personal Organiser">
     <CollectionView x:Name="collectionView"
@@ -15,12 +15,14 @@
                                       TargetType="{x:Type local:MainPage}" />
                 <local:FlyoutPageItem
                     Title="Connexion"
-                    IconSource="test.png"
-                <local:FlyoutPageItem Title="Liste wiki"
-                                      IconSource="wikilist.png"
-                                      TargetType="{x:Type local:WikiList}"/>
+                    IconSource="test.png" 
                     TargetType="{x:Type local:Connexion}"
                     />
+                 <local:FlyoutPageItem 
+                    Title="Liste wiki"
+                    IconSource="wikilist.png"
+                    TargetType="{x:Type local:WikiList}"/>
+                    
             </x:Array>
         </CollectionView.ItemsSource>
         <CollectionView.ItemTemplate>

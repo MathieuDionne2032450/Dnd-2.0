@@ -49,25 +49,25 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Compile Update="FlyoutMenuPage.xaml.cs">
+	  <Compile Update="View\FlyoutMenuPage.xaml.cs">
 	    <DependentUpon>FlyoutMenuPage.xaml</DependentUpon>
 	  </Compile>
-	  <Compile Update="AppFlyout.xaml.cs">
+	  <Compile Update="View\AppFlyout.xaml.cs">
 	    <DependentUpon>AppFlyout.xaml</DependentUpon>
 	  </Compile>
 	</ItemGroup>
 
 	<ItemGroup>
-	  <MauiXaml Update="Connexion.xaml">
+	  <MauiXaml Update="View\Connexion.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="FlyoutMenuPage.xaml">
+	  <MauiXaml Update="View\FlyoutMenuPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="MainPage.xaml">
+	  <MauiXaml Update="View\MainPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="WikiList.xaml">
+	  <MauiXaml Update="View\WikiList.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	</ItemGroup>
