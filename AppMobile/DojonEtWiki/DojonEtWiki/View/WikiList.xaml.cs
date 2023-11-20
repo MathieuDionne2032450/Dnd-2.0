@@ -7,48 +7,49 @@ public partial class WikiList : ContentPage
 		InitializeComponent();
 	}
 
-	private void Campagne_Clicked(object sender, EventArgs e)
+	private async void Campagne_Clicked(object sender, EventArgs e)
 	{
-
+		await Navigation.PushAsync(new InfoCampagne());
+			
 	}
 
-	private void Perso_Clicked(object sender, EventArgs e)
+	private async void Perso_Clicked(object sender, EventArgs e)
 	{
+        await Navigation.PushAsync(new InfoPerso());
+    }
 
-	}
-
-	private void Monstre_Clicked(object sender, EventArgs e)
+	private async void Monstre_Clicked(object sender, EventArgs e)
 	{
+        await Navigation.PushAsync(new InfoMonstre());
+    }
 
-	}
-
-	private void Arme_Clicked(object sender, EventArgs e)
+	private async void Arme_Clicked(object sender, EventArgs e)
 	{
+        await Navigation.PushAsync(new InfoArmes());
+    }
 
-	}
-
-	private void Armure_Clicked(object sender, EventArgs e)
+	private async void Armure_Clicked(object sender, EventArgs e)
 	{
+        await Navigation.PushAsync(new InfoArmures());
+    }
 
-	}
-
-	private void Classes_Clicked(object sender, EventArgs e)
+	private async void Classes_Clicked(object sender, EventArgs e)
 	{
+        await Navigation.PushAsync(new InfoClasse());
+    }
 
-	}
-
-	private void Enchantement_Clicked(object sender, EventArgs e)
+	private async void Enchantement_Clicked(object sender, EventArgs e)
 	{
+        await Navigation.PushAsync(new InfoEnchantement());
+    }
 
-	}
-
-	private void PNJ_Clicked(object sender, EventArgs e)
+	private async void PNJ_Clicked(object sender, EventArgs e)
 	{
+        await Navigation.PushAsync(new InfoPnj());
+    }
 
-	}
-
-	private void Race_Clicked(object sender, EventArgs e)
+	private async void Race_Clicked(object sender, EventArgs e)
 	{
-
-	}
+        await Navigation.PushAsync(new InfoRace());
+    }
 }

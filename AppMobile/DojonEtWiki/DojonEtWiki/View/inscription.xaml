@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DojonEtWiki.View.inscription"
+             Title="inscription"
+             BackgroundImageSource="Resources/Images/background2.jpg">
+    <VerticalStackLayout Padding="30,0" Spacing="0" >
+            <Label 
+            Text="Nom d'utilisateur"
+            TextColor="Gray"
+            FontSize="16"
+            HorizontalOptions="Start" />
+
+            <Entry x:Name="username" FontSize="25" Margin="0,0,0,10" Placeholder="Nom d'utilisateur" HorizontalOptions="FillAndExpand" TextColor="White" PlaceholderColor="LightGray" BackgroundColor="Grey"></Entry>
+
+
+            <Label 
+            Text="Mot de passe"
+            TextColor="Gray"
+            FontSize="16"
+            HorizontalOptions="Start" />
+
+            <Entry x:Name="password" FontSize="25" IsPassword="True" Placeholder="Mot de passe" HorizontalOptions="FillAndExpand" TextColor="White" PlaceholderColor="LightGray" BackgroundColor="Grey"></Entry>
+
+
+            <Label 
+            Text="Confirmation du mot de passe"
+            TextColor="Gray"
+            FontSize="16"
+            HorizontalOptions="Start" />
+
+            <Entry Margin="0,0,0,40" x:Name="password2" FontSize="25" IsPassword="True" Placeholder="Mot de passe" HorizontalOptions="FillAndExpand" TextColor="White" PlaceholderColor="LightGray" BackgroundColor="Grey"></Entry>
+
+
+            <Button Text="Inscription" Clicked="Inscription_Clicked"></Button>
+        </VerticalStackLayout>
+
+
+        
+
+</ContentPage>

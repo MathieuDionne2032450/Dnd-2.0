@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DojonEtWiki.View.InfoCampagne"
+             Title="InfoCampagne"
+             BackgroundImageSource="Resources/Images/background1.jpg">
+    <VerticalStackLayout>
+        <Label 
+            Text="-titre campagne-"
+            FontSize="Title"
+            FontAttributes="Bold"
+            TextColor="Red"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center"
+            Margin="20"/>
+
+        <Label
+            VerticalOptions="Center" 
+            HorizontalOptions="Center"
+            TextColor="White"
+            >
+            <Label.FormattedText>
+                <FormattedString>
+                    <Span Text="Nom: " FontAttributes="Bold"/>
+                    <Span Text=" -nom campagne-"/>
+                </FormattedString>
+            </Label.FormattedText>
+        </Label>
+
+        <Label
+            VerticalOptions="Center" 
+            HorizontalOptions="Center"
+            TextColor="White"
+            >
+            <Label.FormattedText>
+                <FormattedString>
+                    <Span Text="description: " FontAttributes="Bold"/>
+                    <Span Text=" -description campagne-"/>
+                </FormattedString>
+            </Label.FormattedText>
+        </Label>
+
+        <Label
+            TextColor="White"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center"
+            >
+            <Label.FormattedText>
+                <FormattedString>
+                    <Span Text="nombre de joueurs: " FontAttributes="Bold"/>
+                    <Span Text=" -nombre de joueurs campagne-"/>
+                </FormattedString>
+            </Label.FormattedText>
+        </Label>
+        
+        <Button Clicked="listPerso" VerticalOptions="Center" BackgroundColor="Red" Margin="70,10" Text="Voir la liste"></Button>
+
+        <Label
+            VerticalOptions="Center" 
+            HorizontalOptions="Center"
+            TextColor="White"
+            >
+            <Label.FormattedText>
+                <FormattedString>
+                    <Span Text="Nom du MDJ: " FontAttributes="Bold"/>
+                    <Span Text=" -Nom du MDJ campagne-"/>
+                </FormattedString>
+            </Label.FormattedText>
+        </Label>
+
+
+    </VerticalStackLayout>
+</ContentPage>
