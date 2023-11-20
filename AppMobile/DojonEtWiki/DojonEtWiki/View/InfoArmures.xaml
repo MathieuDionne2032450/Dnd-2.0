@@ -3,10 +3,31 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="DojonEtWiki.View.InfoArmures"
              Title="InfoArmures">
-    <VerticalStackLayout>
+    <StackLayout>
         <Label 
-            Text="Welcome to .NET MAUI!"
+            Text="Liste de vos armures"
+            FontSize="Title"
+            FontAttributes="Bold"
+            TextColor="Red"
             VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+            HorizontalOptions="Center"
+            Margin="20"/>
+        <CollectionView ItemsSource="{Binding Armures}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame BackgroundColor="LightGray" Padding="10" Margin="5">
+                        <StackLayout>
+                            <Label Text="{Binding Name, StringFormat='Nom : {0}'}" FontAttributes="Bold"/>
+                            <Label Text="{Binding Type, StringFormat='Type : {0}'}" />
+                            <Label Text="{Binding Ac, StringFormat='AC : {0}'}" />
+                            <Label Text="{Binding DexBonus, StringFormat='Bonus de dextérité: {0}'}" />
+                            <Label Text="{Binding MaxDexMod, StringFormat='Modification maximale de dextérité : {0}'}" />
+                            <Label Text="{Binding StealthDisadvantage, StringFormat='Désavantage de furtivité : {0}'}" />
+                            <Label Text="{Binding Enchantement.Nom, StringFormat='Enchantement : {0}'}" />
+                        </StackLayout>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </StackLayout>
 </ContentPage>

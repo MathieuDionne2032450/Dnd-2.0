@@ -3,10 +3,65 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="DojonEtWiki.View.InfoMonstre"
              Title="InfoMonstre">
-    <VerticalStackLayout>
+    <StackLayout>
         <Label 
-            Text="Welcome to .NET MAUI!"
+            Text="Liste de vos Monstres202"
+            FontSize="Title"
+            FontAttributes="Bold"
+            TextColor="Red"
             VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+            HorizontalOptions="Center"
+            Margin="20"/>
+        <CollectionView ItemsSource="{Binding Monstres}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame BackgroundColor="LightGray" Padding="10" Margin="5">
+                        <StackLayout>
+                            <Label Text="{Binding Nom, StringFormat='Nom : {0}'}" FontAttributes="Bold"/>
+                            <Label Text="{Binding Size, StringFormat='Taille : {0}'}" />
+                            <Label Text="{Binding ArmorClass, StringFormat='Classe armure : {0}'}" />
+                            <Label Text="{Binding HitPoint, StringFormat='Points de frappe : {0}'}" />
+                            <Label Text="{Binding Speed, StringFormat='Vitesse : {0}'}" />
+                            <Label Text="{Binding FlySpeed, StringFormat='Vitesse de vol : {0}'}" />
+                            <Label Text="{Binding ClimbSpeed, StringFormat='Vitesse de grimpage : {0}'}" FontAttributes="Bold"/>
+                            <Label Text="{Binding Str, StringFormat='Force : {0}'}" />
+                            <Label Text="{Binding Dex, StringFormat='Dextérité : {0}'}" />
+                            <Label Text="{Binding Con, StringFormat='Constitution : {0}'}" />
+                            <Label Text="{Binding Intel, StringFormat='Intelligence : {0}'}" />
+                            <Label Text="{Binding Wis, StringFormat='Sagesse : {0}'}" />
+                            <Label Text="{Binding Cha, StringFormat='Charisme : {0}'}" />
+                            <Label Text="{Binding DarkVision, StringFormat='Vision nocturne : {0}'}" />
+                            <Label Text="{Binding Challenge, StringFormat='Défi : {0}'}" />
+                            <Label Text="{Binding Lang, StringFormat='Langage : {0}'}" />
+                            <Label Text="{Binding DammageResistance, StringFormat='Résistance aux dégâts : {0}'}" />
+                            <Label Text="{Binding DammageImmunities, StringFormat='Immunités aux dégâts: {0}'}" />
+                            <Label Text="{Binding ConditionImmunities, StringFormat='Immunités aux afflictions : {0}'}" />
+                            <Label Text="{Binding DammageImmunities, StringFormat='Immunités aux dégâts: {0}'}" />
+                            <Label Text="Actions :" FontAttributes="Bold"/>
+                            <StackLayout>
+                                <CollectionView ItemsSource="{Binding Actions}">
+                                    <CollectionView.ItemTemplate>
+                                        <DataTemplate>
+                                            <Label Text="{Binding Name, StringFormat='Nom action : {0}'}"/>
+                                        </DataTemplate>
+                                    </CollectionView.ItemTemplate>
+                                </CollectionView>
+                            </StackLayout>
+                            <Label Text="Campagnes :" FontAttributes="Bold"/>
+                            <StackLayout>
+                                <CollectionView ItemsSource="{Binding Campagne}">
+                                    <CollectionView.ItemTemplate>
+                                        <DataTemplate>
+                                            <Label Text="{Binding Name, StringFormat='Nom de la campagne : {0}'}"/>
+                                        </DataTemplate>
+                                    </CollectionView.ItemTemplate>
+                                </CollectionView>
+                            </StackLayout>
+                        </StackLayout>
+                        
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </StackLayout>
 </ContentPage>
