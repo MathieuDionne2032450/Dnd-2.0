@@ -15,6 +15,10 @@
                     Title="Liste wiki"
                     IconSource="wikilist.png"
                     TargetType="{x:Type local:WikiList}"/>
+                <local:FlyoutPageItem 
+                    Title="Mes campagnes"
+                    IconSource="wikilist.png"
+                    TargetType="{x:Type local:MesCampagnes}"/>
                     
             </x:Array>
         </CollectionView.ItemsSource>
