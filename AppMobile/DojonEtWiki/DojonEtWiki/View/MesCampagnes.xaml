@@ -1,12 +1,34 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="DojonEtWiki.View.MesCampagnes"
-             Title="MesCampagnes">
+             x:Class="DojonEtWiki.View.ListeCampagnes"
+             Title="ListeCampagnes">
     <VerticalStackLayout>
         <Label 
-            Text="Welcome to .NET MAUI!"
+            Text="Wiki"
+            FontSize="Title"
+            FontAttributes="Bold"
+            TextColor="Red"
             VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+            HorizontalOptions="Center"
+            Margin="20"/>
+
+        <ListView ItemsSource="{Binding Campagnes}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Grid Width="40" Height="40" Background="Gray">
+                            <Label Text="{Binding Id}"/>
+                        </Grid>
+                        <Border Margin="40,0,0,0" Background="LightGray">
+                            <Label Text="{Binding Name}"/>
+                        </Border>
+                    </Grid>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+
+
     </VerticalStackLayout>
 </ContentPage>
