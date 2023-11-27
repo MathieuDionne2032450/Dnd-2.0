@@ -10,7 +10,7 @@ public partial class MainPage : ContentPage
     {
         InitializeComponent();
         ApiHelper.InitializeClient();
-        List<Enchantement> e = EnchantementProcessor.GetEnchantement().Result;
+      //  List<Enchantement> e = EnchantementProcessor.GetEnchantement().Result;
     }
 
     private async void Connection_Clicked(object sender, EventArgs e)

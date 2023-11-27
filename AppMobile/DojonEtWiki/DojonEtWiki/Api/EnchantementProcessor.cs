@@ -11,9 +11,9 @@ using GoogleGson;
 
 namespace DojonEtWiki.Api
 {
-    public class EnchantementProcessor
+    public static class EnchantementProcessor
     {
-        public static async Task<List<Enchantement>> GetEnchantement()
+        /*public static async Task<List<Enchantement>> GetEnchantement()
         {
             string url = "GetAllArme";
 
@@ -51,6 +51,18 @@ namespace DojonEtWiki.Api
 
             return null;
             
+        }*/
+
+        public static Enchantement[] SimulationEnchantements()
+        {
+            Enchantement enchantement = new Enchantement { Description = "met les ennemies en feu", Nom = "Feu", Id = 1, Modif = 2,Type="feu" };
+            Enchantement enchantement1 = new Enchantement { Description = "tire de l'eau", Nom = "eau", Id = 2, Modif = 3, Type = "eau" };
+            Enchantement enchantement2= new Enchantement { Description = "place des bloc de terre", Nom = "terre", Id = 3, Modif = 4, Type = "terre" };
+            Enchantement enchantement3 = new Enchantement { Description = "tire de la glace", Nom = "glace", Id = 4, Modif = 5, Type = "glace" };
+
+            return new Enchantement[] { enchantement, enchantement1, enchantement2, enchantement3}; 
+
+
         }
     }
 }
