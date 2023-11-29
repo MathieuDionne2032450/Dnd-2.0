@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DojonEtWiki.View.Creation"
+             Title="Creation">
+    <ScrollView>
+        <VerticalStackLayout>
+            <Label 
+            Text="Choisir une campagne"
+            FontSize="Title"
+            FontAttributes="Bold"
+            TextColor="Red"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center"
+            Margin="20"/>
+
+
+            <!-- manque la liste des campagnes -->
+
+
+
+
+            <Button x:Name="creercampagne"
+                    Text="Créer une campagne"
+                    SemanticProperties.Hint="Liste des campagnes"
+                    Clicked="creer_Clicked"
+                    HorizontalOptions="Center"
+                    Margin="10"
+                    HeightRequest="60"
+                    WidthRequest="300"/>
+
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

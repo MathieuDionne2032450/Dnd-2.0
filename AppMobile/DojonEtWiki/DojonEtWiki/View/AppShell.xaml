@@ -7,13 +7,16 @@
     Shell.FlyoutBehavior="Flyout">
 
     <ShellContent
-        
         Title="WikiList"
         ContentTemplate="{DataTemplate local:WikiList}"
         Route="WikiList"/>
     <ShellContent
-        
         Title="Mes Campagnes"
         ContentTemplate="{DataTemplate local:MesCampagnes}"
         Route="MesCampagnes"/>
+    <ShellContent
+        Title="Centre de création"
+        ContentTemplate="{DataTemplate local:Creation}"
+        Route="Creation"/>
+    
 </Shell>

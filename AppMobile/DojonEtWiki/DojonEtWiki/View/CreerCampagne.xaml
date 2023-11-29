@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DojonEtWiki.View.CreerCampagne"
+             BackgroundImageSource="Resources/Images/background1.jpg"
+             Title="CreerCampagne">
+    <VerticalStackLayout>
+        <Label 
+            Text="Creation de campagne"
+            FontSize="Title"
+            FontAttributes="Bold"
+            TextColor="White"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center"
+            Margin="20"/>
+
+        <VerticalStackLayout Padding="30,0" Spacing="0" >
+            <Label 
+                Text="Nom de la campagne"
+                TextColor="Gray"
+                FontSize="16"
+                HorizontalOptions="Start" />
+
+            <Entry x:Name="nom" FontSize="25" Margin="0,0,0,10" Placeholder="Nom de la campagne" HorizontalOptions="FillAndExpand" TextColor="White" PlaceholderColor="LightGray" BackgroundColor="Grey"></Entry>
+
+
+            <Label 
+                Text="Description"
+                TextColor="Gray"
+                FontSize="16"
+                HorizontalOptions="Start" />
+
+            <Entry x:Name="description" FontSize="25" IsPassword="True" Placeholder="Description" HorizontalOptions="FillAndExpand" TextColor="White" PlaceholderColor="LightGray" BackgroundColor="Grey"></Entry>
+            <Label 
+                    x:Name="error"
+                    IsVisible="False"
+                Text="Les informations entrées sont incorrectes"
+                TextColor="Red"
+                FontSize="16"
+                HorizontalOptions="Center" />
+
+            <Button Margin="0,30,0,110" Text="Créer" Clicked="creer_Clicked"></Button>
+
+        </VerticalStackLayout>
+    </VerticalStackLayout>
+</ContentPage>
