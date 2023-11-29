@@ -4,6 +4,6 @@ public partial class MesCampagnes : ContentPage
 {
 	public MesCampagnes()
 	{
-		InitializeComponent();
+		//InitializeComponent();
 	}
 }

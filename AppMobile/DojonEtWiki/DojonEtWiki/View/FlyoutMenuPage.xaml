@@ -10,8 +10,11 @@
                     SelectionMode="Single">
         <CollectionView.ItemsSource>
             <x:Array Type="{x:Type local:FlyoutPageItem}">
-                
-                 <local:FlyoutPageItem 
+                <local:FlyoutPageItem 
+                    Title="Déconection"
+                    IconSource="wikilist.png"
+                    TargetType="{x:Type local:MainPage}"/>
+                <local:FlyoutPageItem 
                     Title="Liste wiki"
                     IconSource="wikilist.png"
                     TargetType="{x:Type local:WikiList}"/>

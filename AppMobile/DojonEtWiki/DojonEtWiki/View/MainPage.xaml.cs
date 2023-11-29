@@ -17,6 +17,7 @@ public partial class MainPage : ContentPage
     {
         if(password.Text=="admin" && username.Text == "admin")
         {
+            Application.Current.MainPage = new AppShell();
             await Navigation.PushAsync(new WikiList());
         }
         else

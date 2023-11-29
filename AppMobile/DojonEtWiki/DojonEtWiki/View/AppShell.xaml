@@ -6,10 +6,14 @@
     xmlns:local="clr-namespace:DojonEtWiki.View"
     Shell.FlyoutBehavior="Flyout">
 
-    
     <ShellContent
+        
         Title="WikiList"
         ContentTemplate="{DataTemplate local:WikiList}"
         Route="WikiList"/>
-
+    <ShellContent
+        
+        Title="Mes Campagnes"
+        ContentTemplate="{DataTemplate local:MesCampagnes}"
+        Route="MesCampagnes"/>
 </Shell>
