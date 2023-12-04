@@ -3,10 +3,29 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="DojonEtWiki.View.InfoClasse"
              Title="InfoClasse">
-    <VerticalStackLayout>
+    <StackLayout>
         <Label 
-            Text="Welcome to .NET MAUI!"
+            Text="Liste de vos classes"
+            FontSize="Title"
+            FontAttributes="Bold"
+            TextColor="Red"
             VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+            HorizontalOptions="Center"
+            Margin="20"/>
+        <CollectionView ItemsSource="{Binding ClassList}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame BackgroundColor="LightGray" Padding="10" Margin="5">
+                        <StackLayout>
+                            <Label Text="{Binding name, StringFormat='Nom : {0}'}" FontAttributes="Bold"/>
+                            <Label Text="{Binding description, StringFormat='Description : {0}'}" />
+                            <Label Text="{Binding hitDie, StringFormat='Hit die : {0}'}" />
+                            <Label Text="{Binding primaryAbility, StringFormat='Habileté primaire : {0}'}" />
+                            <Label Text="{Binding Campagne.Name, StringFormat='Campagne : {0}'}" />
+                        </StackLayout>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </StackLayout>
 </ContentPage>

@@ -3,10 +3,29 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="DojonEtWiki.View.InfoArmes"
              Title="InfoArmes">
-    <VerticalStackLayout>
+    <StackLayout>
         <Label 
-            Text="Welcome to .NET MAUI!"
+            Text="Liste de vos armes"
+            FontSize="Title"
+            FontAttributes="Bold"
+            TextColor="Red"
             VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+            HorizontalOptions="Center"
+            Margin="20"/>
+        <CollectionView ItemsSource="{Binding Armes}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame BackgroundColor="LightGray" Padding="10" Margin="5">
+                        <StackLayout>
+                            <Label Text="{Binding Nom, StringFormat='Nom : {0}'}" FontAttributes="Bold"/>
+                            <Label Text="{Binding BonusJet, StringFormat='Bonus de jet : {0}'}" />
+                            <Label Text="{Binding BonusForce, StringFormat='Bonus de force : {0}'}" />
+                            <Label Text="{Binding Enchantement.Nom, StringFormat='Enchantement : {0}'}" />
+                            <Label Text="{Binding Campagne.Name, StringFormat='Campagne : {0}'}" />
+                        </StackLayout>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </StackLayout>
 </ContentPage>

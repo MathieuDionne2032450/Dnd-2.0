@@ -3,10 +3,66 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="DojonEtWiki.View.FichePerso"
              Title="FichePerso">
-    <VerticalStackLayout>
+    <StackLayout>
         <Label 
-            Text="Welcome to .NET MAUI!"
+            Text="Fiche du personnage"
+            FontSize="Title"
+            FontAttributes="Bold"
+            TextColor="Red"
             VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+            HorizontalOptions="Center"
+            Margin="20"/>
+        <CollectionView ItemsSource="{Binding Perso}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame BackgroundColor="LightGray" Padding="10" Margin="5">
+                        <StackLayout>
+                            <Label Text="{Binding Nom, StringFormat='Nom : {0}'}" FontAttributes="Bold"/>
+                            <Label Text="{Binding Description, StringFormat='Description : {0}'}" />
+                            <Label Text="{Binding Inspiration, StringFormat='Inspiration : {0}'}" />
+                            <Label Text="{Binding Armure.Name, StringFormat='Armure : {0}'}" />
+                            <Label Text="Armes : "/>
+                            <StackLayout>
+                                <CollectionView ItemsSource="{Binding LesArmes}">
+                                    <CollectionView.ItemTemplate>
+                                        <DataTemplate>
+                                            <Label Text="{Binding Nom, StringFormat='Nom : {0}'}"/>
+                                        </DataTemplate>
+                                    </CollectionView.ItemTemplate>
+                                </CollectionView>
+                            </StackLayout>
+                            <Label Text="{Binding Classes.name, StringFormat='Classe : {0}'}" />
+                            <Label Text="{Binding Race.Nom, StringFormat='Race : {0}'}" />
+                            <Label Text="Skills : "/>
+                            <StackLayout>
+                                <CollectionView ItemsSource="{Binding Skills}">
+                                    <CollectionView.ItemTemplate>
+                                        <DataTemplate>
+                                            <Label Text="{Binding Nom, StringFormat='Nom : {0}'}"/>
+                                        </DataTemplate>
+                                    </CollectionView.ItemTemplate>
+                                </CollectionView>
+                            </StackLayout>
+                            <Label Text="{Binding Personalitetrait, StringFormat='Trait de personnalité : {0}'}" />
+                            <Label Text="{Binding Ideal, StringFormat='Idéal : {0}'}" />
+                            <Label Text="{Binding Bonds, StringFormat='Liens : {0}'}" />
+                            <Label Text="{Binding Flaws, StringFormat='Défauts : {0}'}" />
+                            <Label Text="{Binding Niveau, StringFormat='Niveau : {0}'}" />
+                            <Label Text="{Binding Campagne.Nom, StringFormat='Campagne : {0}'}" />
+                            <Label Text="Feats : "/>
+                            <StackLayout>
+                                <CollectionView ItemsSource="{Binding feats}">
+                                    <CollectionView.ItemTemplate>
+                                        <DataTemplate>
+                                            <Label Text="{Binding Nom, StringFormat='Nom : {0}'}"/>
+                                        </DataTemplate>
+                                    </CollectionView.ItemTemplate>
+                                </CollectionView>
+                            </StackLayout>
+                        </StackLayout>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </StackLayout>
 </ContentPage>
