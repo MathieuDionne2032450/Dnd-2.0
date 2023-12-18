@@ -19,23 +19,6 @@ namespace DojonEtWiki.Api
 
             string test = ApiHelper.apiClient.BaseAddress + url;
 
-            //HttpWebRequest httpWebRequest = (HttpWebRequest)WebRequest.Create(test);
-            //httpWebRequest.Method = "GET";
-
-            //HttpWebResponse httpWebResponse = httpWebRequest.GetResponse() as HttpWebResponse;
-            
-            //    if (httpWebResponse.StatusCode == HttpStatusCode.OK)
-            //    {
-            //        using (Stream dataStream = httpWebResponse.GetResponseStream())
-            //        {
-            //            using (StreamReader reader = new StreamReader(dataStream))
-            //            {
-            //                var also = reader.ReadToEnd();
-            //            }
-            //        }
-            //    }
-
-
             HttpResponseMessage reponse = await ApiHelper.apiClient.GetAsync(new Uri(ApiHelper.apiClient.BaseAddress + url)).ConfigureAwait(false);
 
             if (reponse.IsSuccessStatusCode)
@@ -51,18 +34,6 @@ namespace DojonEtWiki.Api
 
             return null;
             
-        }
-
-        public static Enchantement[] SimulationEnchantements()
-        {
-            Enchantement enchantement = new Enchantement { Description = "met les ennemies en feu", Nom = "Feu", Id = 1, Modif = 2,Type="feu" };
-            Enchantement enchantement1 = new Enchantement { Description = "tire de l'eau", Nom = "eau", Id = 2, Modif = 3, Type = "eau" };
-            Enchantement enchantement2= new Enchantement { Description = "place des bloc de terre", Nom = "terre", Id = 3, Modif = 4, Type = "terre" };
-            Enchantement enchantement3 = new Enchantement { Description = "tire de la glace", Nom = "glace", Id = 4, Modif = 5, Type = "glace" };
-
-            return new Enchantement[] { enchantement, enchantement1, enchantement2, enchantement3}; 
-
-
         }
     }
 }

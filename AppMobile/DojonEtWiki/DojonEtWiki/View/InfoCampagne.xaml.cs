@@ -1,8 +1,10 @@
+using DojonEtWiki.ViewModel;
+
 namespace DojonEtWiki.View;
 
 public partial class InfoCampagne : ContentPage
 {
-	public InfoCampagne()
+	public InfoCampagne(VMCampagne vm)
 	{
 		InitializeComponent();
     }

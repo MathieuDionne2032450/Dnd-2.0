@@ -2,8 +2,13 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="DojonEtWiki.View.CampagneList"
-             Title="CampagneList">
-    
+             Title="CampagneList"
+             xmlns:local="clr-namespace:DojonEtWiki.ViewModel">
+
+    <ContentPage.BindingContext>
+        <local:VMCampagne/>
+    </ContentPage.BindingContext>
+
     <ScrollView>
         <StackLayout>
             <Label 
@@ -14,13 +19,13 @@
             VerticalOptions="Center" 
             HorizontalOptions="Center"
             Margin="20"/>
-            <CollectionView ItemsSource="{Binding Campagnes}">
+            <CollectionView ItemsSource="{Binding ListeCampagne}">
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
                         <StackLayout>
-                            <Label Text="Participants :" FontAttributes="Bold"/>
+                            <Label Text="{Binding Name}" FontAttributes="Bold"/>
                             <StackLayout>
-                                <CollectionView ItemsSource="{Binding Participants}">
+                                <CollectionView ItemsSource="{Binding Armes}">
                                     <CollectionView.ItemTemplate>
                                         <DataTemplate>
                                             <Label Text="{Binding Nom}"/>
