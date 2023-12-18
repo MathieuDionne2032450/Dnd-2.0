@@ -1,21 +1,22 @@
 namespace DojonEtWiki.View;
 using Api;
 using DojonEtWiki.Model;
+using DojonEtWiki.ViewModel;
 using System.Web.Http;
 
 public partial class MainPage : ContentPage
 {
-
+    MainPageVM vm;
     public MainPage()
     {
         InitializeComponent();
         ApiHelper.InitializeClient();
-      //  List<Enchantement> e = EnchantementProcessor.GetEnchantement().Result;
+        vm = new MainPageVM();
     }
 
     private async void Connection_Clicked(object sender, EventArgs e)
     {
-        if(password.Text=="admin" && username.Text == "admin")
+        if(vm.CheckKey(password.Text))
         {
             Application.Current.MainPage = new AppShell();
             await Navigation.PushAsync(new WikiList());

@@ -53,6 +53,6 @@ public partial class WikiList : ContentPage
 
 	private async void Race_Clicked(object sender, EventArgs e)
 	{
-        await Navigation.PushAsync(new InfoRace());
+        await Navigation.PushAsync(new WikiRace());
     }
 }
