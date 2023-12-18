@@ -2,7 +2,13 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="DojonEtWiki.View.Creation"
-             Title="Creation">
+             Title="Creation"
+             xmlns:local="clr-namespace:DojonEtWiki.ViewModel">
+
+    <ContentPage.BindingContext>
+        <local:VMCampagne/>
+    </ContentPage.BindingContext>
+
     <ScrollView>
         <VerticalStackLayout>
             <Label 
@@ -16,9 +22,21 @@
 
 
             <!-- manque la liste des campagnes -->
-
-
-
+            <CollectionView ItemsSource="{Binding ListeCampagne}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Padding="10">
+                            <Button Text="{Binding Name}" 
+                            SemanticProperties.Hint="Liste des campagnes"
+                            Clicked="Campagne_Clicked"
+                            HorizontalOptions="Center"
+                            Margin="10"
+                            HeightRequest="60"
+                            WidthRequest="300"/>
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
 
             <Button x:Name="creercampagne"
                     Text="Créer une campagne"

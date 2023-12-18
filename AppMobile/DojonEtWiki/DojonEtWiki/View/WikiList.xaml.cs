@@ -4,6 +4,7 @@ using DojonEtWiki.ViewModel;
 
 public partial class WikiList : ContentPage
 {
+	
 	public WikiList()
 	{
 		InitializeComponent();
@@ -11,7 +12,6 @@ public partial class WikiList : ContentPage
 
 	private async void Campagne_Clicked(object sender, EventArgs e)
 	{
-		await Navigation.PushAsync(new InfoCampagne());
 			
 	}
 

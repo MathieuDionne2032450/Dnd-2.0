@@ -9,7 +9,31 @@ namespace DojonEtWiki.Api
 {
     public static class CampagneProcessor
     {
-        public static Campagne[] SimulationCampagne()
+
+        public async static Task<List<Campagne>> GetAllCampagnes()
+        {
+            string url = "Campagne";
+
+            HttpResponseMessage reponse = await ApiHelper.apiClient.GetAsync(new Uri(ApiHelper.apiClient.BaseAddress + url)).ConfigureAwait(false);
+
+            if (reponse.IsSuccessStatusCode)
+            {
+                List<Campagne> model = await reponse.Content.ReadAsAsync<List<Campagne>>();
+
+                return model;
+            }
+            else
+            {
+                throw new Exception(reponse.ReasonPhrase);
+            }
+
+            return null;
+
+        }
+    }
+}
+
+        /*public static Campagne[] SimulationCampagne()
         {
             Campagne[] campagnes = new Campagne[]
             {
@@ -43,6 +67,4 @@ namespace DojonEtWiki.Api
                 },
             };
             return campagnes;
-        }
-    }
-}
+        }*/
