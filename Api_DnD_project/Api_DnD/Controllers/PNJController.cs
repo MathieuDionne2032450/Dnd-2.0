@@ -19,10 +19,10 @@ namespace Api_DnD.Controllers
 
         //GET: PersoControllerCreate
         [HttpGet("/GetAllPNJ")]
-        public async Task<ActionResult<IEnumerable<PnjDTO>>> GetAllPNJ(string? sortOrder, string? recherche, int page)
+        public async Task<ActionResult<IEnumerable<PNJ>>> GetAllPNJ(string? sortOrder, string? recherche, int page)
         {
-            List<PnjDTO> listePNJDTO = new List<PnjDTO>();
-            PnjDTO pnjConverti;
+            List<PNJ> listePNJ = new List<PNJ>();
+            
             if (!string.IsNullOrEmpty(recherche))
             {
                 foreach(PNJ pnj in _context.PNJ)
@@ -30,31 +30,30 @@ namespace Api_DnD.Controllers
                     if(pnj.Name.Contains(recherche))
                     {
                         // Comme on retourne des PNJDTO, il faut convertir les PNJ
-                        pnjConverti = PnjDTO.PnjToPnjDTO(pnj);
-                        listePNJDTO.Add(pnjConverti);
+
+                        listePNJ.Add(pnj);
                     }
                 }
-                return listePNJDTO;
+                return listePNJ;
             }
 
             if (page <= 0)
                 page = 1;
             foreach (PNJ pnj in _context.PNJ)
-            {
-                pnjConverti = PnjDTO.PnjToPnjDTO(pnj);
-                listePNJDTO.Add(pnjConverti);
+            { 
+                listePNJ.Add(pnj);
             }
             switch (sortOrder)
             {
                 case "nom":
-                    listePNJDTO.OrderBy(r => r.Nom).Skip((3 * page) - 3).Take(3);
-                    return listePNJDTO;
+                    listePNJ.OrderBy(r => r.Name).Skip((3 * page) - 3).Take(3);
+                    return listePNJ;
                 case "nom_desc":
-                    listePNJDTO.OrderByDescending(r => r.Nom).Skip((3 * page) - 3).Take(3);
-                    return listePNJDTO;
+                    listePNJ.OrderByDescending(r => r.Name).Skip((3 * page) - 3).Take(3);
+                    return listePNJ;
                 default:
-                    listePNJDTO.Skip((3 * page) - 3).Take(3);
-                    return listePNJDTO;
+                    listePNJ.Skip((3 * page) - 3).Take(3);
+                    return listePNJ;
             }
         }
 

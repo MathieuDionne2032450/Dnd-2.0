@@ -1,0 +1,212 @@
+[
+    {
+      "nom": "banane",
+      "description": "eau",
+      "type": "eau",
+      "modif": 5,
+      "id": 1
+    },
+    {
+      "nom": "feu de camp",
+      "description": "feu",
+      "type": "feu",
+      "modif": 2,
+      "id": 2
+    },
+    {
+      "nom": "galce",
+      "description": "glace",
+      "type": "glace",
+      "modif": 2,
+      "id": 3
+    },
+    {
+      "nom": "terre",
+      "description": "terre",
+      "type": "terre",
+      "modif": 2,
+      "id": 4
+    },
+    {
+      "nom": "poison",
+      "description": "poison",
+      "type": "poison",
+      "modif": 2,
+      "id": 5
+    },
+    {
+      "nom": "eau",
+      "description": "eau",
+      "type": "eau",
+      "modif": 2,
+      "id": 6
+    },
+    {
+      "nom": "feu",
+      "description": "feu",
+      "type": "feu",
+      "modif": 2,
+      "id": 7
+    },
+    {
+      "nom": "galce",
+      "description": "glace",
+      "type": "glace",
+      "modif": 2,
+      "id": 8
+    },
+    {
+      "nom": "terre",
+      "description": "terre",
+      "type": "terre",
+      "modif": 2,
+      "id": 9
+    },
+    {
+      "nom": "poison",
+      "description": "poison",
+      "type": "poison",
+      "modif": 2,
+      "id": 10
+    },
+    {
+      "nom": "Feu Éternel",
+      "description": "L'arme est enflammée, inflige des dégâts de feu à l'ennemi",
+      "type": "Feu",
+      "modif": 6,
+      "id": 11
+    },
+    {
+      "nom": "Froid Glacial",
+      "description": "L'arme est glacée, inflige des dégâts de froid à l'ennemi",
+      "type": "Froid",
+      "modif": 6,
+      "id": 12
+    },
+    {
+      "nom": "Choc Électrique",
+      "description": "L'arme est chargée d'électricité, inflige des dégâts électriques à l'ennemi",
+      "type": "Électrique",
+      "modif": 6,
+      "id": 13
+    },
+    {
+      "nom": "Poison Mortel",
+      "description": "L'arme est empoisonnée, inflige un poison mortel à l'ennemi",
+      "type": "Poison",
+      "modif": 6,
+      "id": 14
+    },
+    {
+      "nom": "Saignement Profond",
+      "description": "L'arme inflige des dégâts continus, provoque un saignement chez l'ennemi",
+      "type": "Physique",
+      "modif": 4,
+      "id": 15
+    },
+    {
+      "nom": "Âme Captive",
+      "description": "L'âme de l'ennemi est emprisonnée dans l'arme, augmente la puissance de l'arme",
+      "type": "Spirituel",
+      "modif": 2,
+      "id": 16
+    },
+    {
+      "nom": "Protection des Anciens",
+      "description": "L'arme confère une protection magique à son porteur",
+      "type": "Défensif",
+      "modif": 3,
+      "id": 17
+    },
+    {
+      "nom": "Invisibilité Occulte",
+      "description": "L'arme rend son porteur invisible à l'œil nu",
+      "type": "Furtivité",
+      "modif": 4,
+      "id": 18
+    },
+    {
+      "nom": "Flamme Éternelle",
+      "description": "L'arme brûle continuellement sans se consumer, inflige des dégâts de feu",
+      "type": "Feu",
+      "modif": 8,
+      "id": 19
+    },
+    {
+      "nom": "Gel Profond",
+      "description": "L'arme gèle tout sur son passage, inflige des dégâts de froid",
+      "type": "Froid",
+      "modif": 8,
+      "id": 20
+    },
+    {
+      "nom": "Tempête Électrique",
+      "description": "L'arme provoque une tempête électrique, inflige des dégâts électriques",
+      "type": "Électrique",
+      "modif": 8,
+      "id": 21
+    },
+    {
+      "nom": "Poison Mortel Amélioré",
+      "description": "L'empoisonnement provoqué par l'arme est extrêmement mortel",
+      "type": "Poison",
+      "modif": 8,
+      "id": 22
+    },
+    {
+      "nom": "Saignement Mortel",
+      "description": "Le saignement provoqué par l'arme est fatal",
+      "type": "Physique",
+      "modif": 6,
+      "id": 23
+    },
+    {
+      "nom": "Contrôle des Âmes",
+      "description": "L'arme permet de contrôler l'esprit de l'ennemi",
+      "type": "Spirituel",
+      "modif": 4,
+      "id": 24
+    },
+    {
+      "nom": "Bouclier des Dieux",
+      "description": "L'arme crée un bouclier magique, protège son porteur de toute attaque",
+      "type": "Défensif",
+      "modif": 4,
+      "id": 25
+    },
+    {
+      "nom": "Ombre Éternelle",
+      "description": "L'arme plonge tout dans l'obscurité, confère des capacités de furtivité",
+      "type": "Furtivité",
+      "modif": 6,
+      "id": 26
+    },
+    {
+      "nom": "Lumière Éclatante",
+      "description": "L'arme émet une lumière éclatante, repousse les créatures des ténèbres",
+      "type": "Lumière",
+      "modif": 6,
+      "id": 27
+    },
+    {
+      "nom": "Vitesse du Vent",
+      "description": "L'arme confère une grande vitesse à son porteur",
+      "type": "Vitesse",
+      "modif": 6,
+      "id": 28
+    },
+    {
+      "nom": "Résistance de la Terre",
+      "description": "L'arme confère une résistance à tous les éléments terrestres",
+      "type": "Résistance",
+      "modif": 4,
+      "id": 29
+    },
+    {
+      "nom": "Régénération Divine",
+      "description": "L'arme confère une régénération rapide à son porteur",
+      "type": "Régénération",
+      "modif": 5,
+      "id": 30
+    }
+  ]

@@ -1,0 +1,102 @@
+[
+    {
+      "id": 1,
+      "descr": "Maîtrise de l'épée longue",
+      "nom": "Épée Longue"
+    },
+    {
+      "id": 2,
+      "descr": "Maîtrise de l'arc",
+      "nom": "Arc"
+    },
+    {
+      "id": 3,
+      "descr": "Magie de guérison",
+      "nom": "Guérison"
+    },
+    {
+      "id": 4,
+      "descr": "Crochetage de serrures",
+      "nom": "Crochetage"
+    },
+    {
+      "id": 5,
+      "descr": "Alchimie",
+      "nom": "Alchimie"
+    },
+    {
+      "id": 6,
+      "descr": "Maîtrise des bêtes",
+      "nom": "Bêtes"
+    },
+    {
+      "id": 7,
+      "descr": "Tactique de combat",
+      "nom": "Combat Tactique"
+    },
+    {
+      "id": 8,
+      "descr": "Nécromancie",
+      "nom": "Nécromancie"
+    },
+    {
+      "id": 9,
+      "descr": "Invocation d'éléments",
+      "nom": "Invocation"
+    },
+    {
+      "id": 10,
+      "descr": "Méditation",
+      "nom": "Méditation"
+    },
+    {
+      "id": 11,
+      "descr": "Discrétion",
+      "nom": "Discrétion"
+    },
+    {
+      "id": 12,
+      "descr": "Charme",
+      "nom": "Charme"
+    },
+    {
+      "id": 13,
+      "descr": "Connaissance des monstres",
+      "nom": "Monstres"
+    },
+    {
+      "id": 14,
+      "descr": "Ingénierie",
+      "nom": "Ingénierie"
+    },
+    {
+      "id": 15,
+      "descr": "Érudition antique",
+      "nom": "Érudition"
+    },
+    {
+      "id": 16,
+      "descr": "Tissage des runes",
+      "nom": "Runes"
+    },
+    {
+      "id": 17,
+      "descr": "Manipulation des ombres",
+      "nom": "Ombres"
+    },
+    {
+      "id": 18,
+      "descr": "Cuisine magique",
+      "nom": "Cuisine"
+    },
+    {
+      "id": 19,
+      "descr": "Lecture des étoiles",
+      "nom": "Astronomie"
+    },
+    {
+      "id": 20,
+      "descr": "Art de la poésie",
+      "nom": "Poésie"
+    }
+  ]

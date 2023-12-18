@@ -1,0 +1,232 @@
+[
+    {
+      "name": "armure1",
+      "type": "lourde",
+      "ac": 14,
+      "dexBonus": false,
+      "maxDexMod": 0,
+      "stealthDisadvantage": 0,
+      "enchantementId": 1,
+      "id": 1
+    },
+    {
+      "name": "armure1",
+      "type": "lourde",
+      "ac": 14,
+      "dexBonus": false,
+      "maxDexMod": 0,
+      "stealthDisadvantage": 0,
+      "enchantementId": 1,
+      "id": 2
+    },
+    {
+      "name": "armure1",
+      "type": "lourde",
+      "ac": 14,
+      "dexBonus": false,
+      "maxDexMod": 0,
+      "stealthDisadvantage": 0,
+      "enchantementId": 1,
+      "id": 3
+    },
+    {
+      "name": "Armure de Cuir",
+      "type": "Légère",
+      "ac": 11,
+      "dexBonus": true,
+      "maxDexMod": 2,
+      "stealthDisadvantage": 0,
+      "enchantementId": 1,
+      "id": 4
+    },
+    {
+      "name": "Armure d'Écailles",
+      "type": "Légère",
+      "ac": 12,
+      "dexBonus": true,
+      "maxDexMod": 2,
+      "stealthDisadvantage": 0,
+      "enchantementId": 2,
+      "id": 5
+    },
+    {
+      "name": "Armure de Peau",
+      "type": "Légère",
+      "ac": 11,
+      "dexBonus": true,
+      "maxDexMod": 2,
+      "stealthDisadvantage": 0,
+      "enchantementId": 3,
+      "id": 6
+    },
+    {
+      "name": "Armure de Cuir Clouté",
+      "type": "Légère",
+      "ac": 12,
+      "dexBonus": true,
+      "maxDexMod": 2,
+      "stealthDisadvantage": 0,
+      "enchantementId": 4,
+      "id": 7
+    },
+    {
+      "name": "Armure de Cuir Renforcé",
+      "type": "Légère",
+      "ac": 13,
+      "dexBonus": true,
+      "maxDexMod": 2,
+      "stealthDisadvantage": 0,
+      "enchantementId": 5,
+      "id": 8
+    },
+    {
+      "name": "Armure de Mailles",
+      "type": "Intermédiaire",
+      "ac": 14,
+      "dexBonus": true,
+      "maxDexMod": 2,
+      "stealthDisadvantage": 1,
+      "enchantementId": 6,
+      "id": 9
+    },
+    {
+      "name": "Armure d'Écailles de Dragon",
+      "type": "Intermédiaire",
+      "ac": 15,
+      "dexBonus": true,
+      "maxDexMod": 2,
+      "stealthDisadvantage": 1,
+      "enchantementId": 7,
+      "id": 10
+    },
+    {
+      "name": "Armure de Plates",
+      "type": "Lourde",
+      "ac": 18,
+      "dexBonus": false,
+      "maxDexMod": 0,
+      "stealthDisadvantage": 1,
+      "enchantementId": 8,
+      "id": 11
+    },
+    {
+      "name": "Armure de Plates Completes",
+      "type": "Lourde",
+      "ac": 20,
+      "dexBonus": false,
+      "maxDexMod": 0,
+      "stealthDisadvantage": 1,
+      "enchantementId": 9,
+      "id": 12
+    },
+    {
+      "name": "Armure de Plates d'Ornements",
+      "type": "Lourde",
+      "ac": 19,
+      "dexBonus": false,
+      "maxDexMod": 0,
+      "stealthDisadvantage": 1,
+      "enchantementId": 10,
+      "id": 13
+    },
+    {
+      "name": "Armure de Plates de Guerre",
+      "type": "Lourde",
+      "ac": 18,
+      "dexBonus": false,
+      "maxDexMod": 0,
+      "stealthDisadvantage": 1,
+      "enchantementId": 11,
+      "id": 14
+    },
+    {
+      "name": "Armure de Plates à Pointes",
+      "type": "Lourde",
+      "ac": 19,
+      "dexBonus": false,
+      "maxDexMod": 0,
+      "stealthDisadvantage": 1,
+      "enchantementId": 12,
+      "id": 15
+    },
+    {
+      "name": "Armure de Plates des Ombres",
+      "type": "Lourde",
+      "ac": 20,
+      "dexBonus": false,
+      "maxDexMod": 0,
+      "stealthDisadvantage": 1,
+      "enchantementId": 13,
+      "id": 16
+    },
+    {
+      "name": "Armure de Plates du Roi",
+      "type": "Lourde",
+      "ac": 20,
+      "dexBonus": false,
+      "maxDexMod": 0,
+      "stealthDisadvantage": 1,
+      "enchantementId": 14,
+      "id": 17
+    },
+    {
+      "name": "Armure de Plates de l'Aube",
+      "type": "Lourde",
+      "ac": 18,
+      "dexBonus": false,
+      "maxDexMod": 0,
+      "stealthDisadvantage": 1,
+      "enchantementId": 15,
+      "id": 18
+    },
+    {
+      "name": "Armure de Plates des Abysses",
+      "type": "Lourde",
+      "ac": 19,
+      "dexBonus": false,
+      "maxDexMod": 0,
+      "stealthDisadvantage": 1,
+      "enchantementId": 16,
+      "id": 19
+    },
+    {
+      "name": "Armure de Plates du Dragon",
+      "type": "Lourde",
+      "ac": 20,
+      "dexBonus": false,
+      "maxDexMod": 0,
+      "stealthDisadvantage": 1,
+      "enchantementId": 17,
+      "id": 20
+    },
+    {
+      "name": "Armure de Plates du Griffon",
+      "type": "Lourde",
+      "ac": 19,
+      "dexBonus": false,
+      "maxDexMod": 0,
+      "stealthDisadvantage": 1,
+      "enchantementId": 18,
+      "id": 21
+    },
+    {
+      "name": "Armure de Plates de l'Archimage",
+      "type": "Lourde",
+      "ac": 20,
+      "dexBonus": false,
+      "maxDexMod": 0,
+      "stealthDisadvantage": 1,
+      "enchantementId": 19,
+      "id": 22
+    },
+    {
+      "name": "Armure de Plates du Paladin",
+      "type": "Lourde",
+      "ac": 18,
+      "dexBonus": false,
+      "maxDexMod": 0,
+      "stealthDisadvantage": 1,
+      "enchantementId": 20,
+      "id": 23
+    }
+  ]

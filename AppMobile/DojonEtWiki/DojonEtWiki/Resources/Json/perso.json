@@ -1,0 +1,50 @@
+[
+    {
+      "irlJoueur": "Alexandre",
+      "nom": "Dreknethol",
+      "description": "Un beau perso qui est vraiment le plus beau de tous",
+      "inspiration": 0,
+      "armureId": 1,
+      "classeId": 1,
+      "raceId": 1,
+      "personalitetrait": "beau",
+      "ideal": "beauté",
+      "bonds": "Les gens beau",
+      "flaws": "La laideur",
+      "niv": 15,
+      "id": 1,
+      "campagneId": 1
+    },
+    {
+      "irlJoueur": "Mathieu",
+      "nom": "Bwipo",
+      "description": "un laid",
+      "inspiration": 0,
+      "armureId": 2,
+      "classeId": 1,
+      "raceId": 1,
+      "personalitetrait": "laid",
+      "ideal": "laideur",
+      "bonds": "Les gens laid",
+      "flaws": "La beauté",
+      "niv": 5,
+      "id": 2,
+      "campagneId": 2
+    },
+    {
+      "irlJoueur": "Louis",
+      "nom": "Louise",
+      "description": "jeune damme cool",
+      "inspiration": 0,
+      "armureId": 3,
+      "classeId": 1,
+      "raceId": 1,
+      "personalitetrait": "beau",
+      "ideal": "cool",
+      "bonds": "Les gens cool",
+      "flaws": "Les gens pas cool",
+      "niv": 1,
+      "id": 3,
+      "campagneId": 3
+    }
+  ]

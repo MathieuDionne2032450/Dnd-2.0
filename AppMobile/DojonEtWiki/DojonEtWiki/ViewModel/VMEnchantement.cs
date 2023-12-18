@@ -15,13 +15,13 @@ namespace DojonEtWiki.ViewModel
         public Enchantement EnchantementSelectionne { get { return _enchantementSelectionne; } set { _enchantementSelectionne = value; } }
 
         //liste des enchantements
-        Enchantement [] _lesEnchantements = null;
-        public Enchantement[] lesEnchantements { get { return _lesEnchantements; } set { _lesEnchantements = value; } }
+        List<Enchantement> _lesEnchantements = null;
+        public List<Enchantement> lesEnchantements { get { return _lesEnchantements; } set { _lesEnchantements = value; } }
 
         //constructeur
         public VMEnchantement()
         {
-            lesEnchantements = EnchantementProcessor.SimulationEnchantements();
+            lesEnchantements = EnchantementProcessor.GetEnchantement().Result;
             _enchantementSelectionne = lesEnchantements[0];
         }
     }

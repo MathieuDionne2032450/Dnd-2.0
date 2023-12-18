@@ -132,11 +132,13 @@
 	<ItemGroup>
 	  <Folder Include="Media\" />
 	  <Folder Include="Resources\Images\Icons\" />
+	  <Folder Include="Resources\Json\" />
 	</ItemGroup>
 
 	<ItemGroup>
 	  <PackageReference Include="Microsoft.AspNet.WebApi.Client" Version="6.0.0" />
 	  <PackageReference Include="Microsoft.AspNet.WebApi.Core" Version="5.3.0" />
+	  <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
 	</ItemGroup>
 
 </Project>

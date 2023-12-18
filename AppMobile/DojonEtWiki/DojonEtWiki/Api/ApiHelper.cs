@@ -17,7 +17,7 @@ namespace DojonEtWiki.Api
             apiClient.DefaultRequestHeaders.Accept.Clear();
             apiClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
-            apiClient.BaseAddress = new Uri("http://localhost:7296/");
+            apiClient.BaseAddress = new Uri("https://c0fnrbvj-7296.use.devtunnels.ms/");
         }
     }
 }

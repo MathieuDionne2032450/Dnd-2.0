@@ -1,4 +1,6 @@
 namespace DojonEtWiki.View;
+using DojonEtWiki.Api;
+using DojonEtWiki.ViewModel;
 
 public partial class WikiList : ContentPage
 {
@@ -40,7 +42,8 @@ public partial class WikiList : ContentPage
 
 	private async void Enchantement_Clicked(object sender, EventArgs e)
 	{
-        await Navigation.PushAsync(new InfoEnchantement());
+		VMEnchantement vm = new VMEnchantement();
+        await Navigation.PushAsync(new InfoEnchantement(vm));
     }
 
 	private async void PNJ_Clicked(object sender, EventArgs e)

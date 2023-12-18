@@ -32,7 +32,7 @@ namespace TestDnd
         {
             var result = PnjController.GetAllPNJ("Id", null, 1).Result.Value?.ToList();
             result.Count().Should().Be(3);
-            result[0].Nom.Should().Be("Gaspare Boneclaw");
+            result[0].Name.Should().Be("Gaspare Boneclaw");
             
         }
 
@@ -41,7 +41,7 @@ namespace TestDnd
         {
             var result = PnjController.GetAllPNJ("Id", "Boneclaw", 1).Result.Value?.ToList();
             result.Count().Should().Be(2);
-            result[0].Nom.Should().Be("Gaspare Boneclaw");
+            result[0].Name.Should().Be("Gaspare Boneclaw");
 
         }
 

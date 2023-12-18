@@ -1,5 +1,4 @@
-﻿using Android.Content;
-using DojonEtWiki.Model;
+﻿using DojonEtWiki.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;

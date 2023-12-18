@@ -1,0 +1,182 @@
+[
+    {
+      "id": 1,
+      "name": "Boule de Feu",
+      "description": "Invoque une boule de feu brûlante qui explose à l'impact, infligeant des dégâts de feu à tous les ennemis dans la zone.",
+      "dammageType": "Feu",
+      "dammage": 8,
+      "classId": 1,
+      "zone": "Zone d'Explosion"
+    },
+    {
+      "id": 2,
+      "name": "Projectile Magique",
+      "description": "Lance des projectiles magiques non élémentaires vers l'ennemi, infligeant des dégâts magiques.",
+      "dammageType": "Magique",
+      "dammage": 6,
+      "classId": 2,
+      "zone": "Cible Unique"
+    },
+    {
+      "id": 3,
+      "name": "Choc de Foudre",
+      "description": "Frappe l'ennemi avec un éclair de foudre, infligeant des dégâts de foudre et paralysant brièvement.",
+      "dammageType": "Foudre",
+      "dammage": 7,
+      "classId": 3,
+      "zone": "Cible Unique"
+    },
+    {
+      "id": 4,
+      "name": "Main de la Glace",
+      "description": "Crée une main glacée qui saisit l'ennemi, infligeant des dégâts de froid et ralentissant le mouvement.",
+      "dammageType": "Froid",
+      "dammage": 5,
+      "classId": 4,
+      "zone": "Cible Unique"
+    },
+    {
+      "id": 5,
+      "name": "Guérison Sacrée",
+      "description": "Guérit les blessures des alliés dans la zone, restaurant un montant élevé de points de vie.",
+      "dammageType": "Guérison",
+      "dammage": 0,
+      "classId": 5,
+      "zone": "Zone de Soin"
+    },
+    {
+      "id": 6,
+      "name": "Sphère d'Acide",
+      "description": "Crée une sphère d'acide corrosif qui tournoie autour de l'enchanteur, infligeant des dégâts d'acide aux ennemis dans la zone.",
+      "dammageType": "Acide",
+      "dammage": 9,
+      "classId": 6,
+      "zone": "Zone d'Effet"
+    },
+    {
+      "id": 7,
+      "name": "Bénédiction Divine",
+      "description": "Confère des bénédictions divines aux alliés dans la zone, augmentant leur précision et leurs dégâts pendant un certain temps.",
+      "dammageType": "Bénéfique",
+      "dammage": 0,
+      "classId": 7,
+      "zone": "Zone d'Effet"
+    },
+    {
+      "id": 8,
+      "name": "Ombre Mortelle",
+      "description": "Invoque des ombres mortelles pour envelopper l'ennemi, infligeant des dégâts d'ombre et réduisant leur résistance à la lumière.",
+      "dammageType": "Ombre",
+      "dammage": 6,
+      "classId": 8,
+      "zone": "Cible Unique"
+    },
+    {
+      "id": 9,
+      "name": "Nova Radiante",
+      "description": "Libère une explosion de lumière sacrée, infligeant des dégâts radiants à tous les ennemis dans la zone.",
+      "dammageType": "Radiant",
+      "dammage": 10,
+      "classId": 9,
+      "zone": "Zone d'Explosion"
+    },
+    {
+      "id": 10,
+      "name": "Étreinte de la Terre",
+      "description": "Fait émerger des mains de terre pour immobiliser l'ennemi, infligeant des dégâts de terre et les empêchant de se déplacer.",
+      "dammageType": "Terre",
+      "dammage": 7,
+      "classId": 10,
+      "zone": "Cible Unique"
+    },
+    {
+      "id": 11,
+      "name": "Frappe Céleste",
+      "description": "Canalise le pouvoir des cieux pour frapper l'ennemi avec une force céleste, infligeant des dégâts divins et repoussant l'ennemi.",
+      "dammageType": "Divin",
+      "dammage": 8,
+      "classId": 1,
+      "zone": "Cible Unique"
+    },
+    {
+      "id": 12,
+      "name": "Appel des Oiseaux",
+      "description": "Fait appel à un essaim d'oiseaux pour attaquer l'ennemi, infligeant des dégâts de picorage et causant une confusion temporaire.",
+      "dammageType": "Physique",
+      "dammage": 4,
+      "classId": 2,
+      "zone": "Cible Unique"
+    },
+    {
+      "id": 13,
+      "name": "Mur de Force",
+      "description": "Crée un mur invisible d'énergie pure pour bloquer les attaques ennemies.",
+      "dammageType": "Barrage",
+      "dammage": 0,
+      "classId": 3,
+      "zone": "Défense"
+    },
+    {
+      "id": 14,
+      "name": "Foudre Céleste",
+      "description": "Invoque un éclair céleste qui frappe l'ennemi de haut en bas, infligeant des dégâts de foudre et provoquant une paralysie temporaire.",
+      "dammageType": "Foudre",
+      "dammage": 9,
+      "classId": 4,
+      "zone": "Cible Unique"
+    },
+    {
+      "id": 15,
+      "name": "Flammes Éternelles",
+      "description": "Crée des flammes éternelles qui brûlent l'ennemi, infligeant des dégâts de feu persistants jusqu'à ce que le feu soit éteint.",
+      "dammageType": "Feu",
+      "dammage": 7,
+      "classId": 5,
+      "zone": "Cible Unique"
+    },
+    {
+      "id": 16,
+      "name": "Miroir Magique",
+      "description": "Crée un miroir magique qui renvoie les sorts ennemis vers leur lanceur, les affectant avec leur propre magie.",
+      "dammageType": "Réflexion",
+      "dammage": 0,
+      "classId": 6,
+      "zone": "Défense"
+    },
+    {
+      "id": 17,
+      "name": "Réanimation des Morts",
+      "description": "Réanime temporairement un allié tombé au combat en tant que mort-vivant loyal, sous le contrôle du lanceur.",
+      "dammageType": "Nécrotique",
+      "dammage": 0,
+      "classId": 7,
+      "zone": "Allié Mort"
+    },
+    {
+      "id": 18,
+      "name": "Éclair de Givre",
+      "description": "Lance un éclair de givre qui gèle l'ennemi sur place, infligeant des dégâts de froid et réduisant la vitesse de déplacement.",
+      "dammageType": "Froid",
+      "dammage": 6,
+      "classId": 8,
+      "zone": "Cible Unique"
+    },
+    {
+      "id": 19,
+      "name": "Tempête de Sable",
+      "description": "Crée une tempête de sable tourbillonnante qui aveugle et étouffe les ennemis dans la zone, infligeant des dégâts de sable.",
+      "dammageType": "Physique",
+      "dammage": 8,
+      "classId": 9,
+      "zone": "Zone d'Effet"
+    },
+    {
+      "id": 20,
+      "name": "Éclat Astral",
+      "description": "Libère des éclats d'énergie astrale qui transpercent l'ennemi, infligeant des dégâts d'énergie et ignorant une partie de l'armure.",
+      "dammageType": "Énergie",
+      "dammage": 7,
+      "classId": 10,
+      "zone": "Cible Unique"
+    }
+  ]

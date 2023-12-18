@@ -1,0 +1,142 @@
+[
+  {
+    "bonusJet": 2,
+    "bonusForce": 3,
+    "nom": "Épée de la Destinée",
+    "enchantementId": 1,
+    "id": 1
+  },
+  {
+    "bonusJet": 1,
+    "bonusForce": 2,
+    "nom": "Arc de l'Ombre",
+    "enchantementId": 2,
+    "id": 2
+  },
+  {
+    "bonusJet": 3,
+    "bonusForce": 4,
+    "nom": "Marteau du Tonnerre",
+    "enchantementId": 3,
+    "id": 3
+  },
+  {
+    "bonusJet": 2,
+    "bonusForce": 2,
+    "nom": "Dague de l'Assassin",
+    "enchantementId": 4,
+    "id": 4
+  },
+  {
+    "bonusJet": 4,
+    "bonusForce": 5,
+    "nom": "Hache du Barbare",
+    "enchantementId": 5,
+    "id": 5
+  },
+  {
+    "bonusJet": 1,
+    "bonusForce": 3,
+    "nom": "Bâton de Feu",
+    "enchantementId": 6,
+    "id": 6
+  },
+  {
+    "bonusJet": 3,
+    "bonusForce": 2,
+    "nom": "Lance de la Justice",
+    "enchantementId": 7,
+    "id": 7
+  },
+  {
+    "bonusJet": 2,
+    "bonusForce": 1,
+    "nom": "Faux de la Mort",
+    "enchantementId": 8,
+    "id": 8
+  },
+  {
+    "bonusJet": 5,
+    "bonusForce": 4,
+    "nom": "Épée de la Lumière",
+    "enchantementId": 9,
+    "id": 9
+  },
+  {
+    "bonusJet": 2,
+    "bonusForce": 3,
+    "nom": "Arc du Chasseur",
+    "enchantementId": 10,
+    "id": 10
+  },
+  {
+    "bonusJet": 4,
+    "bonusForce": 4,
+    "nom": "Marteau de Guerre",
+    "enchantementId": 11,
+    "id": 11
+  },
+  {
+    "bonusJet": 3,
+    "bonusForce": 2,
+    "nom": "Dague de l'Ombre",
+    "enchantementId": 12,
+    "id": 12
+  },
+  {
+    "bonusJet": 3,
+    "bonusForce": 3,
+    "nom": "Hache du Guerrier",
+    "enchantementId": 13,
+    "id": 13
+  },
+  {
+    "bonusJet": 1,
+    "bonusForce": 1,
+    "nom": "Bâton de Sagesse",
+    "enchantementId": 14,
+    "id": 14
+  },
+  {
+    "bonusJet": 2,
+    "bonusForce": 2,
+    "nom": "Lance de l'Aigle",
+    "enchantementId": 15,
+    "id": 15
+  },
+  {
+    "bonusJet": 4,
+    "bonusForce": 3,
+    "nom": "Faux de la Nuit",
+    "enchantementId": 16,
+    "id": 16
+  },
+  {
+    "bonusJet": 3,
+    "bonusForce": 4,
+    "nom": "Épée du Paladin",
+    "enchantementId": 17,
+    "id": 17
+  },
+  {
+    "bonusJet": 2,
+    "bonusForce": 2,
+    "nom": "Arc de Précision",
+    "enchantementId": 18,
+    "id": 18
+  },
+  {
+    "bonusJet": 4,
+    "bonusForce": 5,
+    "nom": "Marteau de Justice",
+    "enchantementId": 19,
+    "id": 19
+  },
+  {
+    "bonusJet": 1,
+    "bonusForce": 3,
+    "nom": "Dague du Voleur",
+    "enchantementId": 20,
+    "id": 20
+  }
+]

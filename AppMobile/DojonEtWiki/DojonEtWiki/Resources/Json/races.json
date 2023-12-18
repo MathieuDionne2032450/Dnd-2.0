@@ -1,0 +1,35 @@
+[
+    {
+      "nom": "Loup",
+      "bonusPV": 1,
+      "bonusDex": 1,
+      "bonusForce": 1,
+      "bonusIntel": 1,
+      "bonusWisdom": 1,
+      "bonusConsti": 1,
+      "bonusCharisma": 1,
+      "id": 1
+    },
+    {
+      "nom": "Humain",
+      "bonusPV": 10,
+      "bonusDex": 0,
+      "bonusForce": 0,
+      "bonusIntel": 0,
+      "bonusWisdom": 0,
+      "bonusConsti": 0,
+      "bonusCharisma": 0,
+      "id": 2
+    },
+    {
+      "nom": "Elfe",
+      "bonusPV": 5,
+      "bonusDex": 10,
+      "bonusForce": 0,
+      "bonusIntel": 0,
+      "bonusWisdom": 0,
+      "bonusConsti": 0,
+      "bonusCharisma": 0,
+      "id": 3
+    }
+  ]

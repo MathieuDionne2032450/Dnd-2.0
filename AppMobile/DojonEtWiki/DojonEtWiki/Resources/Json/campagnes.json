@@ -1,0 +1,32 @@
+[
+    {
+      "id": 1,
+      "name": "plate",
+      "desc": "campagne plate"
+    },
+    {
+      "id": 2,
+      "name": "dole",
+      "desc": "campagne Dole"
+    },
+    {
+      "id": 3,
+      "name": "fun",
+      "desc": "campagne Fun"
+    },
+    {
+      "id": 4,
+      "name": "La Quête du Dragon Écarlate",
+      "desc": "Une aventure épique où les héros se lancent à la recherche d'un puissant dragon rouge qui menace le royaume."
+    },
+    {
+      "id": 5,
+      "name": "Les Terres Oubliées de l'Ancien Roi",
+      "desc": "Un voyage dangereux à travers des terres oubliées, autrefois gouvernées par un roi légendaire. Les mystères et les trésors attendent ceux qui oseront explorer."
+    },
+    {
+      "id": 6,
+      "name": "La Légion des Ténèbres",
+      "desc": "Une sombre prophétie annonce l'arrivée d'une légion de créatures des ténèbres. Les héros doivent unir leurs forces pour empêcher l'avènement de l'obscurité."
+    }
+  ]

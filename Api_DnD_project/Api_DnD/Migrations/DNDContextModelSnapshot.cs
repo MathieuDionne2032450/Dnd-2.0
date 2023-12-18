@@ -16,7 +16,7 @@ namespace Api_DnD.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "7.0.12")
+                .HasAnnotation("ProductVersion", "7.0.13")
                 .HasAnnotation("Relational:MaxIdentifierLength", 64);
 
             modelBuilder.Entity("ActionMonstre", b =>
@@ -308,6 +308,9 @@ namespace Api_DnD.Migrations
                     b.Property<int>("Bouche")
                         .HasColumnType("int");
 
+                    b.Property<int>("CampagneId")
+                        .HasColumnType("int");
+
                     b.Property<int>("Cheveux")
                         .HasColumnType("int");
 
@@ -335,6 +338,8 @@ namespace Api_DnD.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("CampagneId");
 
                     b.ToTable("PNJ", (string)null);
                 });
@@ -608,21 +613,6 @@ namespace Api_DnD.Migrations
                     b.ToTable("CampagneMonstre");
                 });
 
-            modelBuilder.Entity("CampagnePNJ", b =>
-                {
-                    b.Property<int>("CampagneId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("PNJsId")
-                        .HasColumnType("int");
-
-                    b.HasKey("CampagneId", "PNJsId");
-
-                    b.HasIndex("PNJsId");
-
-                    b.ToTable("CampagnePNJ");
-                });
-
             modelBuilder.Entity("CampagneQuete", b =>
                 {
                     b.Property<int>("CampagneId")
@@ -733,6 +723,17 @@ namespace Api_DnD.Migrations
                         .IsRequired();
 
                     b.Navigation("Enchantement");
+                });
+
+            modelBuilder.Entity("Api_DnD.Model.PNJ", b =>
+                {
+                    b.HasOne("Api_DnD.Model.Campagne", "Campagne")
+                        .WithMany("PNJs")
+                        .HasForeignKey("CampagneId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Campagne");
                 });
 
             modelBuilder.Entity("Api_DnD.Model.Perso", b =>
@@ -856,21 +857,6 @@ namespace Api_DnD.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("CampagnePNJ", b =>
-                {
-                    b.HasOne("Api_DnD.Model.Campagne", null)
-                        .WithMany()
-                        .HasForeignKey("CampagneId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("Api_DnD.Model.PNJ", null)
-                        .WithMany()
-                        .HasForeignKey("PNJsId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
             modelBuilder.Entity("CampagneQuete", b =>
                 {
                     b.HasOne("Api_DnD.Model.Campagne", null)
@@ -929,6 +915,11 @@ namespace Api_DnD.Migrations
                         .HasForeignKey("featsid")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("Api_DnD.Model.Campagne", b =>
+                {
+                    b.Navigation("PNJs");
                 });
 
             modelBuilder.Entity("Api_DnD.Model.PNJ", b =>

@@ -1,0 +1,102 @@
+[
+    {
+      "id": 1,
+      "nom": "Éclair de l'Ombre",
+      "descr": "Vous pouvez vous déplacer rapidement et silencieusement dans l'ombre, devenant invisible pour vos ennemis."
+    },
+    {
+      "id": 2,
+      "nom": "Lame Tourbillonnante",
+      "descr": "Vous pouvez effectuer une attaque tourbillonnante, touchant tous les ennemis dans un rayon de 5 mètres."
+    },
+    {
+      "id": 3,
+      "nom": "Résistance à la Magie",
+      "descr": "Vous avez développé une résistance naturelle à la magie, réduisant les dégâts magiques que vous subissez de moitié."
+    },
+    {
+      "id": 4,
+      "nom": "Maître de la Disruption",
+      "descr": "Vous avez appris à perturber les sorts des lanceurs de sorts ennemis, rendant leurs incantations plus difficiles."
+    },
+    {
+      "id": 5,
+      "nom": "Oeil de l'Aigle",
+      "descr": "Votre vue est exceptionnellement perçante, vous permettant de repérer des détails minuscules à grande distance."
+    },
+    {
+      "id": 6,
+      "nom": "Coup Étourdissant",
+      "descr": "Vous avez perfectionné l'art de frapper les points faibles de vos ennemis, les assommant brièvement avec un coup bien placé."
+    },
+    {
+      "id": 7,
+      "nom": "Danse des Lames",
+      "descr": "Vous pouvez manier deux armes à une main simultanément avec une grâce mortelle, effectuant des attaques rapides et précises."
+    },
+    {
+      "id": 8,
+      "nom": "Sang-Froid",
+      "descr": "Sous la pression, vous maintenez votre calme. Vous avez l'avantage sur les jets de sauvegarde contre la peur."
+    },
+    {
+      "id": 9,
+      "nom": "Invocation Élémentaire",
+      "descr": "Vous avez appris à invoquer un élémentaire pour combattre à vos côtés lors des batailles."
+    },
+    {
+      "id": 10,
+      "nom": "Tacticien Brillant",
+      "descr": "Vous êtes un stratège brillant sur le champ de bataille, capable de coordonner les attaques de votre groupe avec une grande efficacité."
+    },
+    {
+      "id": 11,
+      "nom": "Frappes Précises",
+      "descr": "Vous avez appris à viser les points faibles de vos ennemis, infligeant des dégâts supplémentaires avec vos attaques."
+    },
+    {
+      "id": 12,
+      "nom": "Maître des Potions",
+      "descr": "Vous avez une connaissance approfondie des potions et des élixirs, vous permettant de les créer avec une grande efficacité."
+    },
+    {
+      "id": 13,
+      "nom": "Sceau de Protection",
+      "descr": "Vous pouvez créer un sceau magique de protection qui offre une résistance contre les sorts et les attaques magiques."
+    },
+    {
+      "id": 14,
+      "nom": "Voyageur Astral",
+      "descr": "Vous avez la capacité de quitter votre corps physique et de voyager dans l'astral, explorant d'autres plans d'existence."
+    },
+    {
+      "id": 15,
+      "nom": "Frappe Foudroyante",
+      "descr": "Votre attaque porte un coup puissant, infligeant des dégâts massifs et repoussant l'ennemi en arrière."
+    },
+    {
+      "id": 16,
+      "nom": "Forme Bestiale",
+      "descr": "Vous pouvez vous transformer en une bête féroce, acquérant ses capacités et sa force physique."
+    },
+    {
+      "id": 17,
+      "nom": "Ombre Mordante",
+      "descr": "Vous pouvez vous déplacer rapidement dans les ombres, devenant invisible et gagnant un bonus aux attaques furtives."
+    },
+    {
+      "id": 18,
+      "nom": "Chant de Guérison",
+      "descr": "Votre voix a un pouvoir de guérison. En chantant, vous pouvez soigner les blessures de vos alliés."
+    },
+    {
+      "id": 19,
+      "nom": "Gardien Ancestral",
+      "descr": "Vous pouvez invoquer l'esprit de vos ancêtres pour protéger vos alliés, créant un bouclier magique impénétrable."
+    },
+    {
+      "id": 20,
+      "nom": "Cri Destructeur",
+      "descr": "Vous pouvez lancer un cri puissant qui détruit les structures et les ennemis à proximité."
+    }
+  ]

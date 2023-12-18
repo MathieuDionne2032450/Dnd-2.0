@@ -1,0 +1,122 @@
+[
+  {
+    "Bouche": 1,
+    "Nez": 2,
+    "Barbe": 0,
+    "Cheveux": 3,
+    "Sourcil": 4,
+    "Tete": 1,
+    "Yeux1": 2,
+    "Yeux2": 3,
+    "Description": "Un guerrier féroce des terres du Nord.",
+    "Name": "Drizzt Do'Urden"
+  },
+  {
+    "Bouche": 2,
+    "Nez": 3,
+    "Barbe": 1,
+    "Cheveux": 2,
+    "Sourcil": 1,
+    "Tete": 3,
+    "Yeux1": 4,
+    "Yeux2": 2,
+    "Description": "Un puissant sorcier spécialisé dans les enchantements.",
+    "Name": "Elminster"
+  },
+  {
+    "Bouche": 3,
+    "Nez": 4,
+    "Barbe": 2,
+    "Cheveux": 1,
+    "Sourcil": 2,
+    "Tete": 4,
+    "Yeux1": 3,
+    "Yeux2": 1,
+    "Description": "Un nain expert en forge et en combat.",
+    "Name": "Bruenor Battlehammer"
+  },
+  {
+    "Bouche": 4,
+    "Nez": 1,
+    "Barbe": 3,
+    "Cheveux": 4,
+    "Sourcil": 3,
+    "Tete": 2,
+    "Yeux1": 1,
+    "Yeux2": 4,
+    "Description": "Un barbare redoutable des plaines sauvages.",
+    "Name": "Wulfgar"
+  },
+  {
+    "Bouche": 5,
+    "Nez": 2,
+    "Barbe": 4,
+    "Cheveux": 3,
+    "Sourcil": 4,
+    "Tete": 1,
+    "Yeux1": 2,
+    "Yeux2": 1,
+    "Description": "Un archer elfe renommé.",
+    "Name": "Legolas"
+  },
+  {
+    "Bouche": 6,
+    "Nez": 3,
+    "Barbe": 1,
+    "Cheveux": 4,
+    "Sourcil": 2,
+    "Tete": 3,
+    "Yeux1": 1,
+    "Yeux2": 2,
+    "Description": "Un mystérieux voleur et assassin.",
+    "Name": "Artemis Entreri"
+  },
+  {
+    "Bouche": 7,
+    "Nez": 4,
+    "Barbe": 2,
+    "Cheveux": 3,
+    "Sourcil": 1,
+    "Tete": 4,
+    "Yeux1": 2,
+    "Yeux2": 3,
+    "Description": "Un puissant mage de la cité de Waterdeep.",
+    "Name": "Khelben Blackstaff"
+  },
+  {
+    "Bouche": 8,
+    "Nez": 1,
+    "Barbe": 3,
+    "Cheveux": 4,
+    "Sourcil": 2,
+    "Tete": 1,
+    "Yeux1": 4,
+    "Yeux2": 2,
+    "Description": "Un gnome marchand et aventurier.",
+    "Name": "Regis"
+  },
+  {
+    "Bouche": 9,
+    "Nez": 2,
+    "Barbe": 4,
+    "Cheveux": 1,
+    "Sourcil": 3,
+    "Tete": 2,
+    "Yeux1": 1,
+    "Yeux2": 3,
+    "Description": "Un elfe noir maître de l'épée.",
+    "Name": "Zaknafein"
+  },
+  {
+    "Bouche": 10,
+    "Nez": 3,
+    "Barbe": 1,
+    "Cheveux": 2,
+    "Sourcil": 4,
+    "Tete": 3,
+    "Yeux1": 4,
+    "Yeux2": 1,
+    "Description": "Un paladin dévoué de la lumière.",
+    "Name": "Alustriel"
+  }
+]
