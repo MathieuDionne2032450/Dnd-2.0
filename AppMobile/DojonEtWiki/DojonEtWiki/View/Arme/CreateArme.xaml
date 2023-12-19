@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DojonEtWiki.View.Arme.CreateArme"
+             Title="CreateArme">
+    <VerticalStackLayout>
+        <Label 
+            Text="Créer Arme"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+
+        <Entry Placeholder="Entrer le nom :" x:Name="EntreeNom"/>
+        <Entry Placeholder="Entrer le bonus de jet :" x:Name="EntreeBonusJet"/>
+        <Entry Placeholder="Entrer le bonus de force :" x:Name="EntreeBonusForce"/>
+        <Entry Placeholder="Entrer l'id de l'enchantement :" x:Name="EntreeEnchantementId"/>
+
+        <Button Text="Créer arme" Clicked="OnCreateArmeClicked"/>
+    </VerticalStackLayout>
+</ContentPage>
