@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DojonEtWiki.View.Armure.CreateArmure"
+             Title="CreateArmure">
+    <VerticalStackLayout>
+        <Label 
+            Text="Créer Armure"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center"
+            FontSize="Title"/>
+
+        <Entry Placeholder="Entrer le nom :" x:Name="EntreeNom"/>
+        <Entry Placeholder="Entrer le type :" x:Name="EntreeType"/>
+        <Entry Placeholder="Entrer l'AC :" x:Name="EntreeAC"/>
+        <Entry Placeholder="Entrer le bonus de dextérité :" x:Name="EntreeDexBonus"/>
+        <Entry Placeholder="Entrer la modification maximale de dextérité :" x:Name="EntreeMaxDexMod"/>
+        <Entry Placeholder="Entrer le désavantage de furtivité :" x:Name="EntreeStealthDisadvantage"/>
+        <Entry Placeholder="Entrer l'ID de l'enchantement :" x:Name="EntreeEnchantementId"/>
+
+        <Button Text="Créer armure" Clicked="OnCreateArmureClicked"/>
+    </VerticalStackLayout>
+</ContentPage>
