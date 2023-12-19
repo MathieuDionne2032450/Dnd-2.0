@@ -9,86 +9,40 @@ namespace DojonEtWiki.Api
 {
     public static class PersoProcessor
     {
-        public static Perso[] SimulationPersos()
+        
+
+        public static async Task<List<Enchantement>> Getpersos()
         {
-            Campagne campagne = new Campagne
+            string url = "Enchantement/AllEnchantement";
+            HttpResponseMessage reponse = await ApiHelper.apiClient.GetAsync(new Uri(ApiHelper.apiClient.BaseAddress + url)).ConfigureAwait(false);
+
+            if (reponse.IsSuccessStatusCode)
             {
-                Name = "La campagne",
-                Desc = "La campagne principale",
-                Armes = new List<Arme>(),
-                Armures = new List<Armure>(),
-                Enchantements = new List<Enchantement>(),
-                Monstres = new List<Monstre>(),
-                PNJs = new List<PNJ>(),
-                Quetes = new List<Quete>(),
-                Classes = new List<Classes>(),
-                Races = new List<Race>()
-            };
-
-            Enchantement enchant = new Enchantement() { Nom = "Salabim", Type = "Enchantement magique", Modif = 1, Description = "waw" };
-
-            Armure armure = new Armure
+                List<Enchantement> model = await reponse.Content.ReadAsAsync<List<Enchantement>>();
+                return model;
+            }
+            else
             {
-                Name = "Armure",
-                Type = "Forte",
-                Ac = 2,
-                DexBonus = true,
-                MaxDexMod = 2,
-                StealthDisadvantage = 2,
-                Enchantement = enchant
-            };
+                throw new Exception(reponse.ReasonPhrase);
+            }
 
-            Arme arme = new Arme
+        }
+
+        public static async Task<bool> CreerPerso(string irljoueur,string nom,string desc, int inspi,int armurid,int classid,int raceid,string persotrait,string ideal,string bounds,string flaws, int lvl,int campid)
+        {
+            string url = "CreatePerso?IrlJoueur="+irljoueur+"&Nom="+nom+"&Description="+desc+"&Inspiration="+inspi+"&ArmureId="+armurid+"&ClasseId="+classid+"&RaceId="+raceid+"&Personalitetrait="+persotrait+"&Ideal="+ideal+"&Bonds="+bounds+"&Flaws="+flaws+"&Niv="+lvl+"&CampagneId="+campid;
+            HttpResponseMessage reponse = await ApiHelper.apiClient.GetAsync(new Uri(ApiHelper.apiClient.BaseAddress + url)).ConfigureAwait(false);
+
+            if (reponse.IsSuccessStatusCode)
             {
-                BonusJet = 2,
-                BonusForce = 2,
-                Nom = "Épée",
-                Enchantement = enchant,
-                Campagne = new List<Campagne> { campagne }
-            };
-
-            Race race = new Race() { BonusCharisma = 1, BonusDex = 1, BonusConsti = 1, BonusForce = 1, BonusIntel = 1, BonusPV = 1, BonusWisdom = 1, Nom = "Loup" };
-            Classes classe = new Classes() { description = "desc", hitDie = "2d4", name = "Mage", primaryAbility = "boule de feu" };
-
-            Perso perso = new Perso
+                
+                return true;
+            }
+            else
             {
-                IrlJoueur = "Alexandre",
-                Nom = "Krados",
-                Description = "démon démoniaque",
-                Inspiration = 0,
-                Armure = armure,
-                LesArmes = new List<Arme> { arme },
-                Classes = classe,
-                Race = race,
-                Personalitetrait = "evil",
-                Ideal = "Justice",
-                Bonds = "Avec Louise",
-                Flaws = "Le bruit",
-                Niv = 1,
-                Campagne = campagne
-            };
+                return false;
+            }
 
-            Skill skill = new Skill { Descr = "Compétences acérées", Nom = "Skillz", Persos = new List<Perso> { perso } };
-
-            feats feat = new feats { Nom = "Artificier", Descr = "Peut tirer du cannon" };
-
-            Perso[] persos = new Perso[]
-            {
-
-                new Perso { IrlJoueur = "Alexandre", Nom = "Dreknethol", Description = "Un beau perso qui est vraiment le plus beau de tous", Inspiration = 0,Armure = armure, LesArmes = new List<Arme>{ arme },
-                     Classes = classe, Race = race, Skills = new List<Skill> { skill }, Personalitetrait = "beau",
-                    Ideal="beauté",Bonds = "Les gens beau", Flaws = "La laideur", Niv = 15, Campagne=campagne, feats = new List<feats>{ feat } },
-
-                new Perso { IrlJoueur = "Mathieu", Nom = "Bwipo", Description = "un laid", Inspiration = 1,Armure = armure, LesArmes = new List<Arme>{ arme },
-                     Classes = classe, Race = race, Skills = new List<Skill>{ skill }, Personalitetrait = "laid",
-                    Ideal="laideur",Bonds = "Les gens laid", Flaws = "La beauté", Niv = 5,Campagne=campagne, feats = new List<feats> { feat } },
-
-                new Perso { IrlJoueur = "Louis", Nom = "Louise", Description = "jeune damme cool", Inspiration = 2,Armure = armure, LesArmes = new List<Arme>{ arme },
-                    Classes = classe,Race = race, Skills = new List<Skill>{ skill }, Personalitetrait = "beau",
-                    Ideal="cool",Bonds = "Les gens cool", Flaws = "Les gens pas cool", Niv = 1,Campagne=campagne, feats = new List<feats> { feat } },
-            };
-
-            return persos;
         }
     }
 }

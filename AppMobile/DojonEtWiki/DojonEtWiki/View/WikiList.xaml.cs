@@ -2,7 +2,7 @@ namespace DojonEtWiki.View;
 using DojonEtWiki.Api;
 using DojonEtWiki.ViewModel;
 
-public partial class WikiList : ContentPage
+public partial class WikiList
 {
 	
 	public WikiList()
@@ -12,12 +12,12 @@ public partial class WikiList : ContentPage
 
 	private async void Campagne_Clicked(object sender, EventArgs e)
 	{
-			
-	}
+        await Navigation.PushAsync(new WikiCampagne());
+    }
 
 	private async void Perso_Clicked(object sender, EventArgs e)
 	{
-        await Navigation.PushAsync(new InfoPerso());
+        await Navigation.PushAsync(new WikiPerso());
     }
 
 	private async void Monstre_Clicked(object sender, EventArgs e)
@@ -48,7 +48,7 @@ public partial class WikiList : ContentPage
 
 	private async void PNJ_Clicked(object sender, EventArgs e)
 	{
-        await Navigation.PushAsync(new InfoPnj());
+        await Navigation.PushAsync(new WikiPNJ());
     }
 
 	private async void Race_Clicked(object sender, EventArgs e)

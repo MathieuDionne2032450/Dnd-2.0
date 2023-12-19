@@ -11,9 +11,14 @@
         ContentTemplate="{DataTemplate local:WikiList}"
         Route="WikiList"/>
     <ShellContent
-        Title="Mes Campagnes"
-        ContentTemplate="{DataTemplate local:MesCampagnes}"
-        Route="MesCampagnes"/>
+        Title="Creer un Personnage"
+        ContentTemplate="{DataTemplate local:Creerperso}"
+        Route="Creerperso"/>
+    <ShellContent
+        Title="Creer un PNJ"
+        ContentTemplate="{DataTemplate local:creerPnj}"
+        Route="creerPnj"/>
+    
     <ShellContent
         Title="Centre de création"
         ContentTemplate="{DataTemplate local:Creation}"

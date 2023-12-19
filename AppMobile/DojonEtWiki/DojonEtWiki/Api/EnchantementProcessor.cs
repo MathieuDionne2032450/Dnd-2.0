@@ -27,7 +27,7 @@ namespace DojonEtWiki.Api
             {
                 throw new Exception(reponse.ReasonPhrase);
             }
-            return null;
+           
         }
     }
 }

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DojonEtWiki.View.WikiCampagne"
+             Title="WikiCampagne"
+    BackgroundImageSource="Resources/Images/background1.jpg">
+
+    <Grid RowDefinitions="75,*">
+        <Label 
+            Grid.Row="0"
+            Text="Campagne info"
+            FontSize="Title"
+            FontAttributes="Bold"
+            TextColor="Red"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center"
+            HorizontalTextAlignment="Center"
+            Margin="20"/>
+
+
+        <ScrollView Grid.Row="1" Margin="20" VerticalOptions="StartAndExpand" MinimumHeightRequest="300">
+
+            <Label BackgroundColor="Black" Margin="20" HorizontalOptions="Center" HorizontalTextAlignment="Center" TextColor="White" Text="Dans le contexte des jeux de rôle (JdR), une campagne désigne une série d'aventures interconnectées et continuelles jouées par un groupe de joueurs au fil du temps. Plutôt que d'être une seule séance de jeu indépendante, une campagne constitue une histoire plus vaste et étendue qui se développe au fur et à mesure des sessions. Voici quelques éléments clés qui caractérisent une campagne dans un jeu de rôle :
+1. Continuité Narrative :
+
+    Intrigue Cohérente : Une campagne a une histoire qui se déroule de manière continue d'une séance à l'autre. Les actions des joueurs et les événements qui se produisent ont des conséquences à long terme sur le monde du jeu.
+
+2. Personnages Récurrents :
+
+    PNJ Réguliers : Des personnages non-joueurs (PNJ) récurrents apparaissent tout au long de la campagne, que ce soit en tant qu'alliés, ennemis, mentors ou marchands. Ces personnages évoluent et deviennent parfois cruciaux pour l'intrigue.
+
+3. Évolution des Personnages :
+
+    Progression des Joueurs : Les personnages des joueurs évoluent au fil de la campagne. Ils gagnent de l'expérience, acquièrent de nouvelles compétences, et peuvent même changer fondamentalement en réponse aux événements.
+
+4. Diversité des Lieux :
+
+    Exploration de Mondes Étendus : Les aventures de la campagne peuvent se dérouler dans une variété de lieux, allant de cités prospères à des donjons souterrains, en passant par des forêts mystiques. Chaque lieu contribue à l'expérience globale de la campagne.
+
+5. Objectifs à Long Terme :
+
+    Quêtes Majeures : Une campagne peut comporter des quêtes ou des objectifs à long terme, souvent liés à la trame principale de l'histoire. Les joueurs travaillent vers ces objectifs tout au long de la campagne.
+
+6. Flexibilité et Adaptabilité :
+
+    Réactions aux Joueurs : Les maîtres du jeu peuvent ajuster l'intrigue en fonction des choix des joueurs, assurant ainsi une expérience dynamique et personnalisée. Cela permet d'adapter la campagne à l'évolution des intérêts et des décisions du groupe.
+
+7. Durée Variable :
+
+    Sessions Multiples : Contrairement à une aventure unique qui peut être complétée en une seule séance, une campagne peut s'étendre sur plusieurs mois voire années, avec des séances de jeu régulières.
+
+8. Cohésion du Groupe :
+
+    Relation entre Joueurs : Une campagne renforce souvent la cohésion entre les membres du groupe, car les joueurs partagent des expériences communes et développent des liens avec leurs personnages et l'univers du jeu.
+
+En résumé, une campagne dans un jeu de rôle offre une expérience immersive et continue, où les personnages évoluent, les intrigues se développent et les joueurs participent à une histoire épique qui se déroule au fil du temps. C'est une aventure collaborative qui permet d'explorer de manière approfondie des mondes imaginaires et de créer des souvenirs durables."></Label>
+
+        </ScrollView>
+    </Grid>
+</ContentPage>

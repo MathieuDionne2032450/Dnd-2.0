@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DojonEtWiki.View.WikiPerso"
+             Title="WikiPerso"
+    BackgroundImageSource="Resources/Images/background1.jpg">
+
+    <Grid RowDefinitions="75,*">
+        <Label 
+            Grid.Row="0"
+            Text="Perso info"
+            FontSize="Title"
+            FontAttributes="Bold"
+            TextColor="Red"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center"
+            HorizontalTextAlignment="Center"
+            Margin="20"/>
+
+
+        <ScrollView Grid.Row="1" Margin="20" VerticalOptions="StartAndExpand" MinimumHeightRequest="300">
+
+            <Label BackgroundColor="Black" Margin="20" HorizontalOptions="Center" HorizontalTextAlignment="Center" TextColor="White" Text="Personnages dans Dungeons  and  Dragons
+
+Bienvenue dans l'univers infini de Dungeons  and  Dragons (D and D), où les joueurs ont la possibilité de créer des personnages uniques et de vivre des aventures épiques. Les personnages de D and D sont le cœur du jeu, chacun avec ses propres compétences, histoire et personnalité. Explorez les éléments essentiels de la création et du développement des personnages dans ce vaste monde fantastique.
+Création de Personnage :
+
+    Race : Choisissez parmi une variété de races, telles que les elfes, les nains, les halfelings, les humains, et bien d'autres. Chaque race apporte des traits spécifiques et des avantages uniques.
+
+    Classe : Sélectionnez une classe qui définit les compétences et les pouvoirs de votre personnage. Les classes comprennent des guerriers robustes, des sorciers adeptes de la magie, des voleurs habiles, et bien d'autres.
+
+    Historique : Déterminez l'histoire et le passé de votre personnage avec un historique spécifique. Cela influence les compétences, les outils, et les langues que votre personnage maîtrise.
+
+    Caractéristiques : Distribuez des points dans les caractéristiques de votre personnage, telles que la Force, la Dextérité, la Constitution, l'Intelligence, la Sagesse et la Charisme.
+
+Évolution du Personnage :
+
+    Points d'Expérience (PX) : Gagnez des PX en accomplissant des quêtes, en surmontant des défis et en explorant. À mesure que vous accumulez des PX, votre personnage monte de niveau.
+
+    Niveaux : À chaque niveau, votre personnage gagne de nouvelles compétences, des points de vie supplémentaires et d'autres améliorations. Atteindre des niveaux supérieurs débloque des possibilités plus puissantes.
+
+    Compétences et Talents : Choisissez des compétences et des talents à chaque niveau, personnalisant ainsi votre personnage en fonction de son style de jeu et de son histoire.
+
+Interactions et Rôle-Play :
+
+    Alignement : Définissez l'alignement moral de votre personnage, reflétant ses convictions et son comportement moral. Les alignements vont de 'Chaotique Mauvais' à 'Loyal Bon'.
+
+    Personnalité : Créez une personnalité distinctive pour votre personnage, incluant des traits, des liens, des défauts et des aspirations. Cela contribue à donner de la profondeur à votre rôle-play.
+
+Équipement et Possessions :
+
+    Armes et Armures : Équipez votre personnage avec des armes et des armures appropriées à sa classe et à son style de combat.
+
+    Objets Magiques : Découvrez des objets magiques lors de vos aventures qui améliorent les capacités de votre personnage.
+
+Relation avec le Monde :
+
+    Parti et Alliés : Collaborez avec d'autres joueurs pour former un groupe équilibré. Les relations au sein du parti contribuent à une expérience de jeu riche.
+
+    PNJ et Univers : Interagissez avec des personnages non-joueurs (PNJ) et explorez des mondes diversifiés créés par le maître du jeu (MJ).
+
+Que votre personnage soit un vaillant paladin défenseur de la justice, un sorcier manipulateur de la magie, ou un voleur agile écumant les ruelles sombres, les possibilités dans Dungeons  and  Dragons sont infinies. Plongez dans l'aventure, créez des histoires mémorables et laissez votre personnage devenir une légende dans cet univers fantastique."></Label>
+
+        </ScrollView>
+    </Grid>
+</ContentPage>

@@ -9,16 +9,21 @@ namespace DojonEtWiki.Api
 {
     public static class ClassesProcessor
     {
-        public static Classes[] SimulationClasses()
+        public static async Task<List<Classes>> GetClasses()
         {
-            Classes[] classes = new Classes[]
-            {
-                new Classes {name = "Guerrier", description = "combattant", hitDie="test1", primaryAbility ="Courrir" },
-                new Classes {name = "Archer", description = "tres precis", hitDie="test2", primaryAbility ="tirer des fleche" },
-                new Classes {name = "magicien", description = "ressemble a gandalf", hitDie="test3", primaryAbility ="magie"  }
-            };
+            string url = "Classes";
+            HttpResponseMessage reponse = await ApiHelper.apiClient.GetAsync(new Uri(ApiHelper.apiClient.BaseAddress + url)).ConfigureAwait(false);
 
-            return classes;
+            if (reponse.IsSuccessStatusCode)
+            {
+                List<Classes> model = await reponse.Content.ReadAsAsync<List<Classes>>();
+                return model;
+            }
+            else
+            {
+                throw new Exception(reponse.ReasonPhrase);
+            }
+            return null;
         }
     }
 }

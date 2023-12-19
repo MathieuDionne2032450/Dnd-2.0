@@ -9,16 +9,21 @@ namespace DojonEtWiki.Api
 {
     public static class RaceProcessor
     {
-        public static Race[] SimulationRaces()
+        public static async Task<List<Race>> GetRaces()
         {
-            Race[] races = new Race[]
-            {
-                new Race { Nom = "humain",BonusCharisma = 1, BonusConsti = 2, BonusDex = 3, BonusForce = 4, BonusIntel = 5, BonusPV = 6, BonusWisdom = 7, Campagnes=null},
-                new Race { Nom = "Elf", BonusCharisma = 2, BonusConsti = 3, BonusDex = 4, BonusForce = 5, BonusIntel = 6, BonusPV = 7, BonusWisdom = 8, Campagnes=null},
-                new Race { Nom = "ogre", BonusCharisma = 3, BonusConsti = 4, BonusDex = 5, BonusForce = 6, BonusIntel = 7, BonusPV = 8, BonusWisdom = 9, Campagnes=null}
-            };
+            string url = "Race/GetAllRace";
+            HttpResponseMessage reponse = await ApiHelper.apiClient.GetAsync(new Uri(ApiHelper.apiClient.BaseAddress + url)).ConfigureAwait(false);
 
-            return races;
+            if (reponse.IsSuccessStatusCode)
+            {
+                List<Race> model = await reponse.Content.ReadAsAsync<List<Race>>();
+                return model;
+            }
+            else
+            {
+                throw new Exception(reponse.ReasonPhrase);
+            }
+            return null;
         }
     }
 }

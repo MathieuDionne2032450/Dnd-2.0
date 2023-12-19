@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DojonEtWiki.View.WikiPNJ"
+             Title="WikiPNJ"
+            BackgroundImageSource="Resources/Images/background1.jpg">
+
+    <Grid RowDefinitions="75,*">
+        <Label 
+            Grid.Row="0"
+            Text="Pnj info"
+            FontSize="Title"
+            FontAttributes="Bold"
+            TextColor="Red"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center"
+            HorizontalTextAlignment="Center"
+            Margin="20"/>
+
+
+        <ScrollView Grid.Row="1" Margin="20" VerticalOptions="StartAndExpand" MinimumHeightRequest="300">
+
+            <Label BackgroundColor="Black" Margin="20" HorizontalOptions="Center" HorizontalTextAlignment="Center" TextColor="White" Text="Personnage Non-Joueur (PNJ) dans les Jeux de Rôle
+
+Dans les jeux de rôle, qu'ils se déroulent sur table, en ligne ou dans le cadre de jeux vidéo, un Personnage Non-Joueur (PNJ) désigne un personnage fictif contrôlé par le maître du jeu (MJ) ou par le système de jeu lui-même, plutôt que par un joueur.
+Rôle des PNJ :
+
+    Narration et Histoire : Les PNJ sont souvent utilisés pour enrichir l'histoire en fournissant des détails, des quêtes et des interactions qui façonnent le monde du jeu. Ils peuvent agir en tant que marchands, alliés, ennemis, ou simplement des individus qui donnent vie à l'univers.
+
+    Interactions avec les Joueurs : Les PNJ sont essentiels pour créer des interactions dynamiques entre les joueurs et leur environnement. Ils peuvent fournir des informations cruciales, des objets, des quêtes ou même des défis, contribuant ainsi à l'évolution de l'intrigue.
+
+    Antagonistes ou Alliés : Certains PNJ peuvent être des figures clés dans l'intrigue, agissant en tant qu'antagonistes majeurs ou alliés précieux. Leurs actions et décisions peuvent avoir un impact significatif sur le déroulement de l'histoire."></Label>
+
+        </ScrollView>
+    </Grid>
+</ContentPage>

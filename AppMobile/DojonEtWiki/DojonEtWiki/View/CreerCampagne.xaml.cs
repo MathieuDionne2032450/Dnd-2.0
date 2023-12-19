@@ -7,7 +7,7 @@ public partial class CreerCampagne : ContentPage
 		InitializeComponent();
 	}
 
-    private async void creer_Clicked(object sender, EventArgs e)
+    private void creer_Clicked(object sender, EventArgs e)
     {
         /*await Navigation.PushAsync(new CreerCampagne());*/
     }

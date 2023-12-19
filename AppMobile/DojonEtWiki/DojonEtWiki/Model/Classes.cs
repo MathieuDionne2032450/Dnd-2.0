@@ -9,6 +9,7 @@ namespace DojonEtWiki.Model
         public string? hitDie { get; set; }
         public string? primaryAbility { get; set; }
         public int id { get; set; }
-        public ICollection<Campagne>? Campagne { get; set; }
+
+        public List<Campagne>? Campagne { get; set; }
     }
 }

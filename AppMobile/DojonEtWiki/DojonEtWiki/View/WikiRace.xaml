@@ -4,8 +4,10 @@
              x:Class="DojonEtWiki.View.WikiRace"
              Title="WikiRace"
              BackgroundImageSource="Resources/Images/background1.jpg">
-    <VerticalStackLayout>
+    
+    <Grid RowDefinitions="75,*">
         <Label 
+            Grid.Row="0"
             Text="Race info"
             FontSize="Title"
             FontAttributes="Bold"
@@ -14,11 +16,41 @@
             HorizontalOptions="Center"
             HorizontalTextAlignment="Center"
             Margin="20"/>
+        
 
-        <Label TextColor="White" Text="test"></Label>
-       
+        <ScrollView Grid.Row="1" Margin="20" VerticalOptions="StartAndExpand" MinimumHeightRequest="300">
+            
+                <Label BackgroundColor="Black" Margin="20" HorizontalOptions="Center" HorizontalTextAlignment="Center" TextColor="White" Text="Races de Dungeons and Dragons Bienvenue dans le vaste univers de Dungeons and Dragons (DandD), où une multitude de races fascinantes peuplent des mondes fantastiques. Les races de DandD sont diverses, chacune possédant ses propres caractéristiques physiques, culturelles et historiques. Que vous souhaitiez incarner un elfe agile, un nain habile dans l'art de la forge, ou un halfeling plein de malice, les possibilités sont infinies. Elfes
+    Hauts Elfes: Connus pour leur grâce et leur affinité naturelle avec la magie, les hauts elfes excellent en sorcellerie et en arts magiques.
 
+    Elfes Noirs (Drows): Habitant principalement dans les profondeurs souterraines, les drows sont des elfes sombres, maîtres de la furtivité et de la manipulation.
 
+    Elfes des Bois: En harmonie avec la nature, les elfes des bois sont des archers exceptionnels et des gardiens attentifs des forêts.
 
-    </VerticalStackLayout>
+Nains
+
+    Nains des Montagnes: Résidents des cités souterraines, les nains des montagnes excellent dans l'art de la forge et la défense de leur foyer.
+
+    Nains des Collines: Plus enclins à l'exploration et au commerce, les nains des collines sont des voyageurs curieux et des artisans habiles.
+
+Halfelings
+
+    Halfelings des Pieds Légers: Connus pour leur chance innée, leur agilité et leur esprit débrouillard, les halfelings des pieds légers sont des aventuriers nés.
+
+    Halfelings Robustes: Résilients et endurants, les halfelings robustes sont souvent des fermiers ou des travailleurs acharnés.
+
+Orques
+
+    Orques Sauvages: Vivant dans des tribus guerrières, les orques sauvages excellent dans l'art du combat rapproché et valorisent la force brute.
+
+    Orques Civilisés: Cherchant à s'intégrer à des sociétés plus vastes, les orques civilisés sont souvent des mercenaires ou des aventuriers cherchant à prouver leur valeur.
+
+Humains
+
+Les humains sont une race polyvalente, s'adaptant à divers rôles et professions. Leur histoire, leurs cultures et leurs ambitions sont aussi diversifiées que les mondes qu'ils habitent.
+
+Chaque race offre une expérience de jeu unique, influençant les compétences, les capacités et le style de jeu de votre personnage. Explorez ce vaste univers et créez votre propre légende dans Dungeons and Dragons. Que votre choix se porte sur la sagesse des elfes, la détermination des nains, l'espièglerie des halfelings, la puissance des orques ou la polyvalence des humains, l'aventure n'attend que vous."></Label>
+            
+        </ScrollView>
+    </Grid>
 </ContentPage>

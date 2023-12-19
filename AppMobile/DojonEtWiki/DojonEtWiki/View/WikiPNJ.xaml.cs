@@ -1,8 +1,8 @@
 namespace DojonEtWiki.View;
 
-public partial class WikiRace
+public partial class WikiPNJ 
 {
-	public WikiRace()
+	public WikiPNJ()
 	{
 		InitializeComponent();
 	}
