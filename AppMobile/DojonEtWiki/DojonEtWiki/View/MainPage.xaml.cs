@@ -16,15 +16,15 @@ public partial class MainPage : ContentPage
 
     private async void Connection_Clicked(object sender, EventArgs e)
     {
-        if(vm.CheckKey(password.Text))
-        {
+        //if(vm.CheckKey(password.Text))
+        //{
             Application.Current.MainPage = new AppShell();
             await Navigation.PushAsync(new WikiList());
-        }
-        else
-        {
-            error.IsVisible = true;
-        }
+        //}
+        //else
+        //{
+        //  error.IsVisible = true;
+       // }
         
     }
 

@@ -4,12 +4,12 @@ namespace DojonEtWiki.View;
 
 public partial class InfoCampagne : ContentPage
 {
-	public InfoCampagne(VMCampagne vm)
+	public InfoCampagne()
 	{
 		InitializeComponent();
     }
 
-    private async void listPerso(object sender, EventArgs e)
+    private async void Campagne_Clicked(object sender, EventArgs e)
     {
         await Navigation.PushAsync(new InfoPerso());
     }

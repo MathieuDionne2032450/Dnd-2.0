@@ -23,7 +23,7 @@ namespace DojonEtWiki.ViewModel
             } 
         }
 
-        Campagne _campagne;
+        static Campagne _campagne;
         public Campagne Campagne
         {
             get
@@ -36,9 +36,12 @@ namespace DojonEtWiki.ViewModel
             }
         }
 
+
+
         public VMCampagne()
         {
             ListeCampagne = CampagneProcessor.GetAllCampagnes().Result;
+            
         }
 
     }

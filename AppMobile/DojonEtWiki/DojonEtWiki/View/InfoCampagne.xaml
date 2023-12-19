@@ -3,10 +3,17 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="DojonEtWiki.View.InfoCampagne"
              Title="InfoCampagne"
-             BackgroundImageSource="Resources/Images/background1.jpg">
-    <VerticalStackLayout>
-        <Label 
-            Text="-titre campagne-"
+             BackgroundImageSource="Resources/Images/background1.jpg"
+             xmlns:local="clr-namespace:DojonEtWiki.ViewModel">
+
+    <ContentPage.BindingContext>
+        <local:VMCampagne/>
+    </ContentPage.BindingContext>
+    <ScrollView >
+        <VerticalStackLayout>
+
+            <Label 
+            Text="{Binding Campagne.Name}"
             FontSize="Title"
             FontAttributes="Bold"
             TextColor="Red"
@@ -14,60 +21,205 @@
             HorizontalOptions="Center"
             Margin="20"/>
 
-        <Label
+            <Label
             VerticalOptions="Center" 
             HorizontalOptions="Center"
             TextColor="White"
             >
-            <Label.FormattedText>
-                <FormattedString>
-                    <Span Text="Nom: " FontAttributes="Bold"/>
-                    <Span Text=" -nom campagne-"/>
-                </FormattedString>
-            </Label.FormattedText>
-        </Label>
-
-        <Label
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="description: " FontAttributes="Bold"/>
+                        <Span Text="{Binding Campagne.Desc}"/>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            <Label 
+            Text="Arme de la campagne"
+            FontSize="Subtitle"
+            FontAttributes="Bold"
+            TextColor="Red"
             VerticalOptions="Center" 
             HorizontalOptions="Center"
-            TextColor="White"
-            >
-            <Label.FormattedText>
-                <FormattedString>
-                    <Span Text="description: " FontAttributes="Bold"/>
-                    <Span Text=" -description campagne-"/>
-                </FormattedString>
-            </Label.FormattedText>
-        </Label>
+            />
 
-        <Label
-            TextColor="White"
+            <CollectionView ItemsSource="{Binding Campagne.Armes}" HeightRequest="300" Margin="40">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Padding="10">
+                            <Button x:Name="CampagneBtn" Text="{Binding Nom}" 
+                            SemanticProperties.Hint="Liste des campagnes"
+                            Clicked="Campagne_Clicked"
+                            HorizontalOptions="Center"
+                            HeightRequest="60"
+                            WidthRequest="300"/>
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+
+            <Label 
+            Text="Armures de la campagne"
+            FontSize="Subtitle"
+            FontAttributes="Bold"
+            TextColor="Red"
             VerticalOptions="Center" 
             HorizontalOptions="Center"
-            >
-            <Label.FormattedText>
-                <FormattedString>
-                    <Span Text="nombre de joueurs: " FontAttributes="Bold"/>
-                    <Span Text=" -nombre de joueurs campagne-"/>
-                </FormattedString>
-            </Label.FormattedText>
-        </Label>
-        
-        <Button Clicked="listPerso" VerticalOptions="Center" BackgroundColor="Red" Margin="70,10" Text="Voir la liste"></Button>
+            />
+            <CollectionView ItemsSource="{Binding Campagne.Armures}" HeightRequest="300" Margin="40">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Padding="10">
+                            <Button x:Name="CampagneBtn" Text="{Binding Name}" 
+                            SemanticProperties.Hint="Liste des campagnes"
+                            Clicked="Campagne_Clicked"
+                            HorizontalOptions="Center"
+                            HeightRequest="60"
+                            WidthRequest="300"/>
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
 
-        <Label
+            <Label 
+            Text="Races de la campagne"
+            FontSize="Subtitle"
+            FontAttributes="Bold"
+            TextColor="Red"
             VerticalOptions="Center" 
             HorizontalOptions="Center"
-            TextColor="White"
-            >
-            <Label.FormattedText>
-                <FormattedString>
-                    <Span Text="Nom du MDJ: " FontAttributes="Bold"/>
-                    <Span Text=" -Nom du MDJ campagne-"/>
-                </FormattedString>
-            </Label.FormattedText>
-        </Label>
+            />
+            <CollectionView ItemsSource="{Binding Campagne.Races}" HeightRequest="300" Margin="40">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Padding="10">
+                            <Button x:Name="CampagneBtn" Text="{Binding Nom}" 
+                            SemanticProperties.Hint="Liste des campagnes"
+                            Clicked="Campagne_Clicked"
+                            HorizontalOptions="Center"
+                            HeightRequest="60"
+                            WidthRequest="300"/>
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
 
+            <Label 
+            Text="Classes de la campagne"
+            FontSize="Subtitle"
+            FontAttributes="Bold"
+            TextColor="Red"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center"
+            />
+            <CollectionView ItemsSource="{Binding Campagne.Classes}" HeightRequest="300" Margin="40">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Padding="10">
+                            <Button x:Name="CampagneBtn" Text="{Binding name}" 
+                            SemanticProperties.Hint="Liste des campagnes"
+                            Clicked="Campagne_Clicked"
+                            HorizontalOptions="Center"
+                            HeightRequest="60"
+                            WidthRequest="300"/>
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
 
-    </VerticalStackLayout>
+            <Label 
+            Text="Enchantements de la campagne"
+            FontSize="Subtitle"
+            FontAttributes="Bold"
+            TextColor="Red"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center"
+            />
+            <CollectionView ItemsSource="{Binding Campagne.Enchantements}" HeightRequest="300" Margin="40">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Padding="10">
+                            <Button x:Name="CampagneBtn" Text="{Binding Nom}" 
+                            SemanticProperties.Hint="Liste des campagnes"
+                            Clicked="Campagne_Clicked"
+                            HorizontalOptions="Center"
+                            HeightRequest="60"
+                            WidthRequest="300"/>
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+            <Label 
+            Text="Monstres de la campagne"
+            FontSize="Subtitle"
+            FontAttributes="Bold"
+            TextColor="Red"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center"
+            />
+            <CollectionView ItemsSource="{Binding Campagne.Monstres}" HeightRequest="300" Margin="40">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Padding="10">
+                            <Button x:Name="CampagneBtn" Text="{Binding Nom}" 
+                            SemanticProperties.Hint="Liste des campagnes"
+                            Clicked="Campagne_Clicked"
+                            HorizontalOptions="Center"
+                            HeightRequest="60"
+                            WidthRequest="300"/>
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+            <Label 
+            Text="PNJ de la campagne"
+            FontSize="Subtitle"
+            FontAttributes="Bold"
+            TextColor="Red"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center"
+            />
+            <CollectionView ItemsSource="{Binding Campagne.PNJs}" HeightRequest="300" Margin="40">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Padding="10">
+                            <Button x:Name="CampagneBtn" Text="{Binding Name}" 
+                            SemanticProperties.Hint="Liste des campagnes"
+                            Clicked="Campagne_Clicked"
+                            HorizontalOptions="Center"
+                            HeightRequest="60"
+                            WidthRequest="300"/>
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+            <Label 
+            Text="Quêtes de la campagne"
+            FontSize="Subtitle"
+            FontAttributes="Bold"
+            TextColor="Red"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center"
+            />
+            <CollectionView ItemsSource="{Binding Campagne.Quetes}" HeightRequest="300" Margin="40">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Padding="10">
+                            <Button x:Name="CampagneBtn" Text="{Binding DescriptionQuete}" 
+                            SemanticProperties.Hint="Liste des campagnes"
+                            Clicked="Campagne_Clicked"
+                            HorizontalOptions="Center"
+                            HeightRequest="60"
+                            WidthRequest="300"/>
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+            
+            
+        </VerticalStackLayout>
+    </ScrollView>
 </ContentPage>
