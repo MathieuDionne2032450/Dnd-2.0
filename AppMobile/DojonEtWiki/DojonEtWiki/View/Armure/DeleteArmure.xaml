@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DojonEtWiki.View.Armure.DeleteArmure"
+             Title="DeleteArmure">
+    <VerticalStackLayout>
+        <Label FontSize="Title" Text="Êtes-vous certain de vouloir supprimer cette armure?" />
+        <Label TextColor="Red" Text="{Binding Armure.Name}"/>
+        <Button Text="Supprimer" Clicked="SupprimerClicked"/>
+    </VerticalStackLayout>
+</ContentPage>

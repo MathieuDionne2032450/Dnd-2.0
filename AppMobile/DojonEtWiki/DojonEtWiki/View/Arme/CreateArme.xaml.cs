@@ -17,15 +17,25 @@ public partial class CreateArme : ContentPage
 		string nom = EntreeNom.Text;
 		int enchantementId = Convert.ToInt32(EntreeEnchantementId.Text);
 
-        Model.Arme arme = new Model.Arme
-        {
-            BonusJet = bonusJet,
-            BonusForce = bonusForce,
-            Nom = nom,
-            EnchantementId = enchantementId
-        };
+		using (HttpClient client = new HttpClient())
+		{
+			try
+			{
+				string url = "https://c0fnrbvj-7296.use.devtunnels.ms/CreateArme?bonusJet=" + bonusJet + "&bonusForce=" +
+					bonusForce + "&nom=" +
+					nom + "&enchantementId=" + enchantementId;
+				HttpResponseMessage response = await client.GetAsync(url);
 
-		string url = "Arme/CreateArme";
+				if (response.IsSuccessStatusCode)
+				{
+					string responseBody = await response.Content.ReadAsStringAsync();
+				}
+            }
+			catch(Exception ex)
+			{
+
+			}
+		}
 
     }
 }

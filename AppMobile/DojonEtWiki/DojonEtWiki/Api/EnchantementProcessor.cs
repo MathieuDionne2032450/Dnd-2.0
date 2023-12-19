@@ -29,5 +29,23 @@ namespace DojonEtWiki.Api
             }
             return null;
         }
+
+        public static async Task<Enchantement> GetEnchantementById(int id)
+        {
+            string url = "Enchantement/GetEnchantement/" + id;
+            HttpResponseMessage reponse = await ApiHelper.apiClient.GetAsync(new Uri(ApiHelper.apiClient.BaseAddress + url)).ConfigureAwait(false);
+
+            if (reponse.IsSuccessStatusCode)
+            {
+                Enchantement enchantement = await reponse.Content.ReadAsAsync<Enchantement>();
+                return enchantement;
+            }
+            else
+            {
+                throw new Exception(reponse.ReasonPhrase);
+            }
+        }
+
+
     }
 }

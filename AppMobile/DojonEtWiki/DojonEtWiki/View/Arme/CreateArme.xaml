@@ -7,7 +7,8 @@
         <Label 
             Text="Créer Arme"
             VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+            HorizontalOptions="Center"
+            FontSize="Title"/>
 
         <Entry Placeholder="Entrer le nom :" x:Name="EntreeNom"/>
         <Entry Placeholder="Entrer le bonus de jet :" x:Name="EntreeBonusJet"/>

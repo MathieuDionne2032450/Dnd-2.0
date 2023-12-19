@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DojonEtWiki.View.Classes.CreateClasses"
+             Title="CreateClasses">
+    <VerticalStackLayout>
+        <Label 
+            Text="Créer une classe"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center"
+            FontSize="Title"/>
+
+        <Entry Placeholder="Entrer le nom :" x:Name="EntreeNom"/>
+        <Entry Placeholder="Entrer la description :" x:Name="EntreeDescription"/>
+        <Entry Placeholder="Entrer le Hit Die :" x:Name="EntreeHitDie"/>
+        <Entry Placeholder="Entrer l'habileté primaire :" x:Name="EntreePrimaryAbility"/>
+
+        <Button Text="Créer la classe" Clicked="OnCreateClasseClicked"/>
+    </VerticalStackLayout>
+</ContentPage>
