@@ -24,14 +24,30 @@ namespace DojonEtWiki.Api
             {
                 throw new Exception(reponse.ReasonPhrase);
             }
-            
+
         }
 
-        public static async Task<List<Armure>> PutArmure(int id,string name,string type,int ac,bool dexBonus,int maxDexBonus,int stealth, int enchantId)
+        public static async Task<Armure> GetArmure(int id)
         {
-            
-            string requete = "EditArmure?id="+id+ "&name="+name+ "&type="+type+ "&ac="+ac+ "&dexBonus="+dexBonus+ "&maxDexBonus="+maxDexBonus+ "&stealthDisadvantage="+stealth+"&enchantementId="+ enchantId;
-            HttpResponseMessage reponse = await ApiHelper.apiClient.PutAsync(new Uri(ApiHelper.apiClient.BaseAddress +requete),new StringContent(string.Empty)).ConfigureAwait(false);
+            string url = "GetArmureById/" + id;
+            HttpResponseMessage reponse = await ApiHelper.apiClient.GetAsync(new Uri(ApiHelper.apiClient.BaseAddress + url)).ConfigureAwait(false);
+
+            if (reponse.IsSuccessStatusCode)
+            {
+                Armure model = await reponse.Content.ReadAsAsync<Armure>();
+                return model;
+            }
+            else
+            {
+                throw new Exception(reponse.ReasonPhrase);
+            }
+        }
+
+        public static async Task<List<Armure>> PutArmure(int id, string name, string type, int ac, bool dexBonus, int maxDexBonus, int stealth, int enchantId)
+        {
+
+            string requete = "EditArmure?id=" + id + "&name=" + name + "&type=" + type + "&ac=" + ac + "&dexBonus=" + dexBonus + "&maxDexBonus=" + maxDexBonus + "&stealthDisadvantage=" + stealth + "&enchantementId=" + enchantId;
+            HttpResponseMessage reponse = await ApiHelper.apiClient.PutAsync(new Uri(ApiHelper.apiClient.BaseAddress + requete), new StringContent(string.Empty)).ConfigureAwait(false);
 
             if (reponse.IsSuccessStatusCode)
             {
@@ -79,9 +95,9 @@ namespace DojonEtWiki.Api
                 throw new Exception(reponse.ReasonPhrase);
             }
             return false;
-            }
-
         }
-        
+
     }
+
 }
+

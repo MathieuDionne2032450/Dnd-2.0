@@ -2,7 +2,13 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="DojonEtWiki.View.Arme.CreateArme"
-             Title="CreateArme">
+             Title="CreateArme"
+             xmlns:local="clr-namespace:DojonEtWiki.ViewModel">
+
+    <ContentPage.BindingContext>
+        <local:VMArme/>
+    </ContentPage.BindingContext>
+    
     <VerticalStackLayout>
         <Label 
             Text="Créer Arme"
@@ -10,11 +16,18 @@
             HorizontalOptions="Center"
             FontSize="Title"/>
 
-        <Entry Placeholder="Entrer le nom :" x:Name="EntreeNom"/>
-        <Entry Placeholder="Entrer le bonus de jet :" x:Name="EntreeBonusJet"/>
-        <Entry Placeholder="Entrer le bonus de force :" x:Name="EntreeBonusForce"/>
-        <Entry Placeholder="Entrer l'id de l'enchantement :" x:Name="EntreeEnchantementId"/>
+        <Label>Bonus jet :</Label>
 
-        <Button Text="Créer arme" Clicked="OnCreateArmeClicked"/>
+        <Entry Placeholder="Entrer le bonus jet :" Text="{Binding Arme.BonusJet}"/>
+        <Label>Bonus force :</Label>
+        <Entry Placeholder="Entrer le bonus de force :" Text="{Binding Arme.BonusForce}"/>
+        <Label>Nom :</Label>
+        <Entry Placeholder="Entrer le nom :" Text="{Binding Arme.Nom}"/>
+        <Label>Enchantement id:</Label>
+        <Entry Placeholder="Entrer l'id de l'enchantement :" Text="{Binding Arme.EnchantementId}"/>
+
+        <Button Text="Créer arme" Clicked="OnCreateArmeClicked" IsVisible="{Binding VerifCreate}" Margin="20"/>
+        <Button Text="Modifier arme" Clicked="OnEditArmeClicked" IsVisible="{Binding VerifEdit}" Margin="20"/>
+        <Button Text="Supprimer arme" Clicked="OnDeleteArmeClicked" Margin="20" Background="red"/>
     </VerticalStackLayout>
 </ContentPage>

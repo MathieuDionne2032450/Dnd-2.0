@@ -39,12 +39,22 @@ public partial class InfoCampagne : ContentPage
     }
     private async void Arme_Clicked(object sender, EventArgs e)
     {
-        //VMArmure vmArme = new VMArme();
+        VMArme vmArme = new VMArme();
         Button b = sender as Button;
-        //vmArme.Armure = vm.Campagne.Armures.ToList().Find(a => a.Name == b.Text);
-        //vmArme.VerifEdit = true;
-        //vmArme.VerifCreate = false;
+        vmArme.Arme = vm.Campagne.Armes.ToList().Find(a => a.Nom == b.Text);
+        vmArme.VerifEdit = true;
+        vmArme.VerifCreate = false;
 
-        await Navigation.PushAsync(new InfoPerso());
+        await Navigation.PushAsync(new View.Arme.CreateArme());
+    }
+
+    private async void Arme_Ajout_Clicked(object sender, EventArgs e)
+    {
+        VMArme vmArme = new VMArme();
+        vmArme.Arme = new Model.Arme();
+        vmArme.VerifEdit = false;
+        vmArme.VerifCreate = true;
+
+        await Navigation.PushAsync(new View.Arme.CreateArme());
     }
 }

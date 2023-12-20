@@ -9,9 +9,6 @@ namespace DojonEtWiki.ViewModel
 {
     public class VMArme
     {
-
-
-
         static Arme _arme;
         public Arme Arme
         {
@@ -55,23 +52,23 @@ namespace DojonEtWiki.ViewModel
         {
         }
 
-        public void EditArmure()
+        public void EditArme()
         {
-            //Api.ArmureProcessor.PutArmure(Arme.id, Arme.BonusJet, Arme.BonusForce, Arme.Nom, Arme.EnchantementId);
+            Api.ArmeProcessor.PutArme(Arme.id, Arme.BonusJet, Arme.BonusForce, Arme.Nom, Arme.EnchantementId);
             Arme = null;
         }
 
-        public void CreateArmure()
+        public void CreateArme()
         {
-           // Api.ArmureProcessor.PostArmure(Arme.BonusJet,Arme.BonusForce,Arme.Nom,Arme.EnchantementId);
+           Api.ArmeProcessor.PostArme(Arme.BonusJet,Arme.BonusForce,Arme.Nom,Arme.EnchantementId);
             VMCampagne vm = new VMCampagne();
 
             Arme = null;
         }
 
-        public void DeleteArmure()
+        public void DeleteArme()
         {
-            //Api.ArmureProcessor.DeleteArmure(Armure.Id);
+            Api.ArmeProcessor.DeleteArme(Arme.id);
             VMCampagne vm = new VMCampagne();
 
             Arme = null;

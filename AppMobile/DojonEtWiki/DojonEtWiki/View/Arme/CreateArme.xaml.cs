@@ -1,41 +1,42 @@
 using DojonEtWiki.Api;
 using DojonEtWiki.Model;
+using DojonEtWiki.ViewModel;
 
 namespace DojonEtWiki.View.Arme;
 
 public partial class CreateArme : ContentPage
 {
+    VMArme vm;
 	public CreateArme()
 	{
+        vm = new VMArme();
 		InitializeComponent();
 	}
 
-	private async void OnCreateArmeClicked(object sender, EventArgs e)
-	{
-		int bonusJet = Convert.ToInt32(EntreeBonusJet.Text);
-		int bonusForce = Convert.ToInt32(EntreeBonusForce.Text);
-		string nom = EntreeNom.Text;
-		int enchantementId = Convert.ToInt32(EntreeEnchantementId.Text);
+	
+        private void OnEditArmeClicked(object sender, EventArgs e)
+        {
+            vm.EditArme();
+            VMCampagne vMCampagne = new VMCampagne();
+            vMCampagne.ListeCampagne = Api.CampagneProcessor.GetAllCampagnes().Result;
+            Navigation.RemovePage(this);
+        }
 
-		using (HttpClient client = new HttpClient())
-		{
-			try
-			{
-				string url = "https://c0fnrbvj-7296.use.devtunnels.ms/CreateArme?bonusJet=" + bonusJet + "&bonusForce=" +
-					bonusForce + "&nom=" +
-					nom + "&enchantementId=" + enchantementId;
-				HttpResponseMessage response = await client.GetAsync(url);
+        private void OnCreateArmeClicked(object sender, EventArgs e)
+        {
+            vm.CreateArme();
+            VMCampagne vMCampagne = new VMCampagne();
+            vMCampagne.ListeCampagne = Api.CampagneProcessor.GetAllCampagnes().Result;
 
-				if (response.IsSuccessStatusCode)
-				{
-					string responseBody = await response.Content.ReadAsStringAsync();
-				}
-            }
-			catch(Exception ex)
-			{
+            Navigation.RemovePage(this);
+        }
 
-			}
-		}
+        private void OnDeleteArmeClicked(object sender, EventArgs e)
+        {
+            vm.DeleteArme();
+            VMCampagne vMCampagne = new VMCampagne();
+            vMCampagne.ListeCampagne = Api.CampagneProcessor.GetAllCampagnes().Result;
 
-    }
+            Navigation.RemovePage(this);
+        }
 }
