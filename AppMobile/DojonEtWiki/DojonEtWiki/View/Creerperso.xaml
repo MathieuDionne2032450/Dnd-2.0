@@ -2,22 +2,31 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="DojonEtWiki.View.Creerperso"
-             Title="Creerperso">
+             Title="Creerperso"
+             xmlns:local="clr-namespace:DojonEtWiki.ViewModel">
+
+
+    <ContentPage.BindingContext>
+        <local:VMCreerPerso/>
+    </ContentPage.BindingContext>
+
     <ScrollView>
 
         <VerticalStackLayout Padding="30,0" Spacing="0" >
-
+            
+            
+            
             <Label Text="Nom Joueur" TextColor="Gray" FontSize="16" HorizontalOptions="Start" />
-            <Entry x:Name="NameJoueur" FontSize="25" Margin="0,0,0,10" Placeholder="Nom Joueur" HorizontalOptions="FillAndExpand" TextColor="White" PlaceholderColor="LightGray" BackgroundColor="Grey"></Entry>
+            <Entry Text="{Binding irljoueur,Mode=TwoWay}" x:Name="NameJoueur" FontSize="25" Margin="0,0,0,10" Placeholder="Nom Joueur" HorizontalOptions="FillAndExpand" TextColor="White" PlaceholderColor="LightGray" BackgroundColor="Grey"></Entry>
 
             <Label Text="Nom Personnage" TextColor="Gray" FontSize="16" HorizontalOptions="Start" />
-            <Entry x:Name="NamePerso" FontSize="25" Margin="0,0,0,10" Placeholder="Nom Personnage" HorizontalOptions="FillAndExpand" TextColor="White" PlaceholderColor="LightGray" BackgroundColor="Grey"></Entry>
+            <Entry Text="{Binding nom,Mode=TwoWay}" x:Name="NamePerso" FontSize="25" Margin="0,0,0,10" Placeholder="Nom Personnage" HorizontalOptions="FillAndExpand" TextColor="White" PlaceholderColor="LightGray" BackgroundColor="Grey"></Entry>
 
             <Label Text="Description" TextColor="Gray" FontSize="16" HorizontalOptions="Start" />
-            <Entry x:Name="desc" FontSize="25" Margin="0,0,0,10" Placeholder="Description" HorizontalOptions="FillAndExpand" TextColor="White" PlaceholderColor="LightGray" BackgroundColor="Grey"></Entry>
+            <Entry Text="{Binding desc,Mode=TwoWay}" x:Name="desc" FontSize="25" Margin="0,0,0,10" Placeholder="Description" HorizontalOptions="FillAndExpand" TextColor="White" PlaceholderColor="LightGray" BackgroundColor="Grey"></Entry>
 
             <Label Text="Inspiration" TextColor="Gray" FontSize="16" HorizontalOptions="Start" />
-            <Entry x:Name="inspi" FontSize="25" Margin="0,0,0,10" Placeholder="Inspiration" HorizontalOptions="FillAndExpand" TextColor="White" PlaceholderColor="LightGray" BackgroundColor="Grey"></Entry>
+            <Entry Text="{Binding inspi,Mode=TwoWay}" x:Name="inspi" FontSize="25" Margin="0,0,0,10" Placeholder="Inspiration" HorizontalOptions="FillAndExpand" TextColor="White" PlaceholderColor="LightGray" BackgroundColor="Grey"></Entry>
 
             <Label Text="Race" TextColor="Gray" FontSize="16" HorizontalOptions="Start" />
             <Picker Title="Selectionner une race"
@@ -40,19 +49,19 @@
                 SelectedItem="{Binding SelectedClasse}" />
 
             <Label Text="Trait de personnalité" TextColor="Gray" FontSize="16" HorizontalOptions="Start" />
-            <Entry x:Name="trait" FontSize="25" Margin="0,0,0,10" Placeholder="Trait de personnalité" HorizontalOptions="FillAndExpand" TextColor="White" PlaceholderColor="LightGray" BackgroundColor="Grey"></Entry>
+            <Entry Text="{Binding persotrait,Mode=TwoWay}" x:Name="trait" FontSize="25" Margin="0,0,0,10" Placeholder="Trait de personnalité" HorizontalOptions="FillAndExpand" TextColor="White" PlaceholderColor="LightGray" BackgroundColor="Grey"></Entry>
 
             <Label Text="Idéal" TextColor="Gray" FontSize="16" HorizontalOptions="Start" />
-            <Entry x:Name="ideal" FontSize="25" Margin="0,0,0,10" Placeholder="Idéal" HorizontalOptions="FillAndExpand" TextColor="White" PlaceholderColor="LightGray" BackgroundColor="Grey"></Entry>
+            <Entry Text="{Binding ideal,Mode=TwoWay}" x:Name="ideal" FontSize="25" Margin="0,0,0,10" Placeholder="Idéal" HorizontalOptions="FillAndExpand" TextColor="White" PlaceholderColor="LightGray" BackgroundColor="Grey"></Entry>
 
             <Label Text="Affinité" TextColor="Gray" FontSize="16" HorizontalOptions="Start" />
-            <Entry x:Name="Bond" FontSize="25" Margin="0,0,0,10" Placeholder="Affinité" HorizontalOptions="FillAndExpand" TextColor="White" PlaceholderColor="LightGray" BackgroundColor="Grey"></Entry>
+            <Entry Text="{Binding bounds,Mode=TwoWay}" x:Name="Bond" FontSize="25" Margin="0,0,0,10" Placeholder="Affinité" HorizontalOptions="FillAndExpand" TextColor="White" PlaceholderColor="LightGray" BackgroundColor="Grey"></Entry>
 
             <Label Text="Faiblaisse" TextColor="Gray" FontSize="16" HorizontalOptions="Start" />
-            <Entry x:Name="Flaws" FontSize="25" Margin="0,0,0,10" Placeholder="Faiblaisse" HorizontalOptions="FillAndExpand" TextColor="White" PlaceholderColor="LightGray" BackgroundColor="Grey"></Entry>
+            <Entry Text="{Binding flaws,Mode=TwoWay}" x:Name="Flaws" FontSize="25" Margin="0,0,0,10" Placeholder="Faiblaisse" HorizontalOptions="FillAndExpand" TextColor="White" PlaceholderColor="LightGray" BackgroundColor="Grey"></Entry>
 
             <Label Text="Niveau" TextColor="Gray" FontSize="16" HorizontalOptions="Start" />
-            <Entry x:Name="lvl" FontSize="25" Margin="0,0,0,10" Placeholder="Niveau" HorizontalOptions="FillAndExpand" TextColor="White" PlaceholderColor="LightGray" BackgroundColor="Grey"></Entry>
+            <Entry Text="{Binding lvl,Mode=TwoWay}" x:Name="lvl" FontSize="25" Margin="0,0,0,10" Placeholder="Niveau" HorizontalOptions="FillAndExpand" TextColor="White" PlaceholderColor="LightGray" BackgroundColor="Grey"></Entry>
 
             <Label Text="Campagne" TextColor="Gray" FontSize="16" HorizontalOptions="Start" />
             <Picker Title="Selectionner une Campagne"

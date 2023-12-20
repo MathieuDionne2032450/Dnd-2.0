@@ -23,7 +23,25 @@ namespace DojonEtWiki.Api
             {
                 throw new Exception(reponse.ReasonPhrase);
             }
-            return null;
+            
         }
+        public static async Task<Classes> GetClass(int id)
+        {
+            string url = "GetClasses/"+id;
+            HttpResponseMessage reponse = await ApiHelper.apiClient.GetAsync(new Uri(ApiHelper.apiClient.BaseAddress + url)).ConfigureAwait(false);
+
+            if (reponse.IsSuccessStatusCode)
+            {
+                Classes model = await reponse.Content.ReadAsAsync<Classes>();
+                return model;
+            }
+            else
+            {
+                throw new Exception(reponse.ReasonPhrase);
+            }
+            
+        }
+
+        
     }
 }

@@ -4,7 +4,7 @@ public partial class DeleteArmure : ContentPage
 {
 	public DeleteArmure()
 	{
-		InitializeComponent();
+		//InitializeComponent();
 	}
 
 	private void Button_Clicked(object sender, EventArgs e)

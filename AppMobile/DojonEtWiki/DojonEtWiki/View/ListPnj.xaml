@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DojonEtWiki.View.ListPnj"
+             Title="ListPnj"
+             BackgroundImageSource="Resources/Images/background2.jpg"
+             xmlns:local="clr-namespace:DojonEtWiki.ViewModel">
+
+    <ContentPage.BindingContext>
+        <local:VMPnj/>
+    </ContentPage.BindingContext>
+
+    <VerticalStackLayout BackgroundColor="Gray" HeightRequest="300" Margin="20,0">
+        <Label Text="PNJ" TextColor="Black" FontSize="16" HorizontalOptions="Start" Margin="20"/>
+        <Picker x:Name="pnj" Margin="20" Title="Selectionner un Pnj"
+                ItemsSource="{Binding Pnjs}"
+                ItemDisplayBinding="{Binding Name}"
+                SelectedItem="{Binding SelectedPnj}" />
+
+        <Button Text="Voir" Clicked="voir" Margin="20"></Button>
+    </VerticalStackLayout>
+</ContentPage>

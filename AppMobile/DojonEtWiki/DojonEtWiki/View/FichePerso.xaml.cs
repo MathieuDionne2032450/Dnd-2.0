@@ -1,9 +1,13 @@
+using DojonEtWiki.ViewModel;
+
 namespace DojonEtWiki.View;
 
 public partial class FichePerso : ContentPage
 {
-	public FichePerso()
+	VMFichePerso vm;
+	public FichePerso(VMFichePerso vm_p)
 	{
+		vm = vm_p;
 		InitializeComponent();
 	}
 }

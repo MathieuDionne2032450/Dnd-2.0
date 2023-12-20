@@ -23,5 +23,15 @@
         Title="Centre de création"
         ContentTemplate="{DataTemplate local:Creation}"
         Route="Creation"/>
-    
+
+    <ShellContent
+        Title="Voir Fiche de Personnage"
+        ContentTemplate="{DataTemplate local:ListPerso}"
+        Route="ListPerso"/>
+
+    <ShellContent
+        Title="Voir PNJ"
+        ContentTemplate="{DataTemplate local:ListPnj}"
+        Route="ListPnj"/>
+
 </Shell>

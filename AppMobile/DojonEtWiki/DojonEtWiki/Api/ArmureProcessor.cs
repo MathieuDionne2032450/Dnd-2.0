@@ -24,7 +24,7 @@ namespace DojonEtWiki.Api
             {
                 throw new Exception(reponse.ReasonPhrase);
             }
-            return null;
+            
         }
 
         public static async Task<List<Armure>> PutArmure(int id,string name,string type,int ac,bool dexBonus,int maxDexBonus,int stealth, int enchantId)
@@ -79,6 +79,9 @@ namespace DojonEtWiki.Api
                 throw new Exception(reponse.ReasonPhrase);
             }
             return false;
+            }
+
         }
+        
     }
 }

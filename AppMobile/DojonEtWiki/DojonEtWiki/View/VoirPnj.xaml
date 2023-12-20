@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DojonEtWiki.View.VoirPnj"
+             Title="VoirPnj"
+             xmlns:local="clr-namespace:DojonEtWiki.ViewModel"
+             BackgroundImageSource="Resources/Images/background2.jpg">
+    
+    
+    <ContentPage.BindingContext>
+        <local:VMPnj/>
+    </ContentPage.BindingContext>
+
+
+    <StackLayout>
+
+
+
+        <Label 
+            Text="PNJ"
+            FontSize="Title"
+            FontAttributes="Bold"
+            TextColor="Red"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center"
+            Margin="20"/>
+
+
+
+
+        <Frame BackgroundColor="LightGray" Padding="10" Margin="5">
+            <StackLayout>
+
+                
+                <Label Margin="0,0,0,0" Text="{Binding SelectedPnj.Name, StringFormat='Campagne : {0}'}" />
+                <Label Margin="0,0,0,20" Text="{Binding SelectedPnj.Description, StringFormat='Campagne : {0}'}" />
+
+                <Image Source="Resources/Images/Tete/tete1"/>
+
+
+
+            </StackLayout>
+        </Frame>
+    </StackLayout>
+
+</ContentPage>

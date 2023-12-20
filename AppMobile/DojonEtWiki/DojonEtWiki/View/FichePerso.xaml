@@ -2,8 +2,19 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="DojonEtWiki.View.FichePerso"
-             Title="FichePerso">
+             Title="FichePerso"
+             xmlns:local="clr-namespace:DojonEtWiki.ViewModel"
+             BackgroundImageSource="Resources/Images/background2.jpg">
+
+    <ContentPage.BindingContext>
+        <local:VMFichePerso/>
+    </ContentPage.BindingContext>
+
+
     <StackLayout>
+        
+        
+        
         <Label 
             Text="Fiche du personnage"
             FontSize="Title"
@@ -12,57 +23,79 @@
             VerticalOptions="Center" 
             HorizontalOptions="Center"
             Margin="20"/>
-        <CollectionView ItemsSource="{Binding Perso}">
-            <CollectionView.ItemTemplate>
-                <DataTemplate>
-                    <Frame BackgroundColor="LightGray" Padding="10" Margin="5">
-                        <StackLayout>
-                            <Label Text="{Binding Nom, StringFormat='Nom : {0}'}" FontAttributes="Bold"/>
-                            <Label Text="{Binding Description, StringFormat='Description : {0}'}" />
-                            <Label Text="{Binding Inspiration, StringFormat='Inspiration : {0}'}" />
-                            <Label Text="{Binding Armure.Name, StringFormat='Armure : {0}'}" />
-                            <Label Text="Armes : "/>
-                            <StackLayout>
-                                <CollectionView ItemsSource="{Binding LesArmes}">
-                                    <CollectionView.ItemTemplate>
-                                        <DataTemplate>
-                                            <Label Text="{Binding Nom, StringFormat='Nom : {0}'}"/>
-                                        </DataTemplate>
-                                    </CollectionView.ItemTemplate>
-                                </CollectionView>
-                            </StackLayout>
-                            <Label Text="{Binding Classes.name, StringFormat='Classe : {0}'}" />
-                            <Label Text="{Binding Race.Nom, StringFormat='Race : {0}'}" />
-                            <Label Text="Skills : "/>
-                            <StackLayout>
-                                <CollectionView ItemsSource="{Binding Skills}">
-                                    <CollectionView.ItemTemplate>
-                                        <DataTemplate>
-                                            <Label Text="{Binding Nom, StringFormat='Nom : {0}'}"/>
-                                        </DataTemplate>
-                                    </CollectionView.ItemTemplate>
-                                </CollectionView>
-                            </StackLayout>
-                            <Label Text="{Binding Personalitetrait, StringFormat='Trait de personnalité : {0}'}" />
-                            <Label Text="{Binding Ideal, StringFormat='Idéal : {0}'}" />
-                            <Label Text="{Binding Bonds, StringFormat='Liens : {0}'}" />
-                            <Label Text="{Binding Flaws, StringFormat='Défauts : {0}'}" />
-                            <Label Text="{Binding Niveau, StringFormat='Niveau : {0}'}" />
-                            <Label Text="{Binding Campagne.Nom, StringFormat='Campagne : {0}'}" />
-                            <Label Text="Feats : "/>
-                            <StackLayout>
-                                <CollectionView ItemsSource="{Binding feats}">
-                                    <CollectionView.ItemTemplate>
-                                        <DataTemplate>
-                                            <Label Text="{Binding Nom, StringFormat='Nom : {0}'}"/>
-                                        </DataTemplate>
-                                    </CollectionView.ItemTemplate>
-                                </CollectionView>
-                            </StackLayout>
-                        </StackLayout>
-                    </Frame>
-                </DataTemplate>
-            </CollectionView.ItemTemplate>
-        </CollectionView>
+
+
+
+
+        <Frame BackgroundColor="LightGray" Padding="10" Margin="5">
+            <StackLayout>
+
+                <Label Margin="0,0,0,20" Text="{Binding Campagne.Name, StringFormat='Campagne : {0}'}" />
+                <Label Text="{Binding SelectedPerso.Nom, StringFormat='Nom : {0}'}" FontAttributes="Bold"/>
+                <Label Text="{Binding SelectedPerso.Description, StringFormat='Description : {0}'}" />
+                <Label Text="{Binding SelectedPerso.Inspiration, StringFormat='Inspiration : {0}'}" />
+                <Label Text="{Binding Classes.name, StringFormat='Classe : {0}'}" />
+                <Label Text="{Binding Race.Nom, StringFormat='Race : {0}'}" Margin="0,0,0,20"/>
+
+                <Label Margin="0,0,0,20" Text="{Binding Armure.Name, StringFormat='Armure : {0}'}" />
+
+                <Label Text="Armes : " />
+                <StackLayout Margin="0,0,0,20">
+                    <CollectionView ItemsSource="{Binding SelectedPerso.LesArmes}">
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <Label Text="{Binding Nom, StringFormat='       {0}'}"/>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                </StackLayout>
+                
+                <Label Text="Skills : "/>
+                <StackLayout  Margin="0,0,0,20">
+                    <CollectionView ItemsSource="{Binding SelectedPerso.Skills}">
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <Label Text="{Binding Nom, StringFormat='Nom : {0}'}"/>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                </StackLayout>
+                <Label Text="{Binding SelectedPerso.Personalitetrait, StringFormat='Trait de personnalité : {0}'}" />
+                <Label Text="{Binding SelectedPerso.Ideal, StringFormat='Idéal : {0}'}" />
+                <Label Text="{Binding SelectedPerso.Bonds, StringFormat='Liens : {0}'}" />
+                <Label Text="{Binding SelectedPerso.Flaws, StringFormat='Défauts : {0}'}" />
+
+                <Label Margin="0,20,0,0"  Text="Feats : "/>
+                <StackLayout Margin="0,0,0,20">
+                    <CollectionView ItemsSource="{Binding SelectedPerso.feats}">
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <Label Text="{Binding Nom, StringFormat='Nom : {0}'}"/>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                </StackLayout>
+
+                <Label Margin="0,20,0,20" Text="{Binding SelectedPerso.Niv, StringFormat='Niveau : {0}'}" />
+
+                <Label Text="{Binding Race.BonusPV, StringFormat='Bonus PV : {0}'}" />
+                <Label Text="{Binding Race.BonusCharisma, StringFormat='Bonus Charisma : {0}'}" />
+                <Label Text="{Binding Race.BonusConsti, StringFormat='Bonus Consti : {0}'}" />
+                <Label Text="{Binding Race.BonusDex, StringFormat='Bonus Dex : {0}'}" />
+                <Label Text="{Binding Race.BonusForce, StringFormat='Bonus Force : {0}'}" />
+                <Label Text="{Binding Race.BonusIntel, StringFormat='Bonus Intel : {0}'}" />
+                <Label Text="{Binding Race.BonusWisdom, StringFormat='Bonus Wisdom : {0}'}" />
+                
+
+
+
+                
+            </StackLayout>
+        </Frame>
+
+        
+        
+        
+
     </StackLayout>
 </ContentPage>
