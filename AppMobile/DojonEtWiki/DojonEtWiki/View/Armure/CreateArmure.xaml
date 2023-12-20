@@ -2,7 +2,13 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="DojonEtWiki.View.Armure.CreateArmure"
-             Title="CreateArmure">
+             Title="CreateArmure"
+             xmlns:local="clr-namespace:DojonEtWiki.ViewModel">
+
+    <ContentPage.BindingContext>
+        <local:VMArmure/>
+    </ContentPage.BindingContext>
+    
     <VerticalStackLayout>
         <Label 
             Text="Créer Armure"
@@ -10,14 +16,24 @@
             HorizontalOptions="Center"
             FontSize="Title"/>
 
-        <Entry Placeholder="Entrer le nom :" x:Name="EntreeNom"/>
-        <Entry Placeholder="Entrer le type :" x:Name="EntreeType"/>
-        <Entry Placeholder="Entrer l'AC :" x:Name="EntreeAC"/>
-        <Entry Placeholder="Entrer le bonus de dextérité :" x:Name="EntreeDexBonus"/>
-        <Entry Placeholder="Entrer la modification maximale de dextérité :" x:Name="EntreeMaxDexMod"/>
-        <Entry Placeholder="Entrer le désavantage de furtivité :" x:Name="EntreeStealthDisadvantage"/>
-        <Entry Placeholder="Entrer l'ID de l'enchantement :" x:Name="EntreeEnchantementId"/>
+        <Label>Nom : </Label>
+        <Entry Placeholder="Entrer le nom :" x:Name="EntreeNom" Text="{Binding Armure.Name}"/>
+        <Label>Type : </Label>
+        <Entry Placeholder="Entrer le type :" x:Name="EntreeType" Text="{Binding Armure.Type}"/>
+        <Label>Ac :</Label>
+        <Entry Placeholder="Entrer l'AC :" x:Name="EntreeAC" Text="{Binding Armure.Ac}"/>
+        <Label>Bonus dextérité :</Label>
+        <Entry Placeholder="Entrer le bonus de dextérité :" x:Name="EntreeDexBonus" Text="{Binding Armure.DexBonus}"/>
+        <Label>Max dextérité :</Label>
+        <Entry Placeholder="Entrer la modification maximale de dextérité :" x:Name="EntreeMaxDexMod" Text="{Binding Armure.MaxDexMod}"/>
+        <Label>Désenvantage furtivité :</Label>
+        <Entry Placeholder="Entrer le désavantage de furtivité :" x:Name="EntreeStealthDisadvantage" Text="{Binding Armure.StealthDisadvantage}"/>
+        <Label>Enchantement Id :</Label>
+        <Entry Placeholder="Entrer l'ID de l'enchantement :" x:Name="EntreeEnchantementId" Text="{Binding Armure.EnchantementId}"/>
 
-        <Button Text="Créer armure" Clicked="OnCreateArmureClicked"/>
+        <Button Text="Créer armure" Clicked="OnCreateArmureClicked" IsVisible="{Binding VerifCreate}" Margin="20"/>
+        <Button Text="Modifier armure" Clicked="OnEditArmureClicked" IsVisible="{Binding VerifEdit}" Margin="20"/>
+        <Button Text="Supprimer armure" Clicked="OnDeleteArmureClicked" Margin="20" Background="red"/>
+
     </VerticalStackLayout>
 </ContentPage>

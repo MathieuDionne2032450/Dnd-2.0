@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,9 +9,26 @@ using DojonEtWiki.Model;
 
 namespace DojonEtWiki.ViewModel
 {
-    public class VMCampagne
+    public class VMCampagne:INotifyPropertyChanged
     {
-        List<Campagne> _listeCampagne;
+
+        #region INotifyPropertyChange
+        public event PropertyChangedEventHandler PropertyChanged;
+
+
+        //Fonction qui gère le lancement de l'événément PropertyChanged
+        protected virtual void ValeurChangee(string nomPropriete)
+        {
+            //Vérifie si il y a au moins 1 abonné
+            if (this.PropertyChanged != null)
+            {
+                //Lance l'événement -> tous les abonnés seront notifiés
+                this.PropertyChanged(this, new PropertyChangedEventArgs(nomPropriete));
+            }
+        }
+        #endregion
+
+        static List<Campagne> _listeCampagne;
         public List<Campagne> ListeCampagne
         { 
             get
@@ -20,6 +38,7 @@ namespace DojonEtWiki.ViewModel
             set 
             {
                 _listeCampagne = value;
+                ValeurChangee("ListeCampagne");
             } 
         }
 
@@ -33,6 +52,7 @@ namespace DojonEtWiki.ViewModel
             set
             {
                 _campagne = value;
+                ValeurChangee("Campagne");
             }
         }
 

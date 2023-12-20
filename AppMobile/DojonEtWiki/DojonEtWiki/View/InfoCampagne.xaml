@@ -48,7 +48,7 @@
                         <Grid Padding="10">
                             <Button x:Name="CampagneBtn" Text="{Binding Nom}" 
                             SemanticProperties.Hint="Liste des campagnes"
-                            Clicked="Campagne_Clicked"
+                            Clicked="Arme_Clicked"
                             HorizontalOptions="Center"
                             HeightRequest="60"
                             WidthRequest="300"/>
@@ -56,6 +56,14 @@
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>
+
+            <Button x:Name="CampagneBtn" Text="Ajouter un arme"
+                    Margin="0,10"
+                            SemanticProperties.Hint="Liste des campagnes"
+                            Clicked="Arme_Ajout_Clicked"
+                            HorizontalOptions="Center"
+                            HeightRequest="60"
+                            WidthRequest="300"/>
 
 
             <Label 
@@ -72,7 +80,7 @@
                         <Grid Padding="10">
                             <Button x:Name="CampagneBtn" Text="{Binding Name}" 
                             SemanticProperties.Hint="Liste des campagnes"
-                            Clicked="Campagne_Clicked"
+                            Clicked="Armure_Clicked"
                             HorizontalOptions="Center"
                             HeightRequest="60"
                             WidthRequest="300"/>
@@ -80,6 +88,14 @@
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>
+
+            <Button x:Name="CampagneBtn" Text="Ajouter un armure"
+                    Margin="0,10"
+                            SemanticProperties.Hint="Liste des campagnes"
+                            Clicked="Armure_Ajout_Clicked"
+                            HorizontalOptions="Center"
+                            HeightRequest="60"
+                            WidthRequest="300"/>
 
             <Label 
             Text="Races de la campagne"
