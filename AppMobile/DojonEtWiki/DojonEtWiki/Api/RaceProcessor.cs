@@ -25,5 +25,23 @@ namespace DojonEtWiki.Api
             }
             return null;
         }
+
+        public static async Task<Race> GetRace(int id)
+        {
+            string url = "Race/RaceById/"+id;
+            HttpResponseMessage reponse = await ApiHelper.apiClient.GetAsync(new Uri(ApiHelper.apiClient.BaseAddress + url)).ConfigureAwait(false);
+
+            if (reponse.IsSuccessStatusCode)
+            {
+                Race model = await reponse.Content.ReadAsAsync<Race>();
+                return model;
+            }
+            else
+            {
+                throw new Exception(reponse.ReasonPhrase);
+            }
+            return null;
+        }
+
     }
 }

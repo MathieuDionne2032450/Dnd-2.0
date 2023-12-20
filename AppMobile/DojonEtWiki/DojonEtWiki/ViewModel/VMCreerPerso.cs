@@ -35,6 +35,15 @@ namespace DojonEtWiki.ViewModel
         public List<Campagne> Campagnes { get { return campagnes; } set { campagnes = value; } }
         public Campagne SelectedCampagne { get { return selectedcampagne; } set { selectedcampagne = value; } }
 
+        public string irljoueur { get; set; }
+        public string nom { get; set; }
+        public string desc { get; set; }
+        public int inspi { get; set; }
+        public string persotrait { get; set; }
+        public string ideal { get; set; }
+        public string bounds { get; set; }
+        public string flaws { get; set; }
+        public int lvl { get; set; } 
 
         public VMCreerPerso()
         {
@@ -51,18 +60,22 @@ namespace DojonEtWiki.ViewModel
             SelectedCampagne = Campagnes[0];
         }
 
-        public async void Creerperso(string irljoueur, string nom, string desc, int inspi, string persotrait, string ideal, string bounds, string flaws, int lvl)
+        public async void Creerperso(string irljoueur_p, string nom_p, string desc_p, int inspi_p, string persotrait_p, string ideal_p, string bounds_p, string flaws_p, int lvl_p)
         {
-            bool rep = await PersoProcessor.CreerPerso( irljoueur,  nom,  desc,  inspi, SelectedArmure.Id, SelectedClasse.id, SelectedRace.Id,  persotrait,  ideal,  bounds,  flaws,  lvl,  SelectedCampagne.Id);
+            bool rep = await PersoProcessor.CreerPerso(irljoueur_p, nom_p, desc_p, inspi_p, SelectedArmure.Id, SelectedClasse.id, SelectedRace.Id, persotrait_p, ideal_p, bounds_p, flaws_p, lvl_p,  SelectedCampagne.Id);
             if (rep)
             {
-                Console.WriteLine("oui");
-
+                irljoueur = "";
+                nom = "";
+                desc = "";
+                inspi = 0;
+                persotrait = "";
+                ideal = "";
+                bounds = "";
+                flaws = "";
+                lvl = 0;
             }
-            else
-            {
-                Console.WriteLine("non");
-            }
+            
         }
     }
 }

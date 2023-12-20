@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DojonEtWiki.View.ListPerso"
+             Title="ListPerso"
+             BackgroundImageSource="Resources/Images/background2.jpg"
+             xmlns:local="clr-namespace:DojonEtWiki.ViewModel">
+
+    <ContentPage.BindingContext>
+        <local:VMFichePerso/>
+    </ContentPage.BindingContext>
+    
+    <VerticalStackLayout BackgroundColor="Gray" HeightRequest="300" Margin="20,0">
+        <Label Text="Personage" TextColor="Black" FontSize="16" HorizontalOptions="Start" Margin="20"/>
+        <Picker x:Name="perso"  Margin="20" Title="Selectionner un perso"
+                ItemsSource="{Binding Persos}"
+                ItemDisplayBinding="{Binding Nom}"
+                SelectedItem="{Binding SelectedPerso}" />
+
+        <Button Text="Voir" Clicked="voir" Margin="20"></Button>
+    </VerticalStackLayout>
+</ContentPage>

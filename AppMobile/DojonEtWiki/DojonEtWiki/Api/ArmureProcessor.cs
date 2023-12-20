@@ -23,7 +23,25 @@ namespace DojonEtWiki.Api
             {
                 throw new Exception(reponse.ReasonPhrase);
             }
-            return null;
+            
         }
+
+        public static async Task<Armure> GetArmure(int id)
+        {
+            string url = "GetArmureById/"+id;
+            HttpResponseMessage reponse = await ApiHelper.apiClient.GetAsync(new Uri(ApiHelper.apiClient.BaseAddress + url)).ConfigureAwait(false);
+
+            if (reponse.IsSuccessStatusCode)
+            {
+                Armure model = await reponse.Content.ReadAsAsync<Armure>();
+                return model;
+            }
+            else
+            {
+                throw new Exception(reponse.ReasonPhrase);
+            }
+
+        }
+        
     }
 }
