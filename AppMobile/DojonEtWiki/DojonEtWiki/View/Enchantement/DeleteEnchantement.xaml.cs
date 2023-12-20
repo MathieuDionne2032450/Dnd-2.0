@@ -6,4 +6,9 @@ public partial class DeleteEnchantement : ContentPage
 	{
 		InitializeComponent();
 	}
+
+	private void SupprimerClicked(object sender, EventArgs e)
+	{
+
+	}
 }

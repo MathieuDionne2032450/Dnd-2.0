@@ -28,10 +28,16 @@ namespace DojonEtWiki.Api
 
         }
 
+       
+
         public static async Task<bool> CreerPerso(string irljoueur,string nom,string desc, int inspi,int armurid,int classid,int raceid,string persotrait,string ideal,string bounds,string flaws, int lvl,int campid)
         {
-            string url = "CreatePerso?IrlJoueur="+irljoueur+"&Nom="+nom+"&Description="+desc+"&Inspiration="+inspi+"&ArmureId="+armurid+"&ClasseId="+classid+"&RaceId="+raceid+"&Personalitetrait="+persotrait+"&Ideal="+ideal+"&Bonds="+bounds+"&Flaws="+flaws+"&Niv="+lvl+"&CampagneId="+campid;
-            HttpResponseMessage reponse = await ApiHelper.apiClient.GetAsync(new Uri(ApiHelper.apiClient.BaseAddress + url)).ConfigureAwait(false);
+            string url = "CreatePerso";
+ 
+            StringContent data = new StringContent("?IrlJoueur="+irljoueur+"&Nom="+nom+"&Description="+desc+"&Inspiration="+inspi+"&ArmureId="+armurid+"&ClasseId="+classid+"&RaceId="+raceid+"&Personalitetrait="+persotrait+"&Ideal="+ideal+"&Bonds="+bounds+"&Flaws="+flaws+"&Niv="+lvl+"&CampagneId="+campid);
+            
+            
+            HttpResponseMessage reponse = await ApiHelper.apiClient.PostAsync(new Uri(ApiHelper.apiClient.BaseAddress + url),data).ConfigureAwait(false);
 
             if (reponse.IsSuccessStatusCode)
             {

@@ -7,8 +7,10 @@ public partial class CreateEnchantement : ContentPage
 		InitializeComponent();
 	}
 
-	private void Button_Clicked(object sender, EventArgs e)
+	private void OnCreateEnchantementClicked(object sender, EventArgs e)
 	{
 
 	}
+
+	
 }

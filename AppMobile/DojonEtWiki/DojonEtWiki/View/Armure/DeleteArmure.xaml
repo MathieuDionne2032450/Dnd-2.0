@@ -6,6 +6,6 @@
     <VerticalStackLayout>
         <Label FontSize="Title" Text="Êtes-vous certain de vouloir supprimer cette armure?" />
         <Label TextColor="Red" Text="{Binding Armure.Name}"/>
-        <Button Text="Supprimer" Clicked="SupprimerClicked"/>
+        <Button Text="Supprimer" Clicked="Button_Clicked"/>
     </VerticalStackLayout>
 </ContentPage>
