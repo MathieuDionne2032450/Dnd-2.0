@@ -15,6 +15,7 @@ public partial class ListPnj : ContentPage
     private async void voir(object sender, EventArgs e)
     {
         vm.SelectedPnj = (PNJ)pnj.SelectedItem;
+        vm.SetPNJImage();
         await Navigation.PushAsync(new VoirPnj(vm));
     }
 }
