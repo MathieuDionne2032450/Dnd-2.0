@@ -32,11 +32,23 @@
             <StackLayout>
 
                 
-                <Label Margin="0,0,0,0" Text="{Binding SelectedPnj.Name, StringFormat='Campagne : {0}'}" />
-                <Label Margin="0,0,0,20" Text="{Binding SelectedPnj.Description, StringFormat='Campagne : {0}'}" />
+                <Label Margin="0,0,0,0" Text="{Binding SelectedPnj.Name, StringFormat='Nom : {0}'}" />
+                <Label Margin="0,0,0,20" Text="{Binding SelectedPnj.Description, StringFormat='Description : {0}'}" />
+                <Grid>
+                    <Image Source="Resources/Images/bg.png" Aspect="AspectFit" AnchorY="10"/>
+                    <Image Source="Resources/Images/tete1.png" Aspect="AspectFit" AnchorY="10"/>
 
-                <Image Source="Resources/Images/Tete/tete1"/>
+                    <Image Source="Resources/Images/bouche1.png" Aspect="AspectFit" AnchorY="10"/>
+                    <Image Source="Resources/Images/cheveux2.png" Aspect="AspectFit" AnchorY="10"/>
+                    <Image Source="Resources/Images/nez1.png" Aspect="AspectFit" AnchorY="10"/>
+                    <Image Source="Resources/Images/barbe8.png" Aspect="AspectFit" AnchorY="10"/>
+                    <Image Source="Resources/Images/yeux1_1.png" Aspect="AspectFit" AnchorY="10"/>
+                    <Image Source="Resources/Images/yeux2_3.png" Aspect="AspectFit" AnchorY="10"/>
+                    <Image Source="Resources/Images/sourcil5.png" Aspect="AspectFit" AnchorY="10"/>
+                    
 
+                </Grid>
+                
 
 
             </StackLayout>
